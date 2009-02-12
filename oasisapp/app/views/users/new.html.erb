@@ -1,0 +1,124 @@
+<div class="grid_8" id = "reg">
+  <div id="sos"></div>
+  <div id="top_r"></div>
+  <div id="side_r">
+    <b>Almost Done! We just need your account information to get started.</b>
+    <br/><br/>
+
+    <div style="display:block; ">
+
+
+      <% form_for :user, :url => users_path , :html => {:class =>'regform',:id=>'tehform'}do |f| -%>
+
+        <table style ="width:580px;">
+          <tbody>
+            <tr><td ><span class="inst"><b>Login information</b></span><hr/></td></tr>
+            <tr>
+              <td class="field"><p><label class="fst"for="login">Username:</label>
+                <%= f.text_field :login, "maxlength"=>"32", "size"=>"34"%>
+
+              </td><td class="col_explain"> <div id="loginmsg" class="sml">Your desired username.<%= error_message_on "user", :login%></div></td>
+            </tr>
+            <tr><td><label class="fst"for="password">Password:</label>
+            <%= f.password_field :password, "maxlength"=>"32", "size"=>"34"%>  </td><td class="col_explain"><div id="passmsg" class="sml">Keep your password safe!<%= error_message_on "user", :password%></div></td></tr>
+
+            <tr><td> <label class="fst"for="password_confirmation">Confirm Password:</label>
+            <%= f.password_field :password_confirmation, "maxlength"=>"32", "size"=>"34" %></td><td class="col_explain"><div id="cpassmsg" class="sml">Please enter your chosen password again.<%= error_message_on "user", :password_confirmation%></div></td></tr>
+
+
+            <tr><td><span class="inst"><b>About yourself</b></span><hr/></td></tr>
+
+            <tr><td><label class="fst"for="first_name">First Name:</label>
+            <%= f.text_field :first_name, "maxlength"=>"32", "size"=>"34" %></td><td class="col_explain"><div id="first_namemsg" class="sml" ><%= error_message_on "user", :first_name%></div> </td></tr>
+
+            <tr><td><label class="fst"for="middle_name">Middle Name:<span class="inst">optional</span></label>
+            <%= f.text_field :middle_name, "maxlength"=>"32", "size"=>"34" %></td><td class="col_explain"><div id="middle_namemsg" class="sml"><%= error_message_on "user", :middle_name%></div> </td></tr>
+
+            <tr><td> <label class="fst"for="last_name">Last Name:</label>
+            <%= f.text_field :last_name, "maxlength"=>"32", "size"=>"34" %></td><td class="col_explain"><div id="last_namemsg" class="sml"><%= error_message_on "user", :last_name%></div> </td></tr>
+
+            <tr><td><label class="fst"for="nickname">Nickname:</label>
+            <%= f.text_field :nickname, "maxlength"=>"10", "size"=>"34" %></td><td class="col_explain"><div id="nicknamemsg" class="sml"><%= error_message_on "user", :nickname%></div></td></tr>
+
+            <tr><td> <label class="fst"for="address">Address: </label>
+            <%= f.text_field :address, "maxlength"=>"64", "size"=>"34" %></td><td class="col_explain"><div id="addressmsg" class="sml">Enter your home address.<%= error_message_on "user", :address%></div> </td></tr>
+
+            <tr><td ><span class="inst"><b>Contact information</b> <br/>We'll use this for notification purposes</span><hr/></td></tr>
+
+            <tr><td><label class="fst"for="email">Email Address:</label>
+            <%= f.text_field :email, "maxlength"=>"32", "size"=>"34" %></td><td class="col_explain"> <div id="emailmsg" class="sml"><%= error_message_on "user", :email%></div></td></tr>
+
+
+            <tr><td>  <label class="fst"for="cp_number">Mobile Number:<span class="inst">optional</span></label>
+            <%= f.text_field :cp_number, "maxlength"=>"32", "size"=>"34"%></td><td class="col_explain"><div id="cp_numbermsg" class="sml"><%= error_message_on "user", :cp_number%></div></td></tr>
+
+
+            <tr><td><%= f.check_box :terms_of_service %><span class="sml">I accept the OASIS <a>terms and conditions</a>.</span></td><td class="col_explain"><div class="sml"><%= error_message_on "user", :terms_of_service%></div></td></tr>
+          </tbody>
+        </table>
+
+        <div style="text-align:center; "><%= submit_tag 'Sign me up!',:disable_with => "Signing you up!" %></div>
+      <% end -%>
+
+    </div>
+
+  </div>
+  <div id="bot_r"></div>
+</div>
+
+<div class="grid_4" id ="tehside_r">
+  <div id="par"><p>The Online Access Student Information System is a web-based application that enables parents/guardians to view school information which pertains to their student/child . 	</p></div>
+  <div id="pic_r"></div>
+
+</div>
+<%= observe_field("user_login",
+  :frequency => 0.25,
+  :update => :loginmsg,
+  :url => { :action => :vlogin }, :with =>'login')%>
+<%= observe_field("user_password",
+  :frequency => 0.25,
+  :update => :passmsg,
+  :url => { :action => :vpassword }, :with =>'password') %>
+
+<%= observe_field("user_password_confirmation",
+  :frequency => 0.25,
+  :update => :cpassmsg,
+  :url => { :action => :vconfirm_password }, :with =>'confirm_password') %>
+
+<%= observe_field("user_email",
+  :frequency => 0.25,
+  :update => :emailmsg,
+  :url => { :action => :vemail }, :with =>'email') %>
+
+<%= observe_field("user_first_name",
+  :frequency => 0.25,
+  :update => :first_namemsg,
+  :url => { :action => :vname }, :with =>'name') %>
+
+<%= observe_field("user_middle_name",
+  :frequency => 0.25,
+  :update => :middle_namemsg,
+  :url => { :action => :vname }, :with =>'name') %>
+
+<%= observe_field("user_last_name",
+  :frequency => 0.25,
+  :update => :last_namemsg,
+  :url => { :action => :vname }, :with =>'name') %>
+
+<%= observe_field("user_cp_number",
+  :frequency => 0.25,
+  :update => :cp_numbermsg,
+  :url => { :action => :vcp_number }, :with =>'cp_number') %>
+
+<%= observe_field("user_nickname",
+  :frequency => 0.25,
+  :update => :nicknamemsg,
+  :url => { :action => :vnickname }, :with =>'nickname') %>
+
+<%= observe_field("user_address",
+  :frequency => 0.25,
+  :update => :addressmsg,
+  :url => { :action => :vaddress }, :with =>'address') %>
+
+
+

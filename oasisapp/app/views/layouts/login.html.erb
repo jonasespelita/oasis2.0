@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+  <head>
+    <title>OASIS</title>
+    <meta http-equiv="content-type"
+          content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+
+    <%= stylesheet_link_tag "reset" %>
+    <%= stylesheet_link_tag "960" %>
+    <%= stylesheet_link_tag "style" %>
+
+  </head>
+  
+  <body>
+    <div class="container_12">
+      <div class ="grid_5" id = "logo"><a href="/"></a>
+        <div class="invis"><h1>OASIS</h1><br/><h2>Online Access Student Information System</h2></div>
+      </div>
+
+      <div class="grid_1" id = "slu">
+        <span>Saint Louis University</span>
+      </div>
+
+      <div class="grid_6" id = "topmenu">
+        <ul>
+          <li id="aboutslu"><a href ="http://www.slu.edu.ph/about/"><span class="invis">About SLU</span></a></li>
+          <li id="aboutoasis"><%= link_to "<span class='invis'>About OASIS</span>" ,about_path %></li>
+          <li id="aboutteam"><%= link_to "<span class='invis'>FAQ's</span>", faq_path %></li>
+        </ul>
+
+      </div>
+
+      <div id="reg_sos" class="grid_6"></div>
+
+<div id ="reg_t" class="grid_6"> <%= link_to "<span class='invis'>Registration is easy! Click here.</span>", :controller => "followers",:action=>"new"%> </div>
+      <div class="grid_7">
+        <div id="front"></div>
+        <div id="logos"></div>
+        <p>The <b>Online Access Student Information System (OASIS)</b> is a web-based application integrated with Saint Louis University that enables parents and guardians to track their child’s performance online. <span class="sml"><a href = "about.html">more...</a></span></p>
+        <div id = "news">
+          <b>Campus Activities for September:</b>
+          <div class="top_a"></div>
+          <div class="side_a ">
+            <!--start-->
+            <table cellspacing="2" cellpadding="1" border="0" width="100%" id="events" class="table_events_noborder">
+              <tbody><tr>
+                  <td class="event_date ">Wednesday, September 10, 2008</td>
+                </tr>
+
+                <tr>
+                  <td class="event_desc">SLU CCA presents <b>"The King and I" </b>, a school production. Sept. 10 to 13 and 17 to 20. CCA Theater, 6:15 p.m. For inquiries,contact local 255, tickets available at theCCA office.</td>
+                </tr>
+
+
+                <tr>
+                  <td class="event_date">Tuesday, September 16, 2008</td>
+                </tr>
+
+                <tr>
+                  <td class="event_desc">SLU Guidance Center invites all interested students to attend <b>"The Dark Night: Unmasking the Truths and Lies about SUICIDE".</b> A lecture on suicide precursors and prevention at P700 (AVR), Perfecto building on Sept. 16, (9:30
+                  - 11:30 a.m. &amp; 2:00 - 4:00 p.m.) and on Sept. 17 (9:30 - 11:30 a.m. &amp; 2:00 - 4:00 p.m.). Admission is FREE but on a first-come first-served basis. Register at the Guidance Center (S-111) for the date and time of your choice.</td>
+                </tr>
+
+
+                <tr>
+                  <td class="event_date">Monday, September 22, 2008</td>
+                </tr>
+
+                <tr>
+                  <td class="event_desc"><b> Research and Inventions Week</b>, Sept.
+                  22-27. Exhibit at the Diego Silang Lobby.</td>
+                </tr>
+
+
+                <tr>
+                  <td class="event_desc">SLU Centennial Song competition 10 finalists, presentation and awarding ceremony, 6:00 p.m., CCA Theater. For
+                  inquiries, contact CCA office at local 255.</td>
+                </tr>
+
+
+                <tr>
+                  <td class="event_date">Saturday, September 27, 2008</td>
+                </tr>
+
+                <tr>
+                  <td class="event_desc">IPR Monthly Conference, IPR multipurpose rm., 10:30 a.m. Speaker: Dr. Rainier Ibana on <b>"Grafting Philosophy to the Tagalog Prefix Ka"</b>. For inquiries, call IPR at local 263.</td>
+                </tr>
+
+            </tbody></table><!-- end- -->
+
+
+          </div>
+          <div class="bot_a"></div>
+        </div>
+      </div>
+      <div class="grid_4" id = "login">
+        <b>Login Here:</b>
+        <div class="top_c"></div>
+        <div class="side_c">
+
+          <%= yield -%>
+
+        </div>
+        <div class="bot_c"></div>
+
+        <div  id ="month_events">
+          <b>Site Announcements:</b>
+          <div class="top_c"></div>
+          <div class="side_c">
+
+
+            <ul style="list-style: square inside; width:280px" class="sml">
+              <li>Students grades will be available on September 20, 2008 </li>
+              <li>There would be a system maintenance on September 22, 2008</li>
+              <li>There would be a system maintenance on September 22, 2008</li>
+            </ul>
+
+
+          </div>
+          <div class="bot_c"></div>
+
+        </div>
+      </div>
+
+      <div class = "grid_12" id = "footer">
+        <div id="f_links">
+          <%=  link_to "Home", root_path %> : <%= link_to "Terms & Conditions", toc_path%> :   <%= link_to "Privacy Policy ", pri_path %>  <br/> <%= link_to "Contact Us", contact_path %> :  <%= link_to "About Us", about_path %> : <%= link_to "Site Map", sitemap_path %><br/>
+          <!--	<span>&copy; Saint Louis University, 2008. All rights reserved.</span><br/>-->
+          <span><a href = "http://validator.w3.org/check?uri=referer">XHTML 1.0 valid</a> :
+          <a href ="http://jigsaw.w3.org/css-validator/"> Valid CSS 2.1!</a></span>
+
+        </div>
+
+      </div>
+    </div><!--end of container-->
+  </body>
+</html>

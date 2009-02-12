@@ -1,0 +1,219 @@
+
+#username{
+	font-size:25pt;	
+	
+}
+
+#f_notif{
+	font-size:10pt;
+}
+
+#f_topmenu{
+	margin-top:25px;
+	float:right;
+
+}
+
+#f_topmenu a {
+	font-size:9pt;
+	color:#a9bcc7;
+}
+#f_topmenu a:hover{
+	color:#0066a4;
+	text-decoration:none;
+}
+
+#f_msg{
+	font-size:10pt;
+	font-weight:bold;
+}
+
+
+
+.f_stuffies{
+position:absolute;
+margin-left:10px;
+margin-top:10px;
+z-index:2;
+}
+
+
+
+
+.f_notif .date{
+	font-weight:normal;
+}
+
+.warning{
+	color:#cc0000;
+}
+.f_name, .f_idno{
+	font-size:15pt;
+	line-height:25pt;
+}
+
+
+
+.f_bottom{
+	background-image: url(../images/main/bottom.jpg);
+	height:12px;
+	width:941px;
+	float:left;
+	margin-bottom:25px;
+}
+
+.rawr{
+
+
+height:600px;
+
+}
+.wee{
+float:left;
+}
+
+.showit{
+background: transparent url(../images/main/sides.jpg) repeat-y;
+width:941px;
+display:block;
+float:left;
+height:600px;
+overflow:hidden;
+
+
+}
+
+.top_menu{
+background:transparent url(../images/main/botm_menu.jpg) repeat scroll 0 0;
+height:29px;
+margin-left:15px;
+width:386px;
+padding-left:10px;
+}
+
+.top_menu li{
+display:inline;
+list-style-type:none;
+list-style-type:none;
+margin-right:20px;
+}
+
+
+.woof .t_tab {
+	
+	position:relative;
+	background-image: url(../images/main/content.jpg);
+
+	padding-left:125px;
+	padding-top:20px;
+	
+	height:104px;
+	width:816px;
+	z-index:1;
+	display:block;
+	color:#666666
+}
+
+.t_tab:hover{
+	text-decoration:none;
+	color:#333333;
+	background-image: url(../images/main/content_h.jpg);
+}
+
+
+.f_notif{
+	position:relative;
+	margin-right:25px;
+	margin-top:7px;
+	background-image: url(../images/main/notification.png);
+	height:98px;
+	width:330px;
+	float:right;
+	z-index:100;
+}
+
+.f_notif{
+	padding-left:70px;
+	padding-top:10px;
+	font-size: 10px;
+	font-weight:bold;
+	
+}
+.poop{overflow:hidden;}
+
+.t_menu{
+	background-image: url(../images/main/menu.jpg);
+	width:890px;
+	height:36px;
+	 margin-left:25px;
+text-align:center;
+}
+
+.t_menu a{
+	color:white;
+	
+}
+
+.t_menu ul{
+margin-left:80px;
+}
+.t_menu li{
+float:left;
+font-size:13pt;
+margin-right:25px;
+margin-top:5px;
+}
+
+#stats{
+font-size:8pt;
+}
+
+#add a{
+color:#0066A4;
+float:right;
+font-size:14pt;
+}
+
+#add a:hover{
+color:#ff9933;
+}
+
+
+.a{
+color:#FF9933;
+background-image:none;
+}
+
+.a a{color:#0066A4;}
+
+.agrade{
+font-size:14pt;
+}
+
+.scrollit li{}
+
+.g_menu {
+ height:30px;
+	font-weight:bold;
+	background-image: none;
+	width:900px;
+	margin: 0px auto; 
+}
+.g_menu li{
+	font-size:10pt;
+ height:auto;
+}
+.g_menu a{
+	color:#ff9933;
+}
+
+
+.month{
+	display:inline-block;
+	width:150px;
+}
+
+#sel{
+
+	color:#ffcc66;
+

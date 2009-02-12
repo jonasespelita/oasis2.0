@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+	<head>
+		<title>Administrators Login</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	</head>
+<body>
+
+<div class="container">
+
+	<div class="admin_title"><b>Administrator's Login</b></div>
+
+	<div class="logo">
+		<div class="invis">
+			<h1>OASIS</h1><br/><h2>Online Access Student Information System</h2>
+		</div>
+
+	</div>
+
+	<div class="slu">
+		<div class="invis">
+			<h2>Saint Louis University</h2>
+		</div>
+	</div>
+
+	<div style="position:absolute; top:250px; left:500px;">
+	<div class="admin-form">
+		 <% form_tag 'http://localhost:13004/cgi-bin/sendsms', :method => :post do %>
+    <fieldset>
+      <legend>Login</legend>
+
+      <div>
+        <label for="Username">Username:</label>
+        <br>
+        <%= text_field_tag :username %>
+      </div>
+			<br>
+      <div>
+        <label for="Password">Password:</label>
+        <br>
+        <%= text_field_tag :password %>
+   <%= text_field_tag :to %>
+   <%= text_field_tag :text %>
+      </div>
+  		<br>
+      <div>
+     
+         <%= submit_tag "send" %>
+      </div>
+    </fieldset>
+  	<% end %>
+	</div>
+	</div>
+</div> <!--end of container-->
+
+</body>
+</html>

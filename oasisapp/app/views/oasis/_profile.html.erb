@@ -1,0 +1,230 @@
+<div style=" width:10000px; ">
+
+  <div id="<%= "m5#{profile.idNo}" %>" style="float:left; width:920px;display:block;">
+ 
+    <div style=" width:800px;margin: 0px auto;">
+      <h1><%= profile.fullname %>'s Student Profile</h1>
+        <span class="sml"><p>This is your ward's information submitted to the school. Your ward's current schedule is diplayed below.</p></span>
+      <div class="grid_6" >
+       
+
+
+
+        <div id="b_info" class="box">
+          <span class="sml headr"><b>Basic Information</b></span>
+          <dt>Full Name:</dt><dd><%= profile.fullname %></dd>
+          <dt> ID Number:</dt><dd><%= profile.idNo %></dd>
+          <dt> Course:</dt><dd><%= profile.yrcourse %></dd>
+          <dt> College:</dt><dd><%= profile.college %></dd>
+          <dt> Address:</dt><dd><%= profile.address %></dd>
+           <ul >
+    <span class="sml"><b>Parents/Guardian:</b></span>
+
+          <dt> Father:</dt> <dd><%=  profile.fatherName %></dd>
+          <dt> Mother: </dt><dd><%= profile.motherName %></dd>
+          <dt> Guardian:</dt><dd>
+          <%= if profile.guardianName
+            profile.guardianName
+          else
+            "N/A"
+          end
+        %></dd>
+        
+        </ul>
+        </div>
+
+
+      
+
+    
+       
+
+
+      </div>
+      <div class ="grid_4">
+          <div id="f_info" class = "box">
+          <span class="sml headr"><b>Follower Information</b></span>
+          <span class="sml">Your ward has <%= followers.size %> followers:<br/> </span>
+
+
+          <% for follower in followers%>
+            <dt><%= follower.get_fullname %> </dt><dd><span class="sml" style="color:#C0C0C0">since June 01, 2008</span></dd>
+          <% end %>
+
+          <br/>
+
+        </div>
+        
+      </div>
+      <h1>SKED HERE!</h1>
+    
+    </div>
+  </div>
+
+  <div id="<%= "skedhist#{profile.idNo}" %>" style="float:left; width:920px;display:block; height:550px; overflow-y:scroll">
+    <div class="t_menu g_menu" style="position:relative; left:-20px;"><ul>
+
+        <br/>
+        <li><a href ="<%= "#m5#{profile.idNo}" %>">&lArr;Back to Current</a></li>
+
+    </ul></div>
+
+
+    <div style=" width:700px;margin: 0px auto;">
+      <br/>
+      <b>Schedule History</b>
+      <span class="sml"><p>This is a list of old schedules taken by your ward.</p></span>
+      <h1>First Year First Semester S.Y. 2007 - 2008</h1>
+      <table border="1" cellspacing="0" cellpadding="0" width="691" class="c">
+        <tr class="d">
+          <td width="96" valign="top"><p>Course No.</p></td>
+          <td width="324" valign="top"><p>Course Description</p></td>
+          <td width="72" valign="top"><p>Units</p></td>
+          <td width="189" valign="top"><p>Time,  Day, Room</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>Relg 1</p></td>
+          <td width="324" valign="top"><p>I Believe</p></td>
+          <td width="72" valign="top"><p>3</p></td>
+          <td width="189" valign="top"><p>7:30-8:30, MWF, S311</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>Engl 1</p></td>
+          <td width="324" valign="top"><p>Communication Arts</p></td>
+          <td width="72" valign="top"><p>3</p></td>
+          <td width="189" valign="top"><p>8:30-9:30, MWF, S312</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>Fil 1</p></td>
+          <td width="324" valign="top"><p>Sining pakikipagtalastasan</p></td>
+          <td width="72" valign="top"><p>3</p></td>
+          <td width="189" valign="top"><p>9:30-10:30, MWF, S313</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>Hist 1</p></td>
+          <td width="324" valign="top"><p>Philippine History</p></td>
+          <td width="72" valign="top"><p>3</p></td>
+          <td width="189" valign="top"><p>10:30-11:30, MWF, S314</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>Math 1A</p></td>
+          <td width="324" valign="top"><p>College Algebra</p></td>
+          <td width="72" valign="top"><p>3</p></td>
+          <td width="189" valign="top"><p>11:30-12:30, MWF, S315</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>Math 2A</p></td>
+          <td width="324" valign="top"><p>Plane and Spherical Trigonometry</p></td>
+          <td width="72" valign="top"><p>3</p></td>
+          <td width="189" valign="top"><p>1:00-2:00, MWF, S316</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>ICS 111</p></td>
+          <td width="324" valign="top"><p>Introduction to Computer Science 1</p></td>
+          <td width="72" valign="top"><p>3</p></td>
+          <td width="189" valign="top"><p>7:30-8:30, TTHS, S311</p>
+          <p>8:30-10:30, TTHS, S326</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>ICS 112</p></td>
+          <td width="324" valign="top"><p>Computer Programming 1</p></td>
+          <td width="72" valign="top"><p>3</p></td>
+          <td width="189" valign="top"><p>10:30-11:30, TTHS, S311</p>
+          <p>1:00-2:30, TTHS, S326</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>PE1</p></td>
+          <td width="324" valign="top"><p>Physical Fitness</p></td>
+          <td width="72" valign="top"><p>2</p></td>
+          <td width="189" valign="top"><p>2:00-3:00, MWF, S314</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>&nbsp;</p></td>
+          <td width="324" valign="top"><p>&nbsp;</p></td>
+          <td width="72" valign="top"><p>&nbsp;</p>
+          <p>26 Units</p></td>
+          <td width="189" valign="top"><p>&nbsp;</p></td>
+        </tr>
+      </table>
+      <br/>
+      <h1>First Year Second Semester S.Y. 2007 - 2008</h1>
+      <table border="1" cellspacing="0" cellpadding="0" width="691" class="c">
+        <tr class="d">
+          <td width="96" valign="top"><p>Course No.</p></td>
+          <td width="324" valign="top"><p>Course Description</p></td>
+          <td width="72" valign="top"><p>Units</p></td>
+          <td width="189" valign="top"><p>Time,  Day, Room</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>Relg 2</p></td>
+          <td width="324" valign="top"><p>Believing into Discipleship</p></td>
+          <td width="72" valign="top"><p>3</p></td>
+          <td width="189" valign="top"><p>7:30-8:30, MWF, S311</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>Engl 2</p></td>
+          <td width="324" valign="top"><p>Communication Arts 2</p></td>
+          <td width="72" valign="top"><p>3</p></td>
+          <td width="189" valign="top"><p>8:30-9:30, MWF, S312</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>Fil 2</p></td>
+          <td width="324" valign="top"><p>Pagbasa at Pagsulat sa iba't ibang disiplina</p></td>
+          <td width="72" valign="top"><p>3</p></td>
+          <td width="189" valign="top"><p>9:30-10:30, MWF, S313</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>Psycho 1</p></td>
+          <td width="324" valign="top"><p>General Psychology with drug Prevention</p></td>
+          <td width="72" valign="top"><p>3</p></td>
+          <td width="189" valign="top"><p>10:30-11:30, MWF, S314</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>Math 3B</p></td>
+          <td width="324" valign="top"><p>Analytic Geometry</p></td>
+          <td width="72" valign="top"><p>4</p></td>
+          <td width="189" valign="top"><p>11:30-12:30, MWF, S315</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>Chem 1A</p></td>
+          <td width="324" valign="top"><p>General and Inorganic Chemistry 1 Lec</p></td>
+          <td width="72" valign="top"><p>3</p></td>
+          <td width="189" valign="top"><p>1:00-2:00, MWF, S316</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>Chem 1AL</p></td>
+          <td width="324" valign="top"><p>General and Inorganic Chemistry 1 Lab</p></td>
+          <td width="72" valign="top"><p>1</p></td>
+          <td width="189" valign="top"><p>7:30-8:30, TTHS, S311</p>
+          <p>8:30-10:30, TTHS, S326</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>ICS 121</p></td>
+          <td width="324" valign="top"><p>Introduction to Computer Science 2</p></td>
+          <td width="72" valign="top"><p>3</p></td>
+          <td width="189" valign="top"><p>10:30-11:30, TTHS, S311</p>
+          <p>1:00-2:30, TTHS, S326</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>ICS 122</p></td>
+          <td width="324" valign="top"><p>Computer Programming 2</p></td>
+          <td width="72" valign="top"><p>3</p></td>
+          <td width="189" valign="top"><p>2:00-3:00, MWF, S314</p>
+          <p>3:00-4:00, TTHS, S312</p></td>
+        </tr>
+        <tr>
+          <td width="96" valign="top"><p>PE2</p></td>
+          <td width="324" valign="top"><p>Rhythmic Activities</p></td>
+          <td width="72" valign="top"><p>2</p>
+          <p>28 Units</p></td>
+          <td width="189" valign="top"><p>4:00-5:00, TTHS, S311</p></td>
+        </tr>
+      </table>
+      <br/>
+      <div class="t_menu g_menu" style="position:relative; left:-300px; width:300px;"><ul>
+          <li><a href = "<%= "#m5#{profile.idNo}" %>">&lArr;Back to Current</a></li>
+
+      </ul></div>
+    </div>
+  </div>
+</div>

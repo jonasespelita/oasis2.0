@@ -1,0 +1,1 @@
+page.replace_html :e_notice, flash[:e_alert]

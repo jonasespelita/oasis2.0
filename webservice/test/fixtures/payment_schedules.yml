@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  idNo: 1
+  dateOfPayment: 2009-02-03
+  amt: 1.5
+  textDetail: MyString
+
+two:
+  idNo: 1
+  dateOfPayment: 2009-02-03
+  amt: 1.5
+  textDetail: MyString

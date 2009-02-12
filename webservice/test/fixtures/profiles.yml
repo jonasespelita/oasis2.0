@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  familyName: MyString
+  givenName: MyString
+  middlename: MyString
+  course: MyString
+  yearLevel: 
+  college: MyString
+  address: MyString
+  email: MyString
+  mobileNumber: MyString
+  fatherName: MyString
+  motherName: MyString
+  guardianName: MyString
+  relationshipToGuardian: MyString
+
+two:
+  familyName: MyString
+  givenName: MyString
+  middlename: MyString
+  course: MyString
+  yearLevel: 
+  college: MyString
+  address: MyString
+  email: MyString
+  mobileNumber: MyString
+  fatherName: MyString
+  motherName: MyString
+  guardianName: MyString
+  relationshipToGuardian: MyString

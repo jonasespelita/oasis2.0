@@ -1,0 +1,57 @@
+<div class="grid_12" id="q">
+  <div style=" ">
+    <div class="f_stuffies"><img src="images/main/2061009.jpg" alt="rawr"/></div>
+    <!-- <div class="f_notif ">
+      <ol>
+        <li>There are no notifications concerning your ward as of this time.</li>
+
+      </ol>
+    </div>-->
+  </div>
+
+  <a class="t_tab" href="#q">
+
+    <span class="f_name"><%= profile.fullname %> - Enrolled</span><br/>
+    <span class="f_idno"><%= profile.idNo %></span><br/>
+    <span class="f_course"><%= profile.yrcourse %></span>
+  </a>
+
+
+  <div class ="showit" id="showit_2">
+
+    <div class="t_menu" id="t_menu_2">
+      <ul>
+
+        <% @menu.each do |link| %>
+          <li>
+            <%= link_to_remote link, :update => "ajax#{profile.idNo}",
+              :url => { :action => "show_#{link.downcase}" , :id => profile.idNo,
+            },:before => "Element.addClassName('lc#{profile.idNo}', 'loading');Element.addClassName('ajax#{profile.idNo}', 'invis');",
+              :complete => "Element.removeClassName('lc#{profile.idNo}', 'loading');Element.removeClassName('ajax#{profile.idNo}', 'invis');"
+          %>
+          </li>
+        <% end -%>
+
+
+
+
+      </ul>
+    </div>
+    <div class ="scrollit" style="overflow:hidden; margin-left: 10px;">
+      <div id="lc<%= "#{profile.idNo}" %>" class ="" >
+        <div id="<%="ajax#{profile.idNo}" %>" class="" >
+          <% followers = Array.new
+          (Follower.find_all_by_idno profile.idNo).each do |follower|
+            followers<<User.find(follower.user_id)
+          end %>
+          <%= render :partial => "profile" ,:locals => { :profile => profile, :followers =>   followers}%>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="f_bottom"></div>
+
+  </div>

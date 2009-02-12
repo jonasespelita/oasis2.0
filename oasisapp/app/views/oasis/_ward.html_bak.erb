@@ -1,0 +1,67 @@
+<div class="grid_12" id="q">
+  <div style=" ">
+    <div class="f_stuffies"><img src="images/main/2061009.jpg" alt="rawr"/></div>
+    <div class="f_notif ">
+      <ol>
+        <li>There are no notifications concerning your ward as of this time.</li>
+
+      </ol>
+    </div>
+  </div>
+
+  <a class="t_tab" href="#q">
+
+    <span class="f_name"><%= profile.fullname %></span><br/>
+    <span class="f_idno"><%= profile.idNo %></span><br/>
+    <span class="f_course"><%= profile.yrcourse %></span>
+  </a>
+
+
+  <div class ="showit" id="showit_2">
+
+    <div class="t_menu" id="t_menu_2">
+      <ul>
+
+        
+
+
+
+        <li><%=
+          link_to_remote "Profile", :update => "ajax#{profile.idNo}",
+            :url => { :action => "show_profile" , :id => profile,
+            
+             
+    },:before => "Element.addClassName('lc', 'loading');Element.addClassName('ajax#{profile.idNo}', 'invis');", 
+     :complete => "Element.removeClassName('lc', 'loading');Element.removeClassName('ajax#{profile.idNo}', 'invis');"
+            
+       # link_to_remote "Profile",
+        #    :url=>{
+        #    :action=>"show_profile",
+        #    :update=>"ajax#{profile.idNo}",
+        #    :loading=>"loading..." }
+
+      %>
+      
+        </li>
+        <li><a href="follower_att.html" >Attendance</a></li>
+        <li><a href="follower_fees.html">Fees</a></li>
+        <li><a href="follower_cur.html" >Checklist</a></li>
+        <li><a href="follower_grades.html" >Grades</a></li>
+        <li><a href="follower_gui.html">Guidance</a></li>
+        <li><a href="follower_vio.html" >Violations</a></li>
+      </ul>
+    </div>
+    <div class ="scrollit" style="overflow:hidden; margin-left: 10px;">
+<div id="lc" class ="" >
+<div id="<%="ajax#{profile.idNo}" %>" class="" >
+  
+
+  
+  </div>
+  </div>
+    </div>
+  </div>
+
+  <div class="f_bottom"></div>
+
+</div>

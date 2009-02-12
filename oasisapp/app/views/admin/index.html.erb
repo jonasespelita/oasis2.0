@@ -1,0 +1,1063 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+<title>OASIS Administrator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<%= calendar_date_select_includes nil %>
+<!-- webfxlayout.js -->
+<script type="text/javascript">
+
+/* Do includes */
+
+if (window.pathToRoot == null)
+  pathToRoot = "./";
+
+document.write('<link type="text/css" rel="stylesheet" href="local/webfxlayout.css">');
+webfxMenuDefaultImagePath = pathToRoot + "images/";
+
+/* end includes */
+
+/* set up browser checks and add a simple emulation for IE4 */
+
+// check browsers
+var op = /opera 5|opera\/5/i.test(navigator.userAgent);
+var ie = !op && /msie/i.test(navigator.userAgent);  // preventing opera to be identified as ie
+var mz = !op && /mozilla\/5/i.test(navigator.userAgent);  // preventing opera to be identified as mz
+
+if (ie && document.getElementById == null) {  // ie4
+  document.getElementById = function(sId) {
+    return document.all[sId];
+  };
+}
+
+/* end browser checks */
+
+if (ie && window.attachEvent) {
+  window.attachEvent("onload", function () {
+    var scrollBorderColor  =  "rgb(120,172,255)";
+    var scrollFaceColor    =  "rgb(234,242,255)";
+    with (document.body.style) {
+      scrollbarDarkShadowColor  =  scrollBorderColor;
+      scrollbar3dLightColor    =  scrollBorderColor;
+      scrollbarArrowColor      =  "black";
+      scrollbarBaseColor      =  scrollFaceColor;
+      scrollbarFaceColor      =  scrollFaceColor;
+      scrollbarHighlightColor    =  scrollFaceColor;
+      scrollbarShadowColor    =  scrollFaceColor;
+      scrollbarTrackColor      =  "white";
+    }
+  });
+}
+
+/* we also need some dummy constructors */
+webfxMenuBar = {
+  add : function () {}
+};
+function WebFXMenu() {
+  this.add = function () {};
+}
+function WebFXMenuItem() {}
+function WebFXMenuSeparator() {}
+function WebFXMenuButton() {}
+</script>
+
+
+<script type="text/javascript" src="/javascripts/webLayout.js"></script>
+<script type="text/javascript" src="/javascripts/bwslist.js"></script>
+
+
+</head>
+<body>
+
+<script type="text/javascript">
+	function setLinkSrc( sStyle ) {
+	  document.getElementById( "luna-tab-style-sheet" ).disabled = sStyle != "luna";
+	  document.getElementById( "webfx-tab-style-sheet" ).disabled = sStyle != "webfx"
+	  document.getElementById( "winclassic-tab-style-sheet" ).disabled = sStyle != "winclassic"
+	  
+	  document.documentElement.style.background = 
+	  document.body.style.background = sStyle == "webfx" ? "white" : "ThreeDFace";  
+	}
+
+	setLinkSrc( "luna" );
+</script>
+
+<div class="container">	
+	<div class="admin_title"><b>OASIS Administrator</b></div>
+	<div class="topmenu" style="left:194px;">
+		<%= link_to 'Logout', :action => 'logout' %>
+		|
+		<%= link_to 'Change Password', :action => 'settings' %>
+		<hr />		
+	</div>
+	
+	<div class="logo">
+		<div class="invis">
+			<h1>OASIS</h1><br/><h2>Online Access Student Information System</h2>
+		</div>
+	</div>
+	
+	<div class="slu">
+		<div class="invis">
+			<h2>Saint Louis University</h2>
+		</div>
+	</div>
+	
+	
+	
+	<div class="tab-pane">
+
+	<script type="text/javascript">
+	tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
+	//tp1.setClassNameTag( "dynamic-tab-pane-control-luna" );
+	//alert( 0 )
+	</script>
+	<% if @is_oa %>
+	 <div class="tab-page" id="tabPage1">
+	    <h2 class="tab">Administrator Management</h2>
+	    
+	    <script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+		
+		<fieldset class="fieldset" style="width: 920px; height:195px;overflow:auto;">
+			<legend class="groupbox">Administrators</legend>
+			<div style="position:relative; overflow:auto; "onclick="clickEditAdmin()">
+			<script language="text/javascript" type="text/javascript">
+				<!--
+				//  let's create our list object
+				var nlr1=new mylist('nlr1','dvia1',5,200,180,177,200,150);
+				//  set it's width and height  
+				nlr1.setDims(300,100);
+				//  create array for item addition - you can use the same array for the header and items
+				var aa=new Array(9);
+				//  fill the array with contents (now for the header)
+				aa[0]='Name';
+				aa[1]='Username';
+				aa[2]='Position';
+				aa[3]='Last Visit';
+				aa[4]='Status';
+				//  update the header and redraw
+				nlr1.updateHeader(aa);
+				<% @admins.each{ |admin| %>
+						<%	unless admin.position == 'oa' %>
+							aa[0]= <%= admin.get_name.to_json %>
+							aa[1]= <%= admin.username.to_json %>
+							aa[2]= <%= admin.position.to_json %>
+							<% if admin.last_visit.nil? %>
+								aa[3]= 'n/a'
+							<% else %>
+								aa[3]= <%= admin.last_visit.strftime("%m/%d/%Y %I:%M%p").to_json %>
+							<% end %> 
+							aa[4]= <%= if admin.active then ('Active').to_json else ('Inactive').to_json end %>
+							aa[5]= <%= admin.first_name.to_json %>
+							aa[6]= <%= admin.last_name.to_json %>
+							aa[7]= <%= admin.email.to_json %>
+							aa[8]= <%= admin.id.to_json %>
+							nlr1.silentAdd(aa)
+						<% end %>
+					<% } %>
+					
+				nlr1.draw();
+				-->  
+			</script>
+			</div>
+			<div style="position:relative;top:16px; float:right;left:-20px ">				
+				<%= button_to_function "Add", "addAdmin()", :id => "button_admin_add" %>
+				<%= button_to_function "Activate", "enableAdmin()", :id => "button_admin_activate" %>	 
+				<%= button_to_function "Deactivate", "disableAdmin()", :id => "button_admin_deactivate" %>	 
+			</div>
+	    </fieldset>
+		<br /><br />
+		<fieldset id= "editAdmin" class="fieldset" style="width:920px; height:150px;display:none">
+			<legend class="groupbox">Edit</legend>
+				<% form_tag '/admin/edit_admin', :id => "edit_admin" do %>
+				<div style="position:relative; float:left;">
+					<span style="position:relative; top:0px;">
+						<label for="First_name">First name:
+      					<%= text_field_tag :edit_admin_first_name, params[:edit_admin_first_name], :size => 45, :maxlength => 25 %>
+      					<%= hidden_field_tag :edit_admin_id, params[:edit_admin_id] %>
+      				</label>
+      				<br>
+      				</br>
+					</span>
+					<span style="position:relative; top:6px;">
+						<label for="Last_name">Last name:
+							<span style="position:relative; left:1px;">
+      					<%= text_field_tag :edit_admin_last_name, params[:edit_admin_last_name], :size => 45, :maxlength => 25 %>
+      					</span>
+      				</label>
+      				<br>
+      				</br>
+					</span>						
+						<span style="position:relative; top:12px;">
+							<label for="Position">Position:
+							<span style="position:relative; left:15px;">
+      					<%= text_field_tag :edit_admin_position, params[:edit_admin_position], :size => 45, :maxlength => 25 %>
+      					</span>
+      					</label>
+      				<br>
+      				</br>
+					</span>
+					<span style="position:relative; top:18px;">
+						<label for="Username">Username:
+							<span style="position:relative;left:3px;">
+      					<%= text_field_tag :edit_admin_username, params[:edit_admin_username], :size => 45, :maxlength => 25 %>
+      					</span>
+      				</label>
+      				<br>
+      				</br>
+      			</span>
+				</div>
+				<div style="position:absolute; left:480px;">
+					
+					<span style="position:relative; top:0px;">
+						<% if flash[:notice] == "Edit admin passwords do not match" %>
+						<label for="Password" style="color:red">Password:
+						<% else %>
+						<label for="Password">Password:
+						<% end %>
+							<span style="position:relative; left:2px">
+      					<%= password_field_tag :edit_admin_password, params[:edit_admin_password], :size => 45, :maxlength => 25 %>
+      					</span>
+      				</label>
+      				<br>
+      				</br>
+					</span>
+					<span style="position:relative; top:6px;">
+						<% if flash[:notice] == "Edit admin passwords do not match" %>
+						<label for="Confirm" style="color:red">Confirm:
+						<% else %>
+						<label for="Confirm">Confirm:
+						<% end %>
+							<span style="position:relative; left:15px">
+      					<%= password_field_tag :edit_admin_confirm, params[:edit_admin_confirm], :size => 45, :maxlength => 25 %>
+      					</span>
+      				</label>
+      				<br>
+      				</br>
+					</span>
+					<span style="position:relative; top:12px;">
+						<label for="Email">Email:
+							<span style="position:relative;left:26px">
+      					<%= text_field_tag :edit_admin_email, params[:edit_admin_email], :size => 45 %>
+      					</span>
+      				</label>
+      				<br>
+      				</br>
+					</span>
+				</div>				 
+			<div style="position:relative; float:right; top:100px; left:-5px">
+				<%= submit_tag "Save" %>
+				<%= button_to_function "Cancel", "cancelAdminEdit()" %>	  
+			</div>
+			<% end %>
+	    </fieldset>		
+		
+		<% if flash[:notice] == "Add admin passwords do not match" %>
+		<fieldset id= "addAdmin" class="fieldset" style="width: 920px; height:150px;">
+		<% else %>
+		<fieldset id= "addAdmin" class="fieldset" style="width: 920px; height:150px;display:none">
+		<% end %>
+			<legend class="groupbox">Add New</legend>
+		  		<% form_tag '/admin/add_admin', :id => "add_admin" do %>
+				<div style="position:relative; float:left;">
+					<span style="position:relative; top:0px;">
+						<label for="First_name">First name:
+      					<%= text_field_tag :add_admin_first_name, params[:add_admin_first_name], :size => 45, :maxlength => 25 %>
+      				</label>
+      				<br>
+      				</br>
+					</span>
+					<span style="position:relative; top:6px;">
+						<label for="Last_name">Last name:
+							<span style="position:relative; left:1px;">
+      					<%= text_field_tag :add_admin_last_name, params[:add_admin_last_name], :size => 45, :maxlength => 25 %>
+      					</span>
+      				</label>
+      				<br>
+      				</br>
+					</span>						
+						<span style="position:relative; top:12px;">
+							<label for="Position">Position:
+							<span style="position:relative; left:15px;">
+      					<%= text_field_tag :add_admin_position, params[:add_admin_position], :size => 45, :maxlength => 25 %>
+      					</span>
+      					</label>
+      				<br>
+      				</br>
+					</span>
+					<span style="position:relative; top:18px;">
+						<label for="Username">Username:
+							<span style="position:relative;left:3px">
+      					<%= text_field_tag :add_admin_username, params[:add_admin_username], :size => 45, :maxlength => 25 %>
+      					</span>
+      				</label>
+      				<br>
+      				</br>
+					</span>
+				</div>
+			
+				<div style="position:absolute; left:480px;">
+					
+					<span style="position:relative; top:0px;">
+					<% if flash[:notice] == "Add admin passwords do not match" %>
+					<label for="Password" style="color:red">Password:
+					<% else %>
+					<label for="Password">Password:
+					<% end %>
+							<span style="position:relative; left:2px">
+      					<%= password_field_tag :add_admin_password, params[:add_admin_password], :size => 45, :maxlength => 25 %>
+      					</span>
+      				</label>
+      				<br>
+      				</br>
+					</span>
+					<span style="position:relative; top:6px;">
+						<% if flash[:notice] == "Add admin passwords do not match" %>
+						<label for="Confirm" style="color:red">Confirm:
+						<% else %>
+						<label for="Confirm">Confirm:
+						<% end %>
+							<span style="position:relative; left:15px;">
+						
+      					<%= password_field_tag :add_admin_confirm, params[:add_admin_confirm], :size => 45, :maxlength => 25 %>
+      					</span>
+      				</label>
+      				<br>
+      				</br>
+					</span>
+					<span style="position:relative; top:12px;">
+						<label for="Email">Email:
+							<span style="position:relative;left:26px">
+      					<%= text_field_tag :add_admin_email, params[:add_admin_email], :size => 45 %>
+      					</span>
+      				</label>
+      				<br>
+      				</br>
+					</span>
+				</div>				 
+			<div style="position:relative; float:right; top:100px; left:-5px;">
+				<%= submit_tag "Save" %>
+				<%= button_to_function "Cancel", "cancelAdminAdd()" %>	  	  
+			</div>
+			<% end %>
+	    </fieldset>
+		<% form_tag '/admin/enable_admin', :id => "enable_admin" do %>
+		  <%= hidden_field_tag :enable_admin_id, params[:enable_admin_id] %>
+		<% end %>
+		<% form_tag '/admin/disable_admin', :id => "disable_admin" do %>
+		  <%= hidden_field_tag :disable_admin_id, params[:disable_admin_id] %>
+		<% end %>
+		<% form_tag :id => "admin_selected" do %>
+		  <%= hidden_field_tag :var_selected %>
+		<% end %>
+	  </div>
+	 
+	  <script language="text/javascript" type="text/javascript">
+			function clickEditAdmin() {
+				var i = nlr1.selected;
+				document.getElementById("edit_admin_first_name").value = nlr1.elements[i][5];
+				document.getElementById("edit_admin_last_name").value = nlr1.elements[i][6];
+				document.getElementById("edit_admin_position").value = nlr1.elements[i][2];
+				document.getElementById("edit_admin_username").value = nlr1.elements[i][1];
+				document.getElementById("edit_admin_password").value = ""
+				document.getElementById("edit_admin_confirm").value = ""
+				document.getElementById("edit_admin_email").value = nlr1.elements[i][7];
+				document.getElementById("edit_admin_id").value = nlr1.elements[i][8];		
+				document.getElementById("disable_admin_id").value = nlr1.elements[i][8];	
+				document.getElementById("enable_admin_id").value = nlr1.elements[i][8];	
+				if(nlr1.elements[i][4]=="Active"){
+					document.getElementById("button_admin_activate").disabled = true
+					document.getElementById("button_admin_deactivate").disabled = false
+				
+				}
+				else{
+					document.getElementById("button_admin_activate").disabled = false
+					document.getElementById("button_admin_deactivate").disabled = true
+					
+				};
+				document.getElementById("button_admin_add").disabled = true
+				
+				Element.show('editAdmin');
+				
+			}
+			<% if flash[:notice] == "Edit admin passwords do not match" %>
+			clickEditAdmin()
+			<% end %>
+			function cancelAdminAdd() {
+				document.getElementById("add_admin_first_name").value = ""
+				document.getElementById("add_admin_last_name").value = ""
+				document.getElementById("add_admin_position").value = ""
+				document.getElementById("add_admin_username").value = ""		
+				document.getElementById("add_admin_password").value = ""
+				document.getElementById("add_admin_confirm").value = ""
+				document.getElementById("add_admin_email").value = ""
+				Element.hide('addAdmin');
+			}
+			function cancelAdminEdit() {
+				document.getElementById("edit_admin_first_name").value = ""
+				document.getElementById("edit_admin_last_name").value = ""
+				document.getElementById("edit_admin_position").value = ""
+				document.getElementById("edit_admin_username").value = ""		
+				document.getElementById("edit_admin_password").value = ""
+				document.getElementById("edit_admin_confirm").value = ""
+				document.getElementById("edit_admin_email").value = ""
+				document.getElementById("button_admin_add").disabled = false
+				Element.hide('editAdmin');		
+			}
+			function enableAdmin(){
+				document.getElementById("enable_admin").submit();
+			}
+			function disableAdmin(){
+				document.getElementById("disable_admin").submit();	
+			}
+			function addAdmin(){
+				Element.show('addAdmin');
+				
+			}
+			
+		</script>
+       <% end %>
+	  <div class="tab-page" id="tabPage2">
+	    <h2 class="tab">System Reports</h2>
+	    
+	    <script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script>
+	    
+		<div class="sys_groupbox1">
+			<fieldset class="fieldset" style="width:100px; height:590px;">
+				<legend class="groupbox">Visits Per Day</legend>
+					<% form_tag '/admin/filter_reports', :id => "filter_reports" do %>
+	    	<label for="From">From:
+	    	<%= calendar_date_select_tag "report_from_date", nil %>
+	    	<br>
+	    	</label>
+	    	<label for="To">To:
+	    	<%= calendar_date_select_tag "report_to_date", nil %>
+	    	
+	    	</label>
+	    	<%= submit_tag "Filter" %>
+	    <% end %>
+					<br />
+					<div style="position:relative; overflow:auto; height:470px; top:4px;">
+						<script language="text/javascript" type="text/javascript">
+						<!--
+						//  let's create our list object
+						var nlr2=new mylist('nlr2','dvia2',3,165,114,114);
+						//  set it's width and height  
+						nlr2.setDims(300,100);
+						//  create array for item addition - you can use the same array for the header and items
+						var ab=new Array(3);
+						//  fill the array with contents (now for the header)
+						ab[0]='Date';
+						ab[1]='Total';
+						ab[2]='Unique';
+
+						//  update the header and redraw
+						nlr2.updateHeader(ab);
+						<% ctr = 0 %>
+						<% @reports.each{ |report| %>
+							<% if session[:report_from] && session[:report_to]
+									unless report.date < Date.parse(session[:report_from]) || report.date > Date.parse(session[:report_to])
+									ctr = ctr + 1  %>
+										ab[0]= <%= report.date.strftime("%B %d,%Y").to_json %>
+										ab[1]= <%= report.total.to_json %>
+										ab[2]= <%= report.unique.to_json %>
+
+										nlr2.silentAdd(ab)
+									<%end		
+								else%>
+								ab[0]= <%= report.date.strftime("%B %d,%Y").to_json %>
+										ab[1]= <%= report.total.to_json %>
+										ab[2]= <%= report.unique.to_json %>
+
+										nlr2.silentAdd(ab)
+								<% end %>
+							
+						
+					<% } %>
+					<% if ctr == 0 && session[:report_from] && session[:report_to]%>
+					<%= flash[:notice] = "The dates you selected bear no reports" %>
+					<% end %>
+						
+						nlr2.draw();
+						-->  
+					  </script>
+					 </div>
+					 <br />
+					 <span style= "float:right">
+					 <%= button_to "Download Reports to Excel", :action => "export_reports" %>
+					 </span>
+			    </fieldset>		
+			</div>
+			<div class="sys_groupbox2">
+				<fieldset class="fieldset" style="width: 440px; height: 102px;">
+				<legend class="groupbox">Administrators Online</legend>
+				<div style="overflow:auto; height:102px;">
+					<script language="text/javascript" type="text/javascript">
+						<!--
+						//  let's create our list object
+						var nlr3=new mylist('nlr3','dvia3',3,116,185,130);
+						//  set it's width and height  
+						nlr3.setDims(300,100);
+						//  create array for item addition - you can use the same array for the header and items
+						var ac=new Array(3);
+						//  fill the array with contents (now for the header)
+						ac[0]='Date/Time';
+						ac[1]='Name';
+						ac[2]='Position';
+
+						//  update the header and redraw
+						nlr3.updateHeader(ac);
+
+						<% @cur_ons.each{ |cur| %>
+					
+							ac[0]= <%= cur.date.strftime("%m/%d/%Y %I:%M%p").to_json %>
+							ac[1]= <%= cur.name.to_json %>
+							ac[2]= <%= cur.position.to_json %>
+							nlr3.silentAdd(ac)
+						
+						<% } %>				
+
+						nlr3.draw();
+						-->  
+				  </script>
+				  </div>
+		    </fieldset>
+			<br /><br />
+			<fieldset class="fieldset" style="width: 440px;">
+				<legend class="groupbox">Record Statistics</legend>
+				<div style="float:left; text-align:right;">
+					Number of Registered Users: <br /><br />
+					Number of Student Records: <br /><br />
+					Number of New Student Records:  <br /><br />
+					Last Update of Records: <br /><br />
+					Number of Currently Online Users: <br /><br />
+					Most Number of Users Online: <br /><br />
+					Most Online Users was on: <br /><br />			
+					Records Deleted Last: <br /><br />
+					Number of Blocked Accounts: <br /><br />
+				</div>
+				<div style="position:relative; float:left; text-alignt:right; left:10px; top:1px;">
+					15,825 <br /><br />
+					21,512 <br /><br />
+					265 <br /><br />
+					9-17-2008 <br /><br />
+					541 <br /><br />
+					1,201 <br /><br />
+					7-7-2008 <br /><br />
+					9-12-2008 <br /><br />
+					12
+				</div>
+		    </fieldset>
+	    </div>
+	  </div>
+
+	  <div class="tab-page" id="tabPage3">
+	    <h2 class="tab">Actions Log</h2>
+	    
+	    <script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage3" ) );</script>
+	    
+		<% form_tag '/admin/filter_changes', :id => "filter_changes" do %>
+	    	<label for="From">From:
+	    	<%= calendar_date_select_tag "changes_from_date", nil, :time => true %>
+	    	</label>
+	    	<label for="To">To:
+	    	<%= calendar_date_select_tag "changes_to_date", nil, :time => true %>
+	    	</label>
+	    	<%= submit_tag "Filter" %>
+	    <% end %>
+		
+		<br />
+		
+		<fieldset class="fieldset" style="width: 920px; height: 525px;">	
+			<div style="overflow:auto; height:525px;">
+				<script language="text/javascript" type="text/javascript">
+					<!--
+					//  let's create our list object
+					var nlr4=new mylist('nlr4','dvia4',4,155,200,400,154);
+					//  set it's width and height  
+					nlr4.setDims(300,100);
+					//  create array for item addition - you can use the same array for the header and items
+					var ad=new Array(4);
+					//  fill the array with contents (now for the header)
+					ad[0]='Date/Time';
+					ad[1]='Name';
+					ad[2]='Action Performed';				
+					ad[3]='IP Address';
+
+					//  update the header and redraw
+					nlr4.updateHeader(ad);
+					<% ct = 0 %>
+					<% @changes.each{ |change| %>
+							<% if session[:change_from] && session[:change_to]
+									unless change.created_at < Time.parse(session[:change_from]) || change.created_at > Time.parse(session[:change_to])
+									ct = ct + 1 %>
+										ad[0]= <%= change.created_at.strftime("%m/%d/%Y %I:%M%p").to_json %>
+										ad[1]= <%= Admin.find(change.admin_id).get_name.to_json %>
+										ad[2]= <%= change.change_made.to_json %>
+										ad[3]= <%= change.ip_add.to_json %>
+										nlr4.silentAdd(ad)
+										
+									<%end		
+								else%>
+								ad[0]= <%= change.created_at.strftime("%m/%d/%Y %I:%M%p").to_json %>
+								ad[1]= <%= Admin.find(change.admin_id).get_name.to_json %>
+								ad[2]= <%= change.change_made.to_json %>
+								ad[3]= <%= change.ip_add.to_json %>
+								nlr4.silentAdd(ad)
+								<% end %>
+							
+						
+					<% } %>
+					<% if ct == 0 && session[:change_from] && session[:change_to]%>
+					<%= flash[:notice] = "The dates you selected bear no actions" %>
+					<% end %>
+					nlr4.draw();
+					-->  
+			  </script>
+			</div>
+		</fieldset>
+		   <span style= "float:right;">
+	    		<%= button_to "Download Reports to Excel", :action => "export_actions" %>
+	    	</span>
+	  </div>	  
+	  
+	  <div class="tab-page" id="tabPage3">
+	    <h2 class="tab">Announcements</h2>
+	    
+	    <script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage3" ) );</script>
+	    
+		<div class="sys_groupbox1">
+			<fieldset class="fieldset" style="width: 400px; height:574px;">
+				<legend class="groupbox">Annoucements</legend>
+				<div style="position:relative; overflow:auto; height:520px; top:4px;"onclick="clickEditAnn()">
+				<script language="text/javascript" type="text/javascript">
+					<!--
+					//  let's create our list object
+					var nlr10=new mylist('nlr10','dvia10',2,150,245);
+					//  set it's width and height  
+					nlr10.setDims(300,100);
+					//  create array for item addition - you can use the same array for the header and items
+					var aj=new Array(4);
+					//  fill the array with contents (now for the header)
+					aj[0]='Date/Time';
+					aj[1]='Activity';
+
+					//  update the header and redraw
+					nlr10.updateHeader(aj);
+
+						<% @announcements.each{ |announcement| %>
+						aj[0]= <%= announcement.date_time.strftime("%B %d, %Y %I:%M%p").to_json %>
+						aj[1]= <%= announcement.announcement.to_json %>
+						aj[2]= <%= announcement.summary.to_json %>
+						aj[3]= <%= announcement.id.to_json %>
+						nlr10.silentAdd(aj)
+					<% } %>
+				
+					
+					nlr10.draw();
+					-->  
+				</script>				
+				</div>				
+				<input type="button" name="btn" value="Delete" style="position:relative;float:right; top:13px;" onclick="clickDeleteAnn()">
+				<input type="button" name="btn" id= "button_add_ann" value="Add" style="position:relative;float:right; top:13px; left:-5px;" onclick="clickAddAnn()">						
+		    </fieldset>
+		</div>
+		<div class="sys_groupbox2">
+			<fieldset id= "editAnnouncement" class="fieldset" style="width:420px; height:273px;display:none;">
+				<legend class="groupbox">Edit Announcement</legend>
+				
+					<div style="position:relative; float:left;">
+				<% form_tag '/admin/edit_announcement', :id => "edit_announcement" do %>
+
+								<div>
+									<span style="position:relative; top:2px;">
+										<label for="Announcement">Announcement:
+										<%= text_field_tag :edit_announcement_name, params[:edit_announcement_name], :size => 30 %>
+										</label>
+									</span>
+									<br>
+									<span style="position:relative; top:10px;">
+										<label for="Date/Time">Date/Time:
+										<span style="position:relative; left:28px";>
+										<%= calendar_date_select_tag "edit_announcement_date", nil, :time => true %>
+										</span>
+										</label>
+									</span>
+									<br>
+									<label for="Summary" style="position:relative; top:-120px;">Summary:</label>
+									<span style="position:relative; top:20px; left:30px">
+										
+										<%= text_area_tag :edit_announcement_summary, params[:edit_announcement_summary], :size => "40x9" %>
+										
+										<%= hidden_field_tag :edit_announcement_id, params[:edit_announcement_id] %>
+										
+									</span>
+									<br>
+									<span style="position:relative; top:25px; float:right; left:30px">
+										<%= submit_tag "Save" %>
+										<%= button_to_function "Cancel", "cancelAnnEdit()" %>
+									</span>
+								</div>
+						<% end %>
+						<% form_tag '/admin/delete_announcement', :id => "delete_ann" do %>
+							<%= hidden_field_tag :delete_announcement_id, params[:delete_announcement_id] %>
+							<%= hidden_field_tag :delete_announcement_name, params[:delete_announcement_name] %>
+						<% end %>
+					</div>					
+		    </fieldset>
+			<br />
+			<fieldset id= "addAnnouncement" class="fieldset" style="width:420px; height:273px;display:none;">
+				<legend class="groupbox">Add New Announcement</legend>
+					<div style="position:relative; float:left;">
+						<% form_tag '/admin/add_announcement', :id => "add_announcement" do %>
+
+								<div>
+									<span style="position:relative; top:2px;">
+										<label for="Announcement">Announcement:
+										<%= text_field_tag :add_announcement_name, params[:add_announcement_name], :size => 30 %>
+										</label>
+									</span>
+									<br>
+									<span style="position:relative; top:10px;">
+										<label for="Date/Time">Date/Time:
+										<span style="position:relative; left:28px";>
+										<%= calendar_date_select_tag "add_announcement_date", nil, :time => true %>
+										</span>
+										</label>
+									</span>
+									<br>
+									<label for="Summary" style="position:relative; top:-120px;">Summary:</label>
+									<span style="position:relative; top:20px; left:30px">
+										<%= text_area_tag :add_announcement_summary, params[:add_announcement_summary], :size => "40x9" %>
+									</span>
+									<br>
+									<span style="position:relative; top:25px; float:right; left:30px;">
+										<%= submit_tag "Save" %>
+										<%= button_to_function "Cancel", "cancelAnnAdd()" %>
+									</span>
+								</div>
+						<% end %>
+					</div>
+		    </fieldset>
+		</div>
+	    
+	  </div>
+	  <script language="text/javascript" type="text/javascript">
+			function clickEditAnn() {
+				var j = nlr10.selected;
+				document.getElementById("edit_announcement_date").value = nlr10.elements[j][0];
+				document.getElementById("edit_announcement_name").value = nlr10.elements[j][1];
+				document.getElementById("edit_announcement_summary").value = nlr10.elements[j][2];
+				document.getElementById("edit_announcement_id").value = nlr10.elements[j][3];		
+				document.getElementById("button_add_ann").disabled = true
+				Element.show("editAnnouncement");
+			}
+			function cancelAnnAdd() {
+				Element.hide("addAnnouncement");
+				document.getElementById("add_announcement_date").value = ""
+				document.getElementById("add_announcement_name").value = ""
+				document.getElementById("add_announcement_summary").value = ""
+				document.getElementById("add_announcement_id").value = ""		
+				
+			}
+			function cancelAnnEdit() {
+				document.getElementById("edit_announcement_date").value = ""
+				document.getElementById("edit_announcement_name").value = ""
+				document.getElementById("edit_announcement_summary").value = ""
+				document.getElementById("edit_announcement_id").value = ""
+				document.getElementById("button_add_ann").disabled = false
+				Element.hide("editAnnouncement");		
+			}
+			function clickDeleteAnn(){
+				var j = nlr10.selected;
+				document.getElementById("delete_announcement_id").value = nlr10.elements[j][3];
+				document.getElementById("delete_announcement_name").value = nlr10.elements[j][1];
+				document.getElementById("delete_ann").submit();	
+			}
+			function clickAddAnn(){
+				Element.show("addAnnouncement");
+			}
+				
+		</script>
+	  
+	  <div class="tab-page" id="tabPage1">
+	    <h2 class="tab">User Management</h2>
+	    
+	    <script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+		
+		Search: <select><option>All</option><option>Blocked</option><option>Last Name</option></select> <input type="button" value="Search">
+		<div class="sys_groupbox1">
+			<fieldset class="fieldset" style="width: 400px; height:573px;">
+				<legend class="groupbox">Users</legend>
+				<div style="overflow:auto; height:573px;">
+				<script language="text/javascript" type="text/javascript">
+					<!--
+					//  let's create our list object
+					var nlr5=new mylist('nlr5','dvia5',4,100,150,70,100);
+					//  set it's width and height  
+					nlr5.setDims(300,100);
+					//  create array for item addition - you can use the same array for the header and items
+					var ae=new Array(4);
+					//  fill the array with contents (now for the header)
+					ae[0]='Username';
+					ae[1]='Name';
+					ae[2]='# of Wards';
+					ae[3]='Status';
+					//  update the header and redraw
+					nlr5.updateHeader(ae);
+								
+					<% @users.each{ |user| %>
+						ae[0]= <%= user.login.to_json %>
+						ae[1]= <%= user.get_fullname.to_json %>
+						ae[2]= 1
+						ae[3]= <%= user.status.to_json %>
+					nlr5.silentAdd(ae)
+					<% } %>
+					
+					nlr5.draw();
+					-->  
+				</script>
+				</div>
+				<br />
+				<div style="position:relative; float:right; top:-3px;">
+					<input type="button" name="btn" value="Block">
+					<input type="button" name="btn" value="Unblock">
+				</div>
+		    </fieldset>
+		</div>
+		<div class="sys_groupbox2">
+			<fieldset class="fieldset" style="width:430px; height:573px;">
+				<legend class="groupbox">Edit</legend>
+					<div style="float:left; left:10px; text-align:right; width:155px;">
+						<span style="position:relative; top:3px;">
+							Name: <br />
+						</span>
+						<span style="position:relative; top:17px;">
+							Address: <br />
+						</span>
+						<span style="position:relative; top:31px;">
+							E-mail: <br />
+						</span>
+						<span style="position:relative; top:48px;">
+							Last Date/Time Logged in: <br />
+						</span>
+						<span style="position:relative; top:69px;">
+							Student/s being followed:
+						</span>
+					</div>
+					<div style="position:relative; float:left; width: 80px;">
+						<span style="position:relative; top:0px;">
+							<input type="text" size="40" /><br />
+						</span>
+						<span style="position:relative; top:8px;">
+							<input type="text" size="40" /><br />
+						</span>
+						<span style="position:relative; top:17px;">
+							<input type="text" size="40" />
+						</span>
+						<span style="position:relative; top:28px;">
+							<input type="text" size="40" />
+						</span>
+						<span style="position:relative; top:42px;">
+							<input type="text" size="40" style="height:380px;" />
+						</span>
+						<span style="position:relative; float:right; top:58px; left:185px;">
+							<input type="button" value="Save" />
+						</span>
+					</div>
+		    </fieldset>		
+		</div>
+		
+	  </div>
+
+	  <div class="tab-page" id="tabPage2">
+	    <h2 class="tab">User Query</h2>
+	    
+	    <script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script>
+	    <% form_tag '/admin/filter_query', :id => "filter_query" do %>
+	    	<label for="From">From:
+	    	<%= calendar_date_select_tag "query_from_date", nil, :time => true %>
+	    	</label>
+	    	<label for="To">To:
+	    	<%= calendar_date_select_tag "query_to_date", nil, :time => true %>
+	    	</label>
+	    	<%= submit_tag "Filter" %>
+	    <% end %>
+		<br />
+		
+		<fieldset class="fieldset" style="width:920px; height:240px;">
+			<div style="position:relative;height:200px; overflow:auto;"onclick="clickUserQuery()">
+			<script language="text/javascript" type="text/javascript">
+				<!--
+				//  let's create our list object
+				var nlr6=new mylist('nlr6','dvia6',5,215,193,300,140,60);
+				//  set it's width and height  
+				nlr6.setDims(300,80);
+				//  create array for item addition - you can use the same array for the header and items
+				var af=new Array(7);
+				//  fill the array with contents (now for the header)
+				af[0]='From';
+				af[1]='E-mail';
+				af[2]='Subject';				
+				af[3]='Date/Time';
+				af[4]='Resolved';
+
+				//  update the header and redraw
+				nlr6.updateHeader(af);
+				<% cts = 0 %>
+				<% @queries.each{ |query| %>
+				<% cur_user = User.find(query.user_id) %>
+				<% if session[:query_from] && session[:query_to]
+									unless query.created_at < Time.parse(session[:query_from]) || query.created_at > Time.parse(session[:query_to]) 
+									cts = cts + 1%>
+									af[0]= <%= cur_user.get_full_name.to_json %>
+									af[1]= <%= cur_user.email.to_json %>
+									af[2]= <%= query.subject.to_json %>
+									af[3]= <%= query.created_at.strftime("%m/%d/%Y %I:%M%p").to_json %>
+									af[4]= <%= if query.resolved then ('Yes').to_json else ('No').to_json end %>
+									af[5]= <%= query.message.to_json %>
+									af[6]= <%= query.id.to_json %>
+									nlr6.silentAdd(af)
+								<%end		
+						else%>
+						af[0]= <%= cur_user.get_full_name.to_json %>
+						af[1]= <%= cur_user.email.to_json %>
+						af[2]= <%= query.subject.to_json %>
+						af[3]= <%= query.created_at.strftime("%m/%d/%Y %I:%M%p").to_json %>
+						af[4]= <%= if query.resolved then ('Yes').to_json else ('No').to_json end %>
+						af[5]= <%= query.message.to_json %>
+						af[6]= <%= query.id.to_json %>
+						nlr6.silentAdd(af)
+						<% end %>
+					<% } %>
+					<% if cts == 0 && session[:query_from] && session[:query_to]%>
+					<%= flash[:notice] = "The dates you selected bear no queries" %>
+					<% end %>
+				
+								
+			
+				nlr6.draw();
+				-->  
+			</script>
+			</div>
+			<div style="position:absolute; top:263px; width:96%;">
+				<span style="position:relative; float:right">
+					<%= button_to_function 'Resolve', "resolveQuery()", :id => "button_resolve" %> 
+					<%= button_to_function "Delete", "deleteUserQuery()" %>
+					
+				</span>
+			</div>
+		</fieldset>
+		
+	    
+		<fieldset id= "Sender" class="fieldset" style="width: 920px; height: 80px;display:none;">
+		<legend class="groupbox">Sender</legend>
+		<label for="First_name">From:
+      					<%= text_field_tag :message_sender, nil, :size => 45 %>
+      				</label><br> <br>
+		<label for="First_name">Subject:
+      					<%= text_field_tag :message_subject, nil, :size => 45 %>
+      				</label>
+		</fieldset>
+		
+		<fieldset id= "MessageBox" class="fieldset" style="width: 920px; height: 208px;display:none;">
+		<legend class="groupbox">Message</legend>
+		<%= text_area_tag :message_area, nil, :size => "129x10" %>
+		<span style="position:relative; float:right;">
+		<%= button_to_function 'Reply', "openEmail()" %> 
+		</span>
+		</fieldset>
+		<% form_tag '/admin/delete_query', :id => "delete_query" do %>
+							<%= hidden_field_tag :delete_user_query_id, params[:delete_user_query_id] %>
+							<%= hidden_field_tag :delete_user_query_subject, params[:delete_user_query_subject] %>
+							<%= hidden_field_tag :delete_user_query_sender, params[:delete_user_query_sender] %>
+		<% end %>
+		<% form_tag '/admin/resolve_query', :id => "resolve_query" do %>
+							<%= hidden_field_tag :resolve_user_query_id, params[:resolve_user_query_id] %>
+							<%= hidden_field_tag :resolve_user_query_subject, params[:resolve_user_query_subject] %>
+							<%= hidden_field_tag :resolve_user_query_sender, params[:resolve_user_query_sender] %>
+		<% end %>
+	  </div>
+	  <script language="text/javascript" type="text/javascript">
+	  		function disableResolve() {
+	  			document.getElementById("button_resolve").disabled = true;
+	  		}
+	  		disableResolve();
+			function clickUserQuery() {
+				var i = nlr6.selected;
+				document.getElementById("message_sender").value = nlr6.elements[i][0];
+				document.getElementById("message_subject").value = nlr6.elements[i][2];
+				document.getElementById("message_area").value = nlr6.elements[i][5];
+				document.getElementById("delete_user_query_id").value = nlr6.elements[i][6];	
+				document.getElementById("delete_user_query_subject").value = nlr6.elements[i][2];
+				document.getElementById("delete_user_query_sender").value = nlr6.elements[i][0];
+				document.getElementById("resolve_user_query_id").value = nlr6.elements[i][6];
+				document.getElementById("resolve_user_query_subject").value = nlr6.elements[i][2];
+				document.getElementById("resolve_user_query_sender").value = nlr6.elements[i][0];
+				document.getElementById("button_resolve").disabled = false;
+				Element.show("Sender");
+				Element.show("MessageBox");
+					
+			}
+			function deleteUserQuery() {
+				document.getElementById("delete_query").submit();
+				Element.hide("Sender");
+				Element.hide("MessageBox");
+			}
+			function openEmail() {
+				var i = nlr6.selected;
+				window.location = "mailto:" + nlr6.elements[i][1];
+				Element.hide("Sender");
+				Element.hide("MessageBox");
+			}
+			function resolveQuery() {
+				document.getElementById("resolve_query").submit();
+			}
+		</script>
+		 
+		<div class="tab-page" id="tabPage11">
+			 <h2 class="tab">Site Settings</h2>
+			<div style="position:relative;">
+				Website Status: <select><option>Online</option><option>Offline</option></select> <input type="button" value="Change">
+			</div>
+			<br>
+			<br>
+			<%= link_to_function "Email Content", "showEmail()" %>
+			<br>
+			</br>
+			<br>
+			<div id= "edit_email" style="position:relative;display:none;"> 
+			<%= label_tag "Edit Email Contents:" %>
+			
+			<% form_tag '/admin/edit_email', :id => "edit_email" do %>
+			 <% use_tinymce -%>
+  			<%= text_area_tag 'edit_email_box', nil, :class => "mce-editor", :style => "width:100%;height:100%;" %>
+  			
+  			<span style="position:relative; float:right">
+  			<%= submit_tag "Save" %>
+  			<%= button_to_function "Cancel", "hideEmail()" %>
+  			</span>
+  			<% end %>
+  			</div>
+  			<script language="text/javascript" type="text/javascript">
+  				function showEmail() {
+  					Element.show("edit_email");
+  				}
+  				function hideEmail() {
+  					Element.hide("edit_email");
+  				}
+  			</script>
+		</div>
+</div> <!--end of container-->
+
+<script type="text/javascript">
+
+setupAllTabs();
+
+
+</script>
+
+</body>
+</html>

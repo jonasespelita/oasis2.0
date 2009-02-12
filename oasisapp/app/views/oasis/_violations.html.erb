@@ -1,0 +1,53 @@
+<div style=" width:10000px;">
+
+					<div id="m5" style="float:left; width:900px;display:block; padding-left: 25px; height:540px;overflow-y:scroll;">
+					<div style="margin:20px auto; width:500px; ">
+					<h1>Violations</h1><br/>
+					<span class="sml"><p>These are misconducts reported at the Student Affairs Office.  Only violations that were reported to the Student Affairs Office may be displayed in the OASIS.</p></span>
+					<br/>
+						<table border="1" cellspacing="0" cellpadding="0" width="533" class="c">
+    <tr class="d">
+      <td width="140" valign="top"><p>Date Incurred</p></td>
+      <td width="324" valign="top"><p>Description</p></td>
+      <td width="105" valign="top"><p>No. of offenses</p>
+	   <td width="105" valign="top"><p>Penalty</p></td>
+    </td>
+    </tr>
+    <% @vio.each do |v| %>
+      <tr>
+        <td width= valign="top"><p><%=v.dateOfViolation%></p></td>
+        <td width= valign="top"><p><%= v.offense %></p></td>
+        <td width= valign="top"><p><%= v.memoDetail %></p>
+
+   
+      </tr>
+
+      <%end%>
+  </table>
+  <br/>
+  <p class="sml"><b>Warning</b>- It is a notice to the ward that continuation or repetition of specified conduct may be a cause for other disciplinary action.<br/><br/>
+	<b>Reprimand</b> - It is a severe form of formal rebuke by a person in authority.<br/><br/>
+	<b>Censure</b> - This may either be an oral or written reprimand for violation of specified regulation(s).<br/><br/>
+	<b>Suspension </b>- This entails exclusion from class and exclusion from other privileges or activities or from the campus as set forth in the notice of suspension, for a definite period of time with reinstatement thereafter dependent upon a showing of observance during the period of suspension of terms as set forth in the notice of suspension.<br/>
+	<b>Non-readmission</b><ul class="sml">
+		<li>
+
+			a) Dropping/Dismissal refers to permanent
+termination of student status without
+possibility of readmission to any college of
+the University. A school may drop from its
+rolls during the school year or term a student
+who is considered undesirable.
+<br/><br/>
+
+		</li>
+		<li>
+		b) Expulsion is an extreme form of
+administrative sanction which debars the
+student from all public and private schools.
+		</li>
+	</ul>
+</p>
+						</div>
+					</div>
+				</div> 

@@ -1,0 +1,28 @@
+
+<% if !logged_in? %>
+  <% form_tag session_path do -%>
+    <label for="login">Username:</label>
+    <%= text_field_tag 'login' ,"","maxlength" => "32","size" => "32" %>
+
+    <label for="password">Password:</label>
+    <%= password_field_tag 'password',"","maxlength" => "32","size" => "32" %>
+
+    <br/>
+    <% if flash[:notice] %> <div class="sml" id="login_notif"><%=  flash[:notice] %></div>
+      <% end %>
+    <div style="margin-top:10px">
+      <div class="remember"><span for="remember_me" >Remember me:</span>
+      <%= check_box_tag 'remember_me' %></div>
+
+
+      <%= submit_tag 'Log in' %></div>
+    <% end -%>
+
+  <p class="remember">Forgot password?
+    <a id="resend_password_link" >Click here</a>.
+  </p><br/>
+ 
+<% else %>
+  <span>Logged in as <%= current_user.login %></span>
+  <%= link_to 'logout', logout_path  %>
+<% end %>

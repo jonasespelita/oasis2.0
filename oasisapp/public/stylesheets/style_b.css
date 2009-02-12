@@ -1,0 +1,208 @@
+﻿body {
+font-family: "Lucida Grande",Verdana,sans-serif;
+font-size: 15px;
+line-height:1.5;
+color: #707070;
+}
+
+a{
+color: #628db5;
+text-decoration:none;
+font-weight:bold;
+}
+a:hover{ 
+text-decoration:underline;
+}
+
+.container_12{
+background: transparent url(../images/bg.jpg) no-repeat;
+width: 977px;
+min-height:525px;
+margin-top: 25px;
+}
+
+.grid_5, #logo{
+background-image: url(../images/logo.png);
+height: 169px;
+}
+.grid_5 span, .grid_1 span{
+display:none;
+}
+.grid_6{
+width:440px;
+}
+#slu{
+
+background-image: url(../images/slu.png);
+height:117px;
+left:-60px;
+margin-top:25px;
+position:relative;
+width:76px;
+}
+
+#topmenu{
+	background: transparent url(../images/menu.png) no-repeat;
+	min-height:70px;
+	margin-top:25px;
+}
+
+#topmenu li {
+display:inline;
+list-style-type:none;
+}
+
+#topmenu ul li a {
+
+	float:left;
+	width:140px;
+	height:70px;
+	margin-right:6px;
+}
+
+li#aboutslu a:hover {
+    background: transparent url(../images/menu_hover.png) no-repeat scroll 0px 50%;
+}
+
+li#aboutoasis a:hover {
+    background: transparent url(../images/menu_hover.png) no-repeat scroll -146px 50%;
+}
+
+li#aboutteam a:hover {
+    background: transparent url(../images/menu_hover.png) no-repeat scroll -292px 50%;
+}
+
+
+
+#front{
+background: transparent url(../images/front.png) no-repeat;
+height:324px;
+width:581px;
+left:-9px;
+position:relative;
+}
+
+#login{
+background: none;
+float:left;
+margin-top:116px;
+left: -20px;
+position:relative;
+}
+
+#login a{
+font-size: 10px;
+font-weight:normal;
+}
+
+#login label {
+width:109px;
+display:inline-block;
+font-weight:bold;
+font-size: 20px;
+
+}
+#rawr{
+display:inline-block;
+width:240px;
+}
+.top_c{
+background: transparent url(../images/top_c.png) no-repeat;
+width:364px;
+height:9px;
+}
+.top_a{
+background: transparent url(../images/top_a.png) no-repeat;
+width: 535px;
+height:11px;
+}
+.side_c{
+background: transparent url(../images/side_c.png) ;
+width:314px;
+padding:25px;
+}
+.side_a{
+background: transparent url(../images/side_a.png) ;
+width:510px;
+padding-left:25px;
+}
+.bot_c{
+background: transparent url(../images/bot_c.png) no-repeat;
+width:364px;
+height:11px;
+}
+.bot_a{
+background: transparent url(../images/bot_a.png) no-repeat;
+width: 535px;
+height:11px;
+}
+#reg_sos{
+background: transparent url(../images/reg_sos.png) no-repeat;
+width:518px;
+height:87px;
+}
+
+#reg_t{
+background: transparent url(../images/reg_t.png) no-repeat;
+width:289px;
+height:39px;
+float:right;
+}
+
+#reg_t a{
+float:left;
+width:289px;
+height:39px;
+}
+#reg{
+margin-top:20px;
+}
+#reg_t a:hover{
+background: transparent url(../images/reg_t_h.png) no-repeat;
+}
+
+.invis{
+display:none;
+}
+
+#month_events{
+margin-left:30px;
+}
+
+#footer{
+margin-top:50px;
+font-size:8pt;
+text-align: center;
+color: #adacac;
+}
+#footer a{
+color: #c2c2c2;
+font-weight:normal;
+font-size:8pt;
+}
+
+#f_links{
+display:inline-block;
+}
+#valids{
+float:right;
+}
+
+#news{
+margin-top:25px;}
+
+#logos{
+background: transparent url(../images/logos.png) no-repeat;
+width:352px;
+height:73px;
+position:absolute;
+z-index:10;
+margin-left:55px;
+margin-top:10px;
+}
+
+#date{
+float:right;
+font-size:8pt;
+color:#747474;
+}

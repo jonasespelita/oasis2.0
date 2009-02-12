@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  idNo: 
+  dateOfViolation: 2009-02-03
+  offense: MyText
+  memoDetail: MyText
+
+two:
+  idNo: 
+  dateOfViolation: 2009-02-03
+  offense: MyText
+  memoDetail: MyText

@@ -1,0 +1,76 @@
+
+td{
+  font-size:12px;
+  font-family:arial, helvetica, sans-serif;
+}
+
+.tdheader1 {
+border-top: 1px solid #FFFFFF;
+border-left: 1px solid #FFFFFF;
+border-right: 1px solid #999999;
+border-bottom: 1px solid #999999;
+color:#000000;
+text-decoration:none;
+background-image:url(images/arrows.png);
+background-repeat:no-repeat;
+background-position:top right;
+
+text-decoration:none;
+color: #0066FF;
+display:block;
+}
+.tdheader1:hover{
+border-top: 1px solid #999999;
+border-left: 1px solid #999999;
+border-right: 1px solid #FFFFFF;
+border-bottom: 1px solid #FFFFFF;
+text-decoration:none;
+
+color: #FF6600;
+}
+.tdheader2{
+border-top: 1px solid #FFFFFF;
+border-left: 1px solid #FFFFFF;
+border-right: 1px solid #999999;
+border-bottom: 1px solid #999999;
+color:#000000;
+text-decoration:none;
+background-image:url(images/arrows.png);
+background-repeat:no-repeat;
+background-position:bottom right;
+
+text-decoration:none;
+color: #0066FF;
+display:block;
+}
+.tdheader2:hover{
+border-top: 1px solid #999999;
+border-left: 1px solid #999999;
+border-right: 1px solid #FFFFFF;
+border-bottom: 1px solid #FFFFFF;
+text-decoration:none;
+
+color: #FF6600;
+}
+.tdheader{
+border-top: 1px solid #FFFFFF;
+border-left: 1px solid #FFFFFF;
+border-right: 1px solid #999999;
+border-bottom: 1px solid #999999;
+color:#000000;
+text-decoration:none;
+
+text-decoration:none;
+color: #0066FF;
+display:block;
+}
+.tdheader:hover{
+border-top: 1px solid #999999;
+border-left: 1px solid #999999;
+border-right: 1px solid #FFFFFF;
+border-bottom: 1px solid #FFFFFF;
+text-decoration:none;
+
+color: #FF6600;
+}
+

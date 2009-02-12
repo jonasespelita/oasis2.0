@@ -1,0 +1,205 @@
+
+/*
+
+bright: rgb(234,242,255);
+normal: rgb(120,172,255);
+dark:  rgb(0,66,174);
+
+*/
+
+.container {
+	background: 	transparent url(/images/bg.jpg) no-repeat;
+	width: 			977px;
+	min-height:		525px;
+	margin-top: 	25px;
+	margin-left: 	auto;
+	margin-right: 	auto;
+}
+
+.invis {
+	display:		none;
+}
+
+.logo {
+	background: 	transparent url(/images/logo.png);
+	height: 		169px;
+	width: 			358px;
+	position:		relative;
+	margin-left: 	2px;
+	float:			left;
+}
+
+.slu {
+	background: 	transparent url(/images/slu.png);
+	height: 		117px;
+	width: 			76px;
+	position:		relative;
+	top:			25px;
+	left: 			342px;
+	margin-top: 	25px;	
+}
+
+.admin_title {
+	font-family:	Bookman Old Style;
+	font-size:		18px;
+	position:		relative;
+	float: 			right;
+	margin-top:		15px;
+	margin-right:	25px;
+}
+
+.topmenu {
+	position:		relative;
+	margin-top:		120px;
+	float:			right;
+	font-size:		11pt;
+	font-weight:	bold;
+	text-decoration:none;
+}
+
+.topmenu a{
+	color:			#A9BCC7;
+}
+
+.topmenu a:hover {
+	color:			#0066A4;	
+	text-decoration:none;
+}
+
+.topmenu a:hover {
+	color:			#0066A4;	
+	text-decoration:none;
+}
+
+.fieldset {
+	font-family:	arial,sans serif;
+	padding:		5px;
+	border-color: 	blue;	
+}
+
+.groupbox {
+	font-family:	arial,sans serif;
+	padding-left:	8px;
+	padding-right:	8px;
+}
+
+.sys_groupbox1{
+	position:		relative;
+	float:			left;
+}
+
+.sys_groupbox2{
+	position:		relative;
+	float:			right;
+}
+
+.dynamic-tab-pane-control.tab-pane {
+  position:  		relative;
+  margin-left:		10px;
+  margin-top: 		60px;
+  width:    		958px;
+}
+
+.dynamic-tab-pane-control .tab-row .tab {
+  font-family:  	Verdana, Helvetica, Arial;
+  font-size:    	12px;
+  cursor:      		Default;
+  display:    		inline;
+  margin:     		1px -5px 1px 5px;
+  float:      		left;
+  padding:    		3px 6px 3px 6px;
+  background:   	rgb(234,242,255);
+  border:      		1px solid;
+  border-color: 	rgb(120,172,255);
+  border-left:  	0;
+  border-bottom:	0;
+  border-top:    	0;
+  
+  cursor:      		hand;
+  cursor:      		pointer;
+  
+  z-index:    		1;
+  position:   		relative;
+  top:      		0;
+}
+
+.dynamic-tab-pane-control .tab-row .tab.selected {
+  border:      		1px solid rgb(120,172,255);
+  border-bottom:  	0;
+  z-index:    		3;
+  padding:   		2px 6px 5px 6px;
+  margin:    		1px -6px -2px 0px;
+  top:      		-2px;
+  background:  		white;
+}
+
+.dynamic-tab-pane-control .tab-row .tab a {
+  font-family:    	Verdana, Helvetica, Arial;
+  font-size:     	13px;
+  color:        	rgb(0,66,174);
+  text-decoration:  none;
+  cursor:      		hand;
+  cursor:      		pointer;  
+}
+
+.dynamic-tab-pane-control .tab-row .hover a {
+  color:  			rgb(0,66,174);
+}
+
+.dynamic-tab-pane-control .tab-row .tab.selected a {
+  font-weight:  	bold;
+}
+
+.dynamic-tab-pane-control .tab-page {
+  clear:     		both;
+  border:      		1px solid rgb(120,172,255);
+  background:    	White;
+  z-index:    		2;
+  position:   		relative;
+  top:      		-2px;
+  color:      		Black;
+  font-family:  	Verdana, Helvetica, Arial;
+  font-size:    	13px;
+  padding:    		10px;
+  height: 			610px;
+}
+
+.dynamic-tab-pane-control .tab-row {
+  z-index:    		1;
+  white-space:  	nowrap;
+  background:    	rgb(234,242,255);
+  height:      		1.85em;
+  width:      		100%;
+
+}
+
+.admin-form legend {
+  font-family:	arial,sans serif;
+  padding: 0.2em 0.5em;
+  color:blue; 
+  
+}
+
+.admin-form .submit {
+
+  float:right;
+ 
+}
+
+.admin-form label {
+  width: 5em;
+  float: left;
+  text-align: right;
+  padding-top: 0.2em;
+  margin-right: 0.1em;
+  display: block;
+}
+
+#notice {
+  border: 2px solid red;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
+}
+

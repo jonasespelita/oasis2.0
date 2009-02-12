@@ -1,0 +1,365 @@
+﻿body {
+    font-family: Verdana,Arial, sans-serif;
+    font-size: 15px;
+    line-height:1.5;
+    color: #707070;
+}
+
+a{
+    color: #628db5;
+    text-decoration:none;
+    font-weight:bold;
+}
+a:hover{ 
+    text-decoration:underline;
+}
+
+.container_12{
+    background: transparent url(../images/bg.jpg) no-repeat;
+    width: 977px;
+    min-height:525px;
+    margin-top: 25px;
+}
+
+.grid_5, #logo{
+    background-image: url(../images/logo.png);
+    height: 169px;
+}
+
+#logo a{
+    height: 169px;
+    width:440px;
+    float:left;
+}
+.grid_5 span, .grid_1 span{
+    display:none;
+}
+.grid_6{
+    width:440px;
+}
+#slu{
+
+    background-image: url(../images/slu.png);
+    height:117px;
+    left:-60px;
+    margin-top:25px;
+    position:relative;
+    width:76px;
+}
+
+#topmenu{
+    background: transparent url(../images/menu.png) no-repeat;
+    min-height:70px;
+    margin-top:25px;
+}
+
+#topmenu li {
+    display:inline;
+    list-style-type:none;
+}
+
+#topmenu ul li a {
+
+    float:left;
+    width:140px;
+    height:70px;
+    margin-right:6px;
+}
+
+li#aboutslu a:hover {
+    background: transparent url(../images/menu_hover.png) no-repeat scroll 0px 50%;
+}
+
+li#aboutoasis a:hover {
+    background: transparent url(../images/menu_hover.png) no-repeat scroll -146px 50%;
+}
+
+li#aboutteam a:hover {
+    background: transparent url(../images/menu_hover.png) no-repeat scroll -292px 50%;
+}
+
+
+
+#front{
+    background: transparent url(../images/front.png) no-repeat;
+    height:273px;
+
+
+
+}
+
+
+
+#login a{
+    font-size: 10px;
+    font-weight:normal;
+}
+
+#login label {
+    margin-top:5px;
+    display:inline-block;
+    width:98px;
+
+
+}
+#rawr{
+    display:inline-block;
+    width:240px;
+}
+.top_c{
+    background: transparent url(../images/top_c.png) no-repeat;
+    width:364px;
+    height:9px;
+}
+.top_a{
+    background: transparent url(../images/top_a.png) no-repeat;
+    width: 939px;
+    height:15px;
+}
+.side_c{
+    background: transparent url(../images/side_c.png) ;
+    width:339px;
+    padding: 0 0 0 25px;
+}
+.side_a{
+    background: transparent url(../images/side_a.png) ;
+    width:888px;
+    padding-left:25px;
+    padding-right:25px;
+}
+.bot_c{
+    background: transparent url(../images/bot_c.png) no-repeat;
+    width:364px;
+    height:11px;
+}
+.bot_a{
+    background: transparent url(../images/bot_a.png) no-repeat;
+    width: 939px;
+    height:13px;
+}
+#reg_sos{
+    background: transparent url(../images/reg_sos.png) no-repeat;
+
+    height:106px;
+}
+
+#reg_t{
+    background: transparent url(../images/reg_t.png) no-repeat;
+    width:289px;
+    height:39px;
+    float:right;
+}
+
+#reg_t a{
+    float:left;
+    width:289px;
+    height:39px;
+}
+#reg{
+    margin-top:20px;
+}
+#reg_t a:hover{
+    background: transparent url(../images/reg_t_h.png) no-repeat;
+}
+
+.invis{
+    display:none;
+}
+
+#month_events{
+    margin-top:25px;
+}
+
+#events{
+    font-size:12px;
+}
+.event_date{
+    font-weight:bold;
+    color: #628DB5;
+}
+.event_desc{
+    padding-left:10px;
+}
+#footer{
+    margin-top:50px;
+    font-size:8pt;
+    text-align: center;
+    color: #adacac;
+}
+#footer a{
+    color: #c2c2c2;
+    font-weight:normal;
+    font-size:8pt;
+}
+
+#f_links{
+    display:inline-block;
+}
+#valids{
+    float:right;
+}
+
+#news{
+    margin-top:25px;
+    font-size:10pt;
+}
+
+#logos{
+    background: transparent url(../images/logos.png) no-repeat;
+    width:352px;
+    height:73px;
+    margin-left:80px;
+    margin-bottom:25px;
+
+}
+
+#date{
+    float:right;
+    font-size:8pt;
+    color:#747474;
+}
+.sml{
+    font-size:8pt;
+}
+
+.sml a{
+    font-weight:normal;
+}
+
+div.loading {
+    background: url(/images/loading.gif) no-repeat ;
+    height: 35px;
+    width: 35px;
+    margin-top:260px;
+    margin-left: auto ;
+    margin-right: auto ;
+
+}
+
+#lc{
+
+    /* position:absolute;*/
+
+
+}
+
+#bot_menu{
+    width:180px;
+    position:fixed;
+    bottom:0px;
+    background: transparent url(../images/bot_menu_bak.png) repeat-x;
+    height:30px;
+    right:0px;
+    z-index:100;
+}
+
+#bot_menu_thing{
+    font-size:10pt;
+    width:180px;
+    margin-top:2px;
+    height:26px;
+    border: solid 1px #cbd1d3;
+    text-align: center;
+
+}
+
+#bot_menu_thing:hover{
+    background-color:#f1fafa;
+
+}
+
+#bot_menu_thing a{
+    color:#747474;
+}
+#bot_menu_thing a:hover{
+    text-decoration:none;
+    color:black;
+}
+
+#bot_notifs{
+    background:white;
+    width:300px;
+    position:fixed;
+    bottom:0px;
+    right:0px;
+    border: solid 1px #cbd1d3;
+    z-index:101;
+    font-size:10pt;
+}
+#bot_title{
+    font-weight:bold;
+    background-color:#deeef6;
+
+
+}
+#bot_title a{
+
+    color:#bbbbbb;
+
+}
+#bot_title a:hover{
+    text-decoration:none;
+    color:black;
+
+}
+
+#bot_linkie {
+    margin-right:5px;
+    float:right;
+}
+#bot_linkie a{
+    font-size:8pt;
+    font-weight:normal;
+
+}
+
+select{
+    width:150px;
+
+}
+
+.remember {
+
+    width:260px;
+    font-size:8pt;
+    float:left;
+}
+
+#login_notif{
+
+    color:maroon;
+}
+
+dt{
+    float:left;
+    width:119px;
+    color:#808080;
+
+}
+dd,dt{
+    font-size:12px;
+}
+dd{
+
+}
+
+.headr{
+    background:#ECEFF5 none repeat scroll 0 0;
+    display:block;
+    position:relative;
+    left:-10px;
+    width:100%;
+    padding-left:10px;
+}
+
+.box{
+    border:1px solid #C1DAD7;
+    margin-bottom:10px;
+    padding:0 0 10px 10px;
+}
+
+#f_info{
+
+    height:183px;
+}
+
