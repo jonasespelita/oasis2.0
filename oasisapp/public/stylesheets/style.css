@@ -344,7 +344,7 @@ dd{
 }
 
 .headr{
-    background:#ECEFF5 none repeat scroll 0 0;
+    background:#DEEEF6 none repeat scroll 0 0;
     display:block;
     position:relative;
     left:-10px;
@@ -363,3 +363,8 @@ dd{
     height:183px;
 }
 
+
+.f_info{
+width:100%;
+   float:none;
+}

@@ -1,0 +1,43 @@
+
+
+
+<div style=" width:10000px; ">
+
+  <div id="<%= "m5#{profile.idNo}" %>" style="float:left; width:920px;display:block;">
+
+    <div style=" width:800px;margin: 0px auto;">
+      <h1><%= profile.fullname %>'s Student Profile</h1>
+      <span class="sml"><p>These are the final grades per semester. Official student records are issued by the SLU Registrar's Office only. This page can not be used as an official document.</p></span><br/>
+
+
+      <b>Most recent grades </b><span class="sml" style=" display:inline-block; margin-left:300px;"></span><br/>
+      
+      <span><%= @semester %> S.Y. 2007 - 2008 BSIT-1</span>
+      <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
+        <tr class="d">
+          <td width="96" valign="top"><p>Course No.</p></td>
+          <td width="324" valign="top"><p>Course Description</p></td>
+          <td width="103" valign="top" align="right"><p>Grade</p></td>
+          <td width="103" valign="top" align="right">Remarks</td>
+          <td width="103" valign="top" align="right">Units</td>
+        </tr>
+        <% @grades.each do |grade| %>
+
+          <tr><td><%= grade.courseNo %></td>
+            <td><%= grade.descriptiveTitle %></td>
+            <td><%= grade.grade %></td>
+            <td><%= grade.remark %></td>
+            <td><%= grade.units %></td>
+          </tr>
+        <% end %>
+
+
+      </table>
+      <p class="grades"><em><%= @p_units %> / <%= @t_units %> Units,  <%= @p_passed  %> % Passed</em></p>
+
+    </div>
+
+  </div>
+</div>
+
+

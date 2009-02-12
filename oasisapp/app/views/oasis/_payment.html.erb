@@ -1,0 +1,65 @@
+<div style=" width:10000px; ">
+
+  <div id="<%= "m5#{profile.idNo}" %>" style="float:left; width:920px;display:block;">
+
+    <div style=" width:800px;margin: 0px auto;">
+      <h1>Payment Schedule</h1>
+      <span class="sml"><p>The fees for the whole semester excluding those that are not presented in the original schedule of fees at the start of the semester such as, yearbook, graduation and breakage fees.</p></span>
+
+
+      <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
+
+      </table>
+      <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
+        <tr class="d">
+          <td width="200" valign="top"><p>Item</p></td>
+          <td width="200" valign="top"><p>Fee Amount</p></td>
+        </tr>
+        <% @tf_breakdown.each do |item| %>
+          <tr><td><%= item.item %></td><td><%= item.feeAmt %></td></tr>
+        <% end %>
+
+      </table>
+   <br/>
+
+      <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
+        <tr class="d">
+          <td width="100" valign="top"><p>Date of payment</p></td>
+           <td width="300" valign="top"><p>Details</p></td>
+          <td width="200" valign="top"><p>Amount Paid</p></td>
+         
+        </tr>
+        <% @payments.each do |payment| %>
+          <tr><td><%= payment.dateOFPayment %></td><td><%= payment.textDetail%></td><td><%= "PHP #{payment.amt}"%></td></tr>
+        <% end %>
+
+      </table>
+
+<br/>
+      <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
+        <tr class="d">
+          <td width="100" valign="top"><p>Grading Term</p></td>
+           <td width="300" valign="top"><p>Balance As Of</p></td>
+          <td width="200" valign="top"><p>Payment Amount</p></td>
+
+        </tr>
+        <% @tf_assessment.each do |item| %>
+          <tr><td><%= case item.gradingTerm
+          when "P"
+            "Prelims"
+          when "M"
+            "Midterms"
+          when "F"
+            "Finals"
+          end
+          %></td><td><%= item.balanceAsOf%></td><td><%= "PHP #{item.payAmt}"%></td></tr>
+        <% end %>
+
+      </table>
+
+    </div>
+
+  </div>
+</div>
+
+

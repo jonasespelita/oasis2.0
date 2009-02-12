@@ -17,10 +17,15 @@ class ApplicationController < ActionController::Base
 
   protected
   def set_site
-    Violation.site = "http://localhost:3000/"
-    Profile.site = "http://localhost:3000/"
-
-    Attendance.site = "http://localhost:3000/"
+    site="http://localhost:3000/"
+    Violation.site = site
+    Profile.site = site
+    Grade.site = site
+    Attendance.site = site
+    Guidance.site = site
+    PaymentSchedule.site = site
+    Tfbreakdown.site = site
+    Tfassessment.site = site
   end
   
   def no_cache
