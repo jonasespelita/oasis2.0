@@ -9,7 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090210074838) do
+ActiveRecord::Schema.define(:version => 20090212185627) do
+
+  create_table "actions", :force => true do |t|
+    t.text     "action",      :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "asession_id"
+  end
 
   create_table "admins", :force => true do |t|
     t.string   "username",        :limit => 40, :null => false
@@ -31,6 +38,14 @@ ActiveRecord::Schema.define(:version => 20090210074838) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "summary"
+  end
+
+  create_table "asessions", :force => true do |t|
+    t.string   "ip_add",     :null => false
+    t.datetime "time_out",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "admin_id"
   end
 
   create_table "attendances", :force => true do |t|
@@ -65,6 +80,11 @@ ActiveRecord::Schema.define(:version => 20090210074838) do
   create_table "followers", :force => true do |t|
     t.integer  "idno"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "grades", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
