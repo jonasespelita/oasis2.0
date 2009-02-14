@@ -11,7 +11,9 @@ Signal.trap("TERM") do
 end
 
 while($running) do
+  #Change this to admin variable
   set_time = Time.local(2009, "feb", 13, 22, 29)
+
   if set_time <= Time.now
     Follower.find(:all).each do |follower|
       state = CurrentStateOfFollower.find follower.id
@@ -54,11 +56,15 @@ while($running) do
         notif.notification = "Gradsecenotice!"
         notif.save  
       end
-      
+
+
+##      update admin variable for next generation
+#dont forget to generate the mails and send the cp messages
     end
     
     
   end
+  #check every 60 secs if sked update
   sleep 60
 end
 
