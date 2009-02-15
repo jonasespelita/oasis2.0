@@ -1,3 +1,6 @@
+REMEMBER TO START NOTIFIER DAEMON
+RAILS_ENV=development lib/daemons/notifier_ctl start
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create 

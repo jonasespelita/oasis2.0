@@ -64,6 +64,15 @@ class FollowersController < ApplicationController
       
 
       if f.save
+        #save state of follower for notification generation
+        state =  CurrentStateOfFollower.new
+        state.attendance_as_of = Time.now
+        state.follower_id = f.id
+        state.grade_rows=0
+        state.guidance_rows=0
+        state.violation_rows=0
+        state.save
+        
         flash[:notice]="You are now following #{stud.fullname}"
       else
         #Unknown error O.o this should never come up

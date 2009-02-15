@@ -79,14 +79,9 @@
             ") %></div>
 
     <ul>
-      <li>Notification 1</li>
-      <li>Notification 1</li>
-      <li>Notification 1</li>
-      <li>Notification 1</li>
-      <li>Notification 1</li>
-      <li>Notification 1</li>
-      <li>Notification 1</li>
-      <li>Notification 1</li>
+      <% @notifications.each do |notification| %>
+        <li><%= notification.details %></li>
+  <% end %>
       
     </ul>
     <div id ="bot_linkie"><a href="#">See All</a></div>
