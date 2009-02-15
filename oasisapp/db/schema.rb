@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090213163119) do
+ActiveRecord::Schema.define(:version => 20090215113010) do
 
   create_table "admins", :force => true do |t|
     t.string   "username",        :limit => 40, :null => false
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20090213163119) do
     t.datetime "delivered_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "idno"
   end
 
   create_table "profiles", :force => true do |t|
