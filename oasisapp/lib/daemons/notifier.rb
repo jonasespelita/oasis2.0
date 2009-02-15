@@ -41,7 +41,8 @@ while($running) do
           notif =  Notification.new
           notif.delivered_at = Time.now
           notif.follower_id = follower.user_id
-          notif.details = "Your ward has a violation!"
+          notif.idno = follower.idno
+          notif.details = "has a violation!"
           notif.notification = "Violation notice!"
           notif.save
         end
@@ -54,7 +55,8 @@ while($running) do
           notif =  Notification.new
           notif.delivered_at = Time.now
           notif.follower_id = follower.user_id
-          notif.details = "Your ward has a guidance!"
+          notif.idno = follower.idno
+          notif.details = " has a guidance!"
           notif.notification = "guidace notice!"
           notif.save
         end
@@ -67,7 +69,8 @@ while($running) do
           notif =  Notification.new
           notif.delivered_at = Time.now
           notif.follower_id = follower.user_id
-          notif.details = "Your ward has a grades!"
+          notif.idno = follower.idno
+          notif.details = " has a grades!"
           notif.notification = "grades notice!"
           notif.save
         end
