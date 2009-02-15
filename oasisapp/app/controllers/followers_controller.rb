@@ -11,14 +11,14 @@ class FollowersController < ApplicationController
   #function to verify idno and vcode
   def verify?(idno, vcode)
     if idno==''|| vcode==''
-      flash[:error]="Fields cannot be blank."
+      flash[:error]="All fields are requiredblank."
       return false
     end
 
     #check if student exists
     student = Profile.find(idno)
     if student.id==3 #premade Profile for nonexistent students (check web service)
-      flash[:error]="Student not found"
+      flash[:error]="The student cannot be found. Please check the ID number and try again."
       return false
     end
 
@@ -76,7 +76,7 @@ class FollowersController < ApplicationController
         flash[:notice]="You are now following #{stud.fullname}"
       else
         #Unknown error O.o this should never come up
-        flash[:error]="Something went wrong...Try again"
+        flash[:error]="Something went wrong...Please try again."
         redirect_back_or_default('/')
       end
       redirect_to wards_path
