@@ -49,13 +49,15 @@
 
         <div  class="woof">
 
-
+<ul id = "wards">
           <!--start-->
           <% for prof in @profiles %>
-            <%=render :partial => "ward", :locals => { :profile => prof }  %>
+              
+              <li id="prof_<%= prof.idNo %>"> <span class="handle"><b>Drag this text to sort</b></span><%=render :partial => "ward", :locals => { :profile => prof }  %></li>
           <% end %>
           <!--end-->
-
+</ul>
+<%= sortable_element("wards", :url => "rawr", :handle => "handle") %>
         </div>
 
 
@@ -80,7 +82,7 @@
 
     <ul>
       <% @notifications.each do |notification| %>
-        <li><%= notification.details %></li>
+        <li><%= (Profile.find(notification.idno)).fullname %>has <%= notification.details %></li>
   <% end %>
       
     </ul>
