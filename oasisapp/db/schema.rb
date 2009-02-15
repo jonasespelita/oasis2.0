@@ -9,6 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD:oasisapp/db/schema.rb
 ActiveRecord::Schema.define(:version => 20090212185627) do
 
   create_table "actions", :force => true do |t|
@@ -17,6 +18,9 @@ ActiveRecord::Schema.define(:version => 20090212185627) do
     t.datetime "updated_at"
     t.integer  "asession_id"
   end
+=======
+ActiveRecord::Schema.define(:version => 20090213163119) do
+>>>>>>> 1f0b9bbf9f571c971f1b0dced7086dcca3efec20:oasisapp/db/schema.rb
 
   create_table "admins", :force => true do |t|
     t.string   "username",        :limit => 40, :null => false
@@ -77,6 +81,16 @@ ActiveRecord::Schema.define(:version => 20090212185627) do
     t.datetime "updated_at"
   end
 
+  create_table "current_state_of_followers", :force => true do |t|
+    t.integer  "follower_id"
+    t.integer  "guidance_rows"
+    t.integer  "grade_rows"
+    t.datetime "attendance_as_of"
+    t.integer  "violation_rows"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "followers", :force => true do |t|
     t.integer  "idno"
     t.integer  "user_id"
@@ -89,6 +103,18 @@ ActiveRecord::Schema.define(:version => 20090212185627) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD:oasisapp/db/schema.rb
+=======
+  create_table "notifications", :force => true do |t|
+    t.integer  "follower_id"
+    t.string   "notification"
+    t.text     "details"
+    t.datetime "delivered_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+>>>>>>> 1f0b9bbf9f571c971f1b0dced7086dcca3efec20:oasisapp/db/schema.rb
   create_table "profiles", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"

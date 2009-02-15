@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  follower_id: 1
+  guidance_rows: 1
+  grade_rows: 1
+  attendance_as_of: 2009-02-14 00:31:19
+  violation_rows: 1
+
+two:
+  follower_id: 1
+  guidance_rows: 1
+  grade_rows: 1
+  attendance_as_of: 2009-02-14 00:31:19
+  violation_rows: 1

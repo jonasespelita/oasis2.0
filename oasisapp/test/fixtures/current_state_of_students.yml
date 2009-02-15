@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  guidance_rows: 1
+  last_as_of_attendance: 2009-02-14
+  violation_rows: 1
+  grade_rows: 1
+
+two:
+  guidance_rows: 1
+  last_as_of_attendance: 2009-02-14
+  violation_rows: 1
+  grade_rows: 1
