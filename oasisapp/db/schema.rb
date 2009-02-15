@@ -9,9 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
-ActiveRecord::Schema.define(:version => 20090215113010) do
-
+ActiveRecord::Schema.define(:version => 20090215170721) do
 
   create_table "admins", :force => true do |t|
     t.string   "username",        :limit => 40, :null => false
@@ -19,8 +17,8 @@ ActiveRecord::Schema.define(:version => 20090215113010) do
     t.string   "salt",                          :null => false
     t.string   "last_name",                     :null => false
     t.string   "first_name",                    :null => false
-    t.string   "position",                      :null => false
-    t.boolean  "active",                        :null => false
+    t.string   "position",        :limit => 2,  :null => false
+    t.boolean  "status",                        :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "email"
@@ -35,18 +33,9 @@ ActiveRecord::Schema.define(:version => 20090215113010) do
     t.text     "summary"
   end
 
-
   create_table "attendances", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "campus_activities", :force => true do |t|
-    t.datetime "date",       :null => false
-    t.text     "activity",   :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "summary"
   end
 
   create_table "changes", :force => true do |t|
@@ -80,13 +69,13 @@ ActiveRecord::Schema.define(:version => 20090215113010) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   create_table "grades", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
 
   create_table "notifications", :force => true do |t|
     t.integer  "follower_id"
@@ -119,8 +108,6 @@ ActiveRecord::Schema.define(:version => 20090215113010) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-
 
   create_table "users", :force => true do |t|
     t.string   "login"

@@ -61,7 +61,7 @@ class FollowersController < ApplicationController
       f = Follower.new
       f.idno = params[:idno]
       f.user_id = current_user.id
-      
+      f.position = 10
 
       if f.save
         #save state of follower for notification generation
