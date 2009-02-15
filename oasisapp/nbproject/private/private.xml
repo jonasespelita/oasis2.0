@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
-<<<<<<< HEAD:oasisapp/nbproject/private/private.xml
-=======
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/home/jonas/Desktop/GITSPACE/oasisapp/config/daemons.yml</file>
-        <file>file:/home/jonas/Desktop/GITSPACE/oasisapp/config/database.yml</file>
+        <file>file:/media/LIVEUSB/oasis2.0/oasisapp/config/environment.rb</file>
     </open-files>
->>>>>>> 1f0b9bbf9f571c971f1b0dced7086dcca3efec20:oasisapp/nbproject/private/private.xml
 </project-private>
