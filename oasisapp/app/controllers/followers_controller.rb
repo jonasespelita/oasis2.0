@@ -4,12 +4,26 @@ class FollowersController < ApplicationController
   require 'open-uri'
 
   def new
-    
-    
+
+
     #store location so that we can go back if something fails
     store_location
   end
 
+  def upload_photo
+     flash[:notice]= params[:user]
+    (Follower.find_all_by_user_id params[:user]).each do |f|
+
+      if f.idno == params[:id].to_i
+flash[:notice]= "ASDFASDFSADF"
+        f .photo = params["pic_#{params[:id]}"]
+        f.save
+      end
+    end
+
+
+
+  end
   #function to verify idno and vcode
   def verify?(idno, vcode)
     if idno==''|| vcode==''
@@ -77,7 +91,7 @@ class FollowersController < ApplicationController
         state.guidance_rows=0
         state.violation_rows=0
         state.save
-        
+
         flash[:notice]="You are now following #{stud.fullname}"
       else
         #Unknown error O.o this should never come up
@@ -92,8 +106,8 @@ class FollowersController < ApplicationController
       redirect_to signup_path
     end
   end
- 
 
-  
+
+
 
 end

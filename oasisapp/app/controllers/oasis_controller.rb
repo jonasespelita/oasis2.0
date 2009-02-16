@@ -20,6 +20,9 @@ class OasisController < ApplicationController
     session[:order] = @followers
     flash[:rawr]="hahah"
   end
+  def open_sorter
+    index
+  end
   def sort
     position = Array.new
     flash[:notice] = "sorted!"

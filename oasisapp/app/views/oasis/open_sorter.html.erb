@@ -45,18 +45,24 @@
       </div>
 
       <div class = "grid_12 " id="a_content" >
-        <span id="f_msg">Click on a ward to see details...   </span>
-        <span class ="sml" id="sort_option"><%= link_to "Click here to sort your wards", :action => 'open_sorter' %></span>
+        <span id="f_msg">Drag Text to sort  </span>
+        <span class id="sort_option"><%= link_to "Save!", :action => 'index' %></span>
         <div  class="woof">
 
           <ul id = "wards">
             <!--start-->
 <% for prof in @profiles %>
-              <li id="prof_<%= prof.idNo %>"><%=render :partial => "ward", :locals => { :profile => prof }  %></li>
+
+              <li id="prof_<%= prof.idNo %>">
+                <% form_tag "#{upload_photo_path}/?id=#{prof.idNo}&user=#{current_user.id}", :multipart => true do  %>
+               <span><%=file_field_tag "pic_#{prof.idNo}",  :accept => 'image/png,image/gif,image/jpeg' %></span>
+               <%= submit_tag "submit" %>
+               <% end %>
+              <span class="handle"><b>Drag this text to sort</b></span><%=render :partial => "sort_ward", :locals => { :profile => prof }  %></li>
             <% end %>
             <!--end-->
           </ul>
-
+          <%= sortable_element("wards", :url => {:action => "sort"}, :handle => "handle") %>
         </div>
 
 

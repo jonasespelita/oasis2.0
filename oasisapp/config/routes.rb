@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users
   map.root :controller=> 'sessions', :action => 'new'
-
+  map.upload_photo '/upload', :action => 'upload_photo', :controller => 'followers'
   map.faq '/faqs', :controller => 'static', :action => 'faq'
   map.sitemap '/sitemap', :controller => 'static', :action => "sitemap"
   map.about '/aboutus', :controller => 'static', :action =>'about'

@@ -1,6 +1,12 @@
 <div class="grid_12" id="q">
+
   <div style=" ">
-    <div class="f_stuffies"><img src="images/placeholder.jpg" alt="rawr"/></div>
+    <div class="f_stuffies"><img src= <% if get_follower(profile.idNo).photo_file_name.nil?%>
+                                     <%=  "/images/placeholder.jpg"%>
+<% else %>
+  <%= get_follower(profile.idNo).photo.url(:small) %>
+<% end %>
+     alt="rawr"/></div>
     <!-- <div class="f_notif ">
       <ol>
         <li>There are no notifications concerning your ward as of this time.</li>
