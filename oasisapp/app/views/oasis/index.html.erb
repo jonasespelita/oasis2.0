@@ -41,28 +41,28 @@
         <span id="date"><%= (Time.now).strftime("%B %d, %Y") %><br/> 1st Semester <br/>S.Y. 08 - 09</span><span id = "username">Welcome <%= current_user.nickname %>!</span>
 
 
-<div id ="f_topmenu"> <%= link_to "Logout", logout_path %>| <%= link_to "Settings" , change_password_path %> | <a href="faqs.html">Contact Us </a> <hr/><span id="add"><%= link_to "[+]Add a ward", add_ward_path  %></span></div>
+        <div id ="f_topmenu"> <%= link_to "Logout", logout_path %>| <%= link_to "Settings" , change_password_path %> | <a href="faqs.html">Contact Us </a> <hr/><span id="add"><%= link_to "[+]Add a ward", add_ward_path  %></span></div>
       </div>
 
       <div class = "grid_12 " id="a_content" >
-        <span id="f_msg">Click on a ward to see details...</span>
+        <span id="f_msg">Click on a ward to see details...   <%=   flash[:notice] %>   <%= session[:test] %><%= params[:wards] %></span>
 
         <div  class="woof">
 
-<ul id = "wards">
-          <!--start-->
-          <% for prof in @profiles %>
-              
+          <ul id = "wards">
+            <!--start-->
+<% for prof in @profiles %>
+
               <li id="prof_<%= prof.idNo %>"> <span class="handle"><b>Drag this text to sort</b></span><%=render :partial => "ward", :locals => { :profile => prof }  %></li>
-          <% end %>
-          <!--end-->
-</ul>
-<%= sortable_element("wards", :url => "rawr", :handle => "handle") %>
+            <% end %>
+            <!--end-->
+          </ul>
+          <%= sortable_element("wards", :url => {:action => "sort"}, :handle => "handle") %>
         </div>
 
 
       </div>
-      
+
       <div class = "grid_12" id = "footer">
         <div id="f_links">
           <%=  link_to "Home", root_path %> : <%= link_to "Terms & Conditions", toc_path%> :   <%= link_to "Privacy Policy ", pri_path %>  <br/> <%= link_to "Contact Us", contact_path %> :  <%= link_to "About Us", about_path %> : <%= link_to "Site Map", sitemap_path %><br/>
@@ -73,26 +73,26 @@
         </div>
 
       </div>
-     
+
     </div>
     <div id="bot_notifs" style="display:none;" >
       <div id="bot_title"><span style="margin-right:190px">Notifications </span><%= link_to_function('x',
-           "Element.hide('bot_notifs');
-            ") %></div>
+          "Element.hide('bot_notifs');
+          ") %></div>
 
-    <ul>
-      <% @notifications.each do |notification| %>
-        <li><%= (Profile.find(notification.idno)).fullname %>has <%= notification.details %></li>
-  <% end %>
-      
-    </ul>
-    <div id ="bot_linkie"><a href="#">See All</a></div>
+      <ul>
+        <% @notifications.each do |notification| %>
+          <li><%= (Profile.find(notification.idno)).fullname %>has <%= notification.details %></li>
+        <% end %>
+
+      </ul>
+      <div id ="bot_linkie"><a href="#">See All</a></div>
     </div>
-     <div id="bot_menu"><div id="bot_menu_thing">
-         <%=  link_to_function('Show Notifications (10)',
-           "Element.show('bot_notifs');
-            ")%>
+    <div id="bot_menu"><div id="bot_menu_thing">
+        <%=  link_to_function('Show Notifications (10)',
+          "Element.show('bot_notifs');
+          ")%>
 
-       </div></div>
+    </div></div>
   </body>
 </html>

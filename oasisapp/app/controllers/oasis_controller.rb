@@ -1,9 +1,9 @@
 class OasisController < ApplicationController
   before_filter :login_required
-  
+  $followers
   def index
     $user = current_user
-    followers = Follower.find_all_by_user_id($user.id)
+    @followers = Follower.find_all_by_user_id($user.id, :order =>"position")
     @profiles = Array.new
     begin
       @last_login = (($user.last_login).localtime).strftime("%a %B %d, %Y %I:%M%p ")
@@ -12,12 +12,40 @@ class OasisController < ApplicationController
     end
 
     #for each ward owned, store it in variable @profiles
-    followers.each do |f|
+    @followers.each do |f|
       @profiles<<Profile.find(f.idno)
     end
     @notifications = Notification.find_all_by_follower_id current_user.id
     @menu = make_menu
- 
+    session[:order] = @followers
+    flash[:rawr]="hahah"
+  end
+  def sort
+    position = Array.new
+    flash[:notice] = "sorted!"
+
+    params[:wards].each do |ward|
+      #flash[:notice] =flash[:notice] + ward
+      followers = Follower.find_all_by_idno ward
+
+      followers.each do |f|
+        if f.user_id == current_user.id
+          position << f
+        end
+
+      end
+
+    end
+    flash[:notice] = position.size
+    pos = 1
+    position.each do |f|
+      f.position = pos
+      pos=pos+1
+      flash[:notice] = "#{flash[:notice]}" + "#{f.position}"
+      f.save
+    end
+
+    render :nothing => true
   end
 
   def show_profile
@@ -115,7 +143,6 @@ class OasisController < ApplicationController
     menu << "Profile"
     menu << "Attendance"
     menu << "Fees"
-
     menu << "Grades"
     menu << "Guidance"
     menu << "Violations"

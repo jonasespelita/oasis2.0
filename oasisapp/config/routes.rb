@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.pri '/privacy', :controller => 'static', :action => 'privacy'
   map.toc '/terms', :controller =>'static', :action => 'tos'
   map.resource :session
-  
+  map.reset_password '/reset_password',:controller =>'users', :action => 'reset_password'
   map.change_password '/change_password', :controller => 'users', :action => 'change_password'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.signup '/signup', :controller => "users", :action => "new"
