@@ -6,4 +6,14 @@ class UserMailer < ActionMailer::Base
     body        "testing mail"
   end
 
+  def forgot_password_mail username, password
+    u = User.find_by_login(username)
+    
+     recipients  u.email
+     subject "No-Reply"
+     u.password=password
+     u.password_confirmation = password
+     body "your new password is #{password}"
+     u.save
+  end
 end

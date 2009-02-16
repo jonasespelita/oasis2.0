@@ -25,9 +25,9 @@ config.action_mailer.smtp_settings = {
 
   :address        => 'smtp.gmail.com',
   :port           => 587,
-:domain => "oasis.com",
+  :domain => "oasis.com",
   :authentication => :plain,
-:user_name => "slu.oasis@gmail.com",
-:password =>"oasis123"
+  :user_name => "slu.oasis@gmail.com",
+  :password =>"oasis123"
   
 }

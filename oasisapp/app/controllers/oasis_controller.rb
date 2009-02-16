@@ -1,9 +1,9 @@
 class OasisController < ApplicationController
   before_filter :login_required
-  
+  $followers
   def index
     $user = current_user
-    followers = Follower.find_all_by_user_id($user.id)
+    @followers = Follower.find_all_by_user_id($user.id, :order =>"position")
     @profiles = Array.new
     begin
       @last_login = (($user.last_login).localtime).strftime("%a %B %d, %Y %I:%M%p ")
@@ -12,13 +12,43 @@ class OasisController < ApplicationController
     end
 
     #for each ward owned, store it in variable @profiles
-    followers.each do |f|
+    @followers.each do |f|
       @profiles<<Profile.find(f.idno)
-          
     end
-    
+    @notifications = Notification.find_all_by_follower_id current_user.id
     @menu = make_menu
- 
+    session[:order] = @followers
+    flash[:rawr]="hahah"
+  end
+  def open_sorter
+    index
+  end
+  def sort
+    position = Array.new
+    flash[:notice] = "sorted!"
+     
+    params[:wards].each do |ward|
+      #flash[:notice] =flash[:notice] + ward
+      followers = Follower.find_all_by_idno ward
+   
+      followers.each do |f|
+        if f.user_id == current_user.id
+          position << f
+        end
+
+      end
+
+    end
+    flash[:notice] = position.size
+    pos = 1
+    position.each do |f|
+      f.position = pos
+      pos=pos+1
+      flash[:notice] = "#{flash[:notice]}" + "#{f.position}"
+      f.save
+    end
+
+    render :nothing => true
   end
 
   def show_profile
@@ -27,6 +57,7 @@ class OasisController < ApplicationController
       @followers=Array.new
       (Follower.find_all_by_idno params[:id]).each do |follower|
         @followers<<User.find(follower.user_id)
+    
       end
 
       render :partial => "profile" ,:locals => { :profile => @prof, :followers =>@followers}
@@ -40,7 +71,7 @@ class OasisController < ApplicationController
   def show_attendance
     if verified_followed?
       @prof = Profile.find(params[:id])
-      @absences  =  Attendance.find(:all, :from => "/attendance/?idno=#{params[:id]}.xml")
+      @absences  =  Attendance.find(:all, :from => "/attendance/?idno=#{params[:id]}")
      
       render :partial => "attendance" ,:locals => { :profile => @prof}
     else
@@ -51,7 +82,7 @@ class OasisController < ApplicationController
     if verified_followed?
       #@vio = Array.new
 
-      @vio = Violation.find(:all, :from => "/violation/?idno=#{params[:id]}.xml")
+      @vio = Violation.find(:all, :from => "/violation/?idno=#{params[:id]}")
       render :partial => "violations"
       #  @viol.each do|v|
       #   if v.idno==params[:id]
@@ -88,17 +119,17 @@ class OasisController < ApplicationController
   end
 
   def show_guidance
-     @prof = Profile.find(params[:id])
-     @guidances = Guidance.find(:all, :from => "/guidance/?idno=#{params[:id]}")
-     render :partial => "guidance" ,:locals => { :profile => @prof}
+    @prof = Profile.find(params[:id])
+    @guidances = Guidance.find(:all, :from => "/guidance/?idno=#{params[:id]}")
+    render :partial => "guidance" ,:locals => { :profile => @prof}
   end
 
   def show_fees
     @prof = Profile.find(params[:id])
-     @payments= PaymentSchedule.find(:all, :from => "/payment_schedule/?idno=#{params[:id]}")
-     @tf_breakdown = Tfbreakdown.find(:all, :from => "/tfbreakdown/?idno=#{params[:id]}")
-     @tf_assessment = Tfassessment.find(:all, :from => "/tfassessment/?idno=#{params[:id]}")
-     render :partial => "payment" ,:locals => { :profile => @prof}
+    @payments= PaymentSchedule.find(:all, :from => "/payment_schedule/?idno=#{params[:id]}")
+    @tf_breakdown = Tfbreakdown.find(:all, :from => "/tfbreakdown/?idno=#{params[:id]}")
+    @tf_assessment = Tfassessment.find(:all, :from => "/tfassessment/?idno=#{params[:id]}")
+    render :partial => "payment" ,:locals => { :profile => @prof}
   end
   
   protected
@@ -115,7 +146,6 @@ class OasisController < ApplicationController
     menu << "Profile"
     menu << "Attendance"
     menu << "Fees"
-    menu << "Course Offerings"
     menu << "Grades"
     menu << "Guidance"
     menu << "Violations"

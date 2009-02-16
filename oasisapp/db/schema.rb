@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090213163119) do
+ActiveRecord::Schema.define(:version => 20090216080020) do
 
   create_table "admins", :force => true do |t|
     t.string   "username",        :limit => 40, :null => false
@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20090213163119) do
     t.string   "salt",                          :null => false
     t.string   "last_name",                     :null => false
     t.string   "first_name",                    :null => false
-    t.string   "position",                      :null => false
+    t.string   "position",        :limit => 2,  :null => false
     t.boolean  "active",                        :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -36,14 +36,6 @@ ActiveRecord::Schema.define(:version => 20090213163119) do
   create_table "attendances", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "campus_activities", :force => true do |t|
-    t.datetime "date",       :null => false
-    t.text     "activity",   :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "summary"
   end
 
   create_table "changes", :force => true do |t|
@@ -70,6 +62,8 @@ ActiveRecord::Schema.define(:version => 20090213163119) do
     t.integer  "violation_rows"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tf_assessment_rows"
+    t.integer  "tf_breakdown_rows"
   end
 
   create_table "followers", :force => true do |t|
@@ -77,6 +71,11 @@ ActiveRecord::Schema.define(:version => 20090213163119) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "grades", :force => true do |t|
@@ -91,6 +90,7 @@ ActiveRecord::Schema.define(:version => 20090213163119) do
     t.datetime "delivered_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "idno"
   end
 
   create_table "profiles", :force => true do |t|
@@ -111,20 +111,6 @@ ActiveRecord::Schema.define(:version => 20090213163119) do
     t.date     "date"
     t.integer  "total"
     t.integer  "unique"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sms", :force => true do |t|
-    t.string   "smstext"
-    t.string   "phone"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "students", :force => true do |t|
-    t.string   "idno"
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

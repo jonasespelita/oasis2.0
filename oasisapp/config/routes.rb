@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users
   map.root :controller=> 'sessions', :action => 'new'
-
+  map.upload_photo '/upload', :action => 'upload_photo', :controller => 'followers'
   map.faq '/faqs', :controller => 'static', :action => 'faq'
   map.sitemap '/sitemap', :controller => 'static', :action => "sitemap"
   map.about '/aboutus', :controller => 'static', :action =>'about'
@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.pri '/privacy', :controller => 'static', :action => 'privacy'
   map.toc '/terms', :controller =>'static', :action => 'tos'
   map.resource :session
-  
+  map.reset_password '/reset_password',:controller =>'users', :action => 'reset_password'
   map.change_password '/change_password', :controller => 'users', :action => 'change_password'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.signup '/signup', :controller => "users", :action => "new"
