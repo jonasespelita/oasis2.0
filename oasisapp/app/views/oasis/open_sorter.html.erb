@@ -53,7 +53,12 @@
             <!--start-->
 <% for prof in @profiles %>
               
-              <li id="prof_<%= prof.idNo %>"> <span class="handle"><b>Drag this text to sort</b></span><%=render :partial => "sort_ward", :locals => { :profile => prof }  %></li>
+              <li id="prof_<%= prof.idNo %>">
+                <% form_tag "#{upload_photo_path}/?id=#{prof.idNo}&user=#{current_user.id}", :multipart => true do  %>
+               <span><%=file_field_tag "pic_#{prof.idNo}",  :accept => 'image/png,image/gif,image/jpeg' %></span>
+               <%= submit_tag "submit" %>
+               <% end %>
+              <span class="handle"><b>Drag this text to sort</b></span><%=render :partial => "sort_ward", :locals => { :profile => prof }  %></li>
             <% end %>
             <!--end-->
           </ul>

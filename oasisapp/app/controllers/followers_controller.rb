@@ -8,6 +8,20 @@ class FollowersController < ApplicationController
     store_location
   end
 
+  def upload_photo
+     flash[:notice]= params[:user]
+    (Follower.find_all_by_user_id params[:user]).each do |f|
+                 
+      if f.idno == params[:id].to_i
+flash[:notice]= "ASDFASDFSADF"
+        f .photo = params["pic_#{params[:id]}"]
+        f.save
+      end
+    end
+ 
+ 
+    
+  end
   #function to verify idno and vcode
   def verify?(idno, vcode)
     if idno==''|| vcode==''
