@@ -1,6 +1,8 @@
 class FollowersController < ApplicationController
   layout 'reg'
 
+  require 'open-uri'
+
   def new
     
     
@@ -35,10 +37,13 @@ class FollowersController < ApplicationController
   def hash(i)
      Digest::SHA1.hexdigest("#{@key}#{i}")
   end
-  
-  def create
 
+  def create
+    idno = params[:idno]
+    vcode = params[:vcode]
+    mobilenum = params[:mobilenum]
     if !verify?(params[:idno], params[:vcode])
+      open("http://localhost:13004/cgi-bin/sendsms?username=admin&password=Linux&to=#{mobilenum}&text=#{hash(idno)[4..9]}") {|f|}
       redirect_back_or_default('/')
       return
     end

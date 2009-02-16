@@ -9,142 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090203125338) do
+ActiveRecord::Schema.define(:version => 20081230025024) do
 
   create_table "announcements", :force => true do |t|
-    t.date     "eventDate"
-    t.string   "event"
-    t.string   "memoDetail"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.date "eventDate",  :null => false
+    t.text "event",      :null => false
+    t.text "memoDetail"
   end
 
-  create_table "attendances", :force => true do |t|
-    t.integer  "idNo"
-    t.integer  "code"
-    t.string   "courseNo"
-    t.string   "absences"
-    t.string   "attendanceStatus"
-    t.date     "asOfDate"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "attendance", :force => true do |t|
+    t.integer "code",             :limit => 2,   :null => false
+    t.string  "courseNo",         :limit => nil, :null => false
+    t.integer "absences",         :limit => 2,   :null => false
+    t.string  "attendanceStatus", :limit => 2,   :null => false
+    t.date    "asOfDate",                        :null => false
+    t.integer "idNo",                            :null => false
   end
 
-  create_table "class_schedules", :force => true do |t|
-    t.integer  "idNo"
-    t.integer  "code"
-    t.string   "courseNo"
-    t.string   "descriptiveTitle"
-    t.integer  "units"
-    t.time     "time"
-    t.string   "day"
-    t.string   "room"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  add_index "attendance", ["id"], :name => "attendance_id_key", :unique => true
 
-  create_table "course_offerings", :force => true do |t|
-    t.integer  "semester"
-    t.integer  "endSchYr"
-    t.string   "college"
-    t.integer  "code"
-    t.string   "courseNo"
-    t.string   "descriptiveTitle"
-    t.time     "time"
-    t.string   "day"
-    t.string   "room"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "grades", :force => true do |t|
-    t.integer  "idNo"
-    t.integer  "semester"
-    t.integer  "endSchYr"
-    t.string   "courseNo"
-    t.string   "descriptiveTitle"
-    t.integer  "units"
-    t.integer  "grade"
-    t.string   "remark"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "guidances", :force => true do |t|
-    t.integer  "idNo"
-    t.time     "time"
-    t.date     "day"
-    t.string   "room"
-    t.string   "guidanceStatus"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "payment_schedules", :force => true do |t|
-    t.integer  "idNo"
-    t.date     "dateOfPayment"
-    t.float    "amt"
-    t.string   "textDetail"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "profiles", :force => true do |t|
-    t.integer  "idNo"
-    t.string   "familyName"
-    t.string   "givenName"
-    t.string   "middlename"
-    t.string   "course"
-    t.integer  "yearLevel"
-    t.string   "college"
-    t.string   "address"
-    t.string   "email"
-    t.string   "mobileNumber"
-    t.string   "fatherName"
-    t.string   "motherName"
-    t.string   "guardianName"
-    t.string   "relationshipToGuardian"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "students", :force => true do |t|
-    t.string   "idno"
-    t.string   "name"
-    t.string   "data"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tests", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tfassessments", :force => true do |t|
-    t.integer  "idNo"
-    t.string   "gradingTerm"
-    t.float    "payAmt"
-    t.date     "balanceAsOf"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tfbreakdowns", :force => true do |t|
-    t.integer  "idNo"
-    t.string   "item"
-    t.float    "feeAmt"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "violations", :force => true do |t|
-    t.integer  "idNo"
-    t.date     "dateOfViolation"
-    t.string   "offense"
-    t.string   "memoDetail"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-end

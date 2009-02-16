@@ -5,13 +5,15 @@ asdfsadf
   <div id="side_r">
     <b>Please enter your ward&#39;s ID number and received verification code.</b>
     <br/><br/>
+
     <% if flash[:error] %>
       <div id ="error"><%= image_tag "error.png" %>
 <%= flash[:error] %></div>
         <% end %>
     <% form_tag :controller => 'followers',:action => 'create' do %>
 
-      <label class="fstr">Enter your ward's ID number:</label> <%=  text_field_tag :idno, nil,:size => 30%><br/><br/>
+      <label class="fstr">Mobile Number:</label> <%= text_field_tag :mobilenum, nil,:size => 30 %>
+      <label class="fstr">Enter your ward's ID number:</label> <%=  text_field_tag :idno, nil,:size => 30%><br/>
       <label class="fstr">Enter you ward's verification code:</label> <%= text_field_tag :vcode, nil,:size => 30 %>
 
       <br/>
@@ -25,8 +27,7 @@ asdfsadf
         submit_tag "Next"
         
       end%>
-    <% end
- %>
+    <% end %>
 
 
   </div>
