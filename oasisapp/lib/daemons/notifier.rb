@@ -37,7 +37,8 @@ while($running) do
       @guidance =  Guidance.find(:all, :from => "/guidance/?idno=#{follower.idno}")
       @attendance=  Attendance.find(:all, :from => "/attendance/?idno=#{follower.idno}")
       @grades = Grade.find(:all, :from => "/grade/?idno=#{follower.idno}")
-      
+      @tf_assessment = Tfassessment.find(:all, :from => "/tfassessment/?idno=#{follower.idno}")
+      @tf_breakdown = Tfbreakdown.find(:all, :from => "/tfbreakdown/?idno=#{follower.idno}")
                
       if @violations.size>0
         if state.violation_rows  < @violations.size
@@ -80,10 +81,51 @@ while($running) do
           notif.save
         end
       end
+      
+      if @tf_assessment.size >0
+        if state.tf_assessment_rows < @tf_assessment.size
+          state.tf_assessment_rows = @tf_assessment.size
+          state.save
+          notif = Notification.new
+          notif.delivered_at = Time.now
+           notif.idno = follower.idno
+          notif.details = " has a assessment!"
+          notif.notification = "assessment notice!"
+          notif.save
+          
+        end
+      end
+      
+            if  @tf_breakdown.size >0
+        if state.tf_assessment_rows <  @tf_breakdownt.size
+          state.tf_assessment_rows =  @tf_breakdown.size
+          state.save
+          notif = Notification.new
+          notif.delivered_at = Time.now
+           notif.idno = follower.idno
+          notif.details = " has a breakdown!"
+          notif.notification = "breakdown"
+          notif.save
+          
+        end
+      end
+      
+      if @attendance.size >0
+        if state.attendance_as_of < @attendance.asOfDate
+          state.attendance_as_of = @attendance.asOfDate
+          state.save
+           notif = Notification.new
+          notif.delivered_at = Time.now
+           notif.idno = follower.idno
+          notif.details = " has a absence!"
+          notif.notification = "absence"
+          notif.save
+        end
+      end
 
         
-  ##      update admin variable for next generation
-#dont forget to generate the mails and send the cp messages
+      ##      update admin variable for next generation
+      #dont forget to generate the mails and send the cp messages
 
     end
       
