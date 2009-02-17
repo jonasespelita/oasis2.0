@@ -1,6 +1,7 @@
 class AdminController < ApplicationController
 	before_filter :authorize, :except => :login
 	def index
+		
 		@announcements = Announcements.find(:all)
 		@announcements.sort{ |a,b| a.date_time <=> b.date_time}
 		@announcements.reverse!
@@ -100,6 +101,8 @@ class AdminController < ApplicationController
 					@changes = Changes.find(:all)
 					@changes.delete_if { |x| x.change_made.index("Put Website Online") == nil }
 				when "Edited Email Contents":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Edited Email Contents") == nil }
 				when "Blocked User":
 					@changes = Changes.find(:all)
 					@changes.delete_if { |x| x.change_made.index("Blocked User") == nil }
@@ -455,8 +458,14 @@ class AdminController < ApplicationController
 					@changes.delete_if { |x| x.change_made.index("Deleted query") == nil }
 				when "Removed Student Being Followed":
 				when "Put Website Offline":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Put Website Offline") == nil }
 				when "Put Website Online":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Put Website Online") == nil }
 				when "Edited Email Contents":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Edited Email Contents") == nil }
 				when "Blocked User":
 					@changes = Changes.find(:all)
 					@changes.delete_if { |x| x.change_made.index("Blocked User") == nil }
@@ -689,72 +698,241 @@ class AdminController < ApplicationController
 				a = TempEmail.new
 				a.email = email
 				a.save
-				puts "dito"
-				puts "dito"
-				puts "dito"
-				puts "dito"
-				puts "dito"
-				puts "dito"
-				puts "dito"
-				
-				puts a.id
 				session[:email_id] = a.id
 				session[:select_email_edit] = "Checklist"
 			when "Dropped":
+				email = ""
+				File.open(Rails.root+"/app/views/email/dropped.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Dropped"
 			when "Grades":
+				email = ""
+				File.open(Rails.root+"/app/views/email/grades.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Grades"
 			when "Kicked Out":
+				email = ""
+				File.open(Rails.root+"/app/views/email/kicked out.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Kicked Out"
 			when "Last Chance":
-			when "Non-readmittance":
+				email = ""
+				File.open(Rails.root+"/app/views/email/last chance.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Last Chance"
+			when "Non-readmitance":
+				email = ""
+				File.open(Rails.root+"/app/views/email/non-readmitance.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Non-readmitance"
 			when "Reduced Load":
+				email = ""
+				File.open(Rails.root+"/app/views/email/reduced load.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Reduced Load"
+				
 			when "Shift":
+				email = ""
+				File.open(Rails.root+"/app/views/email/shift.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Shift"
 			when "Totally Dropped":
+				email = ""
+				File.open(Rails.root+"/app/views/email/totally dropped.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Totally Dropped"
 			when "Transfer":
+				email = ""
+				File.open(Rails.root+"/app/views/email/transfer.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Transfer"
 			when "Tuition Fee Assessment":
+				email = ""
+				File.open(Rails.root+"/app/views/email/tuition fee assessment.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Tuition Fee Assessment"
 			when "Tuition Fee Assessment Update":
+				email = ""
+				File.open(Rails.root+"/app/views/email/tuition fee assessment update.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Tuition Fee Assessment Update"
 			when "Tuition Fee Breakdowns":
+				email = ""
+				File.open(Rails.root+"/app/views/email/tuition fee breakdowns.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Tuition Fee Breakdowns"
 			when "Update For Grades":
+				email = ""
+				File.open(Rails.root+"/app/views/email/updateforgrades.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Update For Grades"
 			when "Violations":
+				email = ""
+				File.open(Rails.root+"/app/views/email/violations.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Violations"
 			when "Withdrawn":
+				email = ""
+				File.open(Rails.root+"/app/views/email/withdrawn.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Withdrawn"
 		end
 		redirect_to(:action => "index") 
 	end
 	
 	def edit_email
-		if session[:select_email_edit]
-			puts "uu nman"
-			puts "uu nman"
-			puts "uu nman"
-			puts "uu nman"
-			puts "uu nman"
-			puts "uu nman"
-			puts "uu nman"
-			puts "uu nman"
-			puts "uu nman"
-		end
 		case session[:select_email_edit]
 		
 			when "Checklist":
 				file = File.new(Rails.root+"/app/views/email/checklist.html", "w+")
-
 				file.puts(params[:edit_email_box])
 				file.close
-				puts "saved ata e"
 			when "Dropped":
+				file = File.new(Rails.root+"/app/views/email/dropped.html", "w+")
+				file.puts(params[:edit_email_box])
+				file.close
 			when "Grades":
+				file = File.new(Rails.root+"/app/views/email/grades.html", "w+")
+				file.puts(params[:edit_email_box])
+				file.close
 			when "Kicked Out":
+				file = File.new(Rails.root+"/app/views/email/kicked out.html", "w+")
+				file.puts(params[:edit_email_box])
+				file.close
 			when "Last Chance":
-			when "Non-readmittance":
+				file = File.new(Rails.root+"/app/views/email/last chance.html", "w+")
+				file.puts(params[:edit_email_box])
+				file.close
+			when "Non-readmitance":
+				file = File.new(Rails.root+"/app/views/email/non-readmitance.html", "w+")
+				file.puts(params[:edit_email_box])
+				file.close
 			when "Reduced Load":
+				file = File.new(Rails.root+"/app/views/email/reduced load.html", "w+")
+				file.puts(params[:edit_email_box])
+				file.close
 			when "Shift":
+				file = File.new(Rails.root+"/app/views/email/shift.html", "w+")
+				file.puts(params[:edit_email_box])
+				file.close
 			when "Totally Dropped":
+				file = File.new(Rails.root+"/app/views/email/totally dropped.html", "w+")
+				file.puts(params[:edit_email_box])
+				file.close
 			when "Transfer":
+				file = File.new(Rails.root+"/app/views/email/transfer.html", "w+")
+				file.puts(params[:edit_email_box])
+				file.close
 			when "Tuition Fee Assessment":
+				file = File.new(Rails.root+"/app/views/email/tuition fee assessment.html", "w+")
+				file.puts(params[:edit_email_box])
+				file.close
 			when "Tuition Fee Assessment Update":
+				file = File.new(Rails.root+"/app/views/email/tuition fee assessment update.html", "w+")
+				file.puts(params[:edit_email_box])
+				file.close
 			when "Tuition Fee Breakdowns":
+				file = File.new(Rails.root+"/app/views/email/tuition fee breakdowns.html", "w+")
+				file.puts(params[:edit_email_box])
+				file.close
 			when "Update For Grades":
+				file = File.new(Rails.root+"/app/views/email/updateforgrades.html", "w+")
+				file.puts(params[:edit_email_box])
+				file.close
 			when "Violations":
+				file = File.new(Rails.root+"/app/views/email/violations.html", "w+")
+				file.puts(params[:edit_email_box])
+				file.close
 			when "Withdrawn":
+				file = File.new(Rails.root+"/app/views/email/withdrawn.html", "w+")
+				file.puts(params[:edit_email_box])
+				file.close
 		end
+		act = Changes.new
+		act.admin_id = session[:admin_id]
+		act.ip_add = request.remote_ip
+		act.change_made = "Edited Email Contents of #{session[:select_email_edit]}"
+		act.save
+		redirect_to(:action => "index")
+	end
+	
+	def select_user
+		session[:select_user_id] = params[:select_user_id]
 		redirect_to(:action => "index")
 	end
 	
