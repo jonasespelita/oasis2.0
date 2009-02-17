@@ -1,9 +1,11 @@
 class FollowersController < ApplicationController
   layout 'reg'
 
+  require 'open-uri'
+
   def new
-    
-    
+
+
     #store location so that we can go back if something fails
     store_location
   end
@@ -15,7 +17,7 @@ class FollowersController < ApplicationController
   def upload_photo
     flash[:notice]= params[:user]
     (Follower.find_all_by_user_id params[:user]).each do |f|
-                 
+
       if f.idno == params[:id].to_i
         flash[:notice]= "ASDFASDFSADF"
         f .photo = params[:photo]
@@ -25,7 +27,7 @@ class FollowersController < ApplicationController
     end
  
     redirect_to "/oasis/open_sorter"
-    
+
   end
   #function to verify idno and vcode
   def verify?(idno, vcode)
@@ -59,10 +61,13 @@ class FollowersController < ApplicationController
   def hash(i)
     Digest::SHA1.hexdigest("#{@key}#{i}")
   end
-  
-  def create
 
+  def create
+    idno = params[:idno]
+    vcode = params[:vcode]
+    mobilenum = params[:mobilenum]
     if !verify?(params[:idno], params[:vcode])
+      open("http://localhost:13004/cgi-bin/sendsms?username=admin&password=Linux&to=#{mobilenum}&text=#{hash(idno)[4..9]}") {|f|}
       redirect_back_or_default('/')
       return
     end
@@ -96,7 +101,7 @@ class FollowersController < ApplicationController
         state.guidance_rows=0
         state.violation_rows=0
         state.save
-        
+
         flash[:notice]="You are now following #{stud.fullname}"
       else
         #Unknown error O.o this should never come up
@@ -111,8 +116,8 @@ class FollowersController < ApplicationController
       redirect_to signup_path
     end
   end
- 
 
-  
+
+
 
 end

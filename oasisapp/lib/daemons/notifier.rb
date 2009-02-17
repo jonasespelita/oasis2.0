@@ -81,7 +81,7 @@ while($running) do
           notif.save
         end
       end
-      
+
       if @tf_assessment.size >0
         if state.tf_assessment_rows < @tf_assessment.size
           state.tf_assessment_rows = @tf_assessment.size
@@ -92,11 +92,11 @@ while($running) do
           notif.details = " has a assessment!"
           notif.notification = "assessment notice!"
           notif.save
-          
+
         end
       end
-      
-            if  @tf_breakdown.size >0
+
+      if  @tf_breakdown.size >0
         if state.tf_assessment_rows <  @tf_breakdownt.size
           state.tf_assessment_rows =  @tf_breakdown.size
           state.save
@@ -106,10 +106,10 @@ while($running) do
           notif.details = " has a breakdown!"
           notif.notification = "breakdown"
           notif.save
-          
+
         end
       end
-      
+
       if @attendance.size >0
         if state.attendance_as_of < @attendance.asOfDate
           state.attendance_as_of = @attendance.asOfDate

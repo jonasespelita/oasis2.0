@@ -1,4 +1,4 @@
-# This file is auto-generated from the current state of the database. Instead of editing this file, 
+# This file is auto-generated from the current state of the database. Instead of editing this file,
 # please use the migrations feature of Active Record to incrementally modify your database, and
 # then regenerate this schema definition.
 #
@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20090216080020) do
     t.string   "salt",                          :null => false
     t.string   "last_name",                     :null => false
     t.string   "first_name",                    :null => false
-    t.string   "position",        :limit => 2,  :null => false
+    t.string   "position",                      :null => false
     t.boolean  "active",                        :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(:version => 20090216080020) do
   create_table "attendances", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "campus_activities", :force => true do |t|
+    t.datetime "date",       :null => false
+    t.text     "activity",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "summary"
   end
 
   create_table "changes", :force => true do |t|
@@ -82,7 +90,6 @@ ActiveRecord::Schema.define(:version => 20090216080020) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
   create_table "notifications", :force => true do |t|
     t.integer  "follower_id"
     t.string   "notification"
@@ -111,6 +118,13 @@ ActiveRecord::Schema.define(:version => 20090216080020) do
     t.date     "date"
     t.integer  "total"
     t.integer  "unique"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "students", :force => true do |t|
+    t.string   "idno"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

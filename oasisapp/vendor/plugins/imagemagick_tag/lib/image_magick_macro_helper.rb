@@ -48,7 +48,7 @@ module ActionView
       #
       # Returns an image tag for the image with the given +filename, which will be rendered with the
       # given ImageMagick +commands+.
-      # 
+      #
       # +filename_or_params+ should point to an image in the directory you specified with
       # +imagemagick_for+. You can have subdirectories, in that case you prepend the
       # name of the subdirectory to +filename_or_params+
@@ -76,7 +76,7 @@ module ActionView
       #
       # Returns an image tag for the action with the parameters in +filename_or_params+ (in +url_form+ format).
       # The result of that action will be rendered with the given ImageMagick +commands+.
-      # 
+      #
       # +filename_or_params+ should be the +url_for+ options hash that points to the action that renders the
       # image. You can use any parameters your action need.
       #
@@ -103,7 +103,7 @@ module ActionView
         image_tag_options.delete(:controller)
         return image_tag(imagemagick_path(filename_or_params, commands, options), image_tag_options)
       end
-      
+
       #
       # Returns the path for the image, which will be rendered with the
       # given ImageMagick +commands+.
@@ -118,7 +118,7 @@ module ActionView
           return imagemagick_controller(options).url_for_imagemagick(filename_or_params, commands)
         end
       end
-      
+
     private
       def imagemagick_controller(options)
         options[:controller] ? (options[:controller].camelize + "Controller").constantize.new : @controller
