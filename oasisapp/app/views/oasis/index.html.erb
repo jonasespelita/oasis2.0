@@ -14,7 +14,7 @@
     <%= stylesheet_link_tag "calendar" %>
     <%= stylesheet_link_tag "style" %>
     <%= javascript_include_tag "jquery.js", "jquery.accordion.js", "jquery.localscroll.js","jquery.scrollTo.js", "test.js" ,:defaults%>
-    
+          <%= greybox_head %>
   </head>
   <body>
     
@@ -41,12 +41,15 @@
         <span id="date"><%= (Time.now).strftime("%B %d, %Y") %><br/> 1st Semester <br/>S.Y. 08 - 09</span><span id = "username">Welcome <%= current_user.nickname %>!</span>
         
         
-        <div id ="f_topmenu"> <%= link_to "Logout", logout_path %>| <%= link_to "Settings" , change_password_path %> | <a href="faqs.html">Contact Us </a> <hr/><span id="add"><%= link_to "[+]Add a ward", add_ward_path  %></span></div>
+        <div id ="f_topmenu"> <%= link_to "Logout", logout_path %>| <%= link_to "Settings" , change_password_path %> | <%= link_to "Contact Us" , query_url%><hr/><span id="add"><%= link_to "[+]Add a ward", add_ward_path  %></span></div>
       </div>
       
       <div class = "grid_12 " id="a_content" >
-        <span id="f_msg">Click on a ward to see details...   </span>
-        <span class ="sml" id="sort_option"><%= link_to "Click here to sort your wards", :action => 'open_sorter' %></span>
+        <span id="f_msg">Click on a ward to get started   </span>
+<br/>
+        <span class ="sml" id="sort_option"><%= link_to "Ward Preferences", :action => 'open_sorter' %>
+          <%= coolbox 300,150, "Help", pref_help_path, "[?]" %>
+</span>
         <div  class="woof">
           
           <ul id = "wards">
@@ -57,7 +60,7 @@
             <% end %>
             <!--end-->
           </ul>
-
+          
         </div>
         
         
@@ -84,15 +87,15 @@
         <% @notifications.each do |notification| %>
           <li><%= (Profile.find(notification.idno)).fullname %>has <%= notification.details %></li>
         <% end %>
-              
+                      
       </ul>
-      <div id ="bot_linkie"><a href="#">See All</a></div>
+      <div id ="bot_linkie"><%= coolbox 300,150, "Help", pref_help_path, "See All" %><a href="#">See All</a></div>
     </div>
     <div id="bot_menu"><div id="bot_menu_thing">
         <%=  link_to_function('Show Notifications (10)',
           "Element.show('bot_notifs');
           ")%>
-        
+                
     </div></div>
   </body>
 </html>

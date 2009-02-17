@@ -1,0 +1,13 @@
+<%= flash[:notice] %>
+<div class="grid_12">
+  <% form_tag 'create_query' do%>
+    <%=label_tag( :subject, "Subject:") %><%= text_field_tag( :subject ,"", :size =>"45") %><br/>
+    <%=label_tag( :subject, "Message:") %><br/>
+    <%=text_area_tag(  :message,"",  :size => "60x10") %>
+    <br/>
+    <%=submit_tag("Submit") %>
+  <% end %>
+    
+      
+      
+</div>

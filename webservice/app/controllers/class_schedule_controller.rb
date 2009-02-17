@@ -17,7 +17,8 @@ class ClassScheduleController < ApplicationController
     if @profile
       render :xml => @profile.to_xml
     else
-      render :xml => ClassSchedule.find(2)#pre configured to return a null object kung la sya mahanap...just create a null
+      @profile = ClassSchedule.new
+      render :xml => @profile #pre configured to return a null object kung la sya mahanap...just create a null
                                        #object in the console...
     end
   end

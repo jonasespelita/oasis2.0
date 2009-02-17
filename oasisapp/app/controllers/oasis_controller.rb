@@ -16,9 +16,10 @@ class OasisController < ApplicationController
       @profiles<<Profile.find(f.idno)
     end
     @notifications = Notification.find_all_by_follower_id current_user.id
+ 
     @menu = make_menu
     session[:order] = @followers
-    flash[:rawr]="hahah"
+    
   end
   def open_sorter
     index
@@ -28,7 +29,7 @@ class OasisController < ApplicationController
     flash[:notice] = "sorted!"
      
     params[:wards].each do |ward|
-      #flash[:notice] =flash[:notice] + ward
+  
       followers = Follower.find_all_by_idno ward
    
       followers.each do |f|
@@ -53,6 +54,7 @@ class OasisController < ApplicationController
 
   def show_profile
     if verified_followed?
+         @schedules = ClassSchedule.find(:all, :from => "/classSchedule/?idno=#{params[:id]}")
       @prof = Profile.find(params[:id])
       @followers=Array.new
       (Follower.find_all_by_idno params[:id]).each do |follower|
@@ -60,7 +62,7 @@ class OasisController < ApplicationController
     
       end
 
-      render :partial => "profile" ,:locals => { :profile => @prof, :followers =>@followers}
+      render :partial => "profile" ,:locals => { :profile => @prof, :followers =>@followers, :schedules =>@schedules}
     else
    
       
@@ -132,6 +134,10 @@ class OasisController < ApplicationController
     render :partial => "payment" ,:locals => { :profile => @prof}
   end
   
+  def pref_help
+    
+  end
+
   protected
   def verified_followed?
     followers = Follower.find_all_by_user_id(current_user.id)

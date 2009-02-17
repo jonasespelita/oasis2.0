@@ -1,12 +1,12 @@
 <div class="grid_12" id="q">
- 
+  
   <div style=" ">
     <div class="f_stuffies"><img src= <% if get_follower(profile.idNo).photo_file_name.nil?%>
                                      <%=  "/images/placeholder.jpg"%>
-<% else %>
-  <%= get_follower(profile.idNo).photo.url(:small) %>
-<% end %>
-     alt="rawr"/></div>
+                                   <% else %>
+                                     <%= get_follower(profile.idNo).photo.url(:small) %>
+                                   <% end %>
+                                 alt="rawr"/></div>
     <!-- <div class="f_notif ">
       <ol>
         <li>There are no notifications concerning your ward as of this time.</li>
@@ -14,20 +14,20 @@
       </ol>
     </div>-->
   </div>
-
+  
   <a class="t_tab" href="#q">
-
+    
     <span class="f_name"><%= profile.fullname %> - Enrolled</span><br/>
     <span class="f_idno"><%= profile.idNo %></span><br/>
     <span class="f_course"><%= profile.yrcourse %></span>
   </a>
-
-
+  
+  
   <div class ="showit" id="showit_2">
-
+    
     <div class="t_menu" id="t_menu_2">
       <ul>
-
+        
         <% @menu.each do |link| %>
           <li>
             <%= link_to_remote link, :update => "ajax#{profile.idNo}",
@@ -37,10 +37,10 @@
           %>
           </li>
         <% end -%>
-
-
-
-
+        
+        
+        
+        
       </ul>
     </div>
     <div class ="scrollit" style="overflow:hidden; margin-left: 10px;">
@@ -50,14 +50,18 @@
           (Follower.find_all_by_idno profile.idNo).each do |follower|
             followers<<User.find(follower.user_id)
           end %>
-          <%= render :partial => "profile" ,:locals => { :profile => profile, :followers =>   followers}%>
-
-
-          </div>
+          <% schedules = Array.new
+          (ClassSchedule.find(:all, :from => "/classSchedule/?idno=#{profile.idNo}")).each do |schedule|
+            schedules << schedule
+          end%>
+          <%= render :partial => "profile" ,:locals => { :profile => profile, :followers =>   followers, :schedules=>schedules}%>
+          
+          
         </div>
       </div>
     </div>
-
-    <div class="f_bottom"></div>
-
   </div>
+  
+  <div class="f_bottom"></div>
+  
+</div>

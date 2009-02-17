@@ -26,6 +26,7 @@ class ApplicationController < ActionController::Base
     PaymentSchedule.site = site
     Tfbreakdown.site = site
     Tfassessment.site = site
+   ClassSchedule.site = site
   end
   
   def no_cache

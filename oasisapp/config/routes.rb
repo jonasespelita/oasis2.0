@@ -1,8 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :grades
-
+  map.resources :queries
   map.resources :users
   map.root :controller=> 'sessions', :action => 'new'
+  map.change_photo 'change_photo', :action => 'change_photo', :controller => 'followers'
   map.upload_photo '/upload', :action => 'upload_photo', :controller => 'followers'
   map.faq '/faqs', :controller => 'static', :action => 'faq'
   map.sitemap '/sitemap', :controller => 'static', :action => "sitemap"
@@ -17,6 +18,12 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => "users", :action => "new"
   map.add_ward  'follow', :controller => "followers", :action =>"new"
   map.wards 'wards', :controller => "oasis", :action => "index"
+  
+  
+  
+  map.createquery 'create_query', :controller=>"help", :action =>"create_query"
+  map.query 'contact', :controller=>'help', :action => 'show_query'
+  map.pref_help '/help', :controller => "help", :action =>'pref_help'
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
