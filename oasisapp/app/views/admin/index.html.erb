@@ -509,27 +509,15 @@ function WebFXMenuButton() {}
 			<fieldset class="fieldset" style="width: 440px;">
 				<legend class="groupbox">Record Statistics</legend>
 				<div style="float:left; text-align:right;">
-					Number of Registered Users: <br /><br />
-					Number of Student Records: <br /><br />
-					Number of New Student Records:  <br /><br />
-					Last Update of Records: <br /><br />
-					Number of Currently Online Users: <br /><br />
-					Most Number of Users Online: <br /><br />
-					Most Online Users was on: <br /><br />			
-					Records Deleted Last: <br /><br />
-					Number of Blocked Accounts: <br /><br />
+					<%= label_tag "Number of Registered Users: #{User.find(:all).length}" %> <br><br />	
+					<%= label_tag "Number of Student Records: " %><br><br />	
+					<%= label_tag "Most Number of Visits In a Day: #{@most.unique }" %><br><br />	
+					<%= label_tag "Most Number of Visits In a Day Was On: #{@most.date }" %><br><br />	
+					<%= label_tag "Number of Blocked Accounts: #{User.find_all_by_status("Blocked").length}" %> <br><br />
+					
 				</div>
-				<div style="position:relative; float:left; text-alignt:right; left:10px; top:1px;">
-					15,825 <br /><br />
-					21,512 <br /><br />
-					265 <br /><br />
-					9-17-2008 <br /><br />
-					541 <br /><br />
-					1,201 <br /><br />
-					7-7-2008 <br /><br />
-					9-12-2008 <br /><br />
-					12
-				</div>
+				
+				
 		    </fieldset>
 	    </div>
 	  </div>
@@ -1091,10 +1079,10 @@ function WebFXMenuButton() {}
 			<br>
 			</br>
 			<br>
-			<div id= "edit_email" style="position:relative;display:none;"> 
+			<div id= "edit_email" style="position:relative;"> 
 			<%= label_tag "Edit Email Contents:" %>
 			<% form_tag '/admin/select_email_edit', :id => "email_set" do %>
-			<%= select_tag "select_email_edit", "<option>Checklist</option><option>Dropped</option><option>Grades</option><option>Kicked Out</option><option>Last Chance</option><option>Non-readmittance</option><option>Reduced Load</option><option>Shift</option><option>Totally Dropped</option><option>Transfer</option><option>Tuition Fee Assessment</option><option>Tuition Fee Assessment Update</option><option>Tuition Fee Breakdowns</option><option>Update For Grades</option><option>Violations</option><option>Withdrawn</option>" %>
+			<%= select_tag "select_email_edit", "<option>Attendance Dropped Classcard</option><option>Attendance Totally Dropped</option><option>Attendance Withdrawn</option><option>Grades</option><option>Guidance</option><option>Violation</option>" %>
 	    	</label>
 	    	<%= submit_tag "Load" %>
 	    	<% end %>
