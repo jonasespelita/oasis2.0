@@ -1,6 +1,14 @@
 class AdminController < ApplicationController
 	before_filter :authorize, :except => :login
 	def index
+		puts session[:select_user_id]
+		puts session[:select_user_id]
+		puts session[:select_user_id]
+		puts session[:select_user_id]
+		puts session[:select_user_id]
+		puts session[:select_user_id]
+		puts session[:select_user_id]
+		puts "wakokok"
 		@announcements = Announcements.find(:all)
 		@announcements.sort{ |a,b| a.date_time <=> b.date_time}
 		@announcements.reverse!
@@ -100,6 +108,8 @@ class AdminController < ApplicationController
 					@changes = Changes.find(:all)
 					@changes.delete_if { |x| x.change_made.index("Put Website Online") == nil }
 				when "Edited Email Contents":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Edited Email Contents") == nil }
 				when "Blocked User":
 					@changes = Changes.find(:all)
 					@changes.delete_if { |x| x.change_made.index("Blocked User") == nil }
@@ -929,7 +939,8 @@ class AdminController < ApplicationController
 	end
 	
 	def select_user
-		#dito papasok yung data na nakuha tapos hahanapin ko yung students
+		session[:select_user_id] = params[:select_user_id]
+		redirect_to(:action => "index")
 	end
 	
   private

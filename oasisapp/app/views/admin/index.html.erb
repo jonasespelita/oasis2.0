@@ -6,6 +6,7 @@
 <title>OASIS Administrator</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <%= calendar_date_select_includes nil %>
+
 <!-- webfxlayout.js -->
 <script type="text/javascript">
 
@@ -819,36 +820,26 @@ function WebFXMenuButton() {}
 		<% form_tag '/admin/unblock_user', :id => "unblock_user" do %>
 		  <%= hidden_field_tag :unblock_user_id, nil %>
 		<% end %>
-		<% form_tag '/admin/select_user', :id => "select_user" do %>
-		  <%= hidden_field_tag :select_user_id, nil %>
+		<% form_tag '/admin/select_user', :id => "select_user_show" do %>
+		  <%= hidden_field_tag :select_user_id %>
 		<% end %>
-		<div class="sys_groupbox2" id="showStudents">
-			<fieldset class="fieldset" style="width:430px; height:573px;">
-				<legend class="groupbox">Edit</legend>
+		<div class="sys_groupbox2">
+			<fieldset class="fieldset" style="width:430px; height:573px;" >
+				<legend class="groupbox">Edit Students Being Followed</legend>
+					<div id="show_users_check">
+					</div>
 					
-					<%(Follower.find_all_by_user_id).each do |follower| %>
-					<%= check_box(follower.id,'checked') %>
-					<span><%=(Profile.find(follower.idno)).fullname%></span>
-					<% end %>
 		    </fieldset>		
 		</div>
 		<script language="text/javascript" type="text/javascript">
-			function showSearchField(obj) {
-				
-				if(obj.selectedIndex == 4){
-				
-					Element.show("search_user_name");
-				}else {
-					Element.hide("search_user_name");
-				};
-				
-				
-			}
+			
 			function clickUser(){
 				var i = nlr5.selected;
 				document.getElementById("block_user_id").value = nlr5.elements[i][4];
 				document.getElementById("unblock_user_id").value = nlr5.elements[i][4];
-				//dito mangyayari yung pagsubmit!!!
+				document.getElementById("select_user_id").value = nlr5.elements[i][4];
+				$('select_user_show').request();
+				$('show_users_check').update('<%(Follower.find_all_by_user_id(session[:select_user_id])).each do |follower| %><%= check_box(follower.id,'checked') %>	<span><%=(Profile.find(follower.idno)).fullname%></span><% end %>');
 			}
 			function blockUser(){
 				document.getElementById("block_user").submit();

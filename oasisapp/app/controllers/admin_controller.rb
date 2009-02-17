@@ -1,6 +1,7 @@
 class AdminController < ApplicationController
 	before_filter :authorize, :except => :login
 	def index
+		
 		@announcements = Announcements.find(:all)
 		@announcements.sort{ |a,b| a.date_time <=> b.date_time}
 		@announcements.reverse!
@@ -931,7 +932,8 @@ class AdminController < ApplicationController
 	end
 	
 	def select_user
-		#dito papasok yung data na nakuha tapos hahanapin ko yung students
+		session[:select_user_id] = params[:select_user_id]
+		redirect_to(:action => "index")
 	end
 	
   private
