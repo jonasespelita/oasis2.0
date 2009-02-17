@@ -1,7 +1,5 @@
 class Profile < ActiveResource::Base
 
-
-
   self.timeout = 5
 
   def to_param

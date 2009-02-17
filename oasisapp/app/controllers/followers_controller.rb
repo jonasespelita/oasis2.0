@@ -9,19 +9,24 @@ class FollowersController < ApplicationController
     #store location so that we can go back if something fails
     store_location
   end
+  def change_photo
+    @profile = Profile.find params[:id]
+    @idno= params[:id]
+  end
 
   def upload_photo
-     flash[:notice]= params[:user]
+    flash[:notice]= params[:user]
     (Follower.find_all_by_user_id params[:user]).each do |f|
 
       if f.idno == params[:id].to_i
-flash[:notice]= "ASDFASDFSADF"
-        f .photo = params["pic_#{params[:id]}"]
+        flash[:notice]= "ASDFASDFSADF"
+        f .photo = params[:photo]
         f.save
       end
+    
     end
-
-
+ 
+    redirect_to "/oasis/open_sorter"
 
   end
   #function to verify idno and vcode
@@ -32,24 +37,28 @@ flash[:notice]= "ASDFASDFSADF"
     end
 
     #check if student exists
-    student = Profile.find(idno)
-    if student.id==3 #premade Profile for nonexistent students (check web service)
+    begin
+      student = Profile.find(idno)
+      if student.idNo.nil? #premade Profile for nonexistent students (check web service)
+        flash[:error]="The student cannot be found. Please check the ID number and try again."
+        return false
+      end
+
+      #need hash formula for vcode verification here!
+      if  vcode != hash(idno)[4..9]
+        flash[:error]="Invalid Verification Code #{hash(idno)[4..9]}"
+        return false
+      end
+    rescue
       flash[:error]="The student cannot be found. Please check the ID number and try again."
       return false
     end
-
-    #need hash formula for vcode verification here!
-    if  vcode != hash(idno)[4..9]
-      flash[:error]="Invalid Verification Code #{hash(idno)[4..9]}"
-      return false
-    end
-
 
     return true
   end
 
   def hash(i)
-     Digest::SHA1.hexdigest("#{@key}#{i}")
+    Digest::SHA1.hexdigest("#{@key}#{i}")
   end
 
   def create
@@ -92,6 +101,8 @@ flash[:notice]= "ASDFASDFSADF"
         state.violation_rows=0
         state.save
 
+         generate_notifs f, state
+
         flash[:notice]="You are now following #{stud.fullname}"
       else
         #Unknown error O.o this should never come up
@@ -107,7 +118,6 @@ flash[:notice]= "ASDFASDFSADF"
     end
   end
 
-
-
+ protected
 
 end

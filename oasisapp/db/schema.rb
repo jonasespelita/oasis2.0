@@ -9,7 +9,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+
 ActiveRecord::Schema.define(:version => 20090216080020) do
+
 
   create_table "admins", :force => true do |t|
     t.string   "username",        :limit => 40, :null => false
@@ -106,12 +108,13 @@ ActiveRecord::Schema.define(:version => 20090216080020) do
   end
 
   create_table "queries", :force => true do |t|
-    t.string   "subject",                       :null => false
+    t.string   "subject",                        :null => false
     t.text     "message"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "resolved",   :default => false
+    t.boolean  "resolved",    :default => false
+    t.integer  "resolved_by"
   end
 
   create_table "reports", :force => true do |t|
@@ -122,9 +125,52 @@ ActiveRecord::Schema.define(:version => 20090216080020) do
     t.datetime "updated_at"
   end
 
+  create_table "sitesettings", :force => true do |t|
+    t.boolean  "online"
+    t.time     "notification_time"
+    t.boolean  "notification_monday"
+    t.boolean  "notification_tuesday"
+    t.boolean  "notification_wednesday"
+    t.boolean  "notification_thursday"
+    t.boolean  "notification_friday"
+    t.boolean  "notification_saturday"
+    t.boolean  "notification_sunday"
+    t.time     "email_tme"
+    t.boolean  "email_monday"
+    t.boolean  "email_tuesday"
+    t.boolean  "email_wednesday"
+    t.boolean  "email_thursday"
+    t.boolean  "email_friday"
+    t.boolean  "email_saturday"
+    t.boolean  "email_sunday"
+    t.time     "sms_time"
+    t.boolean  "sms_monday"
+    t.boolean  "sms_tuesday"
+    t.boolean  "sms_wednesday"
+    t.boolean  "sms_thursday"
+    t.boolean  "sms_friday"
+    t.boolean  "sms_saturday"
+    t.boolean  "sms_sunday"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sms", :force => true do |t|
+    t.string   "smstext"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "students", :force => true do |t|
     t.string   "idno"
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "temp_emails", :force => true do |t|
+    t.text     "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

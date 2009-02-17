@@ -1,0 +1,5 @@
+<span>Changing photo for <%= @profile.givenName %></span>
+<% form_tag upload_photo_path(:user=>current_user.id, :id =>@profile.idNo), :multipart => true   do  %>
+    <%= file_field_tag "photo", :accept => 'image/png,image/gif,image/jpeg'%>
+<%= submit_tag 'Submit!'%>
+  <%  end %>

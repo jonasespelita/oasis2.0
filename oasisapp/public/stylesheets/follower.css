@@ -47,9 +47,10 @@ z-index:2;
 .warning{
 	color:#cc0000;
 }
-.f_name, .f_idno{
-	font-size:15pt;
-	line-height:25pt;
+.f_name, .f_idno, f_course{
+    font-weight:bold;
+\\	font-size:15pt;
+\\	line-height:25pt;
 }
 
 
@@ -107,7 +108,7 @@ margin-right:20px;
 	padding-left:125px;
 	padding-top:20px;
 	
-	height:104px;
+	height:85px;
 	width:816px;
 	z-index:1;
 	display:block;
@@ -216,4 +217,13 @@ font-size:14pt;
 #sel{
 
 	color:#ffcc66;
+}
+
+.handle{
+width:956px;
+display:block;
+text-align:center;
+font-weight:normal;
+    cursor:move;
+    color:#777;
 }

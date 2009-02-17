@@ -1,65 +1,87 @@
-<div style=" width:10000px; ">
 
+<div style=" width:10000px; ">
+  
   <div id="<%= "m5#{profile.idNo}" %>" style="float:left; width:920px;display:block;">
- 
+    
     <div style=" width:800px;margin: 0px auto;">
       <h1><%= profile.fullname %>'s Student Profile</h1>
-        <span class="sml"><p>This is your ward's information submitted to the school. Your ward's current schedule is diplayed below.</p></span>
+      <span class="sml"><p>This is your ward's information submitted to the school. Your ward's current schedule is diplayed below.</p></span>
       <div class="grid_6" >
-       
-
-
-
+        
+        
+        
+        
         <div id="b_info" class="box">
+          
           <span class="sml headr"><b>Basic Information</b></span>
           <dt>Full Name:</dt><dd><%= profile.fullname %></dd>
           <dt> ID Number:</dt><dd><%= profile.idNo %></dd>
           <dt> Course:</dt><dd><%= profile.yrcourse %></dd>
           <dt> College:</dt><dd><%= profile.college %></dd>
           <dt> Address:</dt><dd><%= profile.address %></dd>
-           <ul >
-    <span class="sml"><b>Parents/Guardian:</b></span>
-
-          <dt> Father:</dt> <dd><%=  profile.fatherName %></dd>
-          <dt> Mother: </dt><dd><%= profile.motherName %></dd>
-          <dt> Guardian:</dt><dd>
-          <%= if profile.guardianName
-            profile.guardianName
-          else
-            "N/A"
-          end
-        %></dd>
-        
-        </ul>
+          <ul >
+            <span class="sml"><b>Parents/Guardian:</b></span>
+            
+            <dt> Father:</dt> <dd><%=  profile.fatherName %></dd>
+            <dt> Mother: </dt><dd><%= profile.motherName %></dd>
+            <dt> Guardian:</dt><dd>
+              <%= if profile.guardianName
+                profile.guardianName
+              else
+                "N/A"
+              end
+            %></dd>
+            
+          </ul>
         </div>
-
-
-      
-
-    
-       
-
-
+        
+        
+        
+        
+        
+        
+        
+        
       </div>
       <div class ="grid_4">
-          <div id="f_info" class = "box">
+        <div id="f_info" class = "box">
           <span class="sml headr"><b>Follower Information</b></span>
           <span class="sml">Your ward has <%= followers.size %> followers:<br/> </span>
-
-
+          
+          
           <% for follower in followers[0..3]%>
-  <dt class ="f_info"><%= follower.get_fullname %> </dt><dd><span class="sml" style="color:#C0C0C0;  margin-left:15px;"> - since <%= (follower.created_at).strftime("%B %d, %Y") %></span></dd>
+            <dt class ="f_info"><%= follower.get_fullname %> </dt><dd><span class="sml" style="color:#C0C0C0;  margin-left:15px;"> - since <%= (follower.created_at).strftime("%B %d, %Y") %></span></dd>
           <% end %>
-
+          
           <br/>
-
+          
         </div>
         
       </div>
-      <h1>SKED HERE!</h1>
-    
+      <div class="grid_10">
+      <span class="sml"><b>Class Schedule:</b></span>
+      
+      <table border="1" cellspacing="0" cellpadding="0" width="780" class="c">
+        <tr class="d">
+          <td width="200" valign="top"><p>Code</p></td>
+          <td width="200" valign="top"><p>Course No.</p></td>
+          
+          <td width="200" valign="top"><p>Room</p></td>
+          <td width="200" valign="top"><p>Time</p></td>
+          <td width="200" valign="top"><p>Units</p></td>
+        </tr>
+        <% schedules.each  do |schedule|%>
+          <tr><td align="center"><%= schedule.code%></td><td align="center"><%= schedule.courseNo%></td>
+          <td align="center"><%= schedule.room%></td><td align="center"><%= schedule.time%></td><td align="center"><%= schedule.units%></td></tr>
+        <% end %>
+        
+      </table>
+      
+      </div>
+      
+      
     </div>
   </div>
-
- 
+  
+  
 </div>

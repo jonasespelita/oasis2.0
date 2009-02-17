@@ -3,3 +3,13 @@ OASIS
 Online Access Student Information System
 
 "Time waits for no one yo!"
+
+Things needed to run:
+
+Kannel
+Rails gem
+Ruby
+Postgres Gem
+Image Magick
+
+s
