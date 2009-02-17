@@ -8,14 +8,122 @@ class AdminController < ApplicationController
 		@admins.sort{ |a,b| a.username <=> b.username}
 		@admins.reverse!
 		@queries = Query.find(:all)
+		@sitesetting = Sitesettings.find_by_id(1)
+		if session[:email_id]
+			x = TempEmail.find_by_id(session[:email_id])
+			@email_content = x.email
+		end
+		if session[:query_type]
+			case session[:query_type]
+				when "Main Site Inquiry/Problems":
+					@queries = Query.find(:all)
+					@queries.delete_if { |x| x.subject.index("Main Site Inquiry/Problems") == nil }
+				when "Account Settings Inquiry":
+					@queries = Query.find(:all)
+					@queries.delete_if { |x| x.subject.index("Account Settings Inquiry") == nil }
+				when "Ward Information Inquiry":
+					@queries = Query.find(:all)
+					@queries.delete_if { |x| x.subject.index("Ward Information Inquiry") == nil }
+				when "Ward Addition Inquiry/Problems":
+					@queries = Query.find(:all)
+					@queries.delete_if { |x| x.subject.index("Ward Addition Inquiry/Problems") == nil }
+				when "Miscellaneous":
+					@queries = Query.find(:all)
+					@queries.delete_if { |x| x.subject.index("Main Site Inquiry/Problems") != nil || x.subject.index("Ward Addition Inquiry/Problems") != nil || x.subject.index("Ward Information Inquiry") != nil || x.subject.index("Account Settings Inquiry") != nil }
+				when "All":
+					session[:query_type] = nil
+					@queries = Query.find(:all)
+			end
+			if session[:query_from] && session[:query_to]
+				@queries.delete_if { |x| x.created_at < Time.parse(session[:query_from]) || x.created_at > Time.parse(session[:query_to]) }
+			end
+		else	
+			@queries = Query.find(:all)
+		end
 		@queries.sort{ |a,b| a.created_at <=> b.created_at}
-		@users = User.find(:all)
+		if session[:user_filter]
+			case session[:user_filter]
+			
+				when "blocked":
+					@users = User.find(:all)
+					@users.delete_if{ |x| x.status != "Blocked" }
+				when "student":
+					session[:user_filter] = "student"
+					@users = User.find(:all)
+					@users.delete_if{ |x| numeric?(x.login) == false }
+				when "guardian":
+					@users = User.find(:all)
+					@users.delete_if{ |x| numeric?(x.login) }
+				when "last name":
+					@users = User.find(:all)
+					@users.delete_if{ |x| x.last_name.index(session[:user_filter_last_name]) != 0 }
+				when "all":
+					session[:user_filter] = nil
+					session[:user_filter_last_name] = nil
+					@users = User.find(:all)
+			end
+		else
+			@users = User.find(:all)
+		end
+		#elsif session[:user_filter]
 		@users.sort{ |a,b| a.login <=> b.login}
 		@users.reverse!
-		@changes = Changes.find(:all)
+		if session[:change_action]
+			case session[:change_action]
+				when "Added Announcement":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Added announcement") == nil }
+				when "Edited Announcement":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Edited announcement") == nil }
+				when "Downloaded Actions Log":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Downloaded Actions Log") == nil }
+				when "Downloaded System reports":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Downloaded System Reports") == nil }
+				when "Resolved Query":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Resolved query") == nil }
+				when "Deleted Query":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Deleted query") == nil }
+				when "Removed Student Being Followed":
+				
+				when "Changed Messaging Settings":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Changed Messaging Settings") == nil }
+				when "Put Website Offline":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Put Website Offline") == nil }
+				when "Put Website Online":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Put Website Online") == nil }
+				when "Edited Email Contents":
+				when "Blocked User":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Blocked User") == nil }
+				when "Unblocked User":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Unblocked User") == nil }
+				when "All":
+					session[:change_action] = nil
+					@changes = Changes.find(:all)
+			end
+			if session[:change_from] && session[:change_to]
+				@changes.delete_if { |x| x.created_at < Time.parse(session[:change_from]) || x.created_at > Time.parse(session[:change_to]) }
+			end
+		else	
+			@changes = Changes.find(:all)
+		end
 		@changes.sort{ |a,b| a.created_at <=> b.created_at}
 		@cur_ons = CurOnline.find(:all)
-		@reports = Report.find(:all)
+		if session[:report_from] && session[:report_to]
+				@reports = Report.find(:all)
+				@reports.delete_if { |x| x.date < Date.parse(session[:report_from]) || x.date > Date.parse(session[:report_to]) }
+		else
+			@reports = Report.find(:all)
+		end
 		@reports.sort{ |a,b| a.date <=> b.date}
 		admin = Admin.find(session[:admin_id])
 		if admin.position == 'oa'
@@ -61,19 +169,34 @@ class AdminController < ApplicationController
 
 
   def settings
-  	unless params[:new_password].blank?
-			if request.post?
+  	
+  	if request.post?
+  		flash[:message] = ""
+			unless params[:new_password].blank?
 				admin = Admin.authenticate(Admin.find(session[:admin_id]).username, params[:current_password])
 				if params[:new_password] == params[:confirm_password]
 					admin.create_password(params[:new_password])
 					admin.save
-					redirect_to(:action => "index")
-					flash[:message] = "password changed"
+					flash.now[:message] = flash[:message] + "password changed "
 				else
 					flash.now[:notice] = "new password did not match"
+					flash.now[:message] = nil
 				end
 			end
-		end
+			unless params[:new_email].blank?
+				admin = Admin.find(session[:admin_id])
+				if params[:new_email] == params[:confirm_email]
+					admin.email = params[:new_email]
+					flash.now[:message] = flash[:message] + "email changed"
+				else
+					flash.now[:notice] = "new email did not match"
+					flash.now[:message] = nil
+				end
+			end
+	end
+	
+	
+		
 
   end
 
@@ -191,7 +314,7 @@ class AdminController < ApplicationController
 			new_admin = Admin.new
 			new_admin.first_name = params[:add_admin_first_name].capitalize
 			new_admin.last_name = params[:add_admin_last_name].capitalize
-			new_admin.position = params[:add_admin_position]
+			new_admin.position = "General Administrator"
 			new_admin.username = params[:add_admin_username]
 			new_admin.email = params[:add_admin_email]
 			new_admin.active = true
@@ -215,7 +338,6 @@ class AdminController < ApplicationController
 				edit_admin = Admin.find(params[:edit_admin_id])
 				edit_admin.first_name = params[:edit_admin_first_name].capitalize
 				edit_admin.last_name = params[:edit_admin_last_name].capitalize
-				edit_admin.position = params[:edit_admin_position]
 				edit_admin.username = params[:edit_admin_username]
 				edit_admin.email = params[:edit_admin_email]
 				unless params[:edit_admin_password].blank?
@@ -293,21 +415,13 @@ class AdminController < ApplicationController
 
 	def resolve_query
 		resolved_query = Query.find(params[:resolve_user_query_id])
-		if resolved_query.resolved
-			resolved_query.resolved = false
-			act = Changes.new
-			act.admin_id = session[:admin_id]
-			act.ip_add = request.remote_ip
-			act.change_made = "Unresolved query from #{params[:resolve_user_query_sender]} about #{params[:resolve_user_query_subject]}"
-			act.save
-		else
-			resolved_query.resolved = true
-			act = Changes.new
-			act.admin_id = session[:admin_id]
-			act.ip_add = request.remote_ip
-			act.change_made = "Resolved query from #{params[:resolve_user_query_sender]} about #{params[:resolve_user_query_subject]}"
-			act.save
-		end
+		resolved_query.resolved = true
+		resolved_query.resolved_by = session[:admin_id]
+		act = Changes.new
+		act.admin_id = session[:admin_id]
+		act.ip_add = request.remote_ip
+		act.change_made = "Resolved query from #{params[:resolve_user_query_sender]} about #{params[:resolve_user_query_subject]}"
+		act.save
 		resolved_query.save
 		flash[:message] = "Query resolved"
 		redirect_to(:action => "index")
@@ -319,20 +433,59 @@ class AdminController < ApplicationController
 		act.ip_add = request.remote_ip
 		act.change_made = "Downloaded Actions Log"
 		act.save
-		if session[:change_from] && session[:change_to]
-		changey = Changes.find(:all)
-		@changes = []
-		changey.each { |change|
-			@changes.push(change) unless change.created_at < Time.parse(session[:change_from]) || change.created_at > Time.parse(session[:change_to])
-		}
-		else
-		@changes = Changes.find(:all)
+		if session[:change_action]
+			case session[:change_action]
+				when "Added Announcement":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Added announcement") == nil }
+				when "Edited Announcement":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Edited announcement") == nil }
+				when "Downloaded Actions Log":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Downloaded Actions Log") == nil }
+				when "Downloaded System reports":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Downloaded System Reports") == nil }
+				when "Resolved Query":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Resolved query") == nil }
+				when "Deleted Query":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Deleted query") == nil }
+				when "Removed Student Being Followed":
+				when "Put Website Offline":
+				when "Put Website Online":
+				when "Edited Email Contents":
+				when "Blocked User":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Blocked User") == nil }
+				when "Unblocked User":
+					@changes = Changes.find(:all)
+					@changes.delete_if { |x| x.change_made.index("Unblocked User") == nil }
+				when "All":
+					session[:change_action] = nil
+					@changes = Changes.find(:all)
+			end
+			if session[:change_from] && session[:change_to]
+				@changes.delete_if { |x| x.created_at < Time.parse(session[:change_from]) || x.created_at > Time.parse(session[:change_to]) }
+			end
+		else	
+			@changes = Changes.find(:all)
 		end
-		render :layout => false
-		headers['Content-Type'] = "application/vnd.ms-excel"
-		headers['Content-Disposition'] = 'attachment; filename="Actions Log.xls"'
-		headers['Cache-Control'] = ''
-
+		@changes.sort{ |a,b| a.created_at <=> b.created_at}
+		respond_to do |format|
+      #format.html
+      #format.xml { render :xml => @reports }
+      
+      format.csv { send_data @changes.to_csv(:except => [:id, :updated_at]) }
+     
+		#render :layout => false
+		#headers['Content-Type'] = "application/vnd.ms-excel"
+		#headers['Content-Disposition'] = 'attachment; filename="Actions Log.xls"'
+		#headers['Cache-Control'] = ''
+      end
+       headers['Content-Disposition'] = 'attachment; filename="Actions Log.csv"'
 	end
 
 	def export_reports
@@ -342,19 +495,27 @@ class AdminController < ApplicationController
 		act.change_made = "Downloaded System Reports Log"
 		act.save
 		if session[:report_from] && session[:report_to]
-		reporty = Report.find(:all)
-		@reports = []
-		reporty.each { |report|
-			@reports.push(report) unless report.date < Time.parse(session[:report_from]) || report.date > Time.parse(session[:report_to])
-		}
+				@reports = Report.find(:all)
+				@reports.delete_if { |x| x.date < Date.parse(session[:report_from]) || x.date > Date.parse(session[:report_to]) }
 		else
-		@reports = Report.find(:all)
+			@reports = Report.find(:all)
 		end
-		render :layout => false
-		headers['Content-Type'] = "application/vnd.ms-excel"
-		headers['Content-Disposition'] = 'attachment; filename="System Reports.xls"'
-		headers['Cache-Control'] = ''
-
+		@reports.sort{ |a,b| a.date <=> b.date}
+		
+ 
+    
+      respond_to do |format|
+      #format.html
+      #format.xml { render :xml => @reports }
+      
+      format.csv { send_data @reports.to_csv(:except => [:id, :created_at, :updated_at]) }
+    
+		#render :layout => false
+		#headers['Content-Type'] = "application/vnd.ms-excel"
+		#headers['Content-Disposition'] = 'attachment; filename="System Reports.xls"'
+		#headers['Cache-Control'] = ''
+      end
+      headers['Content-Disposition'] = 'attachment; filename="System Reports.csv"'
 	end
 
 	def filter_changes
@@ -362,13 +523,16 @@ class AdminController < ApplicationController
 			unless Time.parse(params[:changes_from_date]) > Time.parse(params[:changes_to_date])
 			session[:change_from] = params[:changes_from_date]
 			session[:change_to] = params[:changes_to_date]
+			session[:change_action] = params[:filter_changes_type]
 			redirect_to(:action => "index")
 			else
 			flash[:notice] = "From date cannot be later than to date"
 			redirect_to(:action => "index")
 			end
 		else
-			flash[:notice] = "Please enter dates to filter"
+			session[:change_from] = nil
+			session[:change_to] = nil
+			session[:change_action] = params[:filter_changes_type]
 			redirect_to(:action => "index")
 		end
 	end
@@ -384,7 +548,9 @@ class AdminController < ApplicationController
 			redirect_to(:action => "index")
 			end
 		else
-			flash[:notice] = "Please enter dates to filter"
+			session[:query_from] = nil
+			session[:query_to] = nil
+			session[:query_type] = params[:filter_query_type]
 			redirect_to(:action => "index")
 		end
 	end
@@ -404,6 +570,199 @@ class AdminController < ApplicationController
 			redirect_to(:action => "index")
 		end
 	end
+	
+	def filter_user
+		case params[:filter_users_type]
+			when "All":
+				session[:user_filter] = "all"
+			when "Blocked":
+				session[:user_filter] = "blocked"
+			when "Student":
+				session[:user_filter] = "student"
+			when "Guardian":
+				session[:user_filter] = "guardian"
+			when "Last Name":
+				session[:user_filter] = "last name"
+				session[:user_filter_last_name] = params[:search_user_name]
+		end
+		redirect_to(:action => "index")
+	end
+	
+	def block_user
+		unless params[:block_user_id].blank?
+			blocked_user = User.find(params[:block_user_id])
+			blocked_user.status = "Blocked"
+			unless blocked_user.save
+	  		redirect_to(:action => "index")
+	  		flash[:notice] = "not saved"
+	  		else
+	  		act = Changes.new
+			act.admin_id = session[:admin_id]
+			act.ip_add = request.remote_ip
+			act.change_made = "Blocked User #{blocked_user.get_fullname}"
+			act.save
+	  		flash[:message] = "User Blocked"
+	  		redirect_to(:action => "index")
+	  		end
+	  	else
+	  		redirect_to(:action => "index")
+			flash[:notice] = "Please select a user"
+		end
+	end
+	def unblock_user
+		unless params[:unblock_user_id].blank?
+			unblocked_user = User.find(params[:unblock_user_id])
+			unblocked_user.status = "Active"
+			unless unblocked_user.save
+	  		redirect_to(:action => "index")
+	  		flash[:notice] = "not saved"
+	  		else
+	  		act = Changes.new
+			act.admin_id = session[:admin_id]
+			act.ip_add = request.remote_ip
+			act.change_made = "Blocked User #{unblocked_user.get_fullname}"
+			act.save
+	  		flash[:message] = "User Unblocked"
+	  		redirect_to(:action => "index")
+	  		end
+	  	else
+	  		redirect_to(:action => "index")
+			flash[:notice] = "Please select a user"
+		end
+	end
+	
+	def change_messages_settings
+		sitesetting = Sitesettings.find_by_id(1)
+		sitesetting.notification_time = DateTime.new(params[:post_notif][:"sunrise(1i)"].to_i, params[:post_notif][:"sunrise(2i)"].to_i, params[:post_notif][:"sunrise(3i)"].to_i, params[:post_notif][:"sunrise(4i)"].to_i, params[:post_notif][:"sunrise(5i)"].to_i, params[:post_notif][:"sunrise(6i)"].to_i)
+		sitesetting.notification_monday = if params[:notif_monday] == "yes" then true else false end
+		sitesetting.notification_tuesday = if params[:notif_tuesday] == "yes" then true else false end
+		sitesetting.notification_wednesday = if params[:notif_wednesday] == "yes" then true else false end
+		sitesetting.notification_thursday = if params[:notif_thursday] == "yes" then true else false end
+		sitesetting.notification_friday = if params[:notif_friday] == "yes" then true else false end
+		sitesetting.notification_saturday = if params[:notif_saturday] == "yes" then true else false end
+		sitesetting.notification_sunday = if params[:notif_sunday] == "yes" then true else false end
+		sitesetting.email_tme = DateTime.new(params[:post_email][:"sunset(1i)"].to_i, params[:post_email][:"sunset(2i)"].to_i, params[:post_email][:"sunset(3i)"].to_i, params[:post_email][:"sunset(4i)"].to_i, params[:post_email][:"sunset(5i)"].to_i, params[:post_email][:"sunset(6i)"].to_i)
+		sitesetting.email_monday = if params[:email_monday] == "yes" then true else false end
+		sitesetting.email_tuesday = if params[:email_tuesday] == "yes" then true else false end
+		sitesetting.email_wednesday = if params[:email_wednesday] == "yes" then true else false end
+		sitesetting.email_thursday = if params[:email_thursday] == "yes" then true else false end
+		sitesetting.email_friday = if params[:email_friday] == "yes" then true else false end
+		sitesetting.email_saturday = if params[:email_saturday] == "yes" then true else false end
+		sitesetting.email_sunday = if params[:email_sunday] == "yes" then true else false end
+		DateTime.new(params[:post_sms][:"midnight(1i)"].to_i, params[:post_sms][:"midnight(2i)"].to_i, params[:post_sms][:"midnight(3i)"].to_i, params[:post_sms][:"midnight(4i)"].to_i, params[:post_sms][:"midnight(5i)"].to_i, params[:post_sms][:"midnight(6i)"].to_i)
+		sitesetting.sms_monday = if params[:sms_monday] == "yes" then true else false end
+		sitesetting.sms_tuesday = if params[:sms_tuesday] == "yes" then true else false end
+		sitesetting.sms_wednesday = if params[:sms_wednesday] == "yes" then true else false end
+		sitesetting.sms_thursday = if params[:sms_thursday] == "yes" then true else false end
+		sitesetting.sms_friday = if params[:sms_friday] == "yes" then true else false end
+		sitesetting.sms_saturday = if params[:sms_saturday] == "yes" then true else false end
+		sitesetting.sms_sunday = if params[:sms_sunday] == "yes" then true else false end
+		sitesetting.save
+		act = Changes.new
+		act.admin_id = session[:admin_id]
+		act.ip_add = request.remote_ip
+		act.change_made = "Changed Messaging Settings"
+		act.save
+		redirect_to(:action => "index") 
+	end
+	
+	def change_site_status
+		sitesetting = Sitesettings.find_by_id(1)
+		sitesetting.online = if params[:site_status] == "Online" then true else false end
+		sitesetting.save
+		act = Changes.new
+		act.admin_id = session[:admin_id]
+		act.ip_add = request.remote_ip
+		act.change_made = if sitesetting.online then "Put Website Online" else "Put Website Offline" end
+		act.save
+		redirect_to(:action => "index") 
+	end
+	
+	def select_email_edit
+		case params[:select_email_edit]
+		
+			when "Checklist":
+				email = ""
+				File.open(Rails.root+"/app/views/email/checklist.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				puts "dito"
+				puts "dito"
+				puts "dito"
+				puts "dito"
+				puts "dito"
+				puts "dito"
+				puts "dito"
+				
+				puts a.id
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Checklist"
+			when "Dropped":
+			when "Grades":
+			when "Kicked Out":
+			when "Last Chance":
+			when "Non-readmittance":
+			when "Reduced Load":
+			when "Shift":
+			when "Totally Dropped":
+			when "Transfer":
+			when "Tuition Fee Assessment":
+			when "Tuition Fee Assessment Update":
+			when "Tuition Fee Breakdowns":
+			when "Update For Grades":
+			when "Violations":
+			when "Withdrawn":
+		end
+		redirect_to(:action => "index") 
+	end
+	
+	def edit_email
+		if session[:select_email_edit]
+			puts "uu nman"
+			puts "uu nman"
+			puts "uu nman"
+			puts "uu nman"
+			puts "uu nman"
+			puts "uu nman"
+			puts "uu nman"
+			puts "uu nman"
+			puts "uu nman"
+		end
+		case session[:select_email_edit]
+		
+			when "Checklist":
+				file = File.new(Rails.root+"/app/views/email/checklist.html", "w+")
+
+				file.puts(params[:edit_email_box])
+				file.close
+				puts "saved ata e"
+			when "Dropped":
+			when "Grades":
+			when "Kicked Out":
+			when "Last Chance":
+			when "Non-readmittance":
+			when "Reduced Load":
+			when "Shift":
+			when "Totally Dropped":
+			when "Transfer":
+			when "Tuition Fee Assessment":
+			when "Tuition Fee Assessment Update":
+			when "Tuition Fee Breakdowns":
+			when "Update For Grades":
+			when "Violations":
+			when "Withdrawn":
+		end
+		redirect_to(:action => "index")
+	end
+	
+  private
+	def numeric?(object)
+		true if Float(object) rescue false
+	end
+
 
 
 
