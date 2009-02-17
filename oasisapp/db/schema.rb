@@ -9,18 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD:oasisapp/db/schema.rb
-ActiveRecord::Schema.define(:version => 20090212185627) do
-
-  create_table "actions", :force => true do |t|
-    t.text     "action",      :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "asession_id"
-  end
-=======
-ActiveRecord::Schema.define(:version => 20090213163119) do
->>>>>>> 1f0b9bbf9f571c971f1b0dced7086dcca3efec20:oasisapp/db/schema.rb
+ActiveRecord::Schema.define(:version => 20090216150740) do
 
   create_table "admins", :force => true do |t|
     t.string   "username",        :limit => 40, :null => false
@@ -42,14 +31,6 @@ ActiveRecord::Schema.define(:version => 20090213163119) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "summary"
-  end
-
-  create_table "asessions", :force => true do |t|
-    t.string   "ip_add",     :null => false
-    t.datetime "time_out",   :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "admin_id"
   end
 
   create_table "attendances", :force => true do |t|
@@ -103,8 +84,6 @@ ActiveRecord::Schema.define(:version => 20090213163119) do
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD:oasisapp/db/schema.rb
-=======
   create_table "notifications", :force => true do |t|
     t.integer  "follower_id"
     t.string   "notification"
@@ -114,7 +93,6 @@ ActiveRecord::Schema.define(:version => 20090213163119) do
     t.datetime "updated_at"
   end
 
->>>>>>> 1f0b9bbf9f571c971f1b0dced7086dcca3efec20:oasisapp/db/schema.rb
   create_table "profiles", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -133,6 +111,36 @@ ActiveRecord::Schema.define(:version => 20090213163119) do
     t.date     "date"
     t.integer  "total"
     t.integer  "unique"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sitesettings", :force => true do |t|
+    t.boolean  "online"
+    t.time     "notification_time"
+    t.boolean  "notification_monday"
+    t.boolean  "notification_tuesday"
+    t.boolean  "notification_wednesday"
+    t.boolean  "notification_thursday"
+    t.boolean  "notification_friday"
+    t.boolean  "notification_saturday"
+    t.boolean  "notification_sunday"
+    t.time     "email_tme"
+    t.boolean  "email_monday"
+    t.boolean  "email_tuesday"
+    t.boolean  "email_wednesday"
+    t.boolean  "email_thursday"
+    t.boolean  "email_friday"
+    t.boolean  "email_saturday"
+    t.boolean  "email_sunday"
+    t.time     "sms_time"
+    t.boolean  "sms_monday"
+    t.boolean  "sms_tuesday"
+    t.boolean  "sms_wednesday"
+    t.boolean  "sms_thursday"
+    t.boolean  "sms_friday"
+    t.boolean  "sms_saturday"
+    t.boolean  "sms_sunday"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

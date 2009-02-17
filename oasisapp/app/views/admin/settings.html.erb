@@ -29,9 +29,9 @@
 		</div>
 	</div>	
 
-	<div style="position:absolute; top:250px; left:485px;">
-		<fieldset class="fieldset" style="width:300px; height:200px;">
-			<legend class="groupbox">Change password</legend>
+	<div style="position:relative; top:250px; left:450px;">
+		<fieldset class="fieldset" style="width:300px; height:300px;">
+			<legend class="groupbox">Change email and password</legend>
 			<% form_tag do %>
 				<span style="position:relative; float:left; top:10px; left:18px;" >
 					<label for="current_password">Current Password:</label><br>
@@ -44,13 +44,22 @@
 				<span style="position:relative; float:left; top:30px; left:18px;" >
 					<label for="confirm_password">Confirm Password:</label><br>
 					<%= password_field_tag :confirm_password, nil, :size => 24 %>
+				</span>
+				<span style="position:relative; float:left; top:40px; left:18px;" >
+					<label for="new_password">New Email:</label><br>
+					<%= text_field_tag :new_email, nil, :size => 24 %>
+				</span>
+				<span style="position:relative; float:left; top:50px; left:18px;" >
+					<label for="confirm_password">Confirm Email:</label><br>
+					<%= text_field_tag :confirm_email, nil, :size => 24 %>
 				</span><br>
-				<span style="position:relative; float:right; top:80px;" >
+				<br>
+				<span style="position:relative; float:right; top:100px;" >
 					<%= submit_tag "Save" %>
 				</span>
 				
 			<% end %>
-			<span style="position:relative; float:right; top:80px; left: -2px" >
+			<span style="position:relative; float:right; top:100px; left: -2px" >
 					<%= button_to "Back", :action => 'index'  %>
 			</span>
 		</fieldset>	
@@ -59,66 +68,4 @@
 
 </body>
 </html>
-=======
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html>
-<head>
-<title>Change Password</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<link href="css/dirlister.css" type="text/css" rel="stylesheet">
-<link href="css/dirlister_style.css" type="text/css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" media="all" href="myStyles.css">
-
-</head>
-<body>
-
-<div class="container">
-	
-	<div class="admin_title"><b>Change Password</b></div>
-		
-	<div class="logo">
-		<div class="invis">
-			<h1>OASIS</h1><br/><h2>Online Access Student Information System</h2>
-		</div>
-	</div>
-	
-	<div class="slu">
-		<div class="invis">
-			<h2>Saint Louis University</h2>
-		</div>
-	</div>	
-
-	<div style="position:absolute; top:250px; left:485px;">
-		<fieldset class="fieldset" style="width:300px; height:200px;">
-			<legend class="groupbox">Change password</legend>
-			<% form_tag do %>
-				<span style="position:relative; float:left; top:10px; left:18px;" >
-					<label for="current_password">Current Password:</label><br>
-					<%= password_field_tag :current_password, params[:current_password], :size => 24 %>
-				</span>
-				<span style="position:relative; float:left; top:20px; left:18px;" >
-					<label for="new_password">New Password:</label><br>
-					<%= password_field_tag :new_password, params[:new_password], :size => 24 %>
-				</span>
-				<span style="position:relative; float:left; top:30px; left:18px;" >
-					<label for="confirm_password">Confirm Password:</label><br>
-					<%= password_field_tag :confirm_password, params[:confirm_password], :size => 24 %>
-				</span><br>
-				<span style="position:relative; float:right; top:80px;" >
-					<%= submit_tag "Save" %>
-				</span>
-				
-			<% end %>
-			<span style="position:relative; float:right; top:80px; left: -2px" >
-					<%= button_to "Back", :action => 'index'  %>
-			</span>
-		</fieldset>	
-	</div>
-</div> <!--end of container-->
-
-</body>
-</html>
->>>>>>> 66164665176a30032298e51cc401d557080e8861:oasisapp/app/views/admin/settings.html.erb
