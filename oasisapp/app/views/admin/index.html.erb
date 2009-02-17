@@ -819,6 +819,9 @@ function WebFXMenuButton() {}
 		<% form_tag '/admin/unblock_user', :id => "unblock_user" do %>
 		  <%= hidden_field_tag :unblock_user_id, nil %>
 		<% end %>
+		<% form_tag '/admin/select_user', :id => "select_user" do %>
+		  <%= hidden_field_tag :select_user_id, nil %>
+		<% end %>
 		<div class="sys_groupbox2" id="showStudents">
 			<fieldset class="fieldset" style="width:430px; height:573px;">
 				<legend class="groupbox">Edit</legend>
@@ -845,6 +848,7 @@ function WebFXMenuButton() {}
 				var i = nlr5.selected;
 				document.getElementById("block_user_id").value = nlr5.elements[i][4];
 				document.getElementById("unblock_user_id").value = nlr5.elements[i][4];
+				//dito mangyayari yung pagsubmit!!!
 			}
 			function blockUser(){
 				document.getElementById("block_user").submit();

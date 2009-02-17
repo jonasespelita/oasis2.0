@@ -1106,7 +1106,7 @@ function WebFXMenuButton() {}
 			<% form_tag '/admin/edit_email', :id => "edit_email" do %>
 			 <% use_tinymce -%>
   			
-  			<%= text_area_tag 'edit_email_box', nil , :class => "mce-editor", :style => "width:100%;height:100%;" %>
+  			<%= text_area_tag 'edit_email_box', @email_content , :class => "mce-editor", :style => "width:100%;height:100%;" %>
   		
   			<span style="position:relative; float:right">
   			<%= submit_tag "Save" %>
