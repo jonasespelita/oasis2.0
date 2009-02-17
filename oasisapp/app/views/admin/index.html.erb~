@@ -417,7 +417,7 @@ function WebFXMenuButton() {}
 	    <script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script>
 	    
 		<div class="sys_groupbox1">
-			<fieldset class="fieldset" style="width:100px; height:590px;">
+			<fieldset class="fieldset" style="width:400px; height:590px;">
 				<legend class="groupbox">Visits Per Day</legend>
 					<% form_tag '/admin/filter_reports', :id => "filter_reports" do %>
 	    	<label for="From">From:
@@ -546,7 +546,7 @@ function WebFXMenuButton() {}
 	    	<%= calendar_date_select_tag "changes_to_date", nil, :time => true %>
 	    	</label>
 	    	<label for="By Action">Action:
-	    	<%= select_tag "filter_changes_type", "<option>All</option><option>Added Announcement</option><option>Edited Announcement</option><option>Downloaded Actions Log</option><option>Downloaded System reports</option><option>Resolved Query</option><option>Deleted Query</option><option>Removed Student Being Followed</option><option>Put Website Offline</option><option>Put Website Online</option><option>Edited Email Contents</option><option>Blocked User</option><option>Unblocked User</option>" %>
+	    	<%= select_tag "filter_changes_type", "<option>All</option><option>Added Announcement</option><option>Edited Announcement</option><option>Downloaded Actions Log</option><option>Downloaded System reports</option><option>Resolved Query</option><option>Deleted Query</option><option>Removed Student Being Followed</option><option>Put Website Offline</option><option>Put Website Online</option><option>Edited Email Contents</option><option>Blocked User</option><option>Unblocked User</option><option>Changed Messaging Settings</option>" %>
 	    	</label>
 	    	<%= submit_tag "Filter" %>
 	    	
@@ -1098,11 +1098,16 @@ function WebFXMenuButton() {}
 			<br>
 			<div id= "edit_email" style="position:relative;display:none;"> 
 			<%= label_tag "Edit Email Contents:" %>
-			
+			<% form_tag '/admin/select_email_edit', :id => "email_set" do %>
+			<%= select_tag "select_email_edit", "<option>Checklist</option><option>Dropped</option><option>Grades</option><option>Kicked Out</option><option>Last Chance</option><option>Non-readmittance</option><option>Reduced Load</option><option>Shift</option><option>Totally Dropped</option><option>Transfer</option><option>Tuition Fee Assessment</option><option>Tuition Fee Assessment Update</option><option>Tuition Fee Breakdowns</option><option>Update For Grades</option><option>Violations</option><option>Withdrawn</option>" %>
+	    	</label>
+	    	<%= submit_tag "Load" %>
+	    	<% end %>
 			<% form_tag '/admin/edit_email', :id => "edit_email" do %>
 			 <% use_tinymce -%>
-  			<%= text_area_tag 'edit_email_box', nil, :class => "mce-editor", :style => "width:100%;height:100%;" %>
   			
+  			<%= text_area_tag 'edit_email_box', nil , :class => "mce-editor", :style => "width:100%;height:100%;" %>
+  		
   			<span style="position:relative; float:right">
   			<%= submit_tag "Save" %>
   			<%= button_to_function "Cancel", "hideEmail()" %>

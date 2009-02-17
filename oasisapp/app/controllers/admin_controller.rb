@@ -9,6 +9,10 @@ class AdminController < ApplicationController
 		@admins.reverse!
 		@queries = Query.find(:all)
 		@sitesetting = Sitesettings.find_by_id(1)
+		if session[:email_id]
+			x = TempEmail.find_by_id(session[:email_id])
+			@email_content = x.email
+		end
 		if session[:query_type]
 			case session[:query_type]
 				when "Main Site Inquiry/Problems":
@@ -411,21 +415,13 @@ class AdminController < ApplicationController
 
 	def resolve_query
 		resolved_query = Query.find(params[:resolve_user_query_id])
-		if resolved_query.resolved
-			resolved_query.resolved = false
-			act = Changes.new
-			act.admin_id = session[:admin_id]
-			act.ip_add = request.remote_ip
-			act.change_made = "Unresolved query from #{params[:resolve_user_query_sender]} about #{params[:resolve_user_query_subject]}"
-			act.save
-		else
-			resolved_query.resolved = true
-			act = Changes.new
-			act.admin_id = session[:admin_id]
-			act.ip_add = request.remote_ip
-			act.change_made = "Resolved query from #{params[:resolve_user_query_sender]} about #{params[:resolve_user_query_subject]}"
-			act.save
-		end
+		resolved_query.resolved = true
+		resolved_query.resolved_by = session[:admin_id]
+		act = Changes.new
+		act.admin_id = session[:admin_id]
+		act.ip_add = request.remote_ip
+		act.change_made = "Resolved query from #{params[:resolve_user_query_sender]} about #{params[:resolve_user_query_subject]}"
+		act.save
 		resolved_query.save
 		flash[:message] = "Query resolved"
 		redirect_to(:action => "index")
@@ -680,6 +676,86 @@ class AdminController < ApplicationController
 		act.change_made = if sitesetting.online then "Put Website Online" else "Put Website Offline" end
 		act.save
 		redirect_to(:action => "index") 
+	end
+	
+	def select_email_edit
+		case params[:select_email_edit]
+		
+			when "Checklist":
+				email = ""
+				File.open(Rails.root+"/app/views/email/checklist.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				puts "dito"
+				puts "dito"
+				puts "dito"
+				puts "dito"
+				puts "dito"
+				puts "dito"
+				puts "dito"
+				
+				puts a.id
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Checklist"
+			when "Dropped":
+			when "Grades":
+			when "Kicked Out":
+			when "Last Chance":
+			when "Non-readmittance":
+			when "Reduced Load":
+			when "Shift":
+			when "Totally Dropped":
+			when "Transfer":
+			when "Tuition Fee Assessment":
+			when "Tuition Fee Assessment Update":
+			when "Tuition Fee Breakdowns":
+			when "Update For Grades":
+			when "Violations":
+			when "Withdrawn":
+		end
+		redirect_to(:action => "index") 
+	end
+	
+	def edit_email
+		if session[:select_email_edit]
+			puts "uu nman"
+			puts "uu nman"
+			puts "uu nman"
+			puts "uu nman"
+			puts "uu nman"
+			puts "uu nman"
+			puts "uu nman"
+			puts "uu nman"
+			puts "uu nman"
+		end
+		case session[:select_email_edit]
+		
+			when "Checklist":
+				file = File.new(Rails.root+"/app/views/email/checklist.html", "w+")
+
+				file.puts(params[:edit_email_box])
+				file.close
+				puts "saved ata e"
+			when "Dropped":
+			when "Grades":
+			when "Kicked Out":
+			when "Last Chance":
+			when "Non-readmittance":
+			when "Reduced Load":
+			when "Shift":
+			when "Totally Dropped":
+			when "Transfer":
+			when "Tuition Fee Assessment":
+			when "Tuition Fee Assessment Update":
+			when "Tuition Fee Breakdowns":
+			when "Update For Grades":
+			when "Violations":
+			when "Withdrawn":
+		end
+		redirect_to(:action => "index")
 	end
 	
   private
