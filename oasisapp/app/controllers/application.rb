@@ -15,6 +15,104 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
 
+  def generate_notifs follower, state
+
+      
+      @violations = Violation.find(:all, :from => "/violation/?idno=#{follower.idno}")
+      @guidance =  Guidance.find(:all, :from => "/guidance/?idno=#{follower.idno}")
+      @attendance=  Attendance.find(:all, :from => "/attendance/?idno=#{follower.idno}")
+      @grades = Grade.find(:all, :from => "/grade/?idno=#{follower.idno}")
+      @tf_assessment = Tfassessment.find(:all, :from => "/tfassessment/?idno=#{follower.idno}")
+      @tf_breakdown = Tfbreakdown.find(:all, :from => "/tfbreakdown/?idno=#{follower.idno}")
+               
+      if @violations.size>0
+        if state.violation_rows  < @violations.size
+          state.violation_rows =  @violations.size
+          state.save
+          notif =  Notification.new
+          notif.delivered_at = Time.now
+          notif.follower_id = follower.user_id
+          notif.idno = follower.idno
+          notif.details = "has a violation!"
+          notif.notification = "Violation notice!"
+          notif.save
+        end
+      end
+        
+      if @guidance.size>0
+        if state.guidance_rows  < @guidance.size
+          state.guidance_rows =  @guidance.size
+          state.save
+          notif =  Notification.new
+          notif.delivered_at = Time.now
+          notif.follower_id = follower.user_id
+          notif.idno = follower.idno
+          notif.details = " has a guidance!"
+          notif.notification = "guidace notice!"
+          notif.save
+        end
+      end
+        
+      if @grades.size>0
+        if state.grade_rows  < @grades.size
+          state.grade_rows =  @grades.size
+          state.save
+          notif =  Notification.new
+          notif.delivered_at = Time.now
+          notif.follower_id = follower.user_id
+          notif.idno = follower.idno
+          notif.details = " has a grades!"
+          notif.notification = "grades notice!"
+          notif.save
+        end
+      end
+      
+      if @tf_assessment.size >0
+        if state.tf_assessment_rows < @tf_assessment.size
+          state.tf_assessment_rows = @tf_assessment.size
+          state.save
+          notif = Notification.new
+          notif.delivered_at = Time.now
+           notif.idno = follower.idno
+          notif.details = " has a assessment!"
+          notif.notification = "assessment notice!"
+          notif.save
+          
+        end
+      end
+      
+            if  @tf_breakdown.size >0
+        if state.tf_assessment_rows <  @tf_breakdownt.size
+          state.tf_assessment_rows =  @tf_breakdown.size
+          state.save
+          notif = Notification.new
+          notif.delivered_at = Time.now
+           notif.idno = follower.idno
+          notif.details = " has a breakdown!"
+          notif.notification = "breakdown"
+          notif.save
+          
+        end
+      end
+      
+      if @attendance.size >0
+        if state.attendance_as_of < @attendance.asOfDate
+          state.attendance_as_of = @attendance.asOfDate
+          state.save
+           notif = Notification.new
+          notif.delivered_at = Time.now
+           notif.idno = follower.idno
+          notif.details = " has a absence!"
+          notif.notification = "absence"
+          notif.save
+        end
+      end
+
+        
+      ##      update admin variable for next generation
+      #dont forget to generate the mails and send the cp messages
+
+    end
   protected
   def set_site
     site="http://localhost:3000/"

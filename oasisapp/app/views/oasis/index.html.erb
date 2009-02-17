@@ -17,7 +17,8 @@
           <%= greybox_head %>
   </head>
   <body>
-    
+
+
     <div class="container_12">
       <div class ="grid_5" id = "logo"><a href="/"></a>
         
@@ -48,7 +49,9 @@
         <span id="f_msg">Click on a ward to get started   </span>
 <br/>
         <span class ="sml" id="sort_option"><%= link_to "Ward Preferences", :action => 'open_sorter' %>
-          <%= coolbox 300,150, "Help", pref_help_path, "[?]" %>
+           <% tooltip do %>
+  You can change your ward's display pictures and also the ordering of your wards by clicking  <%= link_to "here", :action => 'open_sorter' %>.
+<% end %>
 </span>
         <div  class="woof">
           
@@ -89,7 +92,7 @@
         <% end %>
                       
       </ul>
-      <div id ="bot_linkie"><%= coolbox 300,150, "Help", pref_help_path, "See All" %><a href="#">See All</a></div>
+      <div id ="bot_linkie"><%= coolbox 300,150, "Help", pref_help_path, "See All" %></div>
     </div>
     <div id="bot_menu"><div id="bot_menu_thing">
         <%=  link_to_function('Show Notifications (10)',

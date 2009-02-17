@@ -36,4 +36,8 @@ A student who has incurred absences of more than 20% of the required number of c
      
      
   end
+  
+  def test
+    
+  end
 end

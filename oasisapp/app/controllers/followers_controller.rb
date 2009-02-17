@@ -96,7 +96,7 @@ class FollowersController < ApplicationController
         state.guidance_rows=0
         state.violation_rows=0
         state.save
-        
+         generate_notifs f, state
         flash[:notice]="You are now following #{stud.fullname}"
       else
         #Unknown error O.o this should never come up
@@ -111,8 +111,10 @@ class FollowersController < ApplicationController
       redirect_to signup_path
     end
   end
+ protected
  
 
+end
   
 
-end
+
