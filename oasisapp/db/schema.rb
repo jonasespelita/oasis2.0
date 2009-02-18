@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20090217101753) do
     t.string   "salt",                          :null => false
     t.string   "last_name",                     :null => false
     t.string   "first_name",                    :null => false
-    t.string   "position",        :limit => 2,  :null => false
+    t.string   "position",                      :null => false
     t.boolean  "active",                        :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(:version => 20090217101753) do
   create_table "attendances", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "campus_activities", :force => true do |t|
+    t.datetime "date",       :null => false
+    t.text     "activity",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "summary"
   end
 
   create_table "changes", :force => true do |t|
@@ -142,6 +150,13 @@ ActiveRecord::Schema.define(:version => 20090217101753) do
     t.boolean  "sms_friday"
     t.boolean  "sms_saturday"
     t.boolean  "sms_sunday"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "students", :force => true do |t|
+    t.string   "idno"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

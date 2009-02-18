@@ -27,11 +27,11 @@ class OasisController < ApplicationController
   def sort
     position = Array.new
     flash[:notice] = "sorted!"
-     
+
     params[:wards].each do |ward|
   
       followers = Follower.find_all_by_idno ward
-   
+
       followers.each do |f|
         if f.user_id == current_user.id
           position << f

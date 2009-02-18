@@ -261,15 +261,15 @@ class UsersController < ApplicationController
     end
 
   end
-  
+
   def reset_password
-    
+
   end
-  
+
   def go_reset_password
     redirect_to root_path
     UserMailer.deliver_forgot_password_mail params[:email], ActiveSupport::SecureRandom.base64(6)
     flash[:notice] ="Email has been sent!"
-   
+
   end
 end

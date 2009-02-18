@@ -27,20 +27,20 @@ class SessionsController < ApplicationController
     if  flash[:login_attempts].nil?
       flash[:login_attempts] =1
     end
-    
-    
-     
-     
-    if flash[:login_attempts]  > 6 
+
+
+
+
+    if flash[:login_attempts]  > 6
       session[:lockout] = true
       if session[:lockout_for].nil?
         session[:lockout_for] = 5.minutes.from_now.utc
       else
-        
+
       end
-   
+
     end
-    
+
     if session[:lockout]
       if session[:lockout_for] < Time.now
         #reset session after timer is up
@@ -48,15 +48,15 @@ class SessionsController < ApplicationController
         flash[:login_attempts] =1
         session[:lockout_for] = nil
       else
-        flash[:notice] = "Max login attempts. Try again later.."  
+        flash[:notice] = "Max login attempts. Try again later.."
         render :action => 'new'
-        return  
+        return
       end
-      
+
     end
-    
+
     self.current_user = User.authenticate(params[:login], params[:password])
-    
+
     if logged_in?
       if params[:remember_me] == "1"
         current_user.remember_me unless current_user.remember_token?
@@ -69,7 +69,7 @@ class SessionsController < ApplicationController
       redirect_to wards_path
       flash[:notice] = "Logged in as #{current_user.login}"
     else
-      i = flash[:login_attempts] 
+      i = flash[:login_attempts]
       flash[:login_attempts] = i +1
       flash[:notice] = "Invalid username/password. Try again. #{7- flash[:login_attempts] } login attempts left"
       render :action => 'new'

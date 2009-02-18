@@ -8,7 +8,7 @@ class UserMailer < ActionMailer::Base
 
   def forgot_password_mail username, password
     u = User.find_by_login(username)
-    
+
      recipients  u.email
      subject "No-Reply"
      u.password=password
