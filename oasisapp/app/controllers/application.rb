@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def set_locale
   # if this is nil then I18n.default_locale will be used
-  I18n.locale = 'tagalog'
+  I18n.locale = 'english'
 end
 
   # See ActionController::RequestForgeryProtection for details
