@@ -1,6 +1,6 @@
 <div class="grid_12" id="q">
   <div style=" ">
-    <div class="f_stuffies"><%= link_to "<img src=#{(get_follower(profile.idNo)).photo.url(:small)}  alt='change me!'/>",  
+    <div class="f_stuffies"><%= link_to "<img src=#{(get_follower(profile.idNo)).photo.url(:small)}  alt='#{t :change_pic}!'/>",
   change_photo_path(:id=>profile.idNo)  %></div>
   </div>
 
@@ -17,4 +17,4 @@
 
   </div>
 
-  <span class="handle"><b>[Drag this text to move <%=  profile.givenName%>]</b></span>
+  <span class="handle"><b>[<%= t :drag %>  <%=  profile.givenName%>]</b></span>

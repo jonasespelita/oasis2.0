@@ -37,7 +37,7 @@
       <div class="grid_6" id = "topmenu">
         <ul>
           <li id="aboutslu"><a href ="http://www.slu.edu.ph/about/"><span class="invis">About SLU</span></a></li>
-          <li id="aboutoasis"><%= link_to "<span class='invis'>About OASIS</span>" ,about_path %></li>
+          <li id="aboutoasis"><%= link_to "<span class='invis'>#{t:about_oasis}</span>" ,about_path %></li>
           <li id="aboutteam"><%= link_to "<span class='invis'>FAQ's</span>", faq_path %></li>
         </ul>
 
@@ -52,7 +52,7 @@
 <br/>
         <span class ="sml" id="sort_option"><%= link_to "#{t :ward_preferences}", :action => 'open_sorter' %>
            <% tooltip do %>
-  You can change your ward's display pictures and also the ordering of your wards by clicking  <%= link_to "here", :action => 'open_sorter' %>.
+  <%= t :sorter_message %> <%= link_to "#{t :sorter_link}", :action => 'open_sorter' %>.
 <% end %>
 </span>
         <div  class="woof">

@@ -9,3 +9,71 @@ tagalog:
   add_ward: Dagdagan ang Ward
   show_notification: Mga Notipikasyon
   ward_preferences: Kagustuhan tungkol sa Ward
+  about_oasis: Tungkol sa OASIS
+  about_oasis_message: Ang OASIS (Online Access Student Information System) ay isang aplikasyon gamit ang web na tumutulong sa pag gabay ng mga magulang sa kanilang mga anak upang makita ang mga mahahalagang impormasyon sa paaralan. Ang mga mahahalagang impormasyon ng bata ay magmumula sa MIS (Management Information System) at sa Accounting Office. Ang mga magulang o guardian na nais gumamit ng sistema ay maaaring makita ang mga impormasyon sa paaralan gamit ang OASIS sa pamamagitan ng pag gamit ng Internet. Upang masiguro ang seguridad ng mga impormasyong inilalabas ng OASIS, ang aming sistema ay mayroong Username at password para sa mga nais gumamit.
+  about2_oasis: Sino sino ang mga bumubuo
+  about2_oasis_message: ng Saint Louis University. Nag propose sila ng Online Access Infomation System ng sagayon ay masubaybayan ng mga magulang o guardian ang kanilang mga ward bagamat malayo man sila. Ang OASIS ay sina,
+  sorter_message: Pwede mong mapalitan ang litrato ng iyong ward at pag-aayos ng iyong mga wards sa pag-pindot
+  sorter_link: dito
+  ward_preferences: Mga kagustuhan sa ward
+  ward_preference_message: Ipindot ang litrato ng iyong ward para mapalitan ang pinapakitang litrato. I-drag mo ang mga text sa ilalim ng iyong mga wards para mapalitan ang kanilang pag-aayos.
+  drag: I-drag para ipag-ayos si
+  change_pic: palitan
+  save_changes: I-save
+  reg1_header: Ilagay ang ID number ng iyong ward at natanggap na beripikasyon.
+  reg1_id: Ilagay ang ID number
+  reg1_code: Ilagay ang beripikasyon
+  side_r: Ang Oasis (Online Access Student Information System) ay isang aplikasyon gamit ang web na tumutulong sa pag gabay ng mga magulang sa kanilang mga anak upang makita ang mga mahahalagang impormasyon sa paaralan.
+  side_r2: Upang masiguro ang seguridad ng mga impormasyong inilalabas ng OASIS, ang aming sistema ay mayroong Username at password para sa mga nais gumamit.
+  reg2_header: Malapit na matapos! Kelangan nalang namin ang iyong account impormasyon.
+  reg2_username: Ang nagustuhan na username.
+  reg2_password: Protektahan ang password!
+  reg2_cpassword: Pakilagay ang password ulit.
+  reg2_about_yourself: Tungkol sayo
+  reg2_home_add: Pakilagay ang iyong tirahan.
+  reg2_contact: Gagamitin para sa mga notipikasyon
+  reg2_toc: Sumasang-ayon ako sa <a>terms at conditions</a>.
+  reg3_message: Maligayang bati! Na-idagdag mo si
+  reg3_message2: bilang ang iyong ward.
+  faq_header: Frequently  Asked Questions (FAQ)
+  faq_q1: Q1.  Where do I find the verification code for validating my ward?
+  faq_a1: A1.  The verification code can be found on the verification letter which is mailed to your home address as indicated in the enrolment form that is filled in during the enrolment of your ward.
+  faq_q2: Q2.  I forgot my username and/or password to login to the website. How do I retrieve my lost username and/or password?
+  faq_a2: A2.  There is a "Forgot password or username" link located in the main page below the login box. Click the link and follow the instructions indicated.
+  faq_q3: Q3.  How often is the information in the OASIS updated?
+  faq_a3: A3.  Information in the OASIS is updated one month after enrollment and weekly for the succeeding weeks in a semester
+  faq_q4: Q4.  I lost my letter containing the verification code of my ward? What can I do?
+  faq_a4: A4.  You will have to directly go to the Saint Louis University campus located at Bonifacio Street, Baguio City and request for a replacement verification code from the OASIS office.
+  faq_q5: Q5.  I have recently changed my primary e-mail address. How can I change my currently registered e-mail address in the OASIS?
+  faq_a5: A5.  You can change your current e-mail address through the Account Settings manager.
+  faq_q6: Q6.  I am receiving a Login Session Expired message.  What does this mean?
+  faq_a6: A6.  Your current session time logged into the website has expired.  The expiration time has been set to a time limit to 2 hours for security purposes. To avoid this, tick the "Remember me" feature before logging in below the login box.
+  faq_q7: Q7.  I get an immediate session expiration message? What can I do about this?
+  faq_a7: A7.  More than likely "cookies" are disabled on your browser. Enable them by clicking Tools on the File menu, then Internet Options. Click Advanced and then enable cookies.
+  faq_q8: Q8.  One of my wards recently changed his home address. Can I update my records through the OASIS?
+  faq_a8: A8.  The OASIS does not provide a functionality wherein you can update any of your personal records. In order to accomplish the updating of records, you must directly go to the Registrar's Office during Saint Louis University's working hours (7:30am - 5:00pm Mondays through Saturdays).
+  faq_q9: Q9.  I cannot to login to the OASIS.
+  faq_a9: A9.  One possibility is that your account is blocked due to violations done against the OASIS Terms and Conditions. If this is not the case, please check that the username and password entered is correct.
+  faq_q10: Q10.  I cannot view my ward's recent grades and all I see are past grades. When will I be able to view my ward&#39s recent grades?
+  faq_a10: A10.  Student grades are only available one day before enrolment period and updated a month after.
+  faq_q11: Q11.  How will I know the tuition fee balance of my ward? How often is it being updated?
+  faq_a11: A11.  Tuition fee balance is available at the Tuition Fee menu link and is updated every week.
+  faq_q12: Q12.  In the attendance page of the OASIS, I don't see any indication that my ward was present or not.
+  faq_a12: A12.  There is a legend placed in the attendance page indicating whether your ward was present or not.
+  faq_q13: Q13.  Can I delete my account?
+  faq_a13: A13.  No, you can not delete your account.  An account may only be deleted once all of its wards have left Saint Louis University by the OASIS Administration (i.e. graduated, withdrawn or dropped out).
+  faq_q14: Q14.  How do I add a ward?
+  faq_a14: A14.  To add a ward, follow this link
+  faq_q15: Q15.  Can I remove a ward?
+  faq_a15: A15.  No, you may not delete a ward.  Only adding of ward(s) is supported by the OASIS.
+  faq_q16: Q16.  Is OASIS for free?
+  faq_a16: A16.  Yes! Every feature and functionality that you currently see on OASIS is completely free.
+  faq_q17: Q17.  How do I know who is following my ward?
+  faq_a17: A17.
+  faq_q18: Q18.  Is there a limit to the number of wards I can add?
+  faq_a18: A18.  There is no limit to the number of wards each user can add.  As long as you have the certain ward's verification code, you may add him/her.
+  faq_q19: Q19.  How do I sign in to OASIS?
+  faq_a19: A19.  For new users, you need to register first.  If you are currently a user of OASIS, you will only need to enter your username and password in the log-in box that is located at the right portion of the main page.
+  faq_footer1: Can't find your answer?,
+  faq_footer2: send us a message
+  faq_footer3: and we'll contact you shortly.
