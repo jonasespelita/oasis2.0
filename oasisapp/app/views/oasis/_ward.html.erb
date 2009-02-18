@@ -21,8 +21,7 @@
     <span class="f_idno"><%= profile.idNo %></span><br/>
     <span class="f_course"><%= profile.yrcourse %></span>
   </a>
-  
-  
+    
   <div class ="showit" id="showit_2">
     
     <div class="t_menu" id="t_menu_2">
@@ -37,10 +36,7 @@
           %>
           </li>
         <% end -%>
-        
-        
-        
-        
+
       </ul>
     </div>
     <div class ="scrollit" style="overflow:hidden; margin-left: 10px;">
@@ -55,13 +51,12 @@
             schedules << schedule
           end%>
           <%= render :partial => "profile" ,:locals => { :profile => profile, :followers =>   followers, :schedules=>schedules}%>
-          
-          
+
         </div>
       </div>
     </div>
   </div>
-  
+
   <div class="f_bottom"></div>
-  
+
 </div>

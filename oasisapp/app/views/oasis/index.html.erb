@@ -26,7 +26,6 @@
         <span><b>OASIS</b><br/>Online Access Student Information System</span>
 
         <div id="stats" style="margin-top:180px"><b><%= t :following %>:</b> <%= pluralize(@profiles.size, "ward") %> <br/><b><%= t :last_visit %>: </b> <%= @last_login %><br/>
-          
 
         </div>
       </div>
@@ -38,14 +37,12 @@
       <div class="grid_6" id = "topmenu">
         <ul>
           <li id="aboutslu"><a href ="http://www.slu.edu.ph/about/"><span class="invis">About SLU</span></a></li>
-          <li id="aboutoasis"><%= link_to "<span class='invis'>About OASIS</span>" ,about_path %></li>
+          <li id="aboutoasis"><%= link_to "<span class='invis'>#{t:about_oasis}</span>" ,about_path %></li>
           <li id="aboutteam"><%= link_to "<span class='invis'>FAQ's</span>", faq_path %></li>
         </ul>
 
-        
         <span id="date"><%= (Time.now).strftime("%B %d, %Y") %><br/> 1st Semester <br/>S.Y. 08 - 09</span><span id = "username"> <%= t :welcome %> <%= current_user.nickname %>!</span>
-        
-        
+
         <div id ="f_topmenu"> <%= link_to t(:logout), logout_path %>| <%= link_to t(:settings) , change_password_path %> | <%= link_to t(:contact_us) , query_url%><hr/><span id="add"><%= link_to "[+]#{t(:add_ward)}", add_ward_path  %></span></div>
 
       </div>
@@ -56,7 +53,7 @@
 <br/>
         <span class ="sml" id="sort_option"><%= link_to "#{t :ward_preferences}", :action => 'open_sorter' %>
            <% tooltip do %>
-  You can change your ward's display pictures and also the ordering of your wards by clicking  <%= link_to "here", :action => 'open_sorter' %>.
+  <%= t :sorter_message %> <%= link_to "#{t :sorter_link}", :action => 'open_sorter' %>.
 <% end %>
 </span>
         <div  class="woof">

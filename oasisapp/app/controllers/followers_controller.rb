@@ -5,7 +5,6 @@ class FollowersController < ApplicationController
 
   def new
 
-
     #store location so that we can go back if something fails
     store_location
   end
@@ -31,12 +30,31 @@ class FollowersController < ApplicationController
   end
   
 
+
   
   def create
     if !simple_captcha_valid?
       flash[:error]="#{t(:captcha_error)}"
       redirect_back_or_default('/')
       return
+    end
+    #check if student exists
+    begin
+      student = Profile.find(idno)
+      if student.idNo.nil? #premade Profile for nonexistent students (check web service)
+        flash[:error]="The student cannot be found. Please check the ID number and try again."
+        return false
+      end
+
+      #need hash formula for vcode verification here!
+      if  vcode != hash(idno)[4..9]
+        flash[:error]="Invalid Verification Code #{hash(idno)[4..9]}"
+        return false
+      end
+    rescue
+      flash[:error]="The student cannot be found. Please check the ID number and try again."
+      return false
+
     end
 
 #    idno = params[:idno]
@@ -95,6 +113,7 @@ class FollowersController < ApplicationController
     end
   end
 
+
   protected
   
   def hash(i)
@@ -131,7 +150,3 @@ class FollowersController < ApplicationController
   end
 
 end
-  
-
-
-

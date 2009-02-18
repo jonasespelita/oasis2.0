@@ -2,7 +2,7 @@
   <div id="sos"></div>
   <div id="top_r"></div>
   <div id="side_r">
-    <b>Almost Done! We just need your account information to get started.</b>
+    <b><%=  t :reg2_header %></b>
     <br/><br/>
 
     <div style="display:block; ">
@@ -17,16 +17,16 @@
               <td class="field"><p><label class="fst"for="login">Username:</label>
                 <%= f.text_field :login, "maxlength"=>"32", "size"=>"34"%>
 
-              </td><td class="col_explain"> <div id="loginmsg" class="sml">Your desired username.<%= error_message_on "user", :login%></div></td>
+                </td><td class="col_explain"> <div id="loginmsg" class="sml"><%= t :reg2_username %><%= error_message_on "user", :login%></div></td>
             </tr>
             <tr><td><label class="fst"for="password">Password:</label>
-            <%= f.password_field :password, "maxlength"=>"32", "size"=>"34"%>  </td><td class="col_explain"><div id="passmsg" class="sml">Keep your password safe!<%= error_message_on "user", :password%></div></td></tr>
+            <%= f.password_field :password, "maxlength"=>"32", "size"=>"34"%>  </td><td class="col_explain"><div id="passmsg" class="sml"><%= t :reg2_password %><%= error_message_on "user", :password%></div></td></tr>
 
             <tr><td> <label class="fst"for="password_confirmation">Confirm Password:</label>
-            <%= f.password_field :password_confirmation, "maxlength"=>"32", "size"=>"34" %></td><td class="col_explain"><div id="cpassmsg" class="sml">Please enter your chosen password again.<%= error_message_on "user", :password_confirmation%></div></td></tr>
+            <%= f.password_field :password_confirmation, "maxlength"=>"32", "size"=>"34" %></td><td class="col_explain"><div id="cpassmsg" class="sml"><%= t :reg2_cpassword %><%= error_message_on "user", :password_confirmation%></div></td></tr>
 
 
-            <tr><td><span class="inst"><b>About yourself</b></span><hr/></td></tr>
+  <tr><td><span class="inst"><b><%= t :reg2_about_yourself %></b></span><hr/></td></tr>
 
             <tr><td><label class="fst"for="first_name">First Name:</label>
             <%= f.text_field :first_name, "maxlength"=>"32", "size"=>"34" %></td><td class="col_explain"><div id="first_namemsg" class="sml" ><%= error_message_on "user", :first_name%></div> </td></tr>
@@ -41,9 +41,9 @@
             <%= f.text_field :nickname, "maxlength"=>"10", "size"=>"34" %></td><td class="col_explain"><div id="nicknamemsg" class="sml"><%= error_message_on "user", :nickname%></div></td></tr>
 
             <tr><td> <label class="fst"for="address">Address: </label>
-            <%= f.text_field :address, "maxlength"=>"64", "size"=>"34" %></td><td class="col_explain"><div id="addressmsg" class="sml">Enter your home address.<%= error_message_on "user", :address%></div> </td></tr>
+            <%= f.text_field :address, "maxlength"=>"64", "size"=>"34" %></td><td class="col_explain"><div id="addressmsg" class="sml"><%= t :reg2_home_add %><%= error_message_on "user", :address%></div> </td></tr>
 
-            <tr><td ><span class="inst"><b>Contact information</b> <br/>We'll use this for notification purposes</span><hr/></td></tr>
+  <tr><td ><span class="inst"><b>Contact information</b> <br/><%= t :reg2_contact %></span><hr/></td></tr>
 
             <tr><td><label class="fst"for="email">Email Address:</label>
             <%= f.text_field :email, "maxlength"=>"32", "size"=>"34" %></td><td class="col_explain"> <div id="emailmsg" class="sml"><%= error_message_on "user", :email%></div></td></tr>
@@ -53,7 +53,7 @@
             <%= f.text_field :cp_number, "maxlength"=>"32", "size"=>"34"%></td><td class="col_explain"><div id="cp_numbermsg" class="sml"><%= error_message_on "user", :cp_number%></div></td></tr>
 
 
-            <tr><td><%= f.check_box :terms_of_service %><span class="sml">I accept the OASIS <a>terms and conditions</a>.</span></td><td class="col_explain"><div class="sml"><%= error_message_on "user", :terms_of_service%></div></td></tr>
+  <tr><td><%= f.check_box :terms_of_service %><span class="sml"><%= t :reg2_toc %></span></td><td class="col_explain"><div class="sml"><%= error_message_on "user", :terms_of_service%></div></td></tr>
           </tbody>
         </table>
 
@@ -67,7 +67,7 @@
 </div>
 
 <div class="grid_4" id ="tehside_r">
-  <div id="par"><p>The Online Access Student Information System is a web-based application that enables parents/guardians to view school information which pertains to their student/child . 	</p></div>
+  <div id="par"><p><%= t :side_r %></p></div>
   <div id="pic_r"></div>
 
 </div>

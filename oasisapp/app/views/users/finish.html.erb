@@ -2,7 +2,7 @@
 		<div id="sos3"></div>
 		<div id="top_r"></div>
 		<div id="side_r">
-          <b>Congratulations! You have added</b> <span id="ward"> <%= flash[:notice] %> </span><b>as your ward.</b><br/>
+          <b><%= t :reg3_message %></b> <span id="ward"> <%= flash[:notice] %> </span><b><%= reg3_message2 %></b><br/>
 
 <%= link_to "Click here to view profile.", wards_path %>
 		
@@ -12,7 +12,7 @@
 	</div>
 
 	<div class="grid_4" id ="tehside_r">
-	<div id="par3"><p>To ensure the security of the ward&#39;s school information, our proposed system will require a username and password for the users to view their own ward/s' information. 	</p></div>
+      <div id="par3"><p><%= t :side_r2 %></p></div>
 		<div id="pic_r3"></div>
 
 	</div>

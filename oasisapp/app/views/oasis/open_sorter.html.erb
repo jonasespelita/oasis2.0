@@ -36,25 +36,21 @@
       <div class="grid_6" id = "topmenu">
         <ul>
           <li id="aboutslu"><a href ="http://www.slu.edu.ph/about/"><span class="invis">About SLU</span></a></li>
-          <li id="aboutoasis"><%= link_to "<span class='invis'>About OASIS</span>" ,about_path %></li>
+          <li id="aboutoasis"><%= link_to "<span class='invis'>#{t:about_oasis}</span>" ,about_path %></li>
           <li id="aboutteam"><%= link_to "<span class='invis'>FAQ's</span>", faq_path %></li>
           <li> <%= greybox_link_to_page("View Google!", "http://www.google.ca", :title => 'This is google!') %>
 </li>
         </ul>
 
-        <span id="date"><%= (Time.now).strftime("%B %d, %Y") %><br/> 1st Semester <br/>S.Y. 08 - 09</span><span id = "username">Welcome <%= current_user.nickname %>!</span>
+        <span id="date"><%= (Time.now).strftime("%B %d, %Y") %><br/> 1st Semester <br/>S.Y. 08 - 09</span><span id = "username"><%= t :welcome %> <%= current_user.nickname %>!</span>
 
-        
-        
-        <div id ="f_topmenu"> <%= link_to "Logout", logout_path %>| <%= link_to "Settings" , change_password_path %> | <%= link_to "Contact Us" , query_url%> <hr/><span id="add"><%= link_to "[!]Save Changes", :action => 'index' %></span></div>
+        <div id ="f_topmenu"> <%= link_to "Logout", logout_path %>| <%= link_to "Settings" , change_password_path %> | <%= link_to "Contact Us" , query_url%> <hr/><span id="add"><%= link_to "[!]#{t :save_changes}", :action => 'index' %></span></div>
 
       </div>
 
-
-
       <div class = "grid_12 " id="a_content" >
-        <h1>Ward Preferences</h1>
-           <span class="sml">Click on your ward's picture to change it. You can also change the order your wards appear by dragging the text  below each ward.</span>
+        <h1><%= t :ward_preferences%> </h1>
+           <span class="sml"><%= t :ward_preference_message%></span>
     
         <span class id="sort_option"></span>
         <div  class="woof">
@@ -70,7 +66,6 @@
           </ul>
           <%= sortable_element("wards", :url => {:action => "sort"}, :handle => "handle") %>
         </div>
-
 
       </div>
 

@@ -1,5 +1,4 @@
 Rails Widgets
-=======
 
 Rails Widgets is a collection of UI Widgets for RubyOnRails (in form of ActionView helpers).
 You can add tabbed navigations, progressbars, rounded boxes etc in a snap.
