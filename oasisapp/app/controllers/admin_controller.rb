@@ -219,21 +219,26 @@ class AdminController < ApplicationController
 
   def edit_announcement
 		unless params[:edit_announcement_id].blank?
-			edited_announcement = Announcements.find(params[:edit_announcement_id])
-			edited_announcement.date_time = params[:edit_announcement_date]
-			edited_announcement.announcement = params[:edit_announcement_name].strip
-			edited_announcement.summary = params[:edit_announcement_summary].strip
-			unless edited_announcement.save
-				redirect_to(:action => "index")
-				flash.now[:notice] = "not saved"
+		   unless params[:edit_announcement_name].blank? && params[:edit_announcement_summary].blank?
+			   edited_announcement = Announcements.find(params[:edit_announcement_id])
+			   edited_announcement.date_time = Time.now
+			   edited_announcement.announcement = params[:edit_announcement_name].strip
+			   edited_announcement.summary = params[:edit_announcement_summary].strip
+			   unless edited_announcement.save
+				   redirect_to(:action => "index")
+				   flash.now[:notice] = "not saved"
+			   else
+			   act = Changes.new
+			   act.admin_id = session[:admin_id]
+			   act.ip_add = request.remote_ip
+			   act.change_made = "Edited announcement #{params[:edit_announcement_name]}"
+			   act.save
+			   flash[:message] = "Announcement sucessfully edited"
+			   redirect_to(:action => "index")
+			   end
 			else
-			act = Changes.new
-			act.admin_id = session[:admin_id]
-			act.ip_add = request.remote_ip
-			act.change_made = "Edited announcement #{params[:edit_announcement_name]}"
-			act.save
-			flash[:message] = "Announcement sucessfully edited"
-			redirect_to(:action => "index")
+			   flash[:notice] = "Fields Cannot Be Blank"
+			   redirect_to(:action => "index")
 			end
 		else
 			redirect_to(:action => "index")
@@ -242,22 +247,27 @@ class AdminController < ApplicationController
   end
 
   def add_announcement
-  	new_announcement = Announcements.new
-  	new_announcement.date_time = params[:add_announcement_date]
-  	new_announcement.announcement = params[:add_announcement_name].strip
-  	new_announcement.summary = params[:add_announcement_summary].strip
-  	unless new_announcement.save
-  		redirect_to(:action => "index")
-  		flash[:notice] = "not saved"
-  	else
-  		act = Changes.new
-		act.admin_id = session[:admin_id]
-		act.ip_add = request.remote_ip
-		act.change_made = "Edited announcement #{params[:add_announcement_name]}"
-		act.save
-		flash[:message] = "Announcement sucessfully added"
-  		redirect_to(:action => "index")
-  	end
+   unless params[:edit_announcement_name].blank? && params[:edit_announcement_summary].blank?
+     	new_announcement = Announcements.new
+     	new_announcement.date_time = Time.now
+     	new_announcement.announcement = params[:add_announcement_name].strip
+     	new_announcement.summary = params[:add_announcement_summary].strip
+     	unless new_announcement.save
+     		redirect_to(:action => "index")
+     		flash[:notice] = "not saved"
+     	else
+     		act = Changes.new
+		   act.admin_id = session[:admin_id]
+		   act.ip_add = request.remote_ip
+		   act.change_made = "Edited announcement #{params[:add_announcement_name]}"
+		   act.save
+		   flash[:message] = "Announcement sucessfully added"
+     		redirect_to(:action => "index")
+     	end
+   else
+	    flash[:notice] = "Fields Cannot Be Blank"
+		 redirect_to(:action => "index")
+	end
 
   end
 
@@ -280,21 +290,26 @@ class AdminController < ApplicationController
 
 	def add_admin
 		if params[:add_admin_password] == params[:add_admin_confirm]
-			new_admin = Admin.new
-			new_admin.first_name = params[:add_admin_first_name].capitalize.strip
-			new_admin.last_name = params[:add_admin_last_name].capitalize.strip
-			new_admin.position = "General Administrator"
-			new_admin.username = params[:add_admin_username]
-			new_admin.email = params[:add_admin_email].strip
-			new_admin.active = true
-			new_admin.create_password(params[:add_admin_password])
-			unless new_admin.save
-	  		redirect_to(:action => "index")
-	  		flash[:notice] = "not saved"
-	  		else
-	  		flash[:message] = "Admin successfully added"
-	  		redirect_to(:action => "index")
-	  		end
+		   if params[:add_admin_password].length > 4 && params[:add_admin_confirm].length > 4
+			   new_admin = Admin.new
+			   new_admin.first_name = params[:add_admin_first_name].capitalize.strip
+			   new_admin.last_name = params[:add_admin_last_name].capitalize.strip
+			   new_admin.position = "General Administrator"
+			   new_admin.username = params[:add_admin_username]
+			   new_admin.email = params[:add_admin_email].strip
+			   new_admin.active = true
+			   new_admin.create_password(params[:add_admin_password])
+			   unless new_admin.save
+	     		redirect_to(:action => "index")
+	     		flash[:notice] = "not saved"
+	     		else
+	     		flash[:message] = "Admin successfully added"
+	     		redirect_to(:action => "index")
+	     		end
+	     	else
+	     	   flash[:notice] = "Password length must be greater than 4 characters"
+	     		redirect_to(:action => "index")
+	     	end
 	  	else
 	  		flash[:notice] = "Add admin passwords do not match"
 	  		redirect_to(:action => "index")
@@ -304,21 +319,26 @@ class AdminController < ApplicationController
 	def edit_admin
 		if params[:edit_admin_password] == params[:edit_admin_confirm]
 	  		unless params[:edit_admin_id].blank?
-				edit_admin = Admin.find(params[:edit_admin_id])
-				edit_admin.first_name = params[:edit_admin_first_name].capitalize.strip
-				edit_admin.last_name = params[:edit_admin_last_name].capitalize.strip
-				edit_admin.username = params[:edit_admin_username]
-				edit_admin.email = params[:edit_admin_email].strip
-				unless params[:edit_admin_password].blank?
-					edit_admin.create_password(params[:edit_admin_password])
-				end
-				unless edit_admin.save
-		  		redirect_to(:action => "index")
-		  		flash[:notice] = "not saved"
-		  		else
-		  		flash[:message] = "Admin successfully edited"
-		  		redirect_to(:action => "index")
-		  		end
+	  		   if params[:add_admin_password].length > 4 && params[:add_admin_confirm].length > 4
+				   edit_admin = Admin.find(params[:edit_admin_id])
+				   edit_admin.first_name = params[:edit_admin_first_name].capitalize.strip
+				   edit_admin.last_name = params[:edit_admin_last_name].capitalize.strip
+				   edit_admin.username = params[:edit_admin_username]
+				   edit_admin.email = params[:edit_admin_email].strip
+				   unless params[:edit_admin_password].blank?
+					   edit_admin.create_password(params[:edit_admin_password])
+				   end
+				   unless edit_admin.save
+		     		redirect_to(:action => "index")
+		     		flash[:notice] = "not saved"
+		     		else
+		     		flash[:message] = "Admin successfully edited"
+		     		redirect_to(:action => "index")
+		     		end
+		     	else
+	        	   flash[:notice] = "Password length must be greater than 4 characters"
+	        		redirect_to(:action => "index")
+	     	   end
 	  		else
 				redirect_to(:action => "index")
 				flash[:notice] = "Please select an admin to be edited"
@@ -358,7 +378,7 @@ class AdminController < ApplicationController
 		unless params[:disable_admin_id].blank?
 			inactive_admins = Admin.find_all_by_active(true)
 			inactive_admins.delete_if { |x| x.position == 'oa'}
-			if active_admins.length > 1
+			if inactive_admins.length > 1
 				disable_admin = Admin.find(params[:disable_admin_id])
 				disable_admin.active = false
 				unless disable_admin.save
@@ -369,7 +389,7 @@ class AdminController < ApplicationController
 		  		redirect_to(:action => "index")
 		  		end
 		  	else
-		  		flash[:message] = "There must be at least one active general administrator"
+		  		flash[:notice] = "There must be at least one active general administrator"
 		  		redirect_to(:action => "index")
 		  	end
 	  	else
