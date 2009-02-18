@@ -10,6 +10,7 @@ class AdminController < ApplicationController
 		@admins.reverse!
 		@queries = Query.find(:all)
 		@sitesetting = Sitesettings.find_by_id(1)
+		@web_add = WebserviceAddress.find_by_name("webservice")
 		if session[:email_id]
 			x = TempEmail.find_by_id(session[:email_id])
 			@email_content = x.email
@@ -131,7 +132,7 @@ class AdminController < ApplicationController
 		temprep = Report.find(:all)
 		temprep.sort{ |a,b| a.unique <=> b.unique}
 		@most = temprep[0]
-		@least = temprep[temprep.length-1].unique
+		
 		admin = Admin.find(session[:admin_id])
 		if admin.position == 'oa'
 					@is_oa = true
@@ -369,15 +370,22 @@ class AdminController < ApplicationController
 
 	def enable_admin
 		unless params[:enable_admin_id].blank?
-			enable_admin = Admin.find(params[:enable_admin_id])
-			enable_admin.active = true
-			unless enable_admin.save
-	  		redirect_to(:action => "index")
-	  		flash[:notice] = "not saved"
-	  		else
-	  		flash[:message] = "Admin activated"
-	  		redirect_to(:action => "index")
-	  		end
+			active_admins = Admin.find_all_by_active(true)
+			active_admins.delete_if { |x| x.position == 'oa'}
+			if active_admins.length < 3
+				enable_admin = Admin.find(params[:enable_admin_id])
+				enable_admin.active = true
+				unless enable_admin.save
+		  		redirect_to(:action => "index")
+		  		flash[:notice] = "not saved"
+		  		else
+		  		flash[:message] = "Admin activated"
+		  		redirect_to(:action => "index")
+		  		end
+		  	else
+		  		flash[:notice] = "Only three general administrators may be active"
+		  		redirect_to(:action => "index")
+		  	end
 	  	else
 	  		redirect_to(:action => "index")
 			flash[:notice] = "Please select an admin"
@@ -387,15 +395,22 @@ class AdminController < ApplicationController
 
 	def disable_admin
 		unless params[:disable_admin_id].blank?
-			disable_admin = Admin.find(params[:disable_admin_id])
-			disable_admin.active = false
-			unless disable_admin.save
-	  		redirect_to(:action => "index")
-	  		flash[:notice] = "not saved"
-	  		else
-	  		flash[:message] = "Admin deactivated"
-	  		redirect_to(:action => "index")
-	  		end
+			inactive_admins = Admin.find_all_by_active(true)
+			inactive_admins.delete_if { |x| x.position == 'oa'}
+			if active_admins.length > 1
+				disable_admin = Admin.find(params[:disable_admin_id])
+				disable_admin.active = false
+				unless disable_admin.save
+		  		redirect_to(:action => "index")
+		  		flash[:notice] = "not saved"
+		  		else
+		  		flash[:message] = "Admin deactivated"
+		  		redirect_to(:action => "index")
+		  		end
+		  	else
+		  		flash[:message] = "There must be at least one active general administrator"
+		  		redirect_to(:action => "index")
+		  	end
 	  	else
 	  		redirect_to(:action => "index")
 			flash[:notice] = "Please select an admin"
@@ -744,6 +759,16 @@ class AdminController < ApplicationController
 				a.save
 				session[:email_id] = a.id
 				session[:select_email_edit] = "Guidance"
+			when "Forgot Password":
+				email = ""
+				File.open(Rails.root+"/app/views/email/forgotpassword.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Forgot Password"
 			when "Violation":
 				email = ""
 				File.open(Rails.root+"/app/views/email/violation.html").each{ |line|
@@ -782,6 +807,10 @@ class AdminController < ApplicationController
 				file = File.new(Rails.root+"/app/views/email/guidance.html", "w+")
 				file.puts(params[:edit_email_box])
 				file.close
+			when "Forgot Password":
+				file = File.new(Rails.root+"/app/views/email/forgotpassword.html", "w+")
+				file.puts(params[:edit_email_box])
+				file.close
 			when "Violation":
 				file = File.new(Rails.root+"/app/views/email/violation.html", "w+")
 				file.puts(params[:edit_email_box])
@@ -799,6 +828,12 @@ class AdminController < ApplicationController
 	def select_user
 		session[:select_user_id] = params[:select_user_id]
 		redirect_to(:action => "index")
+	end
+	
+	def change_webservice_address
+		web_add = WebserviceAddress.find_by_name("webservice")
+		web_add.address = params[::change_webservice_address]
+		web_add.save
 	end
 	
   private

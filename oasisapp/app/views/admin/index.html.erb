@@ -3,7 +3,11 @@
 
 <html>
 <head>
+<% if @is_oa %>
 <title>OASIS Administrator</title>
+<% else %>
+<title>GEN.  Administrator</title>
+<% end %>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <%= calendar_date_select_includes nil %>
 
@@ -813,21 +817,41 @@ function WebFXMenuButton() {}
 		<% end %>
 		<div class="sys_groupbox2">
 			<fieldset class="fieldset" style="width:430px; height:573px;" >
-				<legend class="groupbox">Edit Students Being Followed</legend>
+				<legend class="groupbox">Remove Students Being Followed</legend>
 					<div id="show_users_check">
 					</div>
 					
 		    </fieldset>		
 		</div>
 		<script language="text/javascript" type="text/javascript">
-			
+			function showSearchField(obj) {
+				
+				if(obj.selectedIndex == 4){
+				
+					Element.show("search_user_name");
+				}else {
+					Element.hide("search_user_name");
+				};
+				
+				
+			}
 			function clickUser(){
 				var i = nlr5.selected;
 				document.getElementById("block_user_id").value = nlr5.elements[i][4];
 				document.getElementById("unblock_user_id").value = nlr5.elements[i][4];
 				document.getElementById("select_user_id").value = nlr5.elements[i][4];
+				if(nlr5.elements[i][3]=="Blocked"){
+					document.getElementById("button_user_block").disabled = true
+					document.getElementById("button_user_unblock").disabled = false
+				
+				}
+				else{
+					document.getElementById("button_user_block").disabled = false
+					document.getElementById("button_user_unblock").disabled = true
+					
+				};
 				$('select_user_show').request();
-				$('show_users_check').update('<%(Follower.find_all_by_user_id(session[:select_user_id])).each do |follower| %><%= check_box(follower.id,'checked') %>	<span><%=(Profile.find(follower.idno)).fullname%></span><% end %>');
+				$('show_users_check').update('<% form_tag '/admin/remove_student', :id => "remove_student" do %> <%(Follower.find_all_by_user_id(session[:select_user_id])).each do |follower| %><%= check_box(follower.id,'checked') %>	<span><%=(Profile.find(follower.idno)).fullname%></span><% end %><br><%= submit_tag "Save" %> <% end %>');
 			}
 			function blockUser(){
 				document.getElementById("block_user").submit();
@@ -979,6 +1003,11 @@ function WebFXMenuButton() {}
 	    			<%= select_tag "site_status", "<option>Online</option><option>Offline</option>" %>
 					<%= submit_tag "Change" %>
 				<% end %>
+				<% form_tag '/admin/change_webservice_address', :id => "web_add" do %>
+					<%= label_tag "Webservice Address:" %>
+					<%= text_field_tag :change_webservice_address, @web_add.address %>
+					<%= submit_tag "Change" %>
+				<% end %>
 			</div>
 			<br>
 			<%= link_to_function "User sent messages frequency settings", "showFreq()" %>
@@ -1081,16 +1110,18 @@ function WebFXMenuButton() {}
 			<br>
 			<div id= "edit_email" style="position:relative;"> 
 			<%= label_tag "Edit Email Contents:" %>
-			<% form_tag '/admin/select_email_edit', :id => "email_set" do %>
-			<%= select_tag "select_email_edit", "<option>Attendance Dropped Classcard</option><option>Attendance Totally Dropped</option><option>Attendance Withdrawn</option><option>Grades</option><option>Guidance</option><option>Violation</option>" %>
+			<% form_tag '/admin/select_email_edit', :id => "email_setting" do %>
+			<%= select_tag "select_email_edit", "<option>Attendance Dropped Classcard</option><option>Attendance Totally Dropped</option><option>Attendance Withdrawn</option><option>Grades</option><option>Guidance</option><option>Forgot Password</option><option>Violation</option>" %>
 	    	</label>
 	    	<%= submit_tag "Load" %>
 	    	<% end %>
 			<% form_tag '/admin/edit_email', :id => "edit_email" do %>
-			 <% use_tinymce -%>
-  			
+			
+			
+  			<div id= "tinymce-editor">
+  			 <% use_tinymce -%>
   			<%= text_area_tag 'edit_email_box', @email_content , :class => "mce-editor", :style => "width:100%;height:100%;" %>
-  		
+  			</div>
   			<span style="position:relative; float:right">
   			<%= submit_tag "Save" %>
   			<%= button_to_function "Cancel", "hideEmail()" %>
@@ -1114,6 +1145,7 @@ function WebFXMenuButton() {}
   				function hideFreq() {
   					Element.hide("message_freq");
   				}
+  				
   			</script>
 		</div>
 </div> <!--end of container-->

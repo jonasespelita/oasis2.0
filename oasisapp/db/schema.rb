@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090217101753) do
+ActiveRecord::Schema.define(:version => 20090217192233) do
 
   create_table "admins", :force => true do |t|
     t.string   "username",        :limit => 40, :null => false
@@ -191,6 +191,13 @@ ActiveRecord::Schema.define(:version => 20090217101753) do
   end
 
   create_table "violations", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "webservice_addresses", :force => true do |t|
+    t.string   "name"
+    t.text     "address"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
