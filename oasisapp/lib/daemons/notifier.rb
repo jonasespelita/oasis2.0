@@ -139,19 +139,22 @@ while($running) do
 
     end
      mobilenum = "09175071504"
+
     cp_set_time =  Time.local(2009, "feb", 13, 22, 29)
-       open("http://localhost:13004/cgi-bin/sendsms?username=admin&password=Linux&to=#{mobilenum}&text=before goin in") {|f|}
+      
     if cp_set_time <= Time.now
       
       
-      f = Follower.find_all_by_user_id 8
-         open("http://localhost:13004/cgi-bin/sendsms?username=admin&password=Linux&to=#{mobilenum}&text=after follower") {|f|}
-      f.each do |fo| 
-        open("http://localhost:13004/cgi-bin/sendsms?username=admin&password=Linux&to=#{mobilenum}&text=inside block") {|f|}
-        @notif = Notification.find_all_by_follower_id fo
+      foo = Follower.find(:all)
+         open("http://localhost:13004/cgi-bin/sendsms?username=admin&password=Linux&to=#{mobilenum}&text=after+follower#{foo.size}") {|f|}
+         
+      
+      foo.each do |fo| 
         
+        @notif = Notification.find_all_by_follower_id fo
+        user = User.find fo.id
         @notif.each do |no|
-          open("http://localhost:13004/cgi-bin/sendsms?username=admin&password=Linux&to=#{mobilenum}&text=another block") {|f|}
+          open("http://localhost:13004/cgi-bin/sendsms?username=admin&password=Linux&to=#{user.cp_number}&text=#{fo.idno}+#{Notification.smsify(no.details)}") {|f|}
         end
         
       end
@@ -164,7 +167,7 @@ while($running) do
     
   end
   #check every 60 secs if sked update
-  sleep 10
+  sleep 5
 end
 
 

@@ -5,7 +5,7 @@ class CreateStudents < ActiveRecord::Migration
       t.string :name
       t.string :data
 
-      t.timestamps
+      #t.timestamps
     end
   end
 

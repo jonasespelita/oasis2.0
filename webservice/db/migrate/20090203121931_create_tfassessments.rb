@@ -4,9 +4,9 @@ class CreateTfassessments < ActiveRecord::Migration
       t.integer :idNo
       t.string :gradingTerm
       t.float :payAmt
-      t.date :balanceAsOf
+      t.float :balanceAsOf
 
-      t.timestamps
+      #t.timestamps
     end
   end
 

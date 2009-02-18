@@ -1,6 +1,8 @@
 
 <div class="grid_8" id = "reg">
-  <div id="sos"></div>
+  <% if !logged_in? %>
+<div id="sos"></div>
+  <% end %>
   <div id="top_r"></div>
   <div id="side_r">
     <b><%= t :reg1_header %></b>

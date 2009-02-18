@@ -2,8 +2,7 @@ class GradeController < ApplicationController
 
   def index
     if params[:idno]
-      @profiles = Grade.find_all_by_idNo params[:idno], :order=>'"endSchYr" DESC'
-
+      @profiles = Grade.find_all_by_idNo params[:idno]
     else
       @profiles = Grade.find(:all)
     end

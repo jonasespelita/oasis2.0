@@ -1,53 +1,56 @@
 <div style="width:10000px; ">
-				<div id="master" style="float:left; width:920px; margin: 0px auto;">
-
-							<div style="width:800px; margin:0px auto;">
-			<div  >
-                          <h1><%= profile.fullname %>'s Attendance<span class="sml"><% tooltip :id => "attendance_tip" do %>
-  <%="<p>The standards of attendance should be maintained to
-prevent the giving of school credits to students who do
-not meet the minimum attendance requirements. The
-checking of attendance is the responsibility of the faculty.
-On the other hand it is the responsibility of the student to
-keep track of his absences so that he knows when his
-classcard may have been submitted and thus he can claim
-it before he goes back to his class.</p><br/><p>A student who has incurred
-absences of more than 20% of the required number of
-class and laboratory periods in a given subject should be
-given a DROPPED (D) mark.</p>
-<br/>" %>
-<% end %>
-					
-					</span> </h1> 
-
-			</div>
-				<b>Attendance status: </b>	<span class="sml" style=" display:inline-block; "> </span>
-					<ul class="sml">
-
-						<br/>
-						<li><b>Currently Dropped Classcards:</b>
-							<ul style="margin-left:25px;"   >
-                              <% @absences.each do |attendance| %>
-                                <li> <%= attendance.courseNo %> : <%= attendance.absences   %> absences : <%= attendance.get_status %></li>
-                                  <% end %>
-							</ul>
-						<br/>
-						</li>
-
-
-					</ul>
-					
-
-
-
-
-
-				</div>
-				</div>
-					
-					
-
-					
-					
-
-				</div>
+  <div id="master" style="float:left; width:920px; margin: 0px auto;">
+    
+    <div style="width:800px; margin:0px auto;">
+      <div  >
+        <h1><%= profile.fullname %>'s Attendance<span class="sml"><% tooltip :id => "attendance_tip" do %>
+              <%="<p>The standards of attendance should be maintained to
+              prevent the giving of school credits to students who do
+              not meet the minimum attendance requirements. The
+              checking of attendance is the responsibility of the faculty.
+              On the other hand it is the responsibility of the student to
+              keep track of his absences so that he knows when his
+              classcard may have been submitted and thus he can claim
+              it before he goes back to his class.</p><br/><p>A student who has incurred
+              absences of more than 20% of the required number of
+              class and laboratory periods in a given subject should be
+              given a DROPPED (D) mark.</p>
+              <br/>" %>
+            <% end %>
+                                                    
+        </span> </h1> 
+        
+      </div>
+      <b>Attendance status: </b>	<span class="sml" style=" display:inline-block; "> </span>
+      
+      
+      <table border="1" cellspacing="0" cellpadding="0" width="801" class="c">
+        <tr class="d">
+          <td width="100" valign="top"><p>Course No</p></td>
+          <td width="100" valign="top"><p># of Absences</p></td>
+          <td width="300" valign="top"><p>Attendance Status</p></td>
+          <td width="200" valign="top"><p>Date Recorded</p></td>
+          
+        </tr>
+        <% @absences.each do |absence| %>
+          <tr align="center"><td><%= absence.courseNo%></td><td align="right"><%= absence.absences%></td><td align="center"><%=absence.get_status%></td><td><%= (Time.parse(absence.asOfDate)).strftime("%B %d, %Y") %></td></tr>
+        <% end %>
+        
+      </table>
+      
+    
+      
+      
+      
+      
+      
+      
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+</div>

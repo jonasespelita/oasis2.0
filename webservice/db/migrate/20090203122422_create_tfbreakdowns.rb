@@ -5,7 +5,7 @@ class CreateTfbreakdowns < ActiveRecord::Migration
       t.string :item
       t.float :feeAmt
 
-      t.timestamps
+      #t.timestamps
     end
   end
 

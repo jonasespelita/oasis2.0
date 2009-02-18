@@ -11,7 +11,7 @@ class CreateCourseOfferings < ActiveRecord::Migration
       t.string :day
       t.string :room
 
-      t.timestamps
+      #t.timestamps
     end
   end
 

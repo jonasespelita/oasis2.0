@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :grades
   map.resources :queries
   map.resources :users
+  map.resources :notification
   map.root :controller=> 'sessions', :action => 'new'
   map.change_photo 'change_photo', :action => 'change_photo', :controller => 'followers'
   map.upload_photo '/upload', :action => 'upload_photo', :controller => 'followers'
@@ -18,7 +19,7 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => "users", :action => "new"
   map.add_ward  'follow', :controller => "followers", :action =>"new"
   map.wards 'wards', :controller => "oasis", :action => "index"
-  
+  map.tos '/tos', :controller =>"help", :action => 'tos'
   
   map.set_lang 'set_language', :controller => 'sessions', :action => 'set_language'
   map.createquery 'create_query', :controller=>"help", :action =>"create_query"

@@ -3,17 +3,6 @@ class ClassScheduleController < ApplicationController
   def index
     if params[:idno]
       @profiles = ClassSchedule.find_all_by_idNo params[:idno]
-       @grades = Grade.find_all_by_idNo params[:idno]
-   
-      @profiles.delete_if do|sked|
-        delete = false
-        @grades.each do |grade|
-            if sked.courseNo==grade.courseNo
-              delete = true
-            end
-        end
-         delete
-      end
     else
       @profiles = ClassSchedule.find(:all)
     end
@@ -25,7 +14,6 @@ class ClassScheduleController < ApplicationController
   # http://localhost:3000/classschedules/2061009
   def show
     @profile = ClassSchedule.find_by_idNo(params[:id])
-    
     if @profile
       render :xml => @profile.to_xml
     else

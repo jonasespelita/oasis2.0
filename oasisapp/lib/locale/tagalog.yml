@@ -33,7 +33,7 @@ tagalog:
   reg2_about_yourself: Tungkol sayo
   reg2_home_add: Pakilagay ang iyong tirahan.
   reg2_contact: Gagamitin para sa mga notipikasyon
-  reg2_toc: Sumasang-ayon ako sa <a>terms at conditions</a>.
+  reg2_toc: Sumasang-ayon ako sa terms at conditions.
   reg3_message: Maligayang bati! Na-idagdag mo si
   reg3_message2: bilang ang iyong ward.
   faq_header: Frequently  Asked Questions (FAQ)
@@ -88,10 +88,29 @@ tagalog:
   rawr: I'm Filipino
 
   activerecord:
-     errors:
-      models:
-         user: 
-           attributes:
-          
-               invalid: Rawr
+    errors: 
+        models: 
+            user:
+                attributes: 
+                    last_name:
+                        invalid: Invalid
+                    nickname:
+                        invalid: Invalid
+                        too_short: Nickname too short. Use 2 to 32 characters
+                    first_name:
+                        invalid: Invalid
+                    login:
+                        invalid: Invalid
+                        too_short: Username too short. Use 6 to 32 characters
+                        taken: Username already taken.
+                    password:
+                        invalid: Invalid
+                        too_short: Password too short. Use 6 to 32 characters
+                    email:
+                        invalid: Invalid
+                        taken: Email already taken.
+                    invalid:
+                        invalid: Invalid
+                    cp_number:
+                        invalid: Invalid
 

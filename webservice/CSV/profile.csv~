@@ -1,548 +1,70 @@
-PROFILE,,,,,,,,,,,,,,
-idNo,familyName,givenName,middleName,gender,course,yearLevel,college,address,eMail,mobileNumber,fatherName,motherName,guardianName,relationshipToGuardian
-2050014,Lane,Lois,Lane,F,BSED,1,COE,Km 5 Asin Rd,Supergirl@yahoo.com,9152888459,Jonathan,Martha,Jor-El,Uncle
-2050015,Kent ,Kara,Kent,F,BSED ,2,COE,155 Assumption Rd,lanalang@hotmail.com,9062547788,Jonathan,Martina,Clark,Uncle
-2050016,Vanderwoodsen,Serena,Lee,F,BSED ,3,COE,133 Hillside,georginalee@gmail.com,9178845522,Geo,Gia,Gilbert,Uncle
-2050017,Ronson,Mark,Lane,M,BSED ,4,COE,21 P Zamora,smarty@gmail.com,9215447778,Oliver,Catalina,Clark,Uncle
-2050018,George,Georgina ,Olsen,F,BSED B-C,1,COE,55 Pinsao Rd,loislane@gmail.com,9215874113,Gerald,Geraldine,Clark,Uncle
-2050019,Hudson ,Katy,Brutus,F,BSED B-C,2,COE,24 1st Rd,oliveoil@yahoo.com,9278521678,Bert,Bertha,Lovelyn,Aunt
-2050020,Perry,Catalina,Big,F,BSED B-C,3,COE,12 Naguilian Rd,samjones@yahoo.com,9155121558,Samuel,Sandy,Emanuel,Uncle
-2050021,Lee,Olivia,Perry,F,BSED B-C,4,COE,110 Hillside Rd,katyperry@yahoo.com,9052177996,Jack,Jacqueline,James,Uncle
-2050022,Brutus,Sophia,James,F,BSED ENGL,1,COE,185 B Marcos Highway,katyjames@yahoo.com,9184445995,Kelvin,Kate,Lily,Aunt
-2050023,Oil,Olive,Rose,F,BSED ENGL,2,COE,21 Quezon Hill Rd,queenbee@yahoo.com,9058874150,Harold,Cristina,Rufus,Uncle
-2050024,Jones,Samantha,Rose,F,BSED ENGL,3,COE,211 Quezon Hill Rd,aaronrose@yahoo.com,9058874151,Harold,Cristina,Rufus,Uncle
-2050025,Faith,Karen,Lee,F,BSED ENGL,4,COE,230 B Gladiola,cyrusrose@yahoo.com,9057441101,William,Amanda,Meldred,Aunt
-2050026,George,Christina,Wong,F,BSED FIL,1,COE,181 B Greenwater,leetamara@gmail.com,9215741563,Wilard,Wilma,Jones,Brother
-2050027,Hung,Kimberly,Cooper,F,BSED FIL,2,COE,12 Outlook Drive,lexknepp@gmail.com,9159633666,Anselmo,Anselma,Sela,Aunt
-2050028,Wong,Maya,Bass,F,BSED FIL,3,COE,579 Irisan,sheldoncooper@yahoo.com,9215555000,Sheran,Sheila,Sha-ed,Uncle
-2050029,Woosh,Mulan,Leonard,F,BSED FIL,4,COE,60 City Camp,pennyyu@gmail.com,9053511255,Angelo,Angela,Angelina,Aunt
-2050030,Lim,Lee Anne,Keller,F,BSED GS,1,COE ,53 Bokawkan Rd,lesliewinkle@hotmail.com,9215577777,Edgar,Doloris,Doris,Aunt
-2050031,Floyd,Pink,Smith,M,BSED GS,2,COE,32 Siapno Rd,lucasscott@rocketmail.com,9295788888,Leo,Lea,Leona,Aunt
-2050032,Roger,John,Lee,M,BSED GS,3,COE,55 Bayan Park,smithtanlee@gmail.com,9063588741,Michael,Michelle,Michy,Sister
-2050033,Kravitz,Lenny,Andaca,M,BSED GS ,4,COE,217 Amparo Drive,Alfonso23@rocketmail.com,9105555444,Oscar,Olivia,Sophia,Aunt
-2050034,Song,Alanis,Lucas,F,BSED HET,1,COE,42 A Honeymood Rd,annataggaro@gmail.com,9187777663,Marcelo,Marcela,Marcelina,Aunt
-2050035,Sing,Brenda,Woosh,F,BSED HET,2,COE,32 Bakakeng Norte,connorowen@gmail.com,9285559999,Reynaldo,Rachel,Rasheen,Aunt
-2050036,Tisdale,Ashlee,Marocs,F,BSED HET,3,COE,41 E Upper Engineers Hill,juanaquino@gmail.com,9196369636,John,Wilma,William,Uncle
-2050037,Martin,Zachary,Scott,M,BSED HET,4,COE,22 Tacay Rd,amandatanen@yahoo.com,9053501298,Yolando,Yolanda,Yolly,Aunt
-2050038,Martin,Cody,Meade,M,BSED MAT,1,COE,24 Dominican Rd,faysommers@yahoo.com,9063501298,Raul,Cresencia,Raulio,Brother
-2050039,Steven,Luis,Alak,M,BSED MAT,2,COE,92 Ledesma,carlorossi@yahoo.com,9073501298,Consuelo,Consuela,Conny,Sister
-2050040,Jimenez,Jay,Alak,M,BSED MAT,3,COE,14 Pucay Rd.,jackdaniels@gmail.com,9083501298,Laurence,Laurencia,Lauren,Brother
-2050041,Star,Patrick,Alak,M,BSED MAT,4,COE,40 Gibraltar Rd,josecuervo@gmail.com,9213501298,Ramon ,Raven,Regia,Aunt
-2050042,Stone,Abigail,Mas,F,BSED MHP,1,COE,77 Hiltop,tomcruise@yahoo.com,9223501298,Carlo,Carla,Carmen,Aunt
-2050043,Feliz,Rain,Goo,M,BSED MHP,2,COE,29 Apugan Irisan,robthomas@yahoo.com,9175544477,Robert,Roberta,Bob,Uncle
-2050044,Thomas,Felix,Spide,M,BSED MHP,3,COE,85 Sanitary Camp,peterparker@yahoo.com,9219984143,John,Janet,Natalie,Aunt
-2050045,Smokes,Marife,Spears,F,BSED MHP,4,COE,28 Holy Ghost,Britneyappe@yahoo.com,9219984142,Enrique,Elvira,Erika,Aunt
-2050046,Smith,Jacob,Apple,M,BSED REL ED,1,COE,209 Malaya Rd,nicolani@yahoo.com,9219984141,Robert,Robertha,Bertha,Aunt
-2050047,Jones,Emily,Simone,F,BSED REL ED,2,COE,439 Upper Quarry,ravenbaxter@yahoo.com,9219984140,Felimon,Felomina,Mina,Aunt
-2050048,White,Madison ,Simone,F,BSED REL ED,3,COE,438 Upper Quarry,ravenbaxter@yahoo.com,9219924139,Felimon,Felomina,Mina,Aunt
-2050049,Black,Hannah,Dulsen,F,BSED REL ED,4,COE,145 Crystal Cave,allisonmack@gmail.com,9219984138,Gordon,Geraldine,Gerald,Uncle
-2050050,Brown,Daniel,Lei,M,BSED SS,1,COE,47 Cordillera Rd,ranmasaotome@gmail.com,9219984137,Benjamin,Bertha,Billy,Uncle
-2050051,Elizabeth ,Quennie,Yu,F,BSED SS,2,COE,39 Balsigan Rd,nabikitendo@gmail.com,9219984136,Gregorio,Gregoria,Greg,Uncle
-2050052,Jones,William,Yu,M,BSED SS,3,COE,12 Balsigan Rd,akanetendo@gmail.com,9219984135,Gregorio,Gregoria,Greg,Uncle
-2050053,Wayne ,Sarah,Lee,F,BSED SS,4,COE,251 Gabriela Silang Rd,tanmarsh@yahoo.com,9219984134,Peter,Petra,Penny,Sister
-2050054,Wayne ,Bruce,Scott,M,BSED LIB,1,COE,64 Pinsao Pilot Project,mattstone@yahoo.com,9219984133,Matthew,Martha,Mark,Brother
-2050055,West,Wally,Cartman,M,BSED LIB,2,COE,137 Dominican Rd,treyparker@yahoo.com,9219984132,Scott,Jean,Grey,Uncle
-2050056,Stewart,John,Stone,M,BSED LIB,3,COE,25 Military Cut-off,jenniferhowwel@gmail.com,9219984131,John,Jean,Anthony,Uncle
-2050057,Hol,Shayera,Tucker,F,BSED LIB,4,COE,55 Dominican Rd,donovantucker@gmail.com,9219984130,James,Jane,Leonard,Uncle
-2050058,Jones,John,Saotome,M,BSED BIO,1,COE,286 Gibraltar Rd,craigtucker@gmail.com,9219984129,Virgillio,Virgina,Judith,Aunt
-2050059,El,Kal,Basco,M,BSED BIO,2,COE,19 San Carlos Heights,kimmyvulmer@gmail.com,9219984128,Domingo,Dominga,Dominic,Brother
-2060010,Welling,Tom,Basawil,M,BSED BIO,3,COE,149 Siapno Rd,tokenblack@gmail.com,9219984127,Basilio,Bea,Crispin,Aunt
-2060011,White,Jamie,Velasco,F,BSED BIO,4,COE,6 Bakakeng Norte,jimbokern@yahoo.com,9219984126,Daniel,Daniela,Danileen,Aunt
-2060012,Curry,Arthur,Lee,M,BSED B-P,1,COE,23 Everlasting,mulanwoosh@yahoo.com ,9219984125,Ismael,Melinia,Marciana,Aunt
-2060013,Palmer,Pay,Woosh,M,BSED B-P,2,COE,144 Holy Ghost Ext,leeanne@gmail.com,9219984124,Marciano,Marciana,Maricel,Aunt
-2060014,Rothstein,Albert,Rock,M,BSED B-P,3,COE,3 Central Fairview,pinkfloyd@gmail.com,9219984123,Reynaldo,Reynalda,Rey,Uncle
-2060015,Falconer,Curt,Patrick,M,BSED B-P,4,COE,18 Kias Rd,johnroger@gmail.com,9219984122,Romeo,Juliet,Loverne,Aunt
-2060016,Freeman,Casidy,Song,F,BSED CHEM,1,COE,55 Cabinet Hill,lennykravitz@gmail.com,9219984121,Benjamin,Benita,Ben,Uncle
-2060017,Lance,Dinah,Song,F,BSED CHEM,2,COE,90 Pinsao Pilot Project,brendasing@gamil.com,9219984120,Joel,Jocelyn,Joyce,Aunt
-2060018,Casidy,Daniel,Martin,M,BSED CHEM,3,COE,18 Pucay Rd,ashleetisdale@gmail.com,9219984119,Andrew,Carmen,Caramel,Sisiter
-2060019,Carter,Michael,Tipton,M,BSED CHEM,4,COE,26 Upper Market Subdivision,zackmartin@gmail.com,9219984118,Nelson,Vicky,Ashlee,Aunt
-2060020,Adams ,Nathaniel,Tipton,M,BSED COMP ED,1,COE,126 Upper Market Subdivision,codymartin@gmail.com,9219984117,Nelson,Vicky,Ashlee,Aunt
-2060021,Batsons,Billy,Even,M,BSED COMP ED,2,COE,43 A Marcoville,luissteven@gmail.com,9219984116,Edwin,Elizabeth,Elena,Aunt
-2060022,Heywood,Hank,Steven,M,BSED COMP ED,3,COE,22 Ambiong Rd,chuckwilson@gmail.com,9219984115,Onofre,Melma,Nanette,Aunt
-2060023,Ryder,Jack,Wilson,M,BSED COMP ED,4,COE,Fort del Pilar Baguio City,zindablake@yahoo.com,9219984114,Edwin,Alba,Jessica,Aunt
-2060024,Travis,Lee,Abdula,M,BSED HST,1,COE,111 Tacay Rd,timdrake@yahoo.com,9219984113,Leonard,Manilyn,Jinky,Aunt
-2060025,D’Aramis,Vivian,Remundo,F,BSED HST,2,COE,15 City Camp Aly,samuley@yahoo.com,9219984112,Emilio,Emilda,Miley,Sister
-2060026,Nelson,Kent ,Twilight,M,BSED HST,3,COE,38 Upper M Roxas,charlieswan@yahoo.com,9219984111,Jose,Josefa,Joselito,Uncle
-2060027,Hoshi,Kimiyo,Twilight,M,BSED HST,4,COE,8 Upper M Roxas,elizabethswan@gmail.com,9219984110,Jack,Fidela,Ace,Uncle
-2060028,Cross,Peter,Justice,M,BSED MUSIC,1,COE,89 Gabriela Silang,harryclearwater@gmail.com,9219984109,Rufino,Heidi,Amelda,Aunt
-2060029,Hall,Don,Swan,M,BSED MUSIC,2,COE,7 Magsaysay Avenue,tylercrowley@gmail.com,9219984108,Pedro,Petra,Anthony,Uncle
-2060030,Dibny,Ralph,Newton,M,BSED MUSIC,3,COE,1 Crystal Cave Rd,laurenmallory@yahoo.com,9219984107,Edgardo,Rosita,Rosemarie,Sister
-2060031,Blood,Jason,Smith,M,BSED MUSIC,4,COE,2 Crystal Cave Rd,mikenewton@yahoo.com,9219984106,Michael,Cristina,Pinky,Sister
-2060032,Queen,Oliver,Comicho,M,BSED MUS&ART,1,COE,3 Crystal Cave Rd,angelweber@gmail.com,9219984105,Angelo,Angela,Angelita,Sister
-2060033,Hall,Hank,Apilado,M,BSED MUS&ART,2,COE,4 Crystal Cave Rd,leahjared@rocketmail.com,9219984104,Erik,Emily,Willard,Brother
-2060034,Tyler ,Rick,Lim,M,BSED MUS&ART,3,COE,5 Crystal Cave Rd,erickyorkee@yahoo.com,9219984103,David,Jenny,Jones,Brother
-2060035,Bertelini,Helena ,Lord,F,BSED MUS&ART,4,COE,6 Crystal Cave Rd,Frodobaggins@yahoo.com,9219984102,Aragorn,Anabelle,Sheryll,Sister
-2060036,Mason,Tora,King,F,BSED PE&HLTH,1,COE,7 Crystal Cave Rd,aragornking@yahoo.com,9219984101,Legolas,Leonida,Lewis,Sister
-2060037,Mason,Rex,King,M,BSED PE&HLTH,2,COE,8 Crystal Cave Rd,legolasgreenleaf@gmail.com,9219984100,Rufus,Jenny,Dan,Brother
-2060038,Holt,Michael,Bolger,M,BSED PE&HLTH,3,COE,9 Crystal Cave Rd,lotr@yahoo.com,9219984099,Fidel,Fidel,Ramon,Brother
-2060039,Tresser,Tom,Arwen,M,BSED PE&HLTH,4,COE,10 Crystal Cave Rd,bolger@gmail.com,9219984098,Owen,Osang,Obet,Brother
-2060040,Rice,Todd,Bolger,M,BSED PE,1,COE,1 Gabriela Silang,bombadil@gmail.com,9219984097,Avelino,Avelina,Avelinita,Sister
-2060041,Victor,Charles,Cloud,M,BSED PE,2,COE,2 Gabriela Silang,cottoncloud@gmail.com,9219984096,Jona,Elizabeth,Nena,Sister
-2060042,Terrill,Rey,Baltazar,M,BSED PE,3,COE,3 Gabriela Silang,billferny@gmail.com,9219984095,Salvador,Salvadora,Salve,Uncle
-2060043,Smith,John,Lewis,M,BSED PE,4,COE,4 Gabriela Silang,elanorgardner@gmail.com,9219984094,Baltazar,Salve,Basty,Uncle
-2060044,Pushkin,Dmitri,Salvador,M,BSED PHYS,1,COE,5 Gabriela Silang,salvebaltazar@gmail.com,9219984093,Apolonio,Apolonia,Loner,Unlcle
-2060045,Hawkins,Sanderson,Queen,M,BSED PHYS,2,COE,120 Guisad Baguio City,samronson@gmail.com,9219984092,Silver,Casidy,Cady,Aunt
-2060046,Justin,Sir,Queen,M,BSED PHYS,3,COE,145 Guisad Baguio City,markronson@gmail.com,9219984091,Silver,Casidy,Cady,Aunt
-2060047,Whitmore,Courtney,Dakota,F,BSED PHYS,4,COE,15 Guisad Baguio City,hanahfanning@gmail.com,9219984090,Joseph,Katherine,Bea,Aunt
-2060048,Gayven,Prince,Dakota,M,BSED RVE,1,COE,155 Guisad Baguio City,lilianfanning@gmail.com,9219984089,Joseph,Katherine,Bea,Aunt
-2060049,Irons,John,Frost,M,BSED RVE,2,COE,69 Dominican Rd,alexfrost@gmail.com,9219984088,Antonio,Rowena,Ronio,Uncle
-2060050,Dugan,Patricia,Agatha,F,BSED RVE,3,COE,1 Dominican Rd,sanguthrie@gmail.com,9219984087,Polo,Ara,Sunshine,Aunt
-2060051,In-Ze,Karl,Thomas,M,BSED RVE,4,COE,15 Pinsao Pilot Project,tomwelling@yahoo.com,9219984086,Samuel,Agatha,Santhie,Aunt
-2060052,Ramone,Poca,Thomas,F,BSED REL STD,1,COE,152 Pinsao Pilot Project,jaimewelling@yahoo.com,9219984085,Samuel,Agatha,Santhie,Aunt
-2060053,Sanders,Gregoria,Ron,F,BSED REL STD,2,COE,89 Pinsao Pilot Project,jaimewhite@yahoo.com,9219984084,Rob,Alice,Cooper,Uncle
-2060054,McCabe,Mari,Cook,F,BSED REL STD,3,COE,JD 76 Pico La Trinidad,carlysmithson@gmail.com,9219984083,David,Anna,Dave,Uncle
-2060055,Ryder,Matthew,Jewel,M,BSED REL STD,4,COE,JD 12 Pico La Trinidad,melissaethridge@gmail.com,9219984082,Jon,Olivia,Paulo,Uncle
-2060056,Grant,Ted,King,M,BSED SC TECH,1,COE,JE 1 Pico La Trinidad ,glenmatlock@yahoo.com,9219984081,Johnny,Melissa,Oscar,Uncle
-2060057,Zatara,Zatanna,Pistol,F,BSED SC TECH,2,COE,15 Military Cut-off,johnnyrotten@gmail.com,9219984080,Oliver,Eliz,Lizzie,Sister
-2060058,Rio ,Marina ,Pistol,F,BSED SC TECH,3,COE,5 Military Cut-off,paulcook@yahoo.com,9219984079,Raphael,Sophia,Steve,Uncle
-2060059,McGinnis,Terry,Blue,M,BSED SC TECH,4,COE,90 Military Cut-off,harryhess@yahoo.com,9219984078,Socarno,Rachel,Dennise,Sister
-2070010,Barda,Big,Blue,M,BSED THE,1,COE,190 Military Cut-off,petelesperance@gmail.com,9219984077,Benny,Felicitas,Socarno,Uncle
-2070011,Foley,Richard,Newman,M,BSED THE,2,COE,67 Military Cut-off,josephrojas@yahoo.com,9219984076,Harry,Helen,Troy,Brother
-2070012,Ro,Kai,Legolas,M,BSED THE,3,COE,23 Military Cut-off,howardgreenfield@gmail.com,9219984075,Edu,Kris,Joshua,Uncle
-2070013,Morgan,Travis,Sacrise,M,BSED THE,4,COE,85 Militay Cut-off,scottstapp@yahoo.com,9219984074,Neil,Sally,Yue,Uncle
-2070014,Gordon,Barbara,Perry,F,BSED VAL,1,COE,10 Apugan Irisan,dalasaustin@yahoo.com,9219984073,Seven,Danileen,Colbie,Sister
-2070015,Drake,Tim,Kitongan,M,BSED VAL,2,COE,23 Apugan Irisan,davepirner@yahoo.com,9219984072,Nick,Nikki,Nicole,Sister
-2070016,Rayner,Kyle,Presley,M,BSED VAL,3,COE,89 Apugan Irisan,jamesroche@yahoo.com,9219984071,Elvis,Ellena,Adam,Uncle
-2070017,Abdula,Paula,Stephen,F,BSED VAL,4,COE,5 Apugan Irisan,steveharris@yahoo.com,9219984070,Steven,Chris,Cole,Uncle
-2070018,Zed,Galius,Cocaine,M,MD,1,COM,7 Apugan Irisan ,bobdylan@yahoo.com,9219984069,Brian,Yvonne,Walter,Uncle
-2070019,Free,Scott,Vander,M,MD,2,COM,12 Apugan Irisan,brianark@yahoo.com,9219984068,Robert,Robertha,Robbin,Uncle
-2070020,Wilson ,Chuck,Stein,M,MD,3,COM,JD 237 Pico La Trinidad,jaronlowen@yahoo.com,9219984067,Tobias,Tabias,Richard,Uncle
-2070021,Hendrickson,Hans,Hen,M,MD,4,COM,JD 123 Pico La Trinidad,jeffcoehen@yahoo.com,9219984066,Raymund,Diana,Eliz,Sister
-2070022,Bjornson,Olaf,Ias,M,SPELL,1,COE,9 Apugan Irisan,tobiassammet@gmail.com,9219984065,David,Jana,Dio,Uncle
-2070023,Blake,Zinda,Dio,F,SPELL,2,COE,876 Central Fairview,jamesronnie@gmail.com,9219984064,Bryan,Crisanta,Ling,Aunt
-2070024,Trevor,Steve,Monte,M,SPELL,3,COE,87 Central Fairview,mark@yahoo.com,9219984063,Armando,Betty,Fea,Aunt
-2070025,Olsen,Jimmy,Jones,M,SPELL,4,COE,76 Central Fairview,joncrosby@yahoo.com,9219984114,Ron,Kimberly,Anne,Sister
-2070026,El,Jor,Bon,M,ED D,1,COE,1 P Zamora,gavinbon@yahoo.com,9219984113,Derick,Dysiree,Dillan,Uncle
-2070027,El,Lara,Cyrus,F,ED D,2,COE,9 P Zamora,Jackson@yahoo.com,9219984112,Rexone,Roxanne,Roxy,Sister
-2070028,Park,Linda,Jet,F,ED D,3,COE,10 P Zamora,benniegreen@yahoo.com,9219984111,Kansas,Anna,Lee,Uncle
-2070029,White,Perry,See,M,ED D,4,COE,11 P Zamora,krisolivia@gmail.com,9219984110,Denver,Nicolani,Lannie,Aunt
-2070030,Troupe,Ron,Web,M,PHD ED,1,COE,12 P Zamora,peternoble@yahoo.com,9219984109,Jasper,Vicel,Vince,Uncle
-2070031,Hawkins,Sharon ,Trunk,F,PHD ED,2,COE,13 P Zamora,sharonhawkins@yahoo.com,9219984108,Judd,Hope,Gay,Aunt
-2070032,Carr,Snapper,Vaper,M,PHD ED,3,COE,15 P Zamora,snappercarr@yahoo.com,9219984107,Daniel,Marilou,Daryl,Uncle
-2070033,Gleeson,Summer,Barombado,F,PHD ED,4,COE,16 P Zamora,samgleeson@yahoo.com,9219984106,Shawn,Justine,Imelda,Aunt
-2070034,Sawyer,Maggie,Velasquez,F,PHD EM,1,COE,17 P Zamora,maggiesawyer@yahoo.com,9219984105,Allan,Shakira,Paula,Aunt
-2070035,Gordon,James,Velasco,M,PHD EM,2,COE,18 P Zamora,jamesgordon@yahoo.com,9219984104,Obet,Mariah,Gavin,Uncle
-2070036,Masen,Gil,Allasiw,M,PHD EM,3,COE,19 P Zamora,gilmasen@yahoo.com,9219984103,Carlo,Karen,Genaro,Brother
-2070037,Montoya,Renee,Hernani,F,PHD EM,4,COE,20 P Zamora,reneemontoya@yahoo.com,9219984102,Christopher,Mae,Gene,Uncle
-2070038,Bullock,Harvey ,Cooper,M,PHD LANG ED,1,COE,21 P Zamora,harveybull@yahoo.com,9219984101,Alejandro,Princess,Geoffrey,Brother
-2070039,Dessdale,Resma,Adams,F,PHD LANG ED,2,COE,22 P Zamora,resmadessdale@yahoo.com,9219984100,Angelo,Kim,George,Uncle
-2070040,Chill,Joe,Davidson,M,PHD LANG ED,3,COE,23 P Zamora,joechill@yahoo.com,9219984099,Nicholas,Aubrey,Gerald,Brother
-2070041,Ur ,Jax,McDonalds,M,PHD LANG ED,4,COE,24 P Zamora,jaxur@yahoo.com,9219984098,Daryl,Rachel,Gerard,Uncle
-2070042,Graves ,Mercy,McCauley,F,PHD LING,1,COE,40 Cabinet Hill,mercygraves@yahoo.com,9219984097,Ron,Leah,Gerardo,Brother
-2070043,Edge,Morgan,McJeffy,M,PHD LING,2,COE,39 Cabinet Hill,morganedge@yahoo.com,9219984096,Matthew,Jessica,German,Uncle
-2070044,Mandragora,Steven,McBurger,M,PHD LING,3,COE,38 Cabinet Hill,stevedragon@yahoo.com,9219984095,Martin,Amber,Gavin,Brother
-2070045,Manning,Tobias,McFries,M,PHD LING,4,COE,37 Cabinet Hill,tobiasmanning@yahoo.com,9219984094,Jason,Jannel,Genaro,Uncle
-2070046,Adam,Teth,McYours,F,PHD LITT,1,COE,36 Cabinet Hill,tethadamas@yahoo.com,9219984093,Jayson,Kathleen,Gene,Brother
-2070047,Manheim,Bruno,Haight,M,PHD LITT,2,COE,35 Cabinet Hill,brunomanheim@yahoo.com,9219984092,Mackenzie,Aaliyah,Jayden,Uncle
-2070048,Lee,Darkseid,Fanning,M,PHD LITT,3,COE,34 Cabinet Hill,darkseidee@yahoo.com,9219984091,Aaron,Abbey,Jaylen,Brother
-2070049,Vundabar,Virman,Gallagher,M,PHD LITT,4,COE,33 Cabinet Hill,virmanvundabar@yahoo.com,9219984090,Adil,Abbie,Jaylin,Uncle
-2070050,Louise,Mary,Galgala,F,PHD MGMT,1,CAC,32 Cabinet Hill,marylouise@yahoo.com,9219984089,Alaister,Abbigail,Jaylon,Brother
-2070051,Hagen ,Matthew,Bestwilen,M,PHD MGMT,2,CAC,31 Cabinet Hill,matthewhagen@yahoo.com,9219984088,Ale,Abby,Jayson,Uncle
-2070052,Fugate,Temple ,Bestwilan,M,PHD MGMT,3,CAC,30 Cabinet Hill,templefugate@yahoo.com,9219984087,Aaron,Abigail,Jean,Brother
-2070053,Quenzel,Harleen,Tricoy,F,PHD MGMT,4,CAC,29 Cabinet Hill,harleenquenzel@yahoo.com,9219984086,Adil,Addison,Jedidiah,Uncle
-2070054,Jones,Waylon,Bootay,M,MBS,1,CNS,28 Cabinet Hill,waylonjones@yahoo.com,9219984085,Alaister,Adrian,Jeff,Brother
-2070055,Bolton ,Lyle,Odyssey,M,MBS,2,CNS,27 Cabinet Hill,lylebolton@yahoo.com,9219984084,Ale,Adriana,Jefferson,Uncle
-2070056,Tetch,Jervez,Crab,M,MBS,3,CNS,26 Cabinet Hill,jerveztetch@yahoo.com,9219984083,Alfie,Adrianna,Jeffery,Brother
-2070057,Langstorm,Kirk,Virgo,M,MBS,4,CNS,25 Cabinet Hill,kirklangstorm@yahoo.com,9219984082,Amancleep,Adrienne,Jeffrey,Uncle
-2070058,Fries,Victor,Leo,M,MALIT,1,COE,24 Cabinet Hill,victorfries@yahoo.com,9219984081,Andrzej,Aileen,Jerald,Brother
-2070059,Cobblepot,Oswald,Libra,M,MALIT,2,COE,23 Cabinet Hill,oswaldcobblepot@yahoo.com,9219984080,Anish,Aimee,Jeremiah,Uncle
-2070060,Isley,Pamela,Scorpio,F,MALIT,3,COE,22 Cabinet Hill,pamelaisley@yahoo.com,9219984079,Arjun,Aisha,Jeremy,Brother
-2080035,Nygma,Edward,Bach,M,MALIT,4,COE,21 Cabinet Hill,edwardnygma@yahoo.com,9219984078,Arun,Aja,Jermaine,Uncle
-2080036,Dagett,Roland,Sebastian,M,MA CT,1,COE,20 Cabinet Hill,rolandagett@yahoo.com,9219984077,Abe,Alaina,Jerod,Brother
-2080037,Sulton,Roxan,Baltazar,F,MA CT,2,COE,19 Cabinet Hill,roxansultin@yahoo.com,9219984076,Adnan,Alana,Jerome,Uncle
-2080038,Crame,Joham,Salvador,M,MA CT,3,COE,18 Cabinet Hill,johamcrame@yahoo.com,9219984075,Alan,Alanna,Jerrell,Brother
-2080039,Lawford,Warren ,Padilla,M,MA CT,4,COE,17 Cabinet Hill,warrenlawford@yahoo.com,9219984074,Alec,Alayna,Jerrod,Uncle
-2080040,Hardwick,Gunther,Alonso,M,MA ECON,1,CAC,16 Cabinet Hill,guntherhardwick@yahoo.com,9219984073,Ali,Aleah,Jerry,Brother
-2080041,Decker,Armand,Armando,M,MA ECON,2,CAC,15 Cabinet Hill,armandecker@yahoo.com,9219984072,Amar,Alecia,Jess,Uncle
-2080042,Dent,Harvey ,Cruz,M,MA ECON,3,CAC,14 Cabinet Hill,harveydent@yahoo.com,9219984071,Andy,Alejandra,Jesse,Brother
-2080043,Stan,Mad,Cruise,M,MA ECON,4,CAC,13 Cabinet Hill,madstan@yahoo.com,9219984070,Anthony,Alena,Jessie,Uncle
-2080044,Mayhem,Maria,Pitt,F,MAED FIL ED,1,COE,12 Cabinet Hill,mariamayhem@yahoo.com,9219984069,Arnold,Alesha,Jessy,Brother
-2080045,Waller,Amanda,Pete,F,MAED FIL ED,2,COE,11 Cabinet Hill,amandawaller@yahoo.com,9219984068,Asghar,Alessandra,Jesus,Uncle
-2080046,Milo ,Achiles,Pansit,M,MAED FIL ED,3,COE,10 Cabinet Hill,achilesmilo@yahoo.com,9219984067,Avi,Alex,Jim,Brother
-2080047,Stang,Hugo,Anney,M,MAED FIL ED,4,COE,9 Cabinet Hill,hugostang@yahoo.com,9219984066,Abe,Alexa,Jimmie,Uncle
-2080048,Hamilton ,Tala,Pirner,F,MAED AS,1,COE,8 Cabinet Hill,talamilton@yahoo.com,9219984065,Adnan,Alexandra,Jimmy,Brother
-2080049,Lord,Maxwell,Harem,M,MAED AS,2,COE,7 Cabinet Hill,maxwellord@yahoo.com,9219984064,Alan,Alexandrea,Joaquin,Uncle
-2080050,Vance,Robert,Scarem,M,MAED AS,3,COE,6 Cabinet Hill,roberntvance@yahoo.com,9219984063,Alec,Alexandria,Jody,Brother
-2080051,King,Galatea,Petty,F,MAED AS,4,COE,5 Cabinet Hill,galateaking@yahoo.com,9219984114,Ali,Alexia,Joe,Uncle
-2080052,Kadabra,Abra,Perry,F,MAED B,1,COE,4 Cabinet Hill,abrakadabra@yahoo.com,9219984113,Amar,Alexis,Joel,Brother
-2080053,Pepper,Pied,Troggs,M,MAED B,2,COE,3 Cabinet Hill,piedpepper@yahoo.com,9219984112,Aceem,Alexus,Joey,Uncle
-2080054,Alva,Edwin,Hansons,M,MAED B,3,COE,2 Cabinet Hill,edwinalva@yahoo.com,9219984111,Adrian,Ali,John,Brother
-2080055,Dillo,Carmen,Isaac,F,MAED B,4,COE,1 Cabinet Hill,carmendillo@yahoo.com,9219984110,Alasdair,Alice,Johnathan,Uncle
-2080056,Barnett,Derek,Newton,M,MAED ECED,1,COE,38 M. H. Del Pilar St. Corner Legarda Road,derekbarnett@yahoo.com,9219984109,Alex,Alicia,Cadence,Sister
-2080057,Ferret,Ebon,Dion,M,MAED ECED,2,COE,37 M. H. Del Pilar St. Corner Legarda Road,ebonferret@yahoo.com,9219984108,Alim,Alina,Caitlin,Aunt
-2080058,Kangor,Madelyn,Kelly,F,MAED ECED,3,COE,36 M. H. Del Pilar St. Corner Legarda Road,madelynkangor@yahoo.com,9219984107,Amber,Alisa,Caitlyn,Sister
-2080059,Lawrence ,Tamara,Rutherford,F,MAED ECED,4,COE,35 M. H. Del Pilar St. Corner Legarda Road,tamaralawrence@yahoo.com,9219984106,Aneesh,Alisha,Caleigh,Aunt
-2090010,Empress,Emerald,Meester,M,MAED ENG,1,COE,34 M. H. Del Pilar St. Corner Legarda Road,emeraldempress@yahoo.com,9219984105,Antoine,Alison,Cali,Sister
-2090011,Grundy,Solomon,Blake,M,MAED ENG,2,COE,33 M. H. Del Pilar St. Corner Legarda Road,solomongundy@yahoo.com,9219984104,Aroshona,Alissa,Calista,Aunt
-2090012,Saphire,Star,Blair,F,MAED ENG,3,COE,32 M. H. Del Pilar St. Corner Legarda Road,starsphire@yahoo.com,9219984103,Ashby,Aliyah,Callie,Sister
-2090013,Destine,Clan,Chuck,M,MAED ENG,4,COE,31 M. H. Del Pilar St. Corner Legarda Road,clandesine@yahoo.com,9219984102,Avikar,Allie,Cameron,Aunt
-2090014,Sinomson,Walt,Bass,M,MAED F,1,COE,30 M. H. Del Pilar St. Corner Legarda Road,waltsinomson@yahoo.com,9219984101,Aceem,Allison,Camila,Sister
-2090015,Halloway,Thomas,Kroeger,M,MAED F,2,COE,29 M. H. Del Pilar St. Corner Legarda Road,thomashalloway@yahoo.com,9053501296,Adrian,Baby,Jabari,Uncle
-2090016,Hammond ,Jim,Crowns,M,MAED F,3,COE,28 M. H. Del Pilar St. Corner Legarda Road,Jomhammond@yahoo.com,9053501295,Alasdair,Bailee,Jace,Uncle
-2090017,Web,Perry,Black,M,MAED F,4,COE,27 M. H. Del Pilar St. Corner Legarda Road,perryweb@yahoo.com,9053501294,Alex,Bailey,Jack,Brother
-2090018,Raymond,Thomas,White,M,MAED GC,1,COE,26 M. H. Del Pilar St. Corner Legarda Road,thomasraymond@yahoo.com,9053501293,Alim,Barbara,Jackie,Brother
-2090019,Dickson,Bruce,Brown,M,MAED GC,2,COE,25 M. H. Del Pilar St. Corner Legarda Road,brucedickson@yahoo.com,9053501292,Amber,Baylee,Jackson,Uncle
-2090020,Todd,Mark,Gray,M,MAED GC,3,COE,24 M. H. Del Pilar St. Corner Legarda Road,marktodd@yahoo.com,9053501291,Aneesh,Beatriz,Jacob,Uncle
-2090021,Barnes,James,Hall,M,MAED GC,4,COE,23 M. H. Del Pilar St. Corner Legarda Road,jamesbarnes@yahoo.com,9053501290,Antoine,Belen,Jacoby,Brother
-2090022,Rodgers,Steven,Mark,M,MAED G,1,COE,22 M. H. Del Pilar St. Corner Legarda Road,stevenrodgers@yahoo.com,9053501289,Aroshona,Bella,Jacques,Brother
-2090023,Black,Johan,Savage,M,MAED G,2,COE,21 M. H. Del Pilar St. Corner Legarda Road,johanblack@yahoo.com,9053501288,Ashby,Berenice,Jade,Uncle
-2090024,Morrow,Elton,Elliot,M,MAED G,3,COE,20 M. H. Del Pilar St. Corner Legarda Road,Eltonmorrow@yahoo.com,9053501287,Avikar,Bethany,Jaden,Uncle
-2090025,Noble,Peter,Warren,M,MAED G,4,COE,19 M. H. Del Pilar St. Corner Legarda Road,petternoble@yahoo.com,9053501286,Aceem,Bianca,Jaime,Brother
-2090026,Barstow ,Elizabeth ,Dysiree,F,MAED LANG,1,COE,18 M. H. Del Pilar St. Corner Legarda Road,elizbartsow@yahoo.com,9053501285,Adrian,Blanca,Jairo,Brother
-2090027,Frank,Robert,Deron,M,MAED LANG,2,COE,17 M. H. Del Pilar St. Corner Legarda Road,robertfrank@yahoo.com,9053501284,Alasdair,Bonnie,Jake,Uncle
-2090028,Marlow,Kevin,Watts,M,MAED LANG,3,COE,16 M. H. Del Pilar St. Corner Legarda Road,kevinmarlow@yahoo.com,9053501283,Alex,Brandi,Jakob,Uncle
-2090029,Pelvey,Laslo,Adam,M,MAED LANG,4,COE,15 M. H. Del Pilar St. Corner Legarda Road,lasopelvey@yahoo.com,9053501282,Alim,Brandy,Jaleel,Brother
-2090030,Mace,Jeffrey,Eve,M,MAED LRNG,1,COE,14 M. H. Del Pilar St. Corner Legarda Road,Jeffmace@yahoo.com,9053501281,Amber,Breana,Jalen,Brother
-2090031,Matkins,John,Hodges,M,MAED LRNG,2,COE,13 M. H. Del Pilar St. Corner Legarda Road,johnmatkins@yahoo.com,9053501280,Adam,Breanna,Jamaal,Uncle
-2090032,Frank,Madeline,Hudges,F,MAED LRNG,3,COE,12 M. H. Del Pilar St. Corner Legarda Road,madelinefrank@yahoo.com,9053501279,Aidan,Brenda,Jamal,Uncle
-2090033,Nasland,William,Snider,M,MAED LRNG,4,COE,230 Camdas,williamnasland@yahoo.com,9053501278,Alastair,Brenna,Jamar,Brother
-2090034,Mason,Grant,Dee,M,MAED LS,1,COE,229 Camdas,grantmason@yahoo.com,9053501277,Alexander,Breonna,Jamarcus,Brother
-2090035,Meke,Simon,Bratta,M,MAED LS,2,COE,228 Camdas,simonmeke@yahoo.com,9053501276,Alistair,Bria,Jamel,Uncle
-2090036,Neptuna,Nautica,Armstrong,F,MAED LS,3,COE,227 Camdas,nauticaneptuna@yahoo.com,9053501275,Anand,Briana,James,Uncle
-2090037,Mitchell,Mary,Green,F,MAED LS,4,COE,226 Camdas,marymitchell@yahoo.com,9053501274,Aneria,Brianna,Jameson,Brother
-2090038,Grayson,Bob,Greenleaf,M,MAED NFE,1,COE,225 Camdas,bobgrayson@yahoo.com,9053501273,Anush,Brianne,Jamie,Brother
-2090039,Monroe ,Jack,Peris,M,MAED NFE,2,COE,224 Camdas,jackmonroe@yahoo.com,9053501272,Adebishi,Bridget,Jamil,Uncle
-2090040,Malik,Albet,Seeger,M,MAED NFE,3,COE,223 Camdas,albetmalik@yahoo.com,9053501271,Aiden,Cadence,Kacey,Sister
-2090041,Druid,Anthony,Totman,M,MAED NFE,4,COE,222 Camdas,anthonydruid@yahoo.com,9053501270,Albert,Caitlin,Kaci,Aunt
-2090042,Walsworth,Lady,Anselmo,F,MAED N,1,COE,221 Camdas,Ladywalsworht@yahoo.com,9053501269,Alexi,Caitlyn,Kacie,Sister
-2090043,Aubrey,Roger,Wills,M,MAED N,2,COE,220 Camdas,rogeraubrey@yahoo.com,9053501268,Allan,Caleigh,Kadence,Sister
-2090044,Chandler ,Charles,Marley,M,MAED N,3,COE,219 Camdas,charleschandler@yahoo.com,9053501267,Andres,Cali,Kaelyn,Aunt
-2090045,Bohanon,Frank,Lowe,M,MAED N,4,COE,218 Camdas,frankbohanon@yahoo.com,9053501266,Ange,Calista,Kaia,Aunt
-2090046,William,Robert,Reichner,M,MAED READ,1,COE,217 Camdas,robertwilliam@yahoo.com,9053501265,Archie,Callie,Kaila,Sister
-2090047,Tinkle,Henry,Hagger,M,MAED READ,2,COE,216 Camdas,henrytinkle@yahoo.com,9053501264,Arrie,Cameron,Kailee,Aunt
-2090048,Tin,Samuel,Keifer,M,MAED READ,3,COE,215 Camdas,samueltin@yahoo.com,9053501263,Adib,Camila,Kailey,Sister
-2090049,Wilsmith,Ava,Stewart,F,MAED READ,4,COE,214 Camdas,avawilsmith@yahoo.com,9053501262,Alain,Camilla,Kailyn,Sister
-2090050,Smithson,Julia,Holderfield,F,MAED SCI,1,COE,213 Camdas,juliasmithson@yahoo.com,9053501261,Albie,Camille,Kaitlin,Aunt
-2090051,Cullen,Edward,Franne,M,MAED SCI,2,COE,212 Camdas,edwardcullen@yahoo.com,9053501260,Alexis,Campbell,Kaitlyn,Aunt
-2090052,Stewart,Bella,Golde,F,MAED SCI,3,COE,211 Camdas,bellastewart@yahoo.com,9053501259,Alwyn,Camryn,Kaitlynn,Sister
-2090053,Smith,Jason,Roberts,M,MAED SCI,4,COE,210 Camdas,jasonsmith@yahoo.com,9053501258,Andrew,Candace,Kaiya,Aunt
-2090054,Steward,Miley,Valenzuela,F,MA EM,1,COE,209 Camdas,mileysteward@yahoo.com,9053501257,Angus,Candice,Kaleigh,Sister
-2090055,Rey,Bobby,Ninfa,M,MA EM,2,COE,208 Camdas,bobbyrey@yahoo.com,9053501256,Ari,Cara,Kaley,Sister
-2090056,Stewart,Jackson ,Bulow,M,MA EM,3,COE,207 Camdas,jacksonstewart@yahoo.com,9053501255,Arthur,Carina,Kali,Aunt
-2090057,Hue ,Thomas,Dickinson,M,MA EM,4,COE,206 Camdas,thomashue@yahoo.com,9053501254,Ashwin,Carissa,Kaliyah,Aunt
-2090058,Jackman,Hugh,Van,M,MA ENGL,1,CHS,205 Camdas,hughjackman@yahoo.com,9053501253,Angelo,Carla,Kallie,Sister
-2090059,Swan,Elizabeth ,Beethoven,F,MA ENGL,2,CHS,204 Camdas,elizswan@yahoo.com,9053501252,Adib,Carlee,Kamryn,Aunt
-2090060,Sparrow,Jack,Light,M,MA ENGL,3,CHS,203 Camdas,jacksparrow@yahoo.com,9053501251,Alain,Carley,Kara,Sister
-2090061,Jones,David,Batombacal,M,MA ENGL,4,CHS,202 Camdas,davidjones@yahoo.com,9053501250,Kade,Carli,Karen,Sister
-2090062,Jill,Eman,Sotto,M,MA ELING,1,CHS,201 Camdas,emanjill@yahoo.com,9053501249,Kadeem,Carlie,Karina,Aunt
-2090063,Bradshaw,Carrie,De Leon,F,MA ELING,2,CHS,200 Camdas,carriebradshaw@yahoo.com,9053501248,Kaden,Carly,Karissa,Aunt
-2090064,York ,Charlotte ,De Guzman ,F,MA ELING,3,CHS,199 Camdas,charlotteyork@yahoo.com,9053501247,Kai,Carmen,Karla,Sister
-2090065,Choo,Jimmy,De los Santos,M,MA ELING,4,CHS,198 Camdas,jimmychoo@yahoo.com,9053501246,Kaleb,Carol,Karlee,Aunt
-2090066,Davis ,Kristin,Grant,F,MA ELITT,1,CHS,197 Camdas,kristindavis@yahoo.com,9053501245,Kalen,Carolina,Karley,Sister
-2090067,Hobes,Miranda,Hugh,F,MA ELITT,2,CHS,196 Camdas,mirandahobes@yahoo.com,9053501244,Kalvin,Caroline,Karli,Sister
-2090068,Catrrall,Kim,Castro,F,MA ELITT,3,CHS,195 Camdas,kimcatrall@yahoo.com,9053501243,Kameron,Carolyn,Karlie,Aunt
-2090069,Braga ,Sonia,Milan,F,MA ELITT,4,CHS,194 Camdas,Soniabraga@yahoo.com,9053501242,Kane,Carrie,Karly,Aunt
-2090070,North,Chris,Baretto,M,MA EHP,1,CEA,193 Camdas,chirsnorth@yahoo.com,9053501241,Kareem,Carson,Karyme,Sister
-2090071,Trump,Donald,Baretta,M,MA EHP,2,CEA,192 Camdas,donaldtrump@yahoo.com,9053501240,Karl,Casandra,Kasandra,Aunt
-2090072,Shaw,Aidan,Mulan,M,MA EHP,3,CEA,191 Camdas,aidanshaw@yahoo.com,9053501239,Kasey,Casey,Kasey,Sister
-2090073,Corbett,John,Watcher,M,MA EHP,4,CEA,190 Camdas,johncorbett@yahoo.com,9053501238,Keanu,Cassandra,Kassandra,Sister
-2090074,Berger,Jack,Gates,M,MA LS,1,CHS,189 Camdas,jackberger@yahoo.com,9053501237,Keaton,Cassidy,Kassidy,Aunt
-2090075,Petrovsky,Aleksander,Amerling,M,MA LS,2,CHS,188 Camdas,alexpetrovsky@yahoo.com,9053501236,Keegan,Cassie,Katarina,Aunt
-2090076,MacDougal,Trey,Aranyosi,M,MA LS,3,CHS,187 Camdas,treymacDougal@yahoo.com,9053501235,Keenan,Catalina,Kate,Sister
-2090077,Goldenblatt,Harry,Bajusz,M,MA LS,4,CHS,186 Camdas,harrygoldenblatt@yahoo.com,9053501234,Kegan,Catherine,Katelin,Aunt
-2090078,Handler,Evan,Balint,M,MA LING,1,CHS,185 Camdas,evanhandler@yahoo.com,9053501233,Keith,Cayla,Katelyn,Sister
-2090079,Brady,Steve,Balog,M,MA LING,2,CHS,184 Camdas,stevebrady@yahoo.com,9053501232,Kelby,Cecelia,Katelynn,Sister
-2090080,Wright,Richard,Barbuscak,M,MA LING,3,CHS,183 Camdas,richwright@yahoo.com,9053501231,Kellen,Cecilia,Katerina,Aunt
-2090081,Jerrod,Smith,Bartus,M,MA LING,4,CHS,182 Camdas,smithjerrod@yahoo.com,9053501230,Kelly,Celeste,Katharine,Aunt
-2090082,Lewis,Jason,Bata,M,MA LITT,1,CHS,181 Camdas,jasonlewis@yahoo.com,9053501229,Kelsey,Celia,Katherine,Sister
-2090083,Remar,James,Bates,M,MA LITT,2,CHS,180 Camdas,jamesremar@gmail.com,9053501228,Kelton,Celine,Kathleen,Aunt
-2090084,Johnston ,Skipper,Bayus,M,MA LITT,3,CHS,179 Camdas,skipperjohnson@gmail.com,9053501227,Kelvin,Charity,Kathryn,Sister
-2090085,Webber,Ben,Belteki,M,MA LITT,4,CHS,178 Camdas,benwebber@gmail.com,9053501226,Kendal,Charlotte,Kathy,Sister
-2090086,Leeds ,Robert,Benis,M,MA PHILOS,1,CHS,177 Camdas,robertleeds@gmail.com,9053501225,Kendall,Chasity,Katie,Aunt
-2090087,Braga ,Sonia,Berecz,F,MA PHILOS,2,CHS,176 Camdas,soniabraga@gmail.com,9053501224,Kendrick,Chaya,Katlyn,Aunt
-2090088,Blatch,Standford,Beregi,M,MA PHILOS,3,CHS,175 Camdas,standforblatch@gmail.com,9053501223,Kenneth,Chelsea,Katrina,Sister
-2090089,Garson,Willie,Berey,M,MA PHILOS,4,CHS,174 Camdas,williegarson@gmail.com,9053501222,Kenny,Chelsey,Katy,Aunt
-2090090,Marintino,Anthony,Bika,M,MA RELG STDS,1,CHS,173 Camdas,marintinoanthony@gmail.com,9053501221,Kent,Cheyanne,Kaya,Sister
-2090091,Cohen,Lyn,Blahut,F,MA RELG STDS,2,CHS,172 Camdas,lyncohen@gmail.com,9053501220,Kenton,Cheyenne,Kayden,Sister
-2090092,Huostun,Julie,Bodi,F,MA RELG STDS,3,CHS,171 Camdas,juliehuostun@gmail.com,9053501219,Keon,Chloe,Kaydence,Aunt
-2090093,Fisher,Carrie,Bordok,F,MA RELG STDS,4,CHS,170 Camdas,carriefisher@gmail.com,9053501218,Kerry,Christa,Kayla,Aunt
-2090094,Arnet,Will,Boros,M,MA SPED,1,COE,169 Camdas,williearnet@gmail.com,9053501217,Keven,Christian,Kaylah,Sister
-2090095,Heron,Cady,Breda,F,MA SPED,2,COE,168 Camdas,cadyheron@gmail.com,9053501216,Kevin,Christiana,Kaylee,Aunt
-2090096,Weiners,Gretchen,Bruskay,F,MA SPED,3,COE,167 Camdas,gretchenweiners@gmail.com,9053501215,Kevon,Christina,Kayleigh,Sister
-2090097,Ian,Janis,Bugyela,F,MA SPED,4,COE,166 Camdas,jasnian@gmail.com,9053501214,Khalid,Christine,Kaylen,Sister
-2090098,Samuels,Aaron,Buskay,F,MAT,1,COE,165 Camdas,aaronsamuels@gmail.com,9053501213,Khalil,Christy,Kayley,Aunt
-2090099,Smith,Karen,Chabina,F,MAT,2,COE,164 Camdas,karensmith@gmail.com,9053501212,Kieran,Ciara,Kayli,Aunt
-2090100,Gnapoor,Kevin,Chaucer,F,MAT,3,COE,163 Camdas,kevingnapoor@gmail.com,9053501211,Gaby,Ciera,Kaylie,Sister
-2090101,Pak,Trang,Chemay,M,MAT,4,COE,162 Camdas,trangpak@gmail.com,9053501210,Bailey,Dakota,Kaylin,Aunt
-2090102,Edwards,Lea,Csaszar,F,MAT BIO,1,COE,161 Camdas,leaedwards@gmail.com,9053501209,Barrett,Dakotah,Kaylyn,Sister
-2090103,Oman ,Shane,Csemadia,F,MAT BIO,2,COE,160 Camdas,shaneoman@gmail.com,9053501208,Barry,Dale,Kaylynn,Sister
-2090104,Gerber,Emma,Csicsery,F,MAT BIO,3,COE,159 Camdas,emmagerber@gmail.com,9053501207,Beau,Dallas,Keely,Aunt
-2090105,Lopez,Jessica,Deak,F,MAT BIO,4,COE,158 Camdas,jessicalopez@gmail.com,9053501206,Ben,Dallin,Keira,Aunt
-2090106,Weddell,Tyler ,Deli,M,MAT CHEM,1,COE,157 Camdas,tyleeweddell@gmail.com,9053501205,Benito,Dalton,Kelli,Sister
-2090107,George,Kylie,Dezso,F,MAT CHEM,2,COE,156 Camdas,kyliegeorge@gmail.com,9053501204,Benjamin,Damian,Kellie,Aunt
-2090108,Kraft,Caroline,Dick,F,MAT CHEM,3,COE,155 Camdas,carolinekraft@gmail.com,9053501203,Bennett,Damien,Kelly,Sister
-2090109,Black,Po ,Dodd,M,MAT CHEM,4,COE,154 Camdas,poblack@gmail.com,9053501202,Benny,Damion,Kelsey,Sister
-2090110,Haffman,Shifu,Duczer,M,MAT PHYS,1,COE,153 Camdas,shifuhaffman@gmail.com,9053501201,Bernard,Damon,Kelsie,Aunt
-2090111,Kim,Oogway,Erdey,M,MAT PHYS,2,COE,152 Camdas,oogwaykim@gmail.com,9053501200,Bernardo,Dan,Kendal,Aunt
-2090112,Jolie,Angelina,Breda,F,MAT PHYS,3,COE,151 Camdas,angelinajolie@gmail.com,9053501199,Bill,Dana,Kendall,Sister
-2090113,Pitt,Brad,Bruskay,M,MAT PHYS,4,COE,150 Camdas,bradpitt@gmail.com,9053501198,Billy,Dandre,Kendra,Aunt
-2090114,Chan,Jaycee,Bugyela,F,M. ENG'G ECE,1,CEA,149 Camdas,jayceechan@gmail.com,9053501197,Blaine,Dane,Kenia,Sister
-2090115,Rogen,Seth,Buskay,M,M. ENG'G ECE,2,CEA,148 Camdas,sethrogen@gmail.com,9053501196,Blair,Dangelo,Kenna,Sister
-2090116,Liu,Lucy,Chabina,F,M. ENG'G ECE,3,CEA,147 Camdas,lucyliu@gmail.com,9053501195,Blake,Daniel,Kennedi,Aunt
-2090117,Cross,David,Chaucer,M,M. ENG'G ECE,4,CEA,146 Camdas,davidcross@gmail.com,9053501194,Bo,Danny,Kennedy,Aunt
-2090118,McDavid,Ian,Chemay,M,M. ENG'G ChE,1,CEA,145 Camdas,iammcdavid@gmail.com,9053501193,Bobby,Dante,Kenya,Sister
-2090119,Ling,Mei,Csaszar,F,M. ENG'G ChE,2,CEA,144 Camdas,meiling@gmail.com,9053501192,Brad,Daquan,Kenzie,Aunt
-2090120,Swan,Isabella,Csemadia,F,M. ENG'G ChE,3,CEA,143 Camdas,isabellaswan@gmail.com,9053501191,Braden,Darian,Keyla,Sister
-2090121,Black,Jacob,Csicsery,M,M. ENG'G ChE,4,CEA,142 Camdas,jacobblack@gmail.com,9053501190,Bradford,Darien,Kiana,Sister
-2090122,Cullen,Carlisle ,Deak,M,M. ENG'G EE,1,CEA,141 Camdas,carlislecullen@gmail.com,9053501189,Bradley,Darin,Kianna,Aunt
-2090123,Platt,Esme,Deli,F,M. ENG'G EE,2,CEA,140 Camdas,esmeplatt@gmail.com,9053501188,Bradly,Dario,Kiara,Aunt
-2090124,Hale,Rosali,Dezso,F,M. ENG'G EE,3,CEA,139 Camdas,rosalihale@gmail.com,9053501187,Brady,Darion,Kiera,Sister
-2090125,McCortney,Emmett,Dick,M,M. ENG'G EE,4,CEA,138 Camdas,emmettmccortney@gmail.com,9053501186,Brandan,Darius,Kierra,Aunt
-2090126,Brandon ,Alice ,Dodd,F,M. ENG'G IE,1,CEA,137 Camdas,alicebrandon@gmail.com,9053501185,Branden,Darnell,Kiersten,Sister
-2090127,Hale,Jasper,Duczer,M,M. ENG'G IE,2,CEA,136 Camdas,jasperhale@gmail.com,9053501184,Brandon,Daron,Kiley,Sister
-2090128,Cullen,Renesmee,Erdey,F,M. ENG'G IE,3,CEA,135 Camdas,renesmeecullen@gmail.com,9053501183,Brandt,Darrell,Kimberly,Aunt
-2090129,Huever,Laurent,Farkas,M,M. ENG'G IE,4,CEA,134 Camdas,laurenthuever@gmail.com,9053501182,Brandyn,Darren,Kinsey,Aunt
-2090130,Zafrina,Senna,Fazekas,F,M. ENG'G ME,1,CEA,133 Camdas,sennazafrina@gmail.com,9053501181,Brant,Darrian,Kira,Sister
-2050058,Randall,Mary,Feher,F,M. ENG'G ME,2,CEA,132 Camdas,maryrandall@gmail.com,9053501180,Braxton,Darrien,Kirsten,Aunt
-2050059,Kebi,Benjamin,Fekete,M,M. ENG'G ME,3,CEA,131 Camdas,benjaminkebu@gmail.com,9053501179,Brayan,Darrin,Kourtney,Sister
-2050060,Makena,Charles,Filczer,M,M. ENG'G ME,4,CEA,130 Camdas,charlesmakena@gmail.com,9053501178,Brayden,Darrion,Krista,Sister
-2050061,Uley,Sam,Fisher,M,MES,1,CNS,129 Camdas,samuley@gmail.com,9053501177,Braydon,Darrius,Kristen,Aunt
-2050062,Embry,Paul,Friedman,M,MES,2,CNS,128 Camdas,paulembry@gmail.com,9053501176,Brendan,Darryl,Kristin,Aunt
-2050063,Jared,Leah,Frindik,F,MES,3,CNS,127 Camdas,leahjared@gmail.com,9053501175,Brenden,Darwin,Kristina,Sister
-2050064,Lee,Anna,Gajdos,F,MES,4,CNS,126 Camdas,annalee@gmail.com,9053501174,Brendon,Daryl,Krystal,Aunt
-2050065,Dawn,Seth,Galya,M,MSAc,1,CAC,125 Camdas,sethdawn@gmail.com,9053501173,Brennan,Dashawn,Kya,Sister
-2050066,Swan,Charlie,Gaydos,M,MSAc,2,CAC,124 Camdas,charlieswan@gmail.com,9053501172,Brennen,,Kyla,Sister
-2050067,Clearwater ,Harry,Glodan,M,MSAc,3,CAC,1 Badihoy,harryclearwater@gmail.com,9053501171,Brent,David,Kylee,Aunt
-2050068,Crowley ,Tyler ,Good,M,MSAc,4,CAC,2 Badihoy,tylercrowley@gmail.com,9053501170,Brenton,Davin,Kyleigh,Aunt
-2050069,Mallory,Lauren,Gubansik,F,MS BIOL,1,CNS,3 Badihoy,laurenmallory@gmail.com,9053501169,Bret,Davion,Kylie,Sister
-2050070,Newton ,Mike,Guyban,M,MS BIOL,2,CNS,4 Badihoy,mikenewton@gmail.com,9053501168,Brett,Davis,Kyra,Aunt
-2050071,Weber,Angela,Haluska,F,MS BIOL,3,CNS,5 Badihoy,angelawebber@gmail.com,9053501167,Brian,Davon,Kacey,Sister
-2050072,Yorkee,Eric,Handa,M,MS BIOL,4,CNS,6 Badihoy,erickyorkee@gmail.com,9053501166,Brice,Davonte,Kaci,Sister
-2050073,Young,Emily,Harmat,F,MSBA,1,CAC,7 Badihoy,emilyyoung@gmail.com,9053501165,Brock,Dawson,Kacie,Aunt
-2050074,Yang,Sue,Helinka,F,MSBA,2,CAC,8 Badihoy,sueyang@gmail.com,9053501164,Broderick,Dayton,Kadence,Aunt
-2050075,Jenks,Jason,Henkel,M,MSBA,3,CAC,9 Badihoy,jasonjenks@gmail.com,9053501163,Brody,Dean,Kaelyn,Sister
-2050076,Arwen,Aragorn,Hornyak,M,MSBA,4,CAC,10 Badihoy,aragornarwen@gmail.com,9053501162,Bronson,Deandre,Kaia,Aunt
-2050077,Baggins,Frodo,Horvath,M,MSCE,1,CEA,11 Badihoy,frodobaggins@gmail.com,9053501161,Brooks,Deangelo,Kaila,Sister
-2050078,Butterbur,Barliman,Hosh,M,MSCE,2,CEA,12 Badihoy,barlimanbutterbur@gmail.com,9053501160,Bruce,Deion,Kailee,Sister
-2050079,Bolger,Fredegar,Hudak,M,MSCE,3,CEA,13 Badihoy,fredegarbolger@gmail.com,9053501159,Bryan,Dejuan,Kailey,Aunt
-2050080,Bombadil,Tom,Huszar,M,MSCE,4,CEA,14 Badihoy,tombombadil@gmail.com,9053501158,Bryant,Demarco,Kailyn,Aunt
-2050081,Cotton,Ron,Ivanyisky,M,MS EN E,1,CEA,15 Badihoy,toncotton@gmail.com,9053501157,Bryce,Demarcus,Kaitlin,Sister
-2050082,Ferny,Bill,Jason,M,MS EN E,2,CEA,16 Badihoy,billferny@gmail.com,9053501156,Bryon,Demario,Kaitlyn,Aunt
-2050083,Gardner ,Elanor,Jo,F,MS EN E,3,CEA,17 Badihoy,elanorgardner@gmail.com,9053501155,Bryson,Demetrius,Kaitlynn,Sister
-2050084,Greenleaf,Legolas,Juhasz,M,MS EN E,4,CEA,18 Badihoy,legolasgreenleaf@gmail.com,9053501154,Byron,Dennis,Kaiya,Sister
-2050085,Chuck,Ned,Kanyo,M,BS S WK,1,CHS,19 Badihoy,nedchuck@gmail.com,9053501153,Gaby,Denver,Kaleigh,Aunt
-2050086,Snook,Olive,Kapusi,F,BS S WK,2,CHS,20 Badihoy,olivesnook@gmail.com,9053501152,Bailey,Denzel,Kaley,Aunt
-2050087,Cod,Emerson,Kapusi,M,BS S WK,3,CHS,21 Badihoy,emersoncod@gmail.com,9053501151,Barrett,Deon,Kali,Sister
-2050088,Charles,Lily,Kapusy,F,BS S WK,4,CHS,22 Badihoy,lilycharles@gmail.com,9053501150,Earl,Deondre,Kaliyah,Aunt
-2050089,Charles,Vivian,Kerek,F,BSRT,1,CNS,23 Badihoy,viviancharles@gmail.com,9053501149,Eddie,Deonte,Ralph,Uncle
-2050090,Barbosa,Hector,King,M,BSRT,2,CNS,24 Badihoy,hectorbarbosa@gmail.com,9053501148,Eddy,Dequan,Ramiro,Uncle
-2050091,Beckett,Cutler,Kiraly,M,BSRT,3,CNS,25 Badihoy,cutlerbeckett@gmail.com,9053501147,Edgar,Derek,Ramon,Brother
-2050092,Feng,Sao,Kish,F,BSRT,4,CNS,26 Badihoy,saofeng@gmail.com,9053501146,Edgardo,Derick,Randall,Brother
-20553160,Gibbs,Joshamee,Kiss,F,BS PSYCH,1,CHS,1 Badihoy,joshameegibbs@gmail.com,9053501145,Edmund,Derik,Randolph,Uncle
-2050094,Norington,James,Kives,M,BS PSYCH,2,CHS,2 Badihoy,jamesnorington@gmail.com,9053501144,Eduardo,Derrick,Randy,Uncle
-2050095,Dalma,Tia,Kluka,F,BS PSYCH,3,CHS,3 Badihoy,tiadalma@gmail.com,9053501143,Edward,Deshaun,Raphael,Brother
-2050096,Turner,William,Koles,M,BS PSYCH,4,CHS,4 Badihoy,williamturner@gmail.com,9053501142,Edwin,Deshawn,Rashad,Brother
-2050097,Rick,Richard,Koleszar,M,BS PHARM,1,CNS,5 Badihoy,richardrick@gmail.com,9053501141,Efrain,Desmond,Rashawn,Uncle
-2050098,Carnahan,Eve,Kopsco,F,BS PHARM,2,CNS,6 Badihoy,evecarnahan@gmail.com,9053501140,Efren,Destin,Rasheed,Uncle
-2050099,Carnahan,Jonathan,Korosi,M,BS PHARM,3,CNS,7 Badihoy,jonathan@gmail.com,9053501139,Eli,Devan,Raul,Uncle
-2050100,Bay,Ardeth,Kostik,M,BS PHARM,4,CNS,8 Badihoy,ardethbay@gmail.com,9053501138,Elias,Devante,Ray,Brother
-2050101,Hassan,Gad,Kosztolanyi,M,BSN,1,CON,9 Badihoy,gadhassan@gmail.com,9053501137,Eliezer,Deven,Raymond,Brother
-2050102,Chamberlain,Allen,Kovach,M,BSN,2,CON,10 Badihoy,allenchamberlain@gmail.com,9053501136,Elijah,Devin,Raymundo,Uncle
-2050103,Vosloo,Arnold ,Kovacs,M,BSN,3,CON,11 Badihoy,arnoldvosloo@gmail.com,9053501135,Eliseo,Devon,Rayshawn,Uncle
-2050104,Alex,Freddie,Kozan,M,BSN,4,CON,12 Badihoy,freddiealex@gmail.com,9053501134,Elisha,Devonta,Reece,Brother
-2050105,Johnson,Dwayne,Kreko,M,BSEM,1,CEA,13 Badihoy,dwaynejohnson@gmail.com,9053501133,Elliot,,Reed,Brother
-2050106,Chavez,Kathleen,Kropog,F,BSEM,2,CEA,14 Badihoy,kathleenchavez@gmail.com,9053501132,Elliott,Devontae,Reese,Uncle
-2050107,Lee,Tammie,Laslo,F,BSEM,3,CEA,15 Badihoy,tammielee@gmail.com,9053501131,Ellis,Devonte,Reggie,Uncle
-2050108,Aubrey,Mcnee,Laszlo,F,BSEM,4,CEA,16 Badihoy,mcneeaubrey@gmail.com,9053501130,Elmer,Devyn,Reginald,Uncle
-2050109,Waldorf,Blair,Laszlone,F,BS MED T,1,CNS,17 Badihoy,blairwaldorf@gmail.com,9053501129,Elton,Dewayne,Reid,Brother
-2050110,Archibald,Nate,Lezu,M,BS MED T,2,CNS,18 Badihoy,natearchibald@gmail.com,9053501128,Elvin,Dexter,Remington,Brother
-2050111,Humphrey,Jenny,Lodej,F,BS MED T,3,CNS,19 Badihoy,jennyhumphrey@gmail.com,9053501127,Elvis,Diamond,Rene,Uncle
-2050112,Momsen,Taylor ,Magyar,F,BS MED T,4,CNS,20 Badihoy,taylormomsen@gmail.com,9053501126,Emanuel,Diego,Reuben,Uncle
-2050113,Crawford,Chace,Majering,M,BSME,1,CEA,21 Badihoy,chacecrawford@gmail.com,9053501125,Emilio,Dillan,Rex,Brother
-2050114,Westwick,Ed,Majering,M,BSME,2,CEA,22 Badihoy,edwestwick@gmail.com,9053501124,Emmanuel,Dillion,Rey,Brother
-2050115,Abrahams,Vanessa,Makkos,F,BSME,3,CEA,23 Badihoy,vanessaabrahams@gmail.com,9053501123,Emmett,Dillon,Reynaldo,Uncle
-2050116,Szhor,Jessica,Makkos,F,BSME,4,CEA,24 Badihoy,hessicaszhor@gmail.com,9053501122,Enrique,Dimitri,Rhett,Uncle
-2050117,Rutherford ,Kelly,Maklary,F,BSME,5,CEA,25 Badihoy,kellyrutherford@gmail.com,9053501121,Eric,Dion,Ricardo,Uncle
-2050118,Bell ,Kristen,Marshall,F,BSIE,1,CEA,26 Badihoy,kristenbell@gmail.com,9053501120,Erich,Dionte,Richard,Brother
-2050119,Coates,Isable,Maruschak,F,BSIE,2,CEA,30 Apugan Irisan,isablecoaates@gmail.com,9053501119,Erick,Domenic,Rick,Brother
-2050120,Farkas,Kati,Matusicki,F,BSIE,3,CEA,31 Apugan Irisan,katifarkas@gmail.com,9053501118,Erik,Dominic,Rickey,Uncle
-2050121,Waldorf,Eleonor,Matusiczky,F,BSGE,1,CEA,32 Apugan Irisan,eleonorwaldord@gmail.com,9053501117,Ernest,Dominick,Ricky,Uncle
-2050122,Rose,Eleonor,Megguesy,F,BSGE,2,CEA,33 Apugan Irisan,eleoborrose@gmail.com,9053501116,Ernesto,Dominique,Rico,Brother
-2050123,Bass,John,Meguesi,M,BSGE,3,CEA,34 Apugan Irisan,johnbass@gmail.com,9053501115,Ervin,Dominque,Ridge,Brother
-2050124,Shafai,Penelope,Meray,F,BSGE,4,CEA,35 Apugan Irisan,penelopeshafai@gmail.com,9053501114,Esteban,Don,Rigoberto,Uncle
-2050125,Sheton,Amanda,Meszaros,F,BSElE,1,CEA,36 Apugan Irisan,amandasheton@gmail.com,9053501113,Estevan,Donald,Riley,Uncle
-2050126,Archibald,Howard,Meyerling,M,BSElE,2,CEA,37 Apugan Irisan,howardarchibald@gmail.com,9053501112,Ethan,Donavan,River,Uncle
-2050127,Robards,Sam,Mezei,F,BSElE,3,CEA,38 Apugan Irisan,samrobards@gmail.com,9053501111,Eugene,Donnell,Robbie,Brother
-2050128,Williams,Hazel,Mocsary,F,BSElE,4,CEA,39 Apugan Irisan,hazelwilliams@gmail.com,9053501110,Evan,Donnie,Robert,Brother
-2050129,Walker ,Dreama,More,F,BSElE,5,CEA,40 Apugan Irisan,dreamawalker@gmail.com,9053501109,Everett,Donovan,Roberto,Uncle
-2066633,Chang,Yin,Kiss,F,BSECE,1,CEA,41 Apugan Irisan,yinchang@gmail.com,9053501108,Ezekiel,Dontae,Robin,Uncle
-2066600,Rose,Aaron,Kives,M,BSECE,2,CEA,42 Apugan Irisan,aaronrose@gmail.com,9053501107,Ezequiel,Donte,Rocky,Brother
-2050131,Yuko,Nelly,Kluka,F,BSECE,3,CEA,43 Apugan Irisan,nellykluka@gmail.com,9053501106,Ezra,Dorian,Roderick,Brother
-2050132,Archibald,Ane,Koles,F,BSECE,4,CEA,44 Apugan Irisan,anearchibald@gmail.com,9053501105,Gabriel,Douglas,Rodney,Uncle
-2050133,Swift,Francei,Koleszar,F,BSECE,5,CEA,45 Apugan Irisan,franceiswift@gmail.com,9053501104,Gage,Drake,Rodolfo,Uncle
-2050134,Amedori,Jahn Patrick,Kopsco,M,BSEE,1,CEA,46 Apugan Irisan,jahnpatrick@gmail.com,9053501103,Galen,Drew,Rodrigo,Uncle
-2050135,Chi,Dorotoa,Korosi,F,BSEE,2,CEA,47 Apugan Irisan,dorotoachi@gmail.com,9053501102,Garett,Duane,Rogelio,Brother
-2050136,Humphrey,Alison,Kostik,F,BSEE,3,CEA,48 Apugan Irisan,alisonhumphrey@gmail.com,9053501101,Garret,Duncan,Roger,Brother
-2050137,Misner,Susan,Kosztolanyi,F,BSEE,4,CEA,49 Apugan Irisan,susanmisner@gmail.com,9053501100,Garrett,Dustin,Rohan,Uncle
-2050138,Wells,Elise,Kovach,F,BSC MKTG,1,CAC,50 Apugan Irisan,elisewells@gmail.com,9053501099,Garrison,Dusty,Roland,Uncle
-2050139,Demar,Emma,Kovacs,F,BSC MKTG,2,CAC,51 Apugan Irisan,emmademar@gmail.com,9053501098,Gary,Dwayne,Rolando,Brother
-2050140,Berg,Michelle,Kozan,F,BSC MKTG,3,CAC,52 Apugan Irisan,michelleberg@gmail.com,9053501097,Gavin,Dwight,Roman,Brother
-2050141,Beaton,Lady,Kreko,F,BSC MKTG,4,CAC,53 Apugan Irisan,ladybeaton@gmail.com,9053501096,Genaro,Dylan,Romeo,Uncle
-2050145,Flint ,Jill,Laszlone,F,BSC MGMT,1,CAC,57 Apugan Irisan,jillflint@gmail.com,9053501092,Gerald,Dale,Rory,Brother
-2050146,Waldorf,Harold,Lezu,M,BSC MGMT,2,CAC,58 Apugan Irisan,haroldwaldorf@gmail.com,9053501091,Gerard,Dallas,Ross,Uncle
-2050147,Shea,John,Lodej,M,BSC MGMT,3,CAC,59 Apugan Irisan,johnshea@gmail.com,9053501090,Gerardo,Dallin,Roy,Uncle
-2050148,Rhodes ,CeCe,Magyar,F,BSC MGMT,4,CAC,60 Apugan Irisan,cecerhodes@gmail.com,9053501089,German,Dalton,Royce,Brother
-2050150,Holand,Willa,Majering,F,BSC FNCL MGMT,1,CAC,62 Apugan Irisan,willaholand@gmail.com,9053501087,Gilbert,Yahaira,Talia,Sister
-2066699,Rose,Cyrus,Makkos,M,BSC FNCL MGMT,2,CAC,63 Apugan Irisan,cyrusrose@gmail.com,9053501086,Gilberto,Yareli,Taliyah,Sister
-2050151,Shawn,Wallace,Makkos,M,BSC FNCL MGMT,3,CAC,64 Apugan Irisan,wallaceshawn@gmail.com,9053501085,Gino,Yaritza,Tamara,Aunt
-2050152,Hornsby,Asher,Maklary,M,BSC FNCL MGMT,4,CAC,65 Apugan Irisan,asherhornsby@gmail.com,9053501084,Giovanni,,Tamia,Aunt
-2050155,Stan,Sebastian,Matusicki,M,BSC ENTREP,1,CAC,68 Apugan Irisan,sebastianstan@gmail.com,9053501081,Glenn,Yazmin,Taniya,Aunt
-2050156,Henry,Jonathan,Matusiczky,M,BSC ENTREP,2,CAC,69 Apugan Irisan,jonathanhenry@gmail.com,9053501080,Gonzalo,Yesenia,Taniyah,Sister
-2050157,Doyle,Matt,Megguesy,M,BSC ENTREP,3,CAC,70 Apugan Irisan,mattdoyle@gmail.com,9053501079,Gordon,Yoselin,Tanya,Sister
-2050158,Lifton,Poppy,Meguesi,M,BSC ENTREP,4,CAC,71 Apugan Irisan,poppylifton@gmail.com,9053501078,Grady,Yuliana,Tara,Aunt
-2050161,Bass,Jack,Meyerling,M,BSC ESBM,1,CAC,74 Apugan Irisan,jackbass@gmail.com,9053501075,Grayson,Yahaira,Tatum,Aunt
-2050162,Harrington,Desmon,Mezei,M,BSC ESBM,2,CAC,75 Apugan Irisan,desmonharrinton@gmail.com,9053501074,Greg,Yareli,Tatyana,Aunt
-2050163,Galecki,Johnny,Mocsary,M,BSC ESBM,3,CAC,76 Apugan Irisan,johnnygalecki@gmail.com,9053501073,Gregorio,Yaritza,Taya,Sister
-2050164,Hofstadter,Leonard Leakey,More,M,BSC ESBM,4,CAC,77 Apugan Irisan,leonardhofstadter@gmail.com,9053501072,Gregory,,Tayler,Sister
-2050165,Sparsons,Jim,Lezu,M,BSC ESBM,,CAC,78 Apugan Irisan,jimsparsons@gmail.com,9053501071,Griffin,Yasmin,Taylor,Aunt
-2050166,Cooper,Sheldon,Lodej,M,BSC ECON,1,CAC,79 Apugan Irisan,sheldoncooper@gmail.com,9053501070,Guadalupe,Yasmine,Teagan,Aunt
-2050167,Cuoco,Kaley,Magyar,F,BSC ECON,2,CAC,80 Apugan Irisan,kaleycuoco@gmail.com,9053501069,Guillermo,Yazmin,Teresa,Sister
-2050168,Yu,Penny,Majering,F,BSC ECON,3,CAC,81 Apugan Irisan,pennyyu@gmail.com,9053501068,Gunnar,Yesenia,Tess,Aunt
-2050169,Helberg,Simon,Majering,M,BSC ECON,4,CAC,82 Apugan Irisan,simonhelberg@gmail.com,9053501067,Gunner,Yoselin,Tessa,Aunt
-2050170,Wolowitz,Howard,Makkos,M,BSC ECON,,CAC,83 Apugan Irisan,howardwolowitz@gmail.com,9053501066,Gustavo,Wanda,Thalia,Sister
-2050171,Nayyar,Kunal,Makkos,M,BSC BUS ECON,1,CAC,84 Apugan Irisan,kunalnayyar@gmail.com,9053501065,Guy,Wenda,Theresa,Sister
-2050172,Koothrappali,Rajesh,Maklary,M,BSC BUS ECON,2,CAC,85 Apugan Irisan,rajeshkoothrapplai@gmail.com,9053501064,Octavio,Wendy,Tia,Aunt
-2050173,Gilbert,Sarah,Marshall,F,BSC BUS ECON,3,CAC,86 Apugan Irisan,sarahgilbert@gmail.com,9053501063,Oliver,Wenona,Tiana,Aunt
-2050174,Winkle,Leslie,Maruschak,F,BSC BUS ECON,4,CAC,87 Apugan Irisan,leslieinkle@gmail.com,9053501062,Omar,Whitney,Tianna,Sister
-2050175,Burrows,James,Matusicki,M,BSC BF,1,CAC,1 Ferguson Rd.,jamesburrows@gmail.com,9053501061,Omari,Wilda,Tiara,Aunt
-2050176,Banks,Ian,Matusiczky,M,BSC BF,2,CAC,2 Ferguson Rd.,ianbanks@gmail.com,9053501060,Orion,Wilhelmina,Tierra,Aunt
-2050177,Keller,Chris,Megguesy,M,BSC BF,3,CAC,3 Ferguson Rd.,chriskeller@gmail.com,9053501059,Orlando,Willa,Tiffany,Sister
-2050178,Scott,Keith,Meguesi,M,BSC BF,4,CAC,4 Ferguson Rd.,keithscott@gmail.com,9053501058,Oscar,Willette,Tina,Sister
-2050179,Scott,Lucas,Meray,M,BSC ,1,CAC,5 Ferguson Rd.,lucasscott@gmail.com,9053501057,Osvaldo,Willow,Toni,Aunt
-2050180,Chambers,Emily,Meszaros,F,BSC,2,CAC,6 Ferguson Rd.,emilychambers@gmail.com,9053501056,Otis,Wilona,Tori,Aunt
-2050181,Lee,Cooper,Meyerling,M,BSC,3,CAC,7 Ferguson Rd.,Cooperlee@gmail.com,9053501055,Owen,Winifred,Tracy,Sister
-2050182,Smith,Tin,Mezei,F,BSC,4,CAC,8 Ferguson Rd.,tinsmith@gmail.com,9053501054,Pablo,Winona,Trinity,Aunt
-2050183,Davis ,Brooke,Mocsary,F,BSC,5,CAC,9 Ferguson Rd.,brookedavis@gmail.com,9053501053,Paris,Wynne,Trisha,Aunt
-2050184,Scott,Nathan,More,M,BSCE,1,CEA,10 Ferguson Rd.,nathanscott@gmail.com,9053501052,Parker,Wanda,Trista,Sister
-2050185,Taggaro,Anna,Morvay,F,BSCE,2,CEA,11 Ferguson Rd.,annataggaro@gmail.com,9053501051,Patrick,Wenda,Tristen,Sister
-2050186,Mersky,Bevin,Muska,M,BSCE,3,CEA,12 Ferguson Rd.,bevintaggaro@gmail.com,9053501050,Paul,Wendy,Tyler,Aunt
-2050187,Roe,Karen,Muszka,F,BSCE,4,CEA,13 Ferguson Rd.,bevinmersky@gmail.com,9053501049,Payton,Wenona,Tyra,Aunt
-2050188,Durham ,WhitNey,Nagy,F,BSCE,5,CEA,14 Ferguson Rd.,karenroe@gmail.com,9053501048,Pedro,Whitney,Tabitha,Sister
-2050189,Gatina,Rachel,Nemeth,F,BSCHE,1,CEA,15 Ferguson Rd.,whiteydurham@gmail.com,9053501047,Perry,Wilda,Talia,Aunt
-2050190,Sawyer,Peyton,Novak,F,BSCHE,2,CEA,16 Ferguson Rd.,rachelgatina@gmail.com,9053501046,Peter,Wilhelmina,Taliyah,Aunt
-2050191,Scott,Dan,Nyeki,M,BSCHE,3,CEA,17 Ferguson Rd.,peytonsawyer@gmail.com,9053501045,Ian,Willa,Tamara,Sister
-2050192,Lucas,James,Odor,M,BSCHE,4,CEA,18 Ferguson Rd.,danscott@gmail.com,9053501044,Ibrahim,Willette,Tamia,Sister
-2050193,Haley,Jake,Okler,M,BSCHE,5,CEA,19 Ferguson Rd.,jameslucas@gmail.com,9053501043,Ignacio,Willow,Tamya,Aunt
-2050194,Charlie,Betty,Olah,F,BS BIOL,1,CNS,20 Ferguson Rd.,jakehaley@gmail.com,9053501042,Infant,Wanda,Tania,Aunt
-2050195,Owens,Connor,Orosz,M,BS BIOL,2,CNS,21 Ferguson Rd.,connorownes@gmail.com,9053501041,Irvin,Wenda,Taniya,Sister
-2050196,Grady,Contance,Pal,F,BS BIOL,3,CNS,22 Ferguson Rd.,contancegrady@gmail.com,9053501040,Irving,Wendy,Taniyah,Aunt
-2050197,Meade,Alexis,Palascsak,M,BS BIOL,4,CNS,23 Ferguson Rd.,alexismeade@gmail.com,9053501039,Isaac,Wenona,Tanya,Aunt
-2050198,Meade,Claire,Papp,F,BS ARCH,1,CEA,24 Ferguson Rd.,clairemeade@gmail.com,9053501038,Isai,Whitney,Tara,Sister
-2050199,Tanen,Amanda,Pauli,F,BS ARCH,2,CEA,25 Ferguson Rd.,amandatanen@gmail.com,9053501037,Raekwon,Wilda,Taryn,Sister
-2095454,Sommers,Fey,Pence,F,BS ARCH,3,CEA,26 Ferguson Rd.,feysommers@gmail.com,9053501036,Rafael,Wilhelmina,Tatiana,Aunt
-2050200,Pepper,Nick,Petho,M,BS ARCH,4,CEA,27 Ferguson Rd.,Mocl[e[[er@gmail.com,9053501035,Raheem,Willa,Tatum,Aunt
-2095478,Rossi,Gio,Petra,M,BS ARCH,5,CEA,28 Ferguson Rd.,giorossi@gmail.com,9053501034,Ralph,Tabitha,Bailey,Sister
-2050201,Rossi,Carlo,Pfiffner,M,BSAC,1,CAC,29 Ferguson Rd.,carlorossi@gmail.com,9053501033,Ramiro,Talia,Barrett,Uncle
-2050202,Daniels,Jack,Piankoczki,M,BSAC,2,CAC,30 Ferguson Rd.,jackdaniels@gmail.com,9053501032,Ramon,Taliyah,Barry,Brother
-2050203,Te,Rose,Polar,F,BSAC,3,CAC,31 Ferguson Rd.,rosete@gmail.com,9053501031,Randall,Tamara,Beau,Brother
-2050204,Cuervo,Jose,Polgar,M,BSAC,4,CAC,32 Ferguson Rd.,josecuervo@gmail.com,9053501030,Randolph,Tamia,Ben,Uncle
-2050205,Red,Margarita,Ponsock,F,BSAC,5,CAC,33 Ferguson Rd.,margaritared@gmail.com,9053501029,Randy,Tamya,Benito,Uncle
-2050206,Gaden,Kimmie,Prebus,F,PH B,1,CHS,34 Ferguson Rd.,kimmiegaden@gmail.com,9053501028,Raphael,Tania,Benjamin,Brother
-2050207,Mc,Shawn,Prokop,M,PH B,2,CHS,35 Ferguson Rd.,shawnmc@gmail.com,9053501027,Rashad,Taniya,Bennett,Uncle
-2050208,Paul,Cliff,Racz,M,PH B,3,CHS,36 Ferguson Rd.,cliffpaul@gmail.com,9053501026,Rashawn,Taniyah,Benny,Brother
-2050209,Danza,Tony,Resetar,M,PH B,4,CHS,37 Ferguson Rd.,tonydanza@gmail.com,9053501025,Rasheed,Tanya,Bernard,Brother
-2050210,Imbruglia,Natalie,Spisak,F,LL. B.,1,COL,43 Ferguson Rd.,natalieimbruglia@gmail.com,9053501019,Reece,Taya,Blake,Brother
-2050211,Thomas,Rob,Stifter,M,LL. B.,2,COL,44 Ferguson Rd.,robthomas@gmail.com,9053501018,Reed,Tayler,Bo,Uncle
-2050212,Parker,Peter,Strobel,M,LL. B.,3,COL,45 Ferguson Rd.,peterparker@gmail.com,9053501017,Reese,Taylor,Bobby,Uncle
-2050213,Maja,Mary Jane,Szalayi,F,LL. B.,4,COL,46 Ferguson Rd.,maryjane@gmail.com,9053501016,Reggie,Teagan,Brad,Brother
-2050214,Apple,Britney,Szanyi,F,BEED VAL FRM,1,COE,47 Ferguson Rd.,britneyapple@gmail.com,9053501015,Reginald,Teresa,Braden,Uncle
-2050215,Lani,Nicole,Morvay,F,BEED VAL FRM,2,COE,48 Ferguson Rd.,nicolelani@gmail.com,9053501014,Reid,Tess,Bradford,Brother
-2050216,Baxter,Raven,Muska,F,BEED VAL FRM,3,COE,49 Ferguson Rd.,ravenbaxter@gmail.com,9053501013,Remington,Tessa,Bradley,Brother
-2050217,Baxter,Cory,Muszka,F,BEED VAL FRM,4,COE,50 Ferguson Rd.,corybaxter@gmail.com,9053501012,Rene,Thalia,Bradly,Uncle
-2050218,Mack,Allison,Nagy,F,BEED VAL,1,COE,51 Ferguson Rd.,allisonmack@gmail.com,9053501011,Reuben,Theresa,Brady,Uncle
-2050219,Kreuk,Kristin,Nemeth,F,BEED VAL,2,COE,52 Ferguson Rd.,kristinkreuk@gmail.com,9053501010,Rex,Tia,Brandan,Brother
-2050220,Dolsen,Erika,Novak,F,BEED VAL,3,COE,53 Ferguson Rd.,erikadolsen@gmail.com,9053501009,Rey,Tiana,Branden,Uncle
-2050221,Saotome,Ranma,Nyeki,M,BEED VAL,4,COE,54 Ferguson Rd.,ranmasaotome@gmail.com,9053501008,Reynaldo,Tianna,Brandon,Brother
-2050222,Tendo,Nabiki,Odor,F,BEED THE,1,COE,55 Ferguson Rd.,nabikitendo@gmail.com,9053501007,Rhett,Tiara,Brandt,Brother
-2050223,Saotome,Genma,Okler,M,BEED THE,2,COE,56 Ferguson Rd.,genmasaotome@gmail.com,9053501006,Ricardo,Tierra,Brandyn,Uncle
-2050224,Kuno,Katewaki,Olah,M,BEED THE,3,COE,57 Ferguson Rd.,katewakikuno@gmail.com,9053501005,Richard,Tiffany,Brant,Uncle
-2050225,Kuonji,Ukyo,Orosz,F,BEED THE,4,COE,58 Ferguson Rd.,ukyokuonji@gmail.com,9053501004,Rick,Tina,Braxton,Brother
-2050226,Kurenai,Tsubasa,Pal,F,BEED SPED,1,COE,59 Ferguson Rd.,tsubasakurenai@gmail.com,9053501003,Rickey,Toni,Brayan,Uncle
-2050227,Lin,Mao Mo,Palascsak,F,BEED SPED,2,COE,60 Ferguson Rd.,maomo@gmail.com,9053501002,Ricky,Tori,Brayden,Brother
-2050228,Tendo,Akane,Papp,F,BEED SPED,3,COE,61 Ferguson Rd.,akanetendo@gmail.com,9053501001,Rico,abrina,Braydon,Brother
-2050229,Marsh,Stan,Pauli,M,BEED SPED,4,COE,62 Ferguson Rd.,stanmarsh@gmail.com,9053501000,Ridge,Sadie,Brendan,Uncle
-2050230,Parker,Trey,Pence,M,BEED SS,1,COE,63 Ferguson Rd.,treyparker@gmail.com,9053500999,Rigoberto,Sage,Brenden,Uncle
-2050231,Cartman,Erick,Petho,M,BEED SS,2,COE,64 Ferguson Rd.,erickcartman@gmail.com,9053500998,Riley,Saige,Brendon,Brother
-2050232,Broflovski,Kyle,Petra,M,BEED SS,3,COE,65 Ferguson Rd.,kylebroflovski@gmail.com,9053500997,River,Salma,Brennan,Uncle
-2050233,Stone,Matt,Pfiffner,M,BEED SS,4,COE,66 Ferguson Rd.,mattstone@gmail.com,9053500996,Robbie,Samantha,Brennen,Brother
-2050234,McCormic,Kenny,Piankoczki,M,BEED SC TECH,1,COE,67 Ferguson Rd.,kennymccormic@gmail.com,9053500995,Robert,Samara,Brent,Brother
-2050235,Howwel,Jennifer,Polar,F,BEED SC TECH,2,COE,68 Ferguson Rd.,bebehowwel@gmail.com,9053500994,Roberto,Samira,Brenton,Uncle
-2050236,Stevens,Bebe,Polgar,F,BEED SC TECH,3,COE,69 Ferguson Rd.,clydestevens@gmail.com,9053500993,Robin,Sanaa,Bret,Uncle
-2050237,Donovan,Clyde ,Ponsock,F,BEED SC TECH,4,COE,70 Ferguson Rd.,craigdonovan@gmail.com,9053500992,Rocky,Sandra,Brett,Brother
-2050238,Tucker,Craig,Prebus,M,BEED RVE,1,COE,71 Ferguson Rd.,jimmytucker@gmail.com,9053500991,Roderick,Sandy,Brian,Uncle
-2050239,Vulmer,Jimmy,Prokop,M,BEED RVE,2,COE,72 Ferguson Rd.,tokenvulmer@gmail.com,9053500990,Rodney,Saniya,Brice,Brother
-2050240,Black,Token,Racz,M,BEED RVE,3,COE,73 Ferguson Rd.,Jimboblack@gmail.com,9053500989,Rodolfo,Sara,Brock,Brother
-2050241,Kern,Jimbo,Resetar,M,BEED RVE,4,COE,74 Ferguson Rd.,stephaniekern@gmail.com,9053500988,Rodrigo,Sarah,Broderick,Uncle
-2050242,Masters,Stephanie,Roman,F,BEED PRE ELM,1,COE,75 Ferguson Rd.,richardsmasters@gmail.com,9053500987,Rogelio,Sarahi,Brody,Uncle
-2050243,Tweak,Richard,Ross,M,BEED PRE ELM,2,COE,76 Ferguson Rd.,apriltweak@gmail.com,9053500986,Roger,Sarai,Bronson,Brother
-2050244,Dianne,April,Schiller,F,BEED PRE ELM,3,COE,77 Ferguson Rd.,princessdianne@gmail.com,9053500985,Rohan,Sariah,Brooks,Uncle
-2050245,Anne,Princess,Shaffer,F,BEED PRE ELM,4,COE,78 Ferguson Rd.,anneprincess@gmail.com,9053500984,Roland,Sasha,Bruce,Brother
-2050246,Mae,Karen,Spisak,F,AB/BSED SC T,1,COE,80 Ferguson Rd.,karenmae@gmail.com,9053500982,Roman,Savanah,Bryant,Uncle
-2050247,Lee,Jerry,Stifter,M,AB/BSED SC T,2,COE,81 Ferguson Rd.,jerrylee@gmail.com,9053500981,Romeo,Savanna,Bryce,Uncle
-2050248,Yu,Ruskin,Strobel,M,AB/BSED SC T,3,COE,82 Ferguson Rd.,ruskinyu@gmail.com,9053500980,Ron,Savannah,Bryon,Brother
-2050249,Parker,Josh,Szalayi,M,AB/BSED SC T,4,COE,83 Ferguson Rd.,joshparker@gmail.com,9053500979,Ronald,Scarlett,Bryson,Uncle
-2050250,Hanson,Taylor ,Roman,M,AB/BSED MAT,1,COE,87 Ferguson Rd.,taylorhanson@gmail.com,9053500975,Roy,Serenity,Barrett,Uncle
-2050251,Whitman,Mae,Ross,F,AB/BSED MAT,2,COE,88 Ferguson Rd.,maewhitman@gmail.com,9053500974,Royce,Shakira,Earl,Brother
-2050252,DeSena,Jack,Schiller,M,AB/BSED MAT,3,COE,89 Ferguson Rd.,jackdesena@gmail.com,9053500973,Ruben,Shania,Talon,Uncle
-2050253,Flower,Jessie,Shaffer,M,AB/BSED MAT,4,COE,90 Ferguson Rd.,jessieflower@gmail.com,9053500972,Rudolph,Shaniya,Tanner,Brother
-2050254,Baldwin ,Greg,Stifter,M,AB/BSED ENGL,1,COE,93 Ferguson Rd.,gregbaldwin@gmail.com,9053500969,Rusty,Shawna,Tavon,Uncle
-2050255,LaBeouf,Shia,Strobel,M,AB/BSED ENGL,2,COE,94 Ferguson Rd.,shialabeouf@gmail.com,9053500968,Ryan,Shayla,Tayler,Brother
-2050256,Stevens,Renee,Szalayi,M,AB/BSED ENGL,3,COE,95 Ferguson Rd.,reneestevens@gmail.com,9053500967,Ryder,Shaylee,Taylor,Uncle
-2050257,Romano,Christy Carlson,Szanyi,F,AB/BSED ENGL,4,COE,96 Ferguson Rd.,christyromano@gmail.com,9053500966,Ryne,Shayna,Ted,Brother
-2050258,Pescow,Donna,Szekely,F,AB POLIT SC,1,CHS,98 Ferguson Rd.,donnapescow@gmail.com,9053500964,Salvador,Sheila,Terence,Uncle
-2050259,Virtue,Tom,Szepi,M,AB POLIT SC,2,CHS,99 Ferguson Rd.,virtuetomail.com,9053500963,Salvatore,Shelby,Terrance,Uncle
-2050260,Stevens,Steve,Sziber,M,AB POLIT SC,3,CHS,100 Ferguson Rd.,stevestevens@gmail.com,9053500962,Sam,Sherlyn,Terrell,Brother
-2050261,Steve,Donald,Sziszak,M,AB POLIT SC,4,CHS,101 Ferguson Rd.,donaldsteve@gmail.com,9053500961,Sammy,Shirley,Terrence,Uncle
-2050262,Twitty,Alan,Tamas,M,AB LITT,1,CHS,103 Ferguson Rd.,alantwitty@gmail.com,9053500959,Samuel,Shyann,Tevin,Brother
-2050263,Trauth,A.J.,Toth,M,AB LITT,2,CHS,104 Ferguson Rd.,ajtrauth@gmail.com,9053500958,Santiago,Shyanne,Thaddeus,Uncle
-2050264,Dean,Tawny,Trakberger,F,AB LITT,3,CHS,105 Ferguson Rd.,tawnydean@gmail.com,9053500957,Santos,Sidney,Theodore,Uncle
-2050265,Harshman,Margo,Treiber,F,AB LITT,4,CHS,106 Ferguson Rd.,margoharshman@gmail.com,9053500956,Saul,Sienna,Thomas,Brother
-2050266,Meyers,Fred,Ujvari,M,AB ENGL,1,CHS,108 Ferguson Rd.,fredmeyers@gmail.com,9053500954,Schuyler,Silvia,Timothy,Brother
-2050267,Wexler,Conrad,Valint,M,AB ENGL,2,CHS,109 Ferguson Rd.,conradwexler@gmail.com,9053500953,Scott,Simone,Tobias,Brother
-2050268,Bell ,George,Varga,M,AB ENGL,3,CHS,110 Ferguson Rd.,georgebell@gmail.com,9053500952,Sean,Sky,Toby,Uncle
-2050269,Arenguren,Bernard,Vargo,M,AB ENGL,4,CHS,111 Ferguson Rd.,bernardarenguren@gmail.com,9053500951,Sebastian,Skye,Todd,Uncle
-2050270,Mendel,Ruby,Vegh,F,AB ECON,1,CAC,113 Ferguson Rd.,rubymendel@gmail.com,9053500949,Seth,Skylar,Tomas,Uncle
-2050271,Frost,Lauren,Velejthy,F,AB ECON,2,CAC,114 Ferguson Rd.,laurenfrost@gmail.com,9053500948,Shane,Skyler,Tommy,Brother
-2050272,Tugnut,Terry,Vigh,F,AB ECON,3,CAC,115 Ferguson Rd.,terrytugnut@gmail.com,9053500947,Shannon,Sofia,Tony,Brother
-2050273,Wise,Jim,Yager,M,AB ECON,4,CAC,116 Ferguson Rd.,jimwise@gmail.com,9053500946,Shaquille,Sonia,Tory,Uncle
-2050274,Williams,Kenya ,Zana,F,AB COM,1,CHS,118 Ferguson Rd.,kenyawilliams@gmail.com,9053500944,Shawn,Sophia,Tracy,Brother
-2050275,Hodges,Erick,Zboray,M,AB COM,2,CHS,119 Ferguson Rd.,erickhodges@gmail.com,9053500943,Shay,Sophie,Trae,Uncle
-2050276,Minkler,Nelson,Zbugyella,M,AB COM,3,CHS,120 Ferguson Rd.,nelsonminkler@gmail.com,9053500942,Shayne,Stacey,Travis,Brother
-2050277,Estrada,Zack,Zoller,M,AB COM,4,CHS,121 Ferguson Rd.,zackestrada@gmail.com,9053500941,Shea,Stacy,Travon,Brother
-2050278,Baker,Brandon ,Zombo,M,AB COM,,CHS,122 Ferguson Rd.,brandonbaker@gmail.com,9053500940,Shelby,Stella,Tre,Uncle
-2050279,Deaver,Bobby,Zweck,M,ASS REL ED,1,CHS,123 Ferguson Rd.,bobbydeaver@gmail.com,9053500939,Sheldon,Stephanie,Trent,Uncle
-2050280,Bravis,Brandon ,Szari,M,ASS REL ED,2,CHS,124 Ferguson Rd.,brandonbravis@gmail.com,9053500938,Sherman,Stephany,Trenton,Brother
-2050281,McCarty,Kelli,Szekely,F,ASS REL ED,3,CHS,125 Ferguson Rd.,kellimccarty@gmail.com,9053500937,Sidney,Summer,Trever,Uncle
-2050282,Marshall ,Charlotte ,Szepi,F,ASS REL ED,4,CHS,126 Ferguson Rd.,charlottemarshall@gmail.com,9053500936,Silas,Susan,Trevon,Brother
-2050283,Kind,Richard,Sziszak,M,AHSE,1,CON,128 Ferguson Rd.,richardkind@gmail.com,9053500934,Skylar,Sydnee,Trey,Uncle
-2050284,Faris,Sean,Szucs,M,AHSE,2,CON,129 Ferguson Rd.,seanfaris@gmail.com,9053500933,Skyler,Sydney,Tristan,Uncle
-2050285,Marsden,Jason,Tamas,M,AHSE,3,CON,130 Ferguson Rd.,jasonmarsden@gmail.com,9053500932,Solomon,Sydni,Tristen,Brother
-2050286,McKellar,Danica,Toth,F,AHSE,4,CON,131 Ferguson Rd.,danicamckellar@gmail.com,9053500931,Sonny,Sydnie,Tristian,Uncle
-2061234,Berman,Chris,Treiber,M,BSIT,1,CICS,133 Ferguson Rd.,chrisberman@gmail.com,9053500929,Spenser,Rachael,Triston,Brother
-2067514,Hilton,Perez,Tuger,M,BSIT,2,CICS,134 Ferguson Rd.,perezhilton@gmail.com,9053500928,Stanley,Rachel,Troy,Uncle
-2041575,Hilton,Paris ,Zaagman ,F,BSIT,3,CICS,135 Ferguson Rd.,parishilton@gmail.com,9053500927,Stefan,Rachelle,Tucker,Uncle
-2024514,Scherzinger,Nicole,Zaalberg ,F,BSIT,4,CICS,136 Ferguson Rd.,nicolescherzinger@gmail.com,9053500926,Stephan,Raegan,Ty,Brother
-2051424,Baxter,Tanya,Zable ,F,BSCS,1,CICS,147 Ferguson Rd.,tanyabaxter@gmail.com,9053500915,Syed,Regan,Tanner,Uncle
-2034855,Henry,David,Dulsen,M,BSCS,2,CICS,148 Ferguson Rd.,davidhenry@gmail.com,9053500914,Sage,Regina,Tariq,Brother
-2066744,Thompson,Bob,Lei,M,BSCS,3,CICS,149 Ferguson Rd.,bobthompson@gmail.com,9053500913,Talon,Reilly,Nadia,Sister
-2055555,Abdoo,Rose,Yu,F,BSCS,4,CICS,150 Ferguson Rd.,roseabdoo@gmail.com,9053500912,Tanner,Reina,Nancy,Aunt
-2053157,Martinez ,Lola,Lee,F,BSIM,1,CICS,161 Ferguson Rd.,lolamartinez@gmail.com,9053500901,Terrence,Roselyn,Nia,Aunt
-2069789,Pensky,Quinn,Woosh,M,BSIM,2,CICS,162 Ferguson Rd.,quinnpensky@gmail.com,9053500900,Terry,Rosemary,Nichole,Aunt
-2069790,Reese,Logan ,Rock,M,BSIM,3,CICS,163 Ferguson Rd.,loganreese@gmail.com,9053500899,Tevin,Rowan,Nicole,Sister
-2069791,Brooks,Dustin,Patrick,M,BSIM,4,CICS,164 Ferguson Rd.,dustinbrooks@gmail.com,9053500898,Thaddeus,Ruby,Nicolette,Aunt
-2069792,Rivers,Dean,Smith,M,MSIT,1,CICS,180 Ferguson Rd.,deanrivers@gmail.com,9053500882,Travis,Kaleigh,Natalia,Sister
-2069793,Finnegan,Seamus,Comicho,M,MSIT,2,CICS,181 Ferguson Rd.,seamusfinnegan@gmail.com,9053500881,Travon,Kaley,Natalie,Sister
-2069794,Reese,Malcolm,Apilado,M,BLIS,1,CICS,182 Ferguson Rd.,malcolmreese@gmail.com,9053500880,Tre,Kali,Nataly,Aunt
-2069795,Gomez,Selena,Lim,F,BLIS,2,CICS,183 Ferguson Rd.,selenagomez@gmail.com,9053500879,Trent,Kaliyah,Natalya,Aunt
-2069796,Lohan,Lindsay,Martin,M,BLIS,3,CICS,324 Guisad Baguio City,lexluthor@yahoo.com,9051234567,Lionel,Krista,Martha,Aunt
-2069797,Ronson,Samantha,Lee,F,BLIS,4,CICS,JE 89 Pico La Trinidad Benguet,tammielee@gmail.com,9217854203,Timmothy,Margarita,McNee,Sister
-2055315,Kent ,Jonathan,Yu,M,BS MATH,1,CICS,30 Camdas,toddrice@hotmail.com,9185427963,Thomas,Lilian,Kara,Aunt
-2055156,Simpson,Ashlee,Smithson,F,BS MATH,2,CICS,243 Holy Ghost Ext,lilo541@yahoo.com,9095205557,Michael,Aliana,Mark,Uncle
-2069798,Simpson,Jessica,Hammet,M,BS MATH,3,CICS,15 A-5 Fairview Ext,nirvana@gmail.com,9278429871,Juan,Juanita,Juanito,Uncle
-2069799,Cobain,Kurt,Hall,M,BS MATH,4,CICS,16 A-5 Fairview Ext,metallica@yahoo.com,9265470020,Pedro,Maria,Mario,Brother
-2055315,Hamet,Kirk,Rhodes,M,BSStat,1,CICS,74 Phil-Am Rd ,gossipgirl@yahoo.com,9206570001,Bart,Lilian,Rufus,Uncle
-2066635,Vanderwoodsen,Erik,Rhodes,F,BSStat,2,CICS,4 Phil-Am Rd,serenadan@gmail.com,9095200001,Bart,Lilian,Rufus,Uncle
-2099999,Kent ,Martha,Rose,M,BSStat,3,CICS,39 Badihoy,natevanesa@yahoo.com,9178433256,George,Georgina,Lilian,Aunt
-2099998,Bass,Lilian,Wong,M,BSStat,4,CICS,4 Old Forestry Cpd,chuckbass@gmail.com,9165899874,Bart,Angel,Jack,Uncle
-,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,
+1,2061234,Chris,Berman,Treiber,M,BSIT,1,CICS,133 Ferguson Rd.,chrisberman@gmail.com,9053500929,Spenser Berman,Rachael Treiber,Triston Berman,Brother
+2,2067514,Perez,Hilton,Tuger,M,BSIT,2,CICS,134 Ferguson Rd.,perezhilton@gmail.com,9053500928,Stanley Hilton,Rachel Tuger,Troy Hilton,Uncle
+3,2041575,Paris ,Hilton,Zaagman ,F,BSIT,3,CICS,135 Ferguson Rd.,parishilton@gmail.com,9053500927,Stefan Hilton,Rachelle Zaagman ,Tucker Hilton,Uncle
+4,2024514,Nicole,Scherzinger,Zaalberg ,F,BSIT,4,CICS,136 Ferguson Rd.,nicolescherzinger@gmail.com,9053500926,Stephan Scherzinger,Raegan Zaalberg ,Ty Scherzinger,Brother
+5,2051424,Tanya,Baxter,Zable ,F,BSCS,1,CICS,147 Ferguson Rd.,tanyabaxter@gmail.com,9053500915,Syed Baxter,Regan Zable ,Tanner Baxter,Uncle
+6,2034855,David,Henry,Dulsen,M,BSCS,2,CICS,148 Ferguson Rd.,davidhenry@gmail.com,9053500914,Sage Henry,Regina Dulsen,Tariq Henry,Brother
+7,2066744,Bob,Thompson,Lei,M,BSCS,3,CICS,149 Ferguson Rd.,bobthompson@gmail.com,9053500913,Talon Thompson,Reilly Lei,Nadia Thompson,Sister
+8,2055555,Rose,Abdoo,Yu,F,BSCS,4,CICS,150 Ferguson Rd.,roseabdoo@gmail.com,9053500912,Tanner Abdoo,Reina Yu,Nancy Abdoo,Aunt
+9,2053157,Lola,Martinez ,Lee,F,BSIM,1,CICS,161 Ferguson Rd.,lolamartinez@gmail.com,9053500901,Terrence Martinez ,Roselyn Lee,Nia Martinez ,Aunt
+10,2069789,Quinn,Pensky,Woosh,M,BSIM,2,CICS,162 Ferguson Rd.,quinnpensky@gmail.com,9053500900,Terry Pensky,Rosemary Woosh,Nichole Pensky,Aunt
+11,2069790,Logan ,Reese,Rock,M,BSIM,3,CICS,163 Ferguson Rd.,loganreese@gmail.com,9053500899,Tevin Reese,Rowan Rock,Nicole Reese,Sister
+12,2069791,Dustin,Brooks,Patrick,M,BSIM,4,CICS,164 Ferguson Rd.,dustinbrooks@gmail.com,9053500898,Thaddeus Brooks,Ruby Patrick,Nicolette Brooks,Aunt
+13,2069792,Dean,Rivers,Smith,M,MSIT,1,CICS,180 Ferguson Rd.,deanrivers@gmail.com,9053500882,Travis Rivers,Kaleigh Smith,Natalia Rivers,Sister
+14,2069793,Seamus,Finnegan,Comicho,M,MSIT,2,CICS,181 Ferguson Rd.,seamusfinnegan@gmail.com,9053500881,Travon Finnegan,Kaley Comicho,Natalie Finnegan,Sister
+15,2069794,Malcolm,Reese,Apilado,M,BLIS,1,CICS,182 Ferguson Rd.,malcolmreese@gmail.com,9053500880,Tre Reese,Kali Apilado,Nataly Reese,Aunt
+16,2069795,Selena,Gomez,Lim,F,BLIS,2,CICS,183 Ferguson Rd.,selenagomez@gmail.com,9053500879,Trent Gomez,Kaliyah Lim,Natalya Gomez,Aunt
+17,2069796,Lindsay,Lohan,Martin,M,BLIS,3,CICS,324 Guisad Baguio City,lexluthor@yahoo.com,9051234567,Lionel Lohan,Krista Martin,Martha Lohan,Aunt
+18,2069797,Samantha,Ronson,Lee,F,BLIS,4,CICS,JE 89 Pico La Trinidad Benguet,tammielee@gmail.com,9217854203,Timmothy Ronson,Margarita Lee,McNee Ronson,Sister
+19,2055315,Jonathan,Kent ,Yu,M,BS MATH,1,CICS,30 Camdas,toddrice@hotmail.com,9185427963,Thomas Kent ,Lilian Yu,Kara Kent ,Aunt
+20,2055156,Ashlee,Simpson,Smithson,F,BS MATH,2,CICS,243 Holy Ghost Ext,lilo541@yahoo.com,9095205557,Michael Simpson,Aliana Smithson,Mark Simpson,Uncle
+21,2069798,Jessica,Simpson,Hammet,M,BS MATH,3,CICS,15 A-5 Fairview Ext,nirvana@gmail.com,9278429871,Juan Simpson,Juanita Hammet,Juanito Simpson,Uncle
+22,2069799,Kurt,Cobain,Hall,M,BS MATH,4,CICS,16 A-5 Fairview Ext,metallica@yahoo.com,9265470020,Pedro Cobain,Maria Hall,Mario Cobain,Brother
+23,2055315,Kirk,Hamet,Rhodes,M,BSStat,1,CICS,74 Phil-Am Rd ,gossipgirl@yahoo.com,9206570001,Bart Hamet,Lilian Rhodes,Rufus Hamet,Uncle
+24,2066635,Erik,Vanderwoodsen,Rhodes,F,BSStat,2,CICS,4 Phil-Am Rd,serenadan@gmail.com,9095200001,Bart Vanderwoodsen,Lilian Rhodes,Rufus Vanderwoodsen,Uncle
+25,2099999,Martha,Kent ,Rose,M,BSStat,3,CICS,39 Badihoy,natevanesa@yahoo.com,9178433256,George Kent ,Georgina Rose,Lilian Kent ,Aunt
+26,2099998,Lilian,Bass,Wong,M,BSStat,4,CICS,4 Old Forestry Cpd,chuckbass@gmail.com,9165899874,Bart Bass,Angel Wong,Jack Bass,Uncle
+27,2066666,Sam,Oliver,Harrison,M,BSIT,1,CICS,JE 100 Betag La Trinidad Benguet,samoliver@gmail.com,9053501297,Tyler Oliver,Valarie Rae Harrison,Ray Harrison,Uncle
+28,2066668,Mendoza,kelvina Jana,Manzano,F,BSIM,1,CICS,JE 102 Betag La Trinidad Benguet,kelvinajana@hotmail.com,9053501299,Carlo Mendoza,Carla Manzano,Carlos Manzano,Uncle
+29,2066669,Fabaan,Georgina Lyn,Macarimpas,F,bs math,1,CICS,JE 103 Betag La Trinidad Benguet,georginalyn@gmail.com,9053501390,Victor Fabaan,Victoria Macarimpas,Vivian Lee,Aunt
+30,2067777,Thomasilyn,Del Monte,Heinz,F,bscs,4,CICS,JE 104 Betag La Trinidad Benguet,thomasilyn@gmail.com,9219984111,Junior Del Monte,Edelbertha Heinz,Sen Yu,God Father
+31,2070054,Waylon,Jones,Bootay,M,MBS,1,CNS,28 Cabinet Hill,waylonjones@yahoo.com,9219984085,Alaister Jones,Adrian Bootay,Jeff Jones,Brother
+32,2070055,Lyle,Bolton ,Odyssey,M,MBS,2,CNS,27 Cabinet Hill,lylebolton@yahoo.com,9219984084,Ale Bolton ,Adriana Odyssey,Jefferson Bolton ,Uncle
+33,2070056,Jervez,Tetch,Crab,M,MBS,3,CNS,26 Cabinet Hill,jerveztetch@yahoo.com,9219984083,Alfie Tetch,Adrianna Crab,Jeffery Tetch,Brother
+34,2070057,Kirk,Langstorm,Virgo,M,MBS,4,CNS,25 Cabinet Hill,kirklangstorm@yahoo.com,9219984082,Amancleep Langstorm,Adrienne Virgo,Jeffrey Langstorm,Uncle
+35,2070018,Galius,Zed,Cocaine,M,MD,1,COM,7 Apugan Irisan ,bobdylan@yahoo.com,9219984069,Brian Zed,Yvonne Cocaine,Walter Zed,Uncle
+36,2070019,Scott,Free,Vander,M,MD,2,COM,12 Apugan Irisan,brianark@yahoo.com,9219984068,Robert Free,Robertha Vander,Robbin Free,Uncle
+37,2070020,Chuck,Wilson ,Stein,M,MD,3,COM,JD 237 Pico La Trinidad,jaronlowen@yahoo.com,9219984067,Tobias Wilson ,Tabias Stein,Richard Wilson ,Uncle
+38,2070021,Hans,Hendrickson,Hen,M,MD,4,COM,JD 123 Pico La Trinidad,jeffcoehen@yahoo.com,9219984066,Raymund Hendrickson,Diana Hen,Eliz Hendrickson,Sister
+39,2050014,Lois,Lane,Lane,F,BSED,1,COE,Km 5 Asin Rd,Supergirl@yahoo.com,9152888459,Jonathan Lane,Martha Lane,Jor-El Lane,Uncle
+40,2050015,Kara,Kent ,Kent,F,BSED ,2,COE,155 Assumption Rd,lanalang@hotmail. com,9062547788,Jonathan Kent ,Martina Kent,Clark Kent ,Uncle
+41,2050016,Serena,Vanderwoodsen,Lee,F,BSED ,3,COE,133 Hillside,georginalee@gmail.com,9178845522,Geo Vanderwoodsen,Gia Lee,Gilbert Vanderwoodsen,Uncle
+42,2050017,Mark,Ronson,Lane,M,BSED ,4,COE,21 P Zamora,smarty@gmail.com,9215447778,Oliver Ronson,Catalina Lane,Clark Ronson,Uncle
+43,2090058,Hugh,Jackman,Van,M,MA ENGL,1,CHS,205 Camdas,hughjackman@yahoo.com,9053501253,Angelo Jackman,Carla Van,Kallie Jackman,Sister
+44,2090059,Elizabeth ,Swan,Beethoven,F,MA ENGL,2,CHS,204 Camdas,elizswan@yahoo.com,9053501252,Adib Swan,Carlee Beethoven,Kamryn Swan,Aunt
+45,2090060,Jack,Sparrow,Light,M,MA ENGL,3,CHS,203 Camdas,jacksparrow@yahoo.com,9053501251,Alain Sparrow,Carley Light,Kara Sparrow,Sister
+46,2090061,David,Jones,Batombacal,M,MA ENGL,4,CHS,202 Camdas,davidjones@yahoo.com,9053501250,Kade Jones,Carli Batombacal,Karen Jones,Sister
+47,2050101,Gad,Hassan,Kosztolanyi,M,BSN,1,CON,9 Badihoy,gadhassan@gmail.com,9053501137,Eliezer Hassan,Deven Kosztolanyi,Raymond Hassan,Brother
+48,2050102,Allen,Chamberlain,Kovach,M,BSN,2,CON,10 Badihoy,allenchamberlain@gmail.com,9053501136,Elijah Chamberlain,Devin Kovach,Raymundo Chamberlain,Uncle
+49,2050103,Arnold ,Vosloo,Kovacs,M,BSN,3,CON,11 Badihoy,arnoldvosloo@gmail.com,9053501135,Eliseo Vosloo,Devon Kovacs,Rayshawn Vosloo,Uncle
+50,2050104,Freddie,Alex,Kozan,M,BSN,4,CON,12 Badihoy,freddiealex@gmail.com,9053501134,Elisha Alex,Devonta Kozan,Reece Alex,Brother
+51,2050138,Elise,Wells,Kovach,F,BSC MKTG,1,CAC,50 Apugan Irisan,elisewells@gmail.com,9053501099,Garrison Wells,Dusty Kovach,Roland Wells,Uncle
+52,2050139,Emma,Demar,Kovacs,F,BSC MKTG,2,CAC,51 Apugan Irisan,emmademar@gmail.com,9053501098,Gary Demar,Dwayne Kovacs,Rolando Demar,Brother
+53,2050140,Michelle,Berg,Kozan,F,BSC MKTG,3,CAC,52 Apugan Irisan,michelleberg@gmail.com,9053501097,Gavin Berg,Dwight Kozan,Roman Berg,Brother
+54,2050141,Lady,Beaton,Kreko,F,BSC MKTG,4,CAC,53 Apugan Irisan,ladybeaton@gmail.com,9053501096,Genaro Beaton,Dylan Kreko,Romeo Beaton,Uncle
+55,2066667,Tyler ,Labine,Smith,M,BS ARCH,1,CEA,JE 101 Betag La Trinidad Benguet,tylerlabine@gmail.com,9053501298,Alex Labine,Alexandra Smith,Alexine Labine,Sister
+56,2050125,Amanda,Sheton,Meszaros,F,BSElE,1,CEA,36 Apugan Irisan,amandasheton@gmail.com,9053501113,Estevan Sheton,Donald Meszaros,Riley Sheton,Uncle
+57,2050126,Howard,Archibald,Meyerling,M,BSElE,2,CEA,37 Apugan Irisan,howardarchibald@gmail.com,9053501112,Ethan Archibald,Donavan Meyerling,River Archibald,Uncle
+58,2050127,Sam,Robards,Mezei,F,BSElE,3,CEA,38 Apugan Irisan,samrobards@gmail.com,9053501111,Eugene Robards,Donnell Mezei,Robbie Robards,Brother
+59,2050128,Hazel,Williams,Mocsary,F,BSElE,4,CEA,39 Apugan Irisan,hazelwilliams@gmail.com,9053501110,Evan Williams,Donnie Mocsary,Robert Williams,Brother
+60,2050129,Dreama,Walker ,More,F,BSElE,5,CEA,40 Apugan Irisan,dreamawalker@gmail.com,9053501109,Everett Walker ,Donovan More,Roberto Walker ,Uncle
+61,2050210,Natalie,Imbruglia,Spisak,F,LL. B.,1,COL,43 Ferguson Rd.,natalieimbruglia@gmail.com,9053501019,Reece Imbruglia,Taya Spisak,Blake Imbruglia,Brother
+62,2050211,Rob,Thomas,Stifter,M,LL. B.,2,COL,44 Ferguson Rd.,robthomas@gmail.com,9053501018,Reed Thomas,Tayler Stifter,Bo Thomas,Uncle
+63,2050212,Peter,Parker,Strobel,M,LL. B.,3,COL,45 Ferguson Rd.,peterparker@gmail.com,9053501017,Reese Parker,Taylor Strobel,Bobby Parker,Uncle
+64,2050213,Mary Jane,Maja,Szalayi,F,LL. B.,4,COL,46 Ferguson Rd.,maryjane@gmail.com,9053501016,Reggie Maja,Teagan Szalayi,Brad Maja,Brother
+65,2050061,Sam,Uley,Fisher,M,MES,1,CNS,129 Camdas,samuley@gmail.com,9053501177,Braydon Uley,Darrius Fisher,Kristen Uley,Aunt
+66,2050218,Allison,Mack,Nagy,F,BEED VAL,1,COE,51 Ferguson Rd.,allisonmack@gmail.com,9053501011,Reuben Mack,Theresa Nagy,Brady Mack,Uncle
+67,2050259,Tom,Virtue,Szepi,M,AB POLIT SC,2,CHS,99 Ferguson Rd.,virtuetomail.com,9053500963,Salvatore Virtue,Shelby Szepi,Terrance Virtue,Uncle
+68,2050284,Sean,Faris,Szucs,M,AHSE,2,CON,129 Ferguson Rd.,seanfaris@gmail.com,9053500933,Skyler Faris,Sydney Szucs,Tristan Faris,Uncle
+69,2050086,Olive,Snook,Kapusi,F,BS S WK,2,CHS,20 Badihoy,olivesnook@gmail.com,9053501152,Bailey Snook,Denzel Kapusi,Kaley Snook,Aunt
+70,2050120,Kati,Farkas,Matusicki,F,BSIE,3,CEA,31 Apugan Irisan,katifarkas@gmail.com,9053501118,Erik Farkas,Dominic Matusicki,Rickey Farkas,Uncle

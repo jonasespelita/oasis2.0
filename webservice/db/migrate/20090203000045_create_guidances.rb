@@ -2,12 +2,12 @@ class CreateGuidances < ActiveRecord::Migration
   def self.up
     create_table :guidances do |t|
       t.integer :idNo
-      t.time :time
+      t.string :time
       t.string :day
       t.string :room
       t.string :guidanceStatus
 
-      t.timestamps
+      #t.timestamps
     end
   end
 

@@ -6,7 +6,7 @@ class CreateViolations < ActiveRecord::Migration
       t.string :offense
       t.string :memoDetail
 
-      t.timestamps
+      #t.timestamps
     end
   end
 

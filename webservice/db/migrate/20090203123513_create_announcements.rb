@@ -3,9 +3,9 @@ class CreateAnnouncements < ActiveRecord::Migration
     create_table :announcements do |t|
       t.date :eventDate
       t.string :event
-      t.string :memoDetail
+      t.text :memoDetail
 
-      t.timestamps
+      #t.timestamps
     end
   end
 

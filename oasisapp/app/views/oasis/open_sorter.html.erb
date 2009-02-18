@@ -38,8 +38,7 @@
           <li id="aboutslu"><a href ="http://www.slu.edu.ph/about/"><span class="invis">About SLU</span></a></li>
           <li id="aboutoasis"><%= link_to "<span class='invis'>#{t:about_oasis}</span>" ,about_path %></li>
           <li id="aboutteam"><%= link_to "<span class='invis'>FAQ's</span>", faq_path %></li>
-          <li> <%= greybox_link_to_page("View Google!", "http://www.google.ca", :title => 'This is google!') %>
-</li>
+       
         </ul>
 
         <span id="date"><%= (Time.now).strftime("%B %d, %Y") %><br/> 1st Semester <br/>S.Y. 08 - 09</span><span id = "username"><%= t :welcome %> <%= current_user.nickname %>!</span>
@@ -95,7 +94,7 @@
       <div id ="bot_linkie"><a href="#">See All</a></div>
     </div>
     <div id="bot_menu"><div id="bot_menu_thing">
-        <%=  link_to_function('Show Notifications (10)',
+        <%=  link_to_function('Notifications (10)',
           "Element.show('bot_notifs');
           ")%>
 

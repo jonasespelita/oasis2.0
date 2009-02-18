@@ -121,8 +121,8 @@ class ApplicationController < ActionController::Base
       end
 
       if @attendance.size >0
-        if state.attendance_as_of < @attendance.last.asOfDate
-          state.attendance_as_of = @attendance.last.asOfDate
+        if state.attendance_as_of < Time.parse(@attendance.last.asOfDate)
+          state.attendance_as_of = Time.parse(@attendance.last.asOfDate)
           state.save
            notif = Notification.new
           notif.delivered_at = Time.now

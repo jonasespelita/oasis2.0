@@ -1,15 +1,12 @@
-VIOLATIONS,,,
-idNo,dateOfViolation,offense,memoDetail
-2066744,14.02.2006,1,Vandalism
 2055555,14.02.2006,1,Wearing I.D without Validation Sticker
+﻿2066744,14.02.2006,1,Vandalism
 2053157,02.03.2006,1,Bringing Laptop without permission
 2050194,07.03.2006,1,Not wearing I.D inside the campus
-2050195,21.06.2006,1,Failed to report the loss of his/her ID card
-,,,to the Student Affairs Office within 24 hours and have a replacement of the same within 48 hours
+2050195,21.06.2006,1,Failed to report the loss of his/her ID card to the Student Affairs Office within 24 hours and have a replacement of the same within 48 hours
 2050196,22.06.2006,1,Failed to surrender his/her lost and found ID card within 48 hours while still in possession of a replacement ID card
 2050187,02.03.2006,1,"Failed to present his/her ID card when requested by school authorities, faculty, personnel or guard on duty"
 2050188,11.07.2006,1,Using for official school purposes or transaction his/her own ID card which is neither authorized nor valid
-2050189,24.08.2006,1,"Unauthorized stay in, or entry to the university campus after 9:00 o�clock in the evening"
+2050189,24.08.2006,1,"Unauthorized stay in, or entry to the university campus after 9:00 o’clock in the evening"
 2050123,28.09.2006,1,Smoking at any time on University premises
 2050124,28.09.2006,1,Littering cans
 2050125,29.09.2006,1,Littering pieces of paper
@@ -89,4 +86,3 @@ idNo,dateOfViolation,offense,memoDetail
 2050061,28.01.2009,3,Bringing Laptop without permission
 2050062,28.01.2009,3,Not wearing I.D inside the campus
 2050063,19.01.2009,3,Wearing I.D without Validation Sticker
-,,,

@@ -8,7 +8,7 @@ class CreateAttendances < ActiveRecord::Migration
       t.string :attendanceStatus
       t.date :asOfDate
       
-      t.timestamps
+      #t.timestamps
     end
   end
 

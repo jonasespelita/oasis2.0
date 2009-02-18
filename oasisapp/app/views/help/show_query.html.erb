@@ -1,9 +1,17 @@
 <%= flash[:notice] %>
 <div class="grid_12">
   <% form_tag 'create_query' do%>
-    <%=label_tag( :subject, "Subject:") %><%= text_field_tag( :subject ,"", :size =>"45") %><br/>
+
+    <%=label_tag( :subject, "Subject:") %><%=select_tag "Subject", "<option selected='selected'>rawr</option> <option>rawr</option>"  %><br/>
     <%=label_tag( :subject, "Message:") %><br/>
-    <%=text_area_tag(  :message,"",  :size => "60x10") %>
+    
+      <% if params[:user_id].nil? %>
+        <%=text_area_tag(  :message,"", :size => "60x10") %>
+<% else %>
+        <%=text_area_tag(  :message,"Reporting #{(User.find(params[:user_id])).nickname} with UserId #{params[:user_id]}",:size => "60x10") %>
+    <% end %>
+    
+    
     <br/>
     <%=submit_tag("Submit") %>
   <% end %>

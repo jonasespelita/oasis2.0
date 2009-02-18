@@ -7,10 +7,10 @@ class CreateGrades < ActiveRecord::Migration
       t.string :courseNo
       t.string :descriptiveTitle
       t.integer :units
-      t.integer :grade
+      t.string :grade
       t.string :remark
 
-      t.timestamps
+      #t.timestamps
     end
   end
 

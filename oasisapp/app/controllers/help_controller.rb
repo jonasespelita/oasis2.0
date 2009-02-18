@@ -1,9 +1,12 @@
 class HelpController < ApplicationController
-  before_filter :login_required
+  before_filter :login_required, :except => [ :tos]
+  
   layout 'reg'
   def pref_help
     render :text =>"Click on your ward's picture to change it. You can also change the order your wards appear by dragging the text  below each ward."
   end
+  
+  
   
   def attendance_help
     render :text =>" The standards of attendance should be maintained to prevent the giving of school credits to students who do not meet the minimum attendance requirements. The checking of attendance is the responsibility of the faculty. On the other hand it is the responsibility of the student to keep track of his absences so that he knows when his classcard may have been submitted and thus he can claim it before he goes back to his class.
@@ -36,7 +39,9 @@ A student who has incurred absences of more than 20% of the required number of c
      
      
   end
-  
+  def tos
+    
+  end
   def test
     
   end

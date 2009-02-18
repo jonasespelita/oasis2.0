@@ -127,8 +127,10 @@ class UsersController < ApplicationController
     end
     if current_user.save
       flash[:e_alert] = "Settings successfully updated"
+      flash[:status] = "success"
     else
       flash[:e_alert] = "Invalid Input."
+      flash[:status] = "error"
     end
     respond_to do |format|
       format.js

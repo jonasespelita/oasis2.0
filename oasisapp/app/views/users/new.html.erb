@@ -53,7 +53,7 @@
             <%= f.text_field :cp_number, "maxlength"=>"32", "size"=>"34"%></td><td class="col_explain"><div id="cp_numbermsg" class="sml"><%= error_message_on "user", :cp_number%></div></td></tr>
 
 
-  <tr><td><%= f.check_box :terms_of_service %><span class="sml"><%= t :reg2_toc %></span></td><td class="col_explain"><div class="sml"><%= error_message_on "user", :terms_of_service%></div></td></tr>
+  <tr><td><%= f.check_box :terms_of_service %><span class="sml"><%=link_to t(:reg2_toc), tos_path, :popup=>true %></span></td><td class="col_explain"><div class="sml"><%= error_message_on "user", :terms_of_service%></div></td></tr>
           </tbody>
         </table>
 

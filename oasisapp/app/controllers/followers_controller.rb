@@ -16,16 +16,21 @@ class FollowersController < ApplicationController
   def upload_photo
     flash[:notice]= params[:user]
     (Follower.find_all_by_user_id params[:user]).each do |f|
-
+    @profile = Profile.find params[:id]
       if f.idno == params[:id].to_i
         flash[:notice]= "#{t(:rawr)}"
         f .photo = params[:photo]
-        f.save
+        if f.save
+          redirect_to "/oasis/open_sorter"
+        else
+          flash[:error] = "Invalid File Type"
+          render :action=> "change_photo"
+        end
       end
     
     end
  
-    redirect_to "/oasis/open_sorter"
+    
 
   end
   
@@ -39,16 +44,16 @@ class FollowersController < ApplicationController
       return
     end
     #check if student exists
-        if !verify?(params[:idno], params[:vcode])
-#      open("http://localhost:13004/cgi-bin/sendsms?username=admin&password=Linux&to=#{mobilenum}&text=#{hash(idno)[4..9]}") {|f|}
+    if !verify?(params[:idno], params[:vcode])
+      #      open("http://localhost:13004/cgi-bin/sendsms?username=admin&password=Linux&to=#{mobilenum}&text=#{hash(idno)[4..9]}") {|f|}
       redirect_back_or_default('/')
       return
     end
     
    
-#    idno = params[:idno]
-#    vcode = params[:vcode]
-#    mobilenum = params[:mobilenum]
+    #    idno = params[:idno]
+    #    vcode = params[:vcode]
+    #    mobilenum = params[:mobilenum]
 
     #init student for easy reference
     stud = Profile.find(params[:idno])
@@ -81,7 +86,7 @@ class FollowersController < ApplicationController
         state.violation_rows=0
         state.save
 
-         generate_notifs f, state
+        generate_notifs f, state
 
         flash[:notice]="You are now following #{stud.fullname}"
       else
@@ -105,7 +110,7 @@ class FollowersController < ApplicationController
     Digest::SHA1.hexdigest("#{@key}#{i}")
   end
 
-#function to verify idno and vcode
+  #function to verify idno and vcode
   def verify?(idno, vcode)
     if idno==''|| vcode==''
       flash[:error]="All fields are required."

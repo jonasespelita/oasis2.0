@@ -54,6 +54,10 @@
 2060057,8:10,S,S111,Reduced load
 2060058,8:20,M,S111,Non-Readmission
 2060059,8:30,T,S111,Kicked Out
+2066666,8:00,M,S111,Reduced Load
+2066667,8:10,T,S111,Non-Readmission
+2066668,8:20,W,S111,Last Chance
+2060060,9:20,W,S111,Kicked Out      
 2070010,8:40,W,S111,Last Chance
 2070011,8:50,TH,S111,Reduced load
 2070012,9:00,F,S111,Non-Readmission

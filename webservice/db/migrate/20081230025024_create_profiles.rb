@@ -17,7 +17,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :guardianName
       t.string :relationshipToGuardian
 
-      t.timestamps
+      #t.timestamps
     end
   end
 

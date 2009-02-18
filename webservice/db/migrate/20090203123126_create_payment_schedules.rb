@@ -2,11 +2,11 @@ class CreatePaymentSchedules < ActiveRecord::Migration
   def self.up
     create_table :payment_schedules do |t|
       t.integer :idNo
-      t.date :dateOfPayment
+      t.timestamp :dateOfPayment
       t.float :amt
       t.string :textDetail
 
-      t.timestamps
+      #t.timestamps
     end
   end
 

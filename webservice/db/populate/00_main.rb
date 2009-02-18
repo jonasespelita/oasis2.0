@@ -1,9 +1,7 @@
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
-puts Rails.root
 
-#announcement working!
-#=begin
+=begin
 puts "start announcements"
 ann_date = '%d.%m.%Y'
 File.open(Rails.root+"/CSV/announcement.csv").each {|line|
@@ -15,27 +13,21 @@ File.open(Rails.root+"/CSV/announcement.csv").each {|line|
   ann.save
 }
 puts "end announcements"
-#=end
 
-#this is working!
-#=begin
 puts "start attendance"
 File.open(Rails.root+"/CSV/attendance.csv").each {|line|
   temp = line.split(',')
   att = Attendance.new
-  att.idNo = temp[0].to_i
-  att.code = temp[1].to_i
-  att.courseNo = temp[2]
-  att.absences = temp[3].to_i
-  att.attendanceStatus = temp[4]
-  att.asOfDate = Date.parse(temp[5])
+  att.idNo = temp[1].to_i
+  att.code = temp[2].to_i
+  att.courseNo = temp[3]
+  att.absences = temp[4].to_i
+  att.attendanceStatus = temp[5]
+  att.asOfDate = Date.parse(temp[6])
   att.save
 }
 puts "end attendance"
-#=end
 
-#this is working
-#=begin
 puts "start class schedule"
 File.open(Rails.root+"/CSV/class schedule.csv").each {|line|
   temp = line.split(',')
@@ -51,10 +43,7 @@ File.open(Rails.root+"/CSV/class schedule.csv").each {|line|
   cs.save
 }
 puts "end class schedule"
-#=end
 
-#this is working!
-#=begin
 puts "start course offerings"
 File.open(Rails.root+"/CSV/course offerings.csv").each {|line|
   temp = line.split(',')
@@ -71,17 +60,14 @@ File.open(Rails.root+"/CSV/course offerings.csv").each {|line|
   co.save
 }
 puts "end course offerings"
-#=end
 
-#this is working!
-#=begin
 puts "start grades"
 File.open(Rails.root+"/CSV/grade.csv").each {|line|
   temp = line.split(',')
   g = Grade.new
-  g.idNo = temp[0].to_i
-  g.semester = temp[1].to_i
-  g.endSchYr = temp[2].to_i
+  g.idNo = temp[2].to_i
+  g.semester = temp[0].to_i
+  g.endSchYr = temp[1].to_i
   g.courseNo = temp[3]
   g.descriptiveTitle = temp[4]
   g.units = temp[5].to_i
@@ -90,104 +76,78 @@ File.open(Rails.root+"/CSV/grade.csv").each {|line|
   g.save
 }
 puts "end grades"
-#=end
-
-#this is working!
-#=begin
+=end
 puts "start guidance"
 File.open(Rails.root+"/CSV/guidance.csv").each {|line|
   temp = line.split(',')
   g = Guidance.new
   g.idNo = temp[0].to_i
-  g.time = temp[1]
+  g.time = temp[1]+"-"+(Time.parse(temp[1])+600).strftime('%H:%M')
   g.day = temp[2]
   g.room = temp[3]
   g.guidanceStatus = temp[4]
   g.save
 }
 puts "end guidance"
-#=end
-
-#this is working!
-#=begin
+=begin
 puts "start payment schedule"
-pay_date = '%d.%m.%Y'
 File.open(Rails.root+"/CSV/payment schedule.csv").each {|line|
   temp = line.split(',')
   pay = PaymentSchedule.new
-  pay.idNo = temp[0].to_i
-  pay.dateOfPayment = DateTime.strptime(temp[1], pay_date)
-  Amt = temp[2]
-  Amt["P"] = " "
-  pay.amt = Amt.strip.to_f
+  pay.idNo = temp[1].to_i
+  pay.dateOfPayment = DateTime.parse(temp[4])
+  pay.amt = temp[2].strip.to_f
   pay.textDetail = temp[3]
   pay.save
 }
 puts "end payment schedule"
-#=end
 
-#this is working!
-#=begin
 puts "start profile"
 File.open(Rails.root+"/CSV/profile.csv").each {|line|
   temp = line.split(',')
   profile = Profile.new
-  profile.idNo = temp[0].to_i
-  profile.familyName = temp[1]
-  profile.givenName = temp[2]
-  profile.middleName = temp[3]
-  profile.gender = temp[4]
-  profile.course = temp[5]
-  profile.yearLevel = temp[6].to_i
-  profile.college = temp[7]
-  profile.address = temp[8]
-  profile.email = temp[9]
-  profile.mobileNumber = temp[10]
-  profile.fatherName = temp[11]
-  profile.motherName = temp[12]
-  profile.guardianName = temp[13]
-  profile.relationshipToGuardian = temp[14]
+  profile.idNo = temp[1].to_i
+  profile.familyName = temp[2]
+  profile.givenName = temp[3]
+  profile.middleName = temp[4]
+  profile.gender = temp[5]
+  profile.course = temp[6]
+  profile.yearLevel = temp[7].to_i
+  profile.college = temp[8]
+  profile.address = temp[9]
+  profile.email = temp[10]
+  profile.mobileNumber = "+63"+temp[11]
+  profile.fatherName = temp[12]
+  profile.motherName = temp[13]
+  profile.guardianName = temp[14]
+  profile.relationshipToGuardian = temp[15]
   profile.save
 }
 puts "end profile"
-#=end
 
-#wahhh!! mali ung csv file!! wla siyang as of date!!
-=begin
 puts "start tuition fee assessment"
-tfa_date = 
 File.open(Rails.root+"/CSV/tuition fee assessment.csv").each {|line|
   temp = line.split(',')
-  tfa = TuitionFeeAssessment.new
-  tfa.idNo = temp[0].to_i
-  tfa.gradingTerm = temp[].to_i
-  payAmt = temp[2]
-  payAmt["P"] = " "
-  tfa.payAmt = payAmt.strip.to_f
-  tfa.balanceAsOf = DateTime.strptime(temp[3], tfa_date)
+  tfa = Tfassessment.new
+  tfa.idNo = temp[1].to_i
+  tfa.gradingTerm = temp[2]
+  tfa.payAmt = temp[3].strip.to_f
+  tfa.balanceAsOf = temp[4].strip.to_f
   tfa.save
 }
 puts "end tuition fee assessment"
-=end
 
-#this is working! hahaha!
-#=begin
 puts "start tuition fee breakdown"
 File.open(Rails.root+"/CSV/tuition fee breakdown.csv").each {|line|
   temp = line.split(',')
   tfb = Tfbreakdown.new
-  tfb.idNo = temp[0].to_i
-  tfb.item = temp[1]
-  feeAmt = temp[2]
-  feeAmt["P"] = " "
-  tfb.feeAmt = feeAmt.strip.to_f
+  tfb.idNo = temp[1].to_i
+  tfb.item = temp[2]
+  tfb.feeAmt = temp[3].strip.to_f
   tfb.save
 }
 puts "end tuition fee breakdown"
-#=end
 
-#this is working din!! hahaha
-#=begin
 puts "start violations"
 vio_date = '%d.%m.%Y'
 File.open(Rails.root+"/CSV/violations.csv").each {|line|
@@ -200,4 +160,16 @@ File.open(Rails.root+"/CSV/violations.csv").each {|line|
   violation.save
 }
 puts "end violations"
-#=end
+
+puts "start mobile number"
+mob_date = '%d.%m.%Y'
+File.open(Rails.root+"/CSV/mobile number.csv").each {|line|
+  temp = line.split(',')
+  mobile = MobileNumber.new
+  mobile.idNo = temp[0].to_i
+  mobile.mobileNumber = temp[1]
+  mobile.enrol_date = DateTime.strptime(temp[2],mob_date)
+  mobile.save
+}
+puts "end mobile number"
+=end

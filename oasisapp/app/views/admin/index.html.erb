@@ -743,7 +743,7 @@ function WebFXMenuButton() {}
 	    	<%= text_field_tag :search_user_name, nil, :id => "search_user_name",  :size => 30, :style => "display:none" %>
 	    	<%= submit_tag "Search" %>
 	    	
-	    	
+                  
 	    <% end %>
 		<div class="sys_groupbox1">
 			<fieldset class="fieldset" style="width: 400px; height:573px;">
@@ -786,7 +786,7 @@ function WebFXMenuButton() {}
 					<%= button_to_function "Block", "blockUser()", :id => "button_user_block" %>	 
 					<%= button_to_function "Unblock", "unblockUser()", :id => "button_user_unblock" %>
 				</span>
-				
+                                <%=  button_to "Show", :action=> 'index' %>
 		    </fieldset>
 		</div>
 		<% form_tag '/admin/block_user', :id => "block_user" do %>
@@ -834,7 +834,7 @@ function WebFXMenuButton() {}
 					
 				};
 				$('select_user_show').request();
-				$('show_users_check').update('<% form_tag '/admin/remove_student', :id => "remove_student" do %> <%(Follower.find_all_by_user_id(session[:select_user_id])).each do |follower| %><%= check_box(follower.id,'checked') %>	<span><%=(Profile.find(follower.idno)).fullname%></span><% end %><br><%= submit_tag "Save" %> <% end %>');
+				$('show_users_check').update('<% form_tag '/admin/remove_student', :id => "remove_student" do %> <%(Follower.find_all_by_user_id(session[:select_user_id])).each do |follower| %><%= check_box(follower.id,'checked') %>	<span><%=(Profile.find(follower.idno)).fullname%></span><br><% end %><br><%= submit_tag "Save" %> <% end %>');
 			}
 			function blockUser(){
 				document.getElementById("block_user").submit();

@@ -360,7 +360,7 @@ dd{
 }
 
 #f_info{
-
+    overflow-y:auto;
     height:183px;
 }
 

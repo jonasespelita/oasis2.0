@@ -8,7 +8,7 @@ english:
   click_start: Click on a ward to get started
 
   add_ward: Add a ward
-  show_notification: Show Notifications
+  show_notification: Notifications
   ward_preferences: Ward preferences
   about_oasis: About OASIS
   about_oasis_message: The Online Access Student Information System (OASIS) is a web-based application that enables parents/guardians (known as users henceforth) to view school information which pertains to their student/child (known as wards henceforth). All relevant information shown in the application is retrieved from the Management Information System (MIS) Office and Accounting Office. The users can view the wards school information through the OASIS anywhere as long as the users have access to the Internet. To ensure the security of the wards school information, our proposed system will require a username and password for the users to view their own ward/s information.
@@ -33,7 +33,7 @@ english:
   reg2_about_yourself: About yourself
   reg2_home_add: Enter your home address.
   reg2_contact: We'll use this for notification purposes
-  reg2_toc: I accept the OASIS <a>terms and conditions</a>.
+  reg2_toc: I accept the OASIS terms and conditions.
   reg3_message: Congratulations! You have added
   reg3_message2: as your ward.
   faq_header: Frequently  Asked Questions (FAQ)
@@ -80,7 +80,7 @@ english:
   faq_footer3: and we'll contact you shortly.
 
 
-
+ captcha_error: Captcha error
   
   rawr: I'm English
 

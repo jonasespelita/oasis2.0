@@ -1,1 +1,1 @@
-page.replace_html :e_notice, flash[:e_alert]
+page.replace_html :e_notice,  "<div class='#{flash[:status]}'>#{flash[:e_alert]}<div>"

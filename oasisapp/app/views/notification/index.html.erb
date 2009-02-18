@@ -1,0 +1,15 @@
+    <%= stylesheet_link_tag "reset" %>
+    <%= stylesheet_link_tag "follower" %>
+    <%= stylesheet_link_tag "960" %>
+    <%= stylesheet_link_tag "calendar" %>
+    <%= stylesheet_link_tag "style" %>
+
+Showing all your generated notifications.
+<% @notifs.each do|notif| %>
+
+  <dt style ="width:100%; color:black;"><%=(Profiles.find(notif.idno)).fullname  %><%= notif.details %></dt>
+      <dd style="margin-left:100px">-<%= notif.delivered_at%></dd>
+  <% end %>
+  Sort by <%= link_to "Violation","" %>
+<%= link_to "Ward","" %>
+<%= link_to "Date","" %>
