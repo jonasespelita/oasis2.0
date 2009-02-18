@@ -9,7 +9,7 @@ class AdminController < ApplicationController
 		@admins.sort{ |a,b| a.username <=> b.username}
 		@admins.reverse!
 		@queries = Query.find(:all)
-		@sitesetting = Sitesettings.find_by_id(1)
+		@sitesetting = Sitesettings.find_by_name("sitesettings")
 		@web_add = WebserviceAddress.find_by_name("webservice")
 		if session[:email_id]
 			x = TempEmail.find_by_id(session[:email_id])
@@ -194,7 +194,7 @@ class AdminController < ApplicationController
 			unless params[:new_email].blank?
 				admin = Admin.find(session[:admin_id])
 				if params[:new_email] == params[:confirm_email]
-					admin.email = params[:new_email]
+					admin.email = params[:new_email].strip!
 					flash.now[:message] = flash[:message] + "email changed"
 				else
 					flash.now[:notice] = "new email did not match"
@@ -216,52 +216,13 @@ class AdminController < ApplicationController
 		flash[:message] = "Logged out"
   end
 
-  def edit_activity
-  	unless params[:edit_activity_id].blank?
-			edited_activity = CampusActivities.find(params[:edit_activity_id])
-			edited_activity.date = params[:edit_activity_date]
-			edited_activity.activity = params[:edit_activity_name]
-			edited_activity.summary = params[:edit_activity_summary]
-			unless edited_activity.save
-				redirect_to(:action => "index")
-				flash[:notice] = "not saved"
-			else
-				redirect_to(:action => "index")
-			end
-		else
-			redirect_to(:action => "index")
-			flash[:notice] = "Please select an activity to be edited"
-		end
-  end
-
-  def add_activity
-  	new_activity = CampusActivities.new
-  	new_activity.date = params[:add_activity_date]
-  	new_activity.activity = params[:add_activity_name]
-  	new_activity.summary = params[:add_activity_summary]
-  	unless new_activity.save
-  		redirect_to(:action => "index")
-  		flash[:notice] = "not saved"
-  	end
-  	redirect_to(:action => "index")
-  end
-
-  	def delete_activity
-	  	deleted_activity = CampusActivities.find(params[:delete_activity_id])
-	  	unless deleted_activity.destroy
-	  		redirect_to(:action => "index")
-	  		flash[:notice] = "not deleted"
-	  	end
-	  	redirect_to(:action => "index")
-
-	end
 
   def edit_announcement
 		unless params[:edit_announcement_id].blank?
 			edited_announcement = Announcements.find(params[:edit_announcement_id])
 			edited_announcement.date_time = params[:edit_announcement_date]
-			edited_announcement.announcement = params[:edit_announcement_name]
-			edited_announcement.summary = params[:edit_announcement_summary]
+			edited_announcement.announcement = params[:edit_announcement_name].strip
+			edited_announcement.summary = params[:edit_announcement_summary].strip
 			unless edited_announcement.save
 				redirect_to(:action => "index")
 				flash.now[:notice] = "not saved"
@@ -283,8 +244,8 @@ class AdminController < ApplicationController
   def add_announcement
   	new_announcement = Announcements.new
   	new_announcement.date_time = params[:add_announcement_date]
-  	new_announcement.announcement = params[:add_announcement_name]
-  	new_announcement.summary = params[:add_announcement_summary]
+  	new_announcement.announcement = params[:add_announcement_name].strip
+  	new_announcement.summary = params[:add_announcement_summary].strip
   	unless new_announcement.save
   		redirect_to(:action => "index")
   		flash[:notice] = "not saved"
@@ -320,11 +281,11 @@ class AdminController < ApplicationController
 	def add_admin
 		if params[:add_admin_password] == params[:add_admin_confirm]
 			new_admin = Admin.new
-			new_admin.first_name = params[:add_admin_first_name].capitalize
-			new_admin.last_name = params[:add_admin_last_name].capitalize
+			new_admin.first_name = params[:add_admin_first_name].capitalize.strip
+			new_admin.last_name = params[:add_admin_last_name].capitalize.strip
 			new_admin.position = "General Administrator"
 			new_admin.username = params[:add_admin_username]
-			new_admin.email = params[:add_admin_email]
+			new_admin.email = params[:add_admin_email].strip
 			new_admin.active = true
 			new_admin.create_password(params[:add_admin_password])
 			unless new_admin.save
@@ -344,10 +305,10 @@ class AdminController < ApplicationController
 		if params[:edit_admin_password] == params[:edit_admin_confirm]
 	  		unless params[:edit_admin_id].blank?
 				edit_admin = Admin.find(params[:edit_admin_id])
-				edit_admin.first_name = params[:edit_admin_first_name].capitalize
-				edit_admin.last_name = params[:edit_admin_last_name].capitalize
+				edit_admin.first_name = params[:edit_admin_first_name].capitalize.strip
+				edit_admin.last_name = params[:edit_admin_last_name].capitalize.strip
 				edit_admin.username = params[:edit_admin_username]
-				edit_admin.email = params[:edit_admin_email]
+				edit_admin.email = params[:edit_admin_email].strip
 				unless params[:edit_admin_password].blank?
 					edit_admin.create_password(params[:edit_admin_password])
 				end
@@ -685,25 +646,35 @@ class AdminController < ApplicationController
 		sitesetting.sms_friday = if params[:sms_friday] == "yes" then true else false end
 		sitesetting.sms_saturday = if params[:sms_saturday] == "yes" then true else false end
 		sitesetting.sms_sunday = if params[:sms_sunday] == "yes" then true else false end
-		sitesetting.save
-		act = Changes.new
-		act.admin_id = session[:admin_id]
-		act.ip_add = request.remote_ip
-		act.change_made = "Changed Messaging Settings"
-		act.save
-		redirect_to(:action => "index") 
+		if sitesetting.save
+			act = Changes.new
+			act.admin_id = session[:admin_id]
+			act.ip_add = request.remote_ip
+			act.change_made = "Changed Messaging Settings"
+			act.save
+			flash[:message] = "Messaging Settings Successfully Changed"
+			redirect_to(:action => "index") 
+		else
+			flash[:notice] = "Messaging Settings Not Saved, an Error Occured"
+			redirect_to(:action => "index") 
+		end
 	end
 	
 	def change_site_status
 		sitesetting = Sitesettings.find_by_id(1)
 		sitesetting.online = if params[:site_status] == "Online" then true else false end
-		sitesetting.save
-		act = Changes.new
-		act.admin_id = session[:admin_id]
-		act.ip_add = request.remote_ip
-		act.change_made = if sitesetting.online then "Put Website Online" else "Put Website Offline" end
-		act.save
-		redirect_to(:action => "index") 
+		if sitesetting.save
+			act = Changes.new
+			act.admin_id = session[:admin_id]
+			act.ip_add = request.remote_ip
+			act.change_made = if sitesetting.online then "Put Website Online" else "Put Website Offline" end
+			act.save
+			flash[:message] = "Website Status Successfully Changed"
+			redirect_to(:action => "index") 
+		else
+			flash[:notice] = "Site status Not Saved, an Error Occured"
+			redirect_to(:action => "index") 
+		end
 	end
 	
 	def select_email_edit
@@ -759,16 +730,16 @@ class AdminController < ApplicationController
 				a.save
 				session[:email_id] = a.id
 				session[:select_email_edit] = "Guidance"
-			when "Forgot Password":
+			when "Forgot Username and Password":
 				email = ""
-				File.open(Rails.root+"/app/views/email/forgotpassword.html").each{ |line|
+				File.open(Rails.root+"/app/views/email/forgotusernamepassword.html").each{ |line|
 				email = email + line
 				}
 				a = TempEmail.new
 				a.email = email
 				a.save
 				session[:email_id] = a.id
-				session[:select_email_edit] = "Forgot Password"
+				session[:select_email_edit] = "Forgot Username and Password"
 			when "Violation":
 				email = ""
 				File.open(Rails.root+"/app/views/email/violation.html").each{ |line|
@@ -807,8 +778,8 @@ class AdminController < ApplicationController
 				file = File.new(Rails.root+"/app/views/email/guidance.html", "w+")
 				file.puts(params[:edit_email_box])
 				file.close
-			when "Forgot Password":
-				file = File.new(Rails.root+"/app/views/email/forgotpassword.html", "w+")
+			when "Forgot Username and Password":
+				file = File.new(Rails.root+"/app/views/email/forgotusernamepassword.html", "w+")
 				file.puts(params[:edit_email_box])
 				file.close
 			when "Violation":
@@ -822,6 +793,7 @@ class AdminController < ApplicationController
 		act.ip_add = request.remote_ip
 		act.change_made = "Edited Email Contents of #{session[:select_email_edit]}"
 		act.save
+		flash[:message] = "Email Contents Successfully Edited"
 		redirect_to(:action => "index")
 	end
 	
@@ -832,8 +804,17 @@ class AdminController < ApplicationController
 	
 	def change_webservice_address
 		web_add = WebserviceAddress.find_by_name("webservice")
-		web_add.address = params[:change_webservice_address]
+		web_add.address = params[:change_webservice_address].strip
 		web_add.save
+		flash[:message] = "Web Service Address Successfully Changed"
+		redirect_to(:action => "index")
+	end
+	
+	def set_semester
+		site_set = Sitesettings.find_by_name("sitesettings")
+		site_set.semester = params[:site_sem]
+		site_set.save
+		flash[:message] = "Current Semester Successfully Changed"
 		redirect_to(:action => "index")
 	end
 	

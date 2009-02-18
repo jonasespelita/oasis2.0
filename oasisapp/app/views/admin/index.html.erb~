@@ -90,7 +90,11 @@ function WebFXMenuButton() {}
 </script>
 
 <div class="container">	
+	<% if @is_oa %>
 	<div class="admin_title"><b>OASIS Administrator</b></div>
+	<% else %>
+	<div class="admin_title"><b>GEN.  Administrator</b></div>
+	<% end %>
 	<div class="topmenu" style="left:194px;">
 		<%= link_to 'Logout', :action => 'logout' %>
 		|
@@ -824,7 +828,17 @@ function WebFXMenuButton() {}
 		    </fieldset>		
 		</div>
 		<script language="text/javascript" type="text/javascript">
-			
+			function showSearchField(obj) {
+				
+				if(obj.selectedIndex == 4){
+				
+					Element.show("search_user_name");
+				}else {
+					Element.hide("search_user_name");
+				};
+				
+				
+			}
 			function clickUser(){
 				var i = nlr5.selected;
 				document.getElementById("block_user_id").value = nlr5.elements[i][4];
@@ -988,16 +1002,23 @@ function WebFXMenuButton() {}
 		<div class="tab-page" id="tabPage11">
 			 <h2 class="tab">Site Settings</h2>
 			<div style="position:relative;">
-				<% form_tag '/admin/change_site_status', :id => "show_site" do %>
+				
+				<% form_tag '/admin/change_site_status', :id => "show_site"  do %>
 					<%= label_tag "Website status:(currently #{if @sitesetting.online then "Online" else "Offline" end})" %> 
 	    			<%= select_tag "site_status", "<option>Online</option><option>Offline</option>" %>
 					<%= submit_tag "Change" %>
 				<% end %>
-				<% form_tag '/admin/change_webservice_address', :id => "web_add" do %>
+				<% form_tag '/admin/set_semester', :id => "set_semester"  do %>
+					<%= label_tag "Semester:(currently #{@sitesetting.semester})" %> 
+	    			<%= select_tag "site_sem", "<option>First</option><option>Second</option><option>Summer</option>" %>
+					<%= submit_tag "Change" %>
+				<% end %>
+				<% form_tag '/admin/change_webservice_address', :id => "web_add", :style => "clear:both" do %>
 					<%= label_tag "Webservice Address:" %>
 					<%= text_field_tag :change_webservice_address, @web_add.address %>
 					<%= submit_tag "Change" %>
 				<% end %>
+				
 			</div>
 			<br>
 			<%= link_to_function "User sent messages frequency settings", "showFreq()" %>
@@ -1101,7 +1122,7 @@ function WebFXMenuButton() {}
 			<div id= "edit_email" style="position:relative;"> 
 			<%= label_tag "Edit Email Contents:" %>
 			<% form_tag '/admin/select_email_edit', :id => "email_setting" do %>
-			<%= select_tag "select_email_edit", "<option>Attendance Dropped Classcard</option><option>Attendance Totally Dropped</option><option>Attendance Withdrawn</option><option>Grades</option><option>Guidance</option><option>Forgot Password</option><option>Violation</option>" %>
+			<%= select_tag "select_email_edit", "<option>Attendance Dropped Classcard</option><option>Attendance Totally Dropped</option><option>Attendance Withdrawn</option><option>Grades</option><option>Guidance</option><option>Forgot Password</option><option>Forgot Username and Password</option><option>Violation</option>" %>
 	    	</label>
 	    	<%= submit_tag "Load" %>
 	    	<% end %>
