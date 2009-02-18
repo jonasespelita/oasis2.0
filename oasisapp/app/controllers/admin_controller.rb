@@ -9,7 +9,8 @@ class AdminController < ApplicationController
 		@admins.sort{ |a,b| a.username <=> b.username}
 		@admins.reverse!
 		@queries = Query.find(:all)
-		@sitesetting = Sitesettings.find_by_id(1)
+		@sitesetting = Sitesettings.find_by_name("sitesettings")
+		@web_add = WebserviceAddress.find_by_name("webservice")
 		if session[:email_id]
 			x = TempEmail.find_by_id(session[:email_id])
 			@email_content = x.email
@@ -128,6 +129,10 @@ class AdminController < ApplicationController
 			@reports = Report.find(:all)
 		end
 		@reports.sort{ |a,b| a.date <=> b.date}
+		temprep = Report.find(:all)
+		temprep.sort{ |a,b| a.unique <=> b.unique}
+		@most = temprep[0]
+		
 		admin = Admin.find(session[:admin_id])
 		if admin.position == 'oa'
 					@is_oa = true
@@ -189,7 +194,7 @@ class AdminController < ApplicationController
 			unless params[:new_email].blank?
 				admin = Admin.find(session[:admin_id])
 				if params[:new_email] == params[:confirm_email]
-					admin.email = params[:new_email]
+					admin.email = params[:new_email].strip!
 					flash.now[:message] = flash[:message] + "email changed"
 				else
 					flash.now[:notice] = "new email did not match"
@@ -211,63 +216,29 @@ class AdminController < ApplicationController
 		flash[:message] = "Logged out"
   end
 
-  def edit_activity
-  	unless params[:edit_activity_id].blank?
-			edited_activity = CampusActivities.find(params[:edit_activity_id])
-			edited_activity.date = params[:edit_activity_date]
-			edited_activity.activity = params[:edit_activity_name]
-			edited_activity.summary = params[:edit_activity_summary]
-			unless edited_activity.save
-				redirect_to(:action => "index")
-				flash[:notice] = "not saved"
-			else
-				redirect_to(:action => "index")
-			end
-		else
-			redirect_to(:action => "index")
-			flash[:notice] = "Please select an activity to be edited"
-		end
-  end
-
-  def add_activity
-  	new_activity = CampusActivities.new
-  	new_activity.date = params[:add_activity_date]
-  	new_activity.activity = params[:add_activity_name]
-  	new_activity.summary = params[:add_activity_summary]
-  	unless new_activity.save
-  		redirect_to(:action => "index")
-  		flash[:notice] = "not saved"
-  	end
-  	redirect_to(:action => "index")
-  end
-
-  	def delete_activity
-	  	deleted_activity = CampusActivities.find(params[:delete_activity_id])
-	  	unless deleted_activity.destroy
-	  		redirect_to(:action => "index")
-	  		flash[:notice] = "not deleted"
-	  	end
-	  	redirect_to(:action => "index")
-
-	end
 
   def edit_announcement
 		unless params[:edit_announcement_id].blank?
-			edited_announcement = Announcements.find(params[:edit_announcement_id])
-			edited_announcement.date_time = params[:edit_announcement_date]
-			edited_announcement.announcement = params[:edit_announcement_name]
-			edited_announcement.summary = params[:edit_announcement_summary]
-			unless edited_announcement.save
-				redirect_to(:action => "index")
-				flash.now[:notice] = "not saved"
+		   unless params[:edit_announcement_name].blank? && params[:edit_announcement_summary].blank?
+			   edited_announcement = Announcements.find(params[:edit_announcement_id])
+			   edited_announcement.date_time = Time.now
+			   edited_announcement.announcement = params[:edit_announcement_name].strip
+			   edited_announcement.summary = params[:edit_announcement_summary].strip
+			   unless edited_announcement.save
+				   redirect_to(:action => "index")
+				   flash.now[:notice] = "not saved"
+			   else
+			   act = Changes.new
+			   act.admin_id = session[:admin_id]
+			   act.ip_add = request.remote_ip
+			   act.change_made = "Edited announcement #{params[:edit_announcement_name]}"
+			   act.save
+			   flash[:message] = "Announcement sucessfully edited"
+			   redirect_to(:action => "index")
+			   end
 			else
-			act = Changes.new
-			act.admin_id = session[:admin_id]
-			act.ip_add = request.remote_ip
-			act.change_made = "Edited announcement #{params[:edit_announcement_name]}"
-			act.save
-			flash[:message] = "Announcement sucessfully edited"
-			redirect_to(:action => "index")
+			   flash[:notice] = "Fields Cannot Be Blank"
+			   redirect_to(:action => "index")
 			end
 		else
 			redirect_to(:action => "index")
@@ -276,22 +247,27 @@ class AdminController < ApplicationController
   end
 
   def add_announcement
-  	new_announcement = Announcements.new
-  	new_announcement.date_time = params[:add_announcement_date]
-  	new_announcement.announcement = params[:add_announcement_name]
-  	new_announcement.summary = params[:add_announcement_summary]
-  	unless new_announcement.save
-  		redirect_to(:action => "index")
-  		flash[:notice] = "not saved"
-  	else
-  		act = Changes.new
-		act.admin_id = session[:admin_id]
-		act.ip_add = request.remote_ip
-		act.change_made = "Edited announcement #{params[:add_announcement_name]}"
-		act.save
-		flash[:message] = "Announcement sucessfully added"
-  		redirect_to(:action => "index")
-  	end
+   unless params[:edit_announcement_name].blank? && params[:edit_announcement_summary].blank?
+     	new_announcement = Announcements.new
+     	new_announcement.date_time = Time.now
+     	new_announcement.announcement = params[:add_announcement_name].strip
+     	new_announcement.summary = params[:add_announcement_summary].strip
+     	unless new_announcement.save
+     		redirect_to(:action => "index")
+     		flash[:notice] = "not saved"
+     	else
+     		act = Changes.new
+		   act.admin_id = session[:admin_id]
+		   act.ip_add = request.remote_ip
+		   act.change_made = "Edited announcement #{params[:add_announcement_name]}"
+		   act.save
+		   flash[:message] = "Announcement sucessfully added"
+     		redirect_to(:action => "index")
+     	end
+   else
+	    flash[:notice] = "Fields Cannot Be Blank"
+		 redirect_to(:action => "index")
+	end
 
   end
 
@@ -314,21 +290,26 @@ class AdminController < ApplicationController
 
 	def add_admin
 		if params[:add_admin_password] == params[:add_admin_confirm]
-			new_admin = Admin.new
-			new_admin.first_name = params[:add_admin_first_name].capitalize
-			new_admin.last_name = params[:add_admin_last_name].capitalize
-			new_admin.position = "General Administrator"
-			new_admin.username = params[:add_admin_username]
-			new_admin.email = params[:add_admin_email]
-			new_admin.active = true
-			new_admin.create_password(params[:add_admin_password])
-			unless new_admin.save
-	  		redirect_to(:action => "index")
-	  		flash[:notice] = "not saved"
-	  		else
-	  		flash[:message] = "Admin successfully added"
-	  		redirect_to(:action => "index")
-	  		end
+		   if params[:add_admin_password].length > 4 && params[:add_admin_confirm].length > 4
+			   new_admin = Admin.new
+			   new_admin.first_name = params[:add_admin_first_name].capitalize.strip
+			   new_admin.last_name = params[:add_admin_last_name].capitalize.strip
+			   new_admin.position = "General Administrator"
+			   new_admin.username = params[:add_admin_username]
+			   new_admin.email = params[:add_admin_email].strip
+			   new_admin.active = true
+			   new_admin.create_password(params[:add_admin_password])
+			   unless new_admin.save
+	     		redirect_to(:action => "index")
+	     		flash[:notice] = "not saved"
+	     		else
+	     		flash[:message] = "Admin successfully added"
+	     		redirect_to(:action => "index")
+	     		end
+	     	else
+	     	   flash[:notice] = "Password length must be greater than 4 characters"
+	     		redirect_to(:action => "index")
+	     	end
 	  	else
 	  		flash[:notice] = "Add admin passwords do not match"
 	  		redirect_to(:action => "index")
@@ -338,21 +319,26 @@ class AdminController < ApplicationController
 	def edit_admin
 		if params[:edit_admin_password] == params[:edit_admin_confirm]
 	  		unless params[:edit_admin_id].blank?
-				edit_admin = Admin.find(params[:edit_admin_id])
-				edit_admin.first_name = params[:edit_admin_first_name].capitalize
-				edit_admin.last_name = params[:edit_admin_last_name].capitalize
-				edit_admin.username = params[:edit_admin_username]
-				edit_admin.email = params[:edit_admin_email]
-				unless params[:edit_admin_password].blank?
-					edit_admin.create_password(params[:edit_admin_password])
-				end
-				unless edit_admin.save
-		  		redirect_to(:action => "index")
-		  		flash[:notice] = "not saved"
-		  		else
-		  		flash[:message] = "Admin successfully edited"
-		  		redirect_to(:action => "index")
-		  		end
+	  		   if params[:add_admin_password].length > 4 && params[:add_admin_confirm].length > 4
+				   edit_admin = Admin.find(params[:edit_admin_id])
+				   edit_admin.first_name = params[:edit_admin_first_name].capitalize.strip
+				   edit_admin.last_name = params[:edit_admin_last_name].capitalize.strip
+				   edit_admin.username = params[:edit_admin_username]
+				   edit_admin.email = params[:edit_admin_email].strip
+				   unless params[:edit_admin_password].blank?
+					   edit_admin.create_password(params[:edit_admin_password])
+				   end
+				   unless edit_admin.save
+		     		redirect_to(:action => "index")
+		     		flash[:notice] = "not saved"
+		     		else
+		     		flash[:message] = "Admin successfully edited"
+		     		redirect_to(:action => "index")
+		     		end
+		     	else
+	        	   flash[:notice] = "Password length must be greater than 4 characters"
+	        		redirect_to(:action => "index")
+	     	   end
 	  		else
 				redirect_to(:action => "index")
 				flash[:notice] = "Please select an admin to be edited"
@@ -365,15 +351,22 @@ class AdminController < ApplicationController
 
 	def enable_admin
 		unless params[:enable_admin_id].blank?
-			enable_admin = Admin.find(params[:enable_admin_id])
-			enable_admin.active = true
-			unless enable_admin.save
-	  		redirect_to(:action => "index")
-	  		flash[:notice] = "not saved"
-	  		else
-	  		flash[:message] = "Admin activated"
-	  		redirect_to(:action => "index")
-	  		end
+			active_admins = Admin.find_all_by_active(true)
+			active_admins.delete_if { |x| x.position == 'oa'}
+			if active_admins.length < 3
+				enable_admin = Admin.find(params[:enable_admin_id])
+				enable_admin.active = true
+				unless enable_admin.save
+		  		redirect_to(:action => "index")
+		  		flash[:notice] = "not saved"
+		  		else
+		  		flash[:message] = "Admin activated"
+		  		redirect_to(:action => "index")
+		  		end
+		  	else
+		  		flash[:notice] = "Only three general administrators may be active"
+		  		redirect_to(:action => "index")
+		  	end
 	  	else
 	  		redirect_to(:action => "index")
 			flash[:notice] = "Please select an admin"
@@ -383,15 +376,22 @@ class AdminController < ApplicationController
 
 	def disable_admin
 		unless params[:disable_admin_id].blank?
-			disable_admin = Admin.find(params[:disable_admin_id])
-			disable_admin.active = false
-			unless disable_admin.save
-	  		redirect_to(:action => "index")
-	  		flash[:notice] = "not saved"
-	  		else
-	  		flash[:message] = "Admin deactivated"
-	  		redirect_to(:action => "index")
-	  		end
+			inactive_admins = Admin.find_all_by_active(true)
+			inactive_admins.delete_if { |x| x.position == 'oa'}
+			if inactive_admins.length > 1
+				disable_admin = Admin.find(params[:disable_admin_id])
+				disable_admin.active = false
+				unless disable_admin.save
+		  		redirect_to(:action => "index")
+		  		flash[:notice] = "not saved"
+		  		else
+		  		flash[:message] = "Admin deactivated"
+		  		redirect_to(:action => "index")
+		  		end
+		  	else
+		  		flash[:notice] = "There must be at least one active general administrator"
+		  		redirect_to(:action => "index")
+		  	end
 	  	else
 	  		redirect_to(:action => "index")
 			flash[:notice] = "Please select an admin"
@@ -666,50 +666,70 @@ class AdminController < ApplicationController
 		sitesetting.sms_friday = if params[:sms_friday] == "yes" then true else false end
 		sitesetting.sms_saturday = if params[:sms_saturday] == "yes" then true else false end
 		sitesetting.sms_sunday = if params[:sms_sunday] == "yes" then true else false end
-		sitesetting.save
-		act = Changes.new
-		act.admin_id = session[:admin_id]
-		act.ip_add = request.remote_ip
-		act.change_made = "Changed Messaging Settings"
-		act.save
-		redirect_to(:action => "index") 
+		if sitesetting.save
+			act = Changes.new
+			act.admin_id = session[:admin_id]
+			act.ip_add = request.remote_ip
+			act.change_made = "Changed Messaging Settings"
+			act.save
+			flash[:message] = "Messaging Settings Successfully Changed"
+			redirect_to(:action => "index") 
+		else
+			flash[:notice] = "Messaging Settings Not Saved, an Error Occured"
+			redirect_to(:action => "index") 
+		end
 	end
 	
 	def change_site_status
 		sitesetting = Sitesettings.find_by_id(1)
 		sitesetting.online = if params[:site_status] == "Online" then true else false end
-		sitesetting.save
-		act = Changes.new
-		act.admin_id = session[:admin_id]
-		act.ip_add = request.remote_ip
-		act.change_made = if sitesetting.online then "Put Website Online" else "Put Website Offline" end
-		act.save
-		redirect_to(:action => "index") 
+		if sitesetting.save
+			act = Changes.new
+			act.admin_id = session[:admin_id]
+			act.ip_add = request.remote_ip
+			act.change_made = if sitesetting.online then "Put Website Online" else "Put Website Offline" end
+			act.save
+			flash[:message] = "Website Status Successfully Changed"
+			redirect_to(:action => "index") 
+		else
+			flash[:notice] = "Site status Not Saved, an Error Occured"
+			redirect_to(:action => "index") 
+		end
 	end
 	
 	def select_email_edit
 		case params[:select_email_edit]
 		
-			when "Checklist":
+			when "Attendance Dropped Classcard":
 				email = ""
-				File.open(Rails.root+"/app/views/email/checklist.html").each{ |line|
+				File.open(Rails.root+"/app/views/email/attendance-dropped classcard.html").each{ |line|
 				email = email + line
 				}
 				a = TempEmail.new
 				a.email = email
 				a.save
 				session[:email_id] = a.id
-				session[:select_email_edit] = "Checklist"
-			when "Dropped":
+				session[:select_email_edit] = "Attendance Dropped Classcard"
+			when "Attendance Totally Dropped":
 				email = ""
-				File.open(Rails.root+"/app/views/email/dropped.html").each{ |line|
+				File.open(Rails.root+"/app/views/email/attendance-totally dropped.html").each{ |line|
 				email = email + line
 				}
 				a = TempEmail.new
 				a.email = email
 				a.save
 				session[:email_id] = a.id
-				session[:select_email_edit] = "Dropped"
+				session[:select_email_edit] = "Attendance Totally Dropped"
+			when "Attendance Withdrawn":
+				email = ""
+				File.open(Rails.root+"/app/views/email/attendance-withdrawn.html").each{ |line|
+				email = email + line
+				}
+				a = TempEmail.new
+				a.email = email
+				a.save
+				session[:email_id] = a.id
+				session[:select_email_edit] = "Attendance Withdrawn"
 			when "Grades":
 				email = ""
 				File.open(Rails.root+"/app/views/email/grades.html").each{ |line|
@@ -720,137 +740,37 @@ class AdminController < ApplicationController
 				a.save
 				session[:email_id] = a.id
 				session[:select_email_edit] = "Grades"
-			when "Kicked Out":
+			when "Guidance":
 				email = ""
-				File.open(Rails.root+"/app/views/email/kicked out.html").each{ |line|
+				File.open(Rails.root+"/app/views/email/guidance.html").each{ |line|
 				email = email + line
 				}
 				a = TempEmail.new
 				a.email = email
 				a.save
 				session[:email_id] = a.id
-				session[:select_email_edit] = "Kicked Out"
-			when "Last Chance":
+				session[:select_email_edit] = "Guidance"
+			when "Forgot Username and Password":
 				email = ""
-				File.open(Rails.root+"/app/views/email/last chance.html").each{ |line|
+				File.open(Rails.root+"/app/views/email/forgotusernamepassword.html").each{ |line|
 				email = email + line
 				}
 				a = TempEmail.new
 				a.email = email
 				a.save
 				session[:email_id] = a.id
-				session[:select_email_edit] = "Last Chance"
-			when "Non-readmitance":
+				session[:select_email_edit] = "Forgot Username and Password"
+			when "Violation":
 				email = ""
-				File.open(Rails.root+"/app/views/email/non-readmitance.html").each{ |line|
+				File.open(Rails.root+"/app/views/email/violation.html").each{ |line|
 				email = email + line
 				}
 				a = TempEmail.new
 				a.email = email
 				a.save
 				session[:email_id] = a.id
-				session[:select_email_edit] = "Non-readmitance"
-			when "Reduced Load":
-				email = ""
-				File.open(Rails.root+"/app/views/email/reduced load.html").each{ |line|
-				email = email + line
-				}
-				a = TempEmail.new
-				a.email = email
-				a.save
-				session[:email_id] = a.id
-				session[:select_email_edit] = "Reduced Load"
-				
-			when "Shift":
-				email = ""
-				File.open(Rails.root+"/app/views/email/shift.html").each{ |line|
-				email = email + line
-				}
-				a = TempEmail.new
-				a.email = email
-				a.save
-				session[:email_id] = a.id
-				session[:select_email_edit] = "Shift"
-			when "Totally Dropped":
-				email = ""
-				File.open(Rails.root+"/app/views/email/totally dropped.html").each{ |line|
-				email = email + line
-				}
-				a = TempEmail.new
-				a.email = email
-				a.save
-				session[:email_id] = a.id
-				session[:select_email_edit] = "Totally Dropped"
-			when "Transfer":
-				email = ""
-				File.open(Rails.root+"/app/views/email/transfer.html").each{ |line|
-				email = email + line
-				}
-				a = TempEmail.new
-				a.email = email
-				a.save
-				session[:email_id] = a.id
-				session[:select_email_edit] = "Transfer"
-			when "Tuition Fee Assessment":
-				email = ""
-				File.open(Rails.root+"/app/views/email/tuition fee assessment.html").each{ |line|
-				email = email + line
-				}
-				a = TempEmail.new
-				a.email = email
-				a.save
-				session[:email_id] = a.id
-				session[:select_email_edit] = "Tuition Fee Assessment"
-			when "Tuition Fee Assessment Update":
-				email = ""
-				File.open(Rails.root+"/app/views/email/tuition fee assessment update.html").each{ |line|
-				email = email + line
-				}
-				a = TempEmail.new
-				a.email = email
-				a.save
-				session[:email_id] = a.id
-				session[:select_email_edit] = "Tuition Fee Assessment Update"
-			when "Tuition Fee Breakdowns":
-				email = ""
-				File.open(Rails.root+"/app/views/email/tuition fee breakdowns.html").each{ |line|
-				email = email + line
-				}
-				a = TempEmail.new
-				a.email = email
-				a.save
-				session[:email_id] = a.id
-				session[:select_email_edit] = "Tuition Fee Breakdowns"
-			when "Update For Grades":
-				email = ""
-				File.open(Rails.root+"/app/views/email/updateforgrades.html").each{ |line|
-				email = email + line
-				}
-				a = TempEmail.new
-				a.email = email
-				a.save
-				session[:email_id] = a.id
-				session[:select_email_edit] = "Update For Grades"
-			when "Violations":
-				email = ""
-				File.open(Rails.root+"/app/views/email/violations.html").each{ |line|
-				email = email + line
-				}
-				a = TempEmail.new
-				a.email = email
-				a.save
-				session[:email_id] = a.id
-				session[:select_email_edit] = "Violations"
-			when "Withdrawn":
-				email = ""
-				File.open(Rails.root+"/app/views/email/withdrawn.html").each{ |line|
-				email = email + line
-				}
-				a = TempEmail.new
-				a.email = email
-				a.save
-				session[:email_id] = a.id
-				session[:select_email_edit] = "Withdrawn"
+				session[:select_email_edit] = "Violation"
+			
 		end
 		redirect_to(:action => "index") 
 	end
@@ -858,81 +778,63 @@ class AdminController < ApplicationController
 	def edit_email
 		case session[:select_email_edit]
 		
-			when "Checklist":
-				file = File.new(Rails.root+"/app/views/email/checklist.html", "w+")
+			when "Attendance Dropped Classcard":
+				file = File.new(Rails.root+"/app/views/email/attendance-dropped classcard.html", "w+")
 				file.puts(params[:edit_email_box])
 				file.close
-			when "Dropped":
-				file = File.new(Rails.root+"/app/views/email/dropped.html", "w+")
+			when "Attendance Totally Dropped":
+				file = File.new(Rails.root+"/app/views/email/attendance-totally dropped.html", "w+")
+				file.puts(params[:edit_email_box])
+				file.close
+			when "Attendance Withdrawn":
+				file = File.new(Rails.root+"/app/views/email/attendance-withdrawn.html", "w+")
 				file.puts(params[:edit_email_box])
 				file.close
 			when "Grades":
 				file = File.new(Rails.root+"/app/views/email/grades.html", "w+")
 				file.puts(params[:edit_email_box])
 				file.close
-			when "Kicked Out":
-				file = File.new(Rails.root+"/app/views/email/kicked out.html", "w+")
+			when "Guidance":
+				file = File.new(Rails.root+"/app/views/email/guidance.html", "w+")
 				file.puts(params[:edit_email_box])
 				file.close
-			when "Last Chance":
-				file = File.new(Rails.root+"/app/views/email/last chance.html", "w+")
+			when "Forgot Username and Password":
+				file = File.new(Rails.root+"/app/views/email/forgotusernamepassword.html", "w+")
 				file.puts(params[:edit_email_box])
 				file.close
-			when "Non-readmitance":
-				file = File.new(Rails.root+"/app/views/email/non-readmitance.html", "w+")
+			when "Violation":
+				file = File.new(Rails.root+"/app/views/email/violation.html", "w+")
 				file.puts(params[:edit_email_box])
 				file.close
-			when "Reduced Load":
-				file = File.new(Rails.root+"/app/views/email/reduced load.html", "w+")
-				file.puts(params[:edit_email_box])
-				file.close
-			when "Shift":
-				file = File.new(Rails.root+"/app/views/email/shift.html", "w+")
-				file.puts(params[:edit_email_box])
-				file.close
-			when "Totally Dropped":
-				file = File.new(Rails.root+"/app/views/email/totally dropped.html", "w+")
-				file.puts(params[:edit_email_box])
-				file.close
-			when "Transfer":
-				file = File.new(Rails.root+"/app/views/email/transfer.html", "w+")
-				file.puts(params[:edit_email_box])
-				file.close
-			when "Tuition Fee Assessment":
-				file = File.new(Rails.root+"/app/views/email/tuition fee assessment.html", "w+")
-				file.puts(params[:edit_email_box])
-				file.close
-			when "Tuition Fee Assessment Update":
-				file = File.new(Rails.root+"/app/views/email/tuition fee assessment update.html", "w+")
-				file.puts(params[:edit_email_box])
-				file.close
-			when "Tuition Fee Breakdowns":
-				file = File.new(Rails.root+"/app/views/email/tuition fee breakdowns.html", "w+")
-				file.puts(params[:edit_email_box])
-				file.close
-			when "Update For Grades":
-				file = File.new(Rails.root+"/app/views/email/updateforgrades.html", "w+")
-				file.puts(params[:edit_email_box])
-				file.close
-			when "Violations":
-				file = File.new(Rails.root+"/app/views/email/violations.html", "w+")
-				file.puts(params[:edit_email_box])
-				file.close
-			when "Withdrawn":
-				file = File.new(Rails.root+"/app/views/email/withdrawn.html", "w+")
-				file.puts(params[:edit_email_box])
-				file.close
+			
 		end
 		act = Changes.new
 		act.admin_id = session[:admin_id]
 		act.ip_add = request.remote_ip
 		act.change_made = "Edited Email Contents of #{session[:select_email_edit]}"
 		act.save
+		flash[:message] = "Email Contents Successfully Edited"
 		redirect_to(:action => "index")
 	end
 	
 	def select_user
 		session[:select_user_id] = params[:select_user_id]
+		redirect_to(:action => "index")
+	end
+	
+	def change_webservice_address
+		web_add = WebserviceAddress.find_by_name("webservice")
+		web_add.address = params[:change_webservice_address].strip
+		web_add.save
+		flash[:message] = "Web Service Address Successfully Changed"
+		redirect_to(:action => "index")
+	end
+	
+	def set_semester
+		site_set = Sitesettings.find_by_name("sitesettings")
+		site_set.semester = params[:site_sem]
+		site_set.save
+		flash[:message] = "Current Semester Successfully Changed"
 		redirect_to(:action => "index")
 	end
 	
