@@ -20,7 +20,7 @@ ActionController::Routing::Routes.draw do |map|
   map.wards 'wards', :controller => "oasis", :action => "index"
   
   
-  
+  map.set_lang 'set_language', :controller => 'sessions', :action => 'set_language'
   map.createquery 'create_query', :controller=>"help", :action =>"create_query"
   map.query 'contact', :controller=>'help', :action => 'show_query'
   map.pref_help '/help', :controller => "help", :action =>'pref_help'
@@ -63,7 +63,8 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing the them or commenting them out if you're using named routes and resources.
- 
+  map.simple_captcha '/simple_captcha/:action', :controller => 'simple_captcha'
+
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end

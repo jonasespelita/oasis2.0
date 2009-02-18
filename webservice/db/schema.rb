@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090203125338) do
+ActiveRecord::Schema.define(:version => 20090216101129) do
 
   create_table "announcements", :force => true do |t|
     t.date     "eventDate"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20090203125338) do
     t.string   "courseNo"
     t.string   "descriptiveTitle"
     t.integer  "units"
-    t.time     "time"
+    t.string     "time"
     t.string   "day"
     t.string   "room"
     t.datetime "created_at"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(:version => 20090203125338) do
     t.integer  "code"
     t.string   "courseNo"
     t.string   "descriptiveTitle"
-    t.time     "time"
+    t.string   "time"
     t.string   "day"
     t.string   "room"
     t.datetime "created_at"
@@ -73,11 +73,16 @@ ActiveRecord::Schema.define(:version => 20090203125338) do
   create_table "guidances", :force => true do |t|
     t.integer  "idNo"
     t.time     "time"
-    t.date     "day"
-    t.string   "room"
-    t.string   "guidanceStatus"
+    t.string   "day"
+    t.text     "room"
+    t.text     "guidanceStatus"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "mobile_numbers", :force => true do |t|
+    t.integer "idNo"
+    t.string  "mobileNumber"
   end
 
   create_table "payment_schedules", :force => true do |t|
@@ -93,7 +98,8 @@ ActiveRecord::Schema.define(:version => 20090203125338) do
     t.integer  "idNo"
     t.string   "familyName"
     t.string   "givenName"
-    t.string   "middlename"
+    t.string   "middleName"
+    t.string   "gender"
     t.string   "course"
     t.integer  "yearLevel"
     t.string   "college"

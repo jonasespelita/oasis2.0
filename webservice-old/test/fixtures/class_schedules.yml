@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  idNo: 1
+  code: 1
+  courseNo: MyString
+  descriptiveTitle: MyString
+  units: 1
+  time: 2009-02-03 20:50:35
+  day: MyString
+  room: MyString
+
+two:
+  idNo: 1
+  code: 1
+  courseNo: MyString
+  descriptiveTitle: MyString
+  units: 1
+  time: 2009-02-03 20:50:35
+  day: MyString
+  room: MyString

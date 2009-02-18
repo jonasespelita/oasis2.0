@@ -12,6 +12,9 @@ db\:migrate\:down=Runs the "down" for a given migration VERSION.
 db\:migrate\:redo=Rollbacks the database one migration and re migrate up. If you want to rollback more than one step, define STEP=x. Target specific version with VERSION=x.
 db\:migrate\:reset=Resets your database using your migrations for the current environment
 db\:migrate\:up=Runs the "up" for a given migration VERSION.
+db\:migrate_and_load=
+db\:migrate_and_populate=Runs migrations and then loads seed data
+db\:populate=Loads initial database models for the current environment.
 db\:reset=Drops and recreates the database from db/schema.rb for the current environment.
 db\:rollback=Rolls the schema back to the previous version. Specify the number of steps with STEP=n
 db\:schema\:dump=Create a db/schema.rb file that can be portably used against any DB supported by AR
@@ -38,6 +41,7 @@ doc\:clobber_plugins=Remove plugin documentation
 doc\:clobber_rails=Remove rdoc products
 doc\:guides=Generate Rails guides
 doc\:plugins=Generate documentation for all installed plugins
+doc\:plugins\:db-populate=Generate documentation for the db-populate plugin
 doc\:rails=Build the rails HTML Files
 doc\:reapp=Force a rebuild of the RDOC files
 doc\:rerails=Force a rebuild of the RDOC files

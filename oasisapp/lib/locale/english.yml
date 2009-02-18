@@ -5,4 +5,39 @@ english:
   contact_us: Contact Us
   following: Following
   last_visit: Last Visit
-  click_start: Click on a ward to get started:
+  click_start: Click on a ward to get started
+  add_ward: Add Ward
+  show_notification: Show Notification
+  ward_preferences: Ward Preferences
+  captcha_error: The characters you entered did not match the image. Please try again.
+  
+  rawr: I'm English
+
+  activerecord:
+    errors: 
+        models: 
+            user:
+                attributes: 
+                    last_name:
+                        invalid: Invalid
+                    nickname:
+                        invalid: Invalid
+                        too_short: Nickname too short. Use 2 to 32 characters
+                    first_name:
+                        invalid: Invalid
+                    login:
+                        invalid: Invalid
+                        too_short: Username too short. Use 6 to 32 characters
+                        taken: Username already taken.
+                    password:
+                        invalid: Invalid
+                        too_short: Password too short. Use 6 to 32 characters
+                    email:
+                        invalid: Invalid
+                        taken: Email already taken.
+                    invalid:
+                        invalid: Invalid
+                    cp_number:
+                        invalid: Invalid
+             
+               

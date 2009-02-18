@@ -50,6 +50,7 @@ while($running) do
           notif.idno = follower.idno
           notif.details = "has a violation!"
           notif.notification = "Violation notice!"
+          notif.new = true
           notif.save
         end
       end
@@ -64,6 +65,7 @@ while($running) do
           notif.idno = follower.idno
           notif.details = " has a guidance!"
           notif.notification = "guidace notice!"
+          notif.new = true
           notif.save
         end
       end
@@ -78,6 +80,7 @@ while($running) do
           notif.idno = follower.idno
           notif.details = " has a grades!"
           notif.notification = "grades notice!"
+          notif.new = true
           notif.save
         end
       end
@@ -91,6 +94,7 @@ while($running) do
            notif.idno = follower.idno
           notif.details = " has a assessment!"
           notif.notification = "assessment notice!"
+          notif.new = true
           notif.save
 
         end
@@ -105,6 +109,7 @@ while($running) do
            notif.idno = follower.idno
           notif.details = " has a breakdown!"
           notif.notification = "breakdown"
+          notif.new = true
           notif.save
 
         end

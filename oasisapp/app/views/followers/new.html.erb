@@ -5,31 +5,32 @@
   <div id="side_r">
     <b>Please enter your ward&#39;s ID number and received verification code.</b>
     <br/><br/>
-
+    
     <% if flash[:error] %>
       <div id ="error"><%= image_tag "error.png" %>
-<%= flash[:error] %></div>
-        <% end %>
+      <%= flash[:error] %></div>
+    <% end %>
     <% form_tag :controller => 'followers',:action => 'create' do %>
-
+    
       <label class="fstr">Mobile Number:</label> <%= text_field_tag :mobilenum, nil,:size => 30 %>
       <label class="fstr">Enter your ward's ID number:</label> <%=  text_field_tag :idno, nil,:size => 30%><br/>
       <label class="fstr">Enter you ward's verification code:</label> <%= text_field_tag :vcode, nil,:size => 30 %>
+    <%= show_simple_captcha :distortion => 'medium' %>
 
       <br/>
       <div style="float:left; width:400px;"><%=link_to '<< Back', wards_path  %></div>
       <%= if logged_in?
-       
+    
         submit_tag "Follow"
-        
+    
       else
-
+    
         submit_tag "Next"
-        
+    
       end%>
     <% end %>
-
-
+    
+    
   </div>
   <div id="bot_r"></div>
 </div>
@@ -37,7 +38,7 @@
 <div class="grid_4" id ="tehside_r">
   <div id="par"><p>The Online Access Student Information System is a web-based application that enables parents/guardians to view school information which pertains to their student/child . 	</p></div>
   <div id="pic_r"></div>
-
+  
 </div>
 
 

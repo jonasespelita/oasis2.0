@@ -19,7 +19,7 @@ class FollowersController < ApplicationController
     (Follower.find_all_by_user_id params[:user]).each do |f|
 
       if f.idno == params[:id].to_i
-        flash[:notice]= "ASDFASDFSADF"
+        flash[:notice]= "#{t(:rawr)}"
         f .photo = params[:photo]
         f.save
       end
@@ -29,45 +29,21 @@ class FollowersController < ApplicationController
     redirect_to "/oasis/open_sorter"
 
   end
-  #function to verify idno and vcode
-  def verify?(idno, vcode)
-    if idno==''|| vcode==''
-      flash[:error]="All fields are requiredblank."
-      return false
-    end
+  
 
-    #check if student exists
-    begin
-      student = Profile.find(idno)
-      if student.idNo.nil? #premade Profile for nonexistent students (check web service)
-        flash[:error]="The student cannot be found. Please check the ID number and try again."
-        return false
-      end
-    
-    
-      #need hash formula for vcode verification here!
-      if  vcode != hash(idno)[4..9]
-        flash[:error]="Invalid Verification Code #{hash(idno)[4..9]}"
-        return false
-      end
-    rescue
-      flash[:error]="The student cannot be found. Please check the ID number and try again."
-      return false
-    end
-
-    return true
-  end
-
-  def hash(i)
-    Digest::SHA1.hexdigest("#{@key}#{i}")
-  end
-
+  
   def create
-    idno = params[:idno]
-    vcode = params[:vcode]
-    mobilenum = params[:mobilenum]
+    if !simple_captcha_valid?
+      flash[:error]="#{t(:captcha_error)}"
+      redirect_back_or_default('/')
+      return
+    end
+
+#    idno = params[:idno]
+#    vcode = params[:vcode]
+#    mobilenum = params[:mobilenum]
     if !verify?(params[:idno], params[:vcode])
-      open("http://localhost:13004/cgi-bin/sendsms?username=admin&password=Linux&to=#{mobilenum}&text=#{hash(idno)[4..9]}") {|f|}
+#      open("http://localhost:13004/cgi-bin/sendsms?username=admin&password=Linux&to=#{mobilenum}&text=#{hash(idno)[4..9]}") {|f|}
       redirect_back_or_default('/')
       return
     end
@@ -119,7 +95,40 @@ class FollowersController < ApplicationController
     end
   end
 
+  protected
+  
+  def hash(i)
+    Digest::SHA1.hexdigest("#{@key}#{i}")
+  end
 
+#function to verify idno and vcode
+  def verify?(idno, vcode)
+    if idno==''|| vcode==''
+      flash[:error]="All fields are required."
+      return false
+    end
+
+    #check if student exists
+    begin
+      student = Profile.find(idno)
+      if student.idNo.nil? #premade Profile for nonexistent students (check web service)
+        flash[:error]="The student cannot be found. Please check the ID number and try again."
+        return false
+      end
+    
+    
+      #need hash formula for vcode verification here!
+      if  vcode != hash(idno)[4..9]
+        flash[:error]="Invalid Verification Code  #{hash(idno)[4..9]}"
+        return false
+      end
+    rescue
+      flash[:error]="The student cannot be found. Please check the ID number and try again."
+      return false
+    end
+
+    return true
+  end
 
 end
   

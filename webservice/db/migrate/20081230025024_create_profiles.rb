@@ -4,8 +4,9 @@ class CreateProfiles < ActiveRecord::Migration
       t.integer :idNo
       t.string :familyName
       t.string :givenName
-      t.string :middlename
+      t.string :middleName
       t.string :course
+      t.string :gender
       t.integer :yearLevel
       t.string :college
       t.string :address

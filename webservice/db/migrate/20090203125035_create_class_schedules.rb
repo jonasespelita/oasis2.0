@@ -6,7 +6,7 @@ class CreateClassSchedules < ActiveRecord::Migration
       t.string :courseNo
       t.string :descriptiveTitle
       t.integer :units
-      t.time :time
+      t.string :time
       t.string :day
       t.string :room
 

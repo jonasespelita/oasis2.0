@@ -16,7 +16,16 @@ class OasisController < ApplicationController
       @profiles<<Profile.find(f.idno)
     end
     @notifications = Notification.find_all_by_follower_id current_user.id
- 
+    @new_notifs = Array.new
+    if @notifications.size>0
+      @notifications.each do|notif|
+        if notif.new
+          @new_notifs << notif
+          notif.new= false
+          notif.save
+        end
+      end
+    end
     @menu = make_menu
     session[:order] = @followers
     
@@ -54,7 +63,11 @@ class OasisController < ApplicationController
 
   def show_profile
     if verified_followed?
-         @schedules = ClassSchedule.find(:all, :from => "/classSchedule/?idno=#{params[:id]}")
+      
+      @schedules = ClassSchedule.find(:all, :from => "/classSchedule/?idno=#{params[:id]}")
+
+
+
       @prof = Profile.find(params[:id])
       @followers=Array.new
       (Follower.find_all_by_idno params[:id]).each do |follower|

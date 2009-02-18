@@ -1,0 +1,203 @@
+GUIDANCE,,,,
+idNo,time,day,room,guidanceStatus
+2050014,8:00,M,S111,Last Chance
+2050015,8:10,T,S111,Reduced load
+2050016,8:20,W,S111,Non-Readmission
+2050017,8:30,TH,S111,Kicked Out
+2050018,8:40,F,S111,Last Chance
+2050019,8:50,S,S111,Reduced load
+2050020,9:00,M,S111,Non-Readmission
+2050021,9:10,T,S111,Kicked Out
+2050022,9:20,W,S111,Last Chance
+2050023,9:30,TH,S111,Reduced load
+2050024,9:40,F,S111,Non-Readmission
+2050025,9:50,S,S111,Kicked Out
+2050026,9:00,M,S111,Last Chance
+2050027,9:10,T,S111,Reduced load
+2050028,9:20,W,S111,Non-Readmission
+2050029,9:30,TH,S111,Kicked Out
+2050030,9:40,F,S111,Last Chance
+2050031,9:50,S,S111,Reduced load
+2050032,10:00,M,S111,Non-Readmission
+2050033,10:10,T,S111,Kicked Out
+2050034,10:20,W,S111,Last Chance
+2050035,10:30,TH,S111,Reduced load
+2050036,10:40,F,S111,Non-Readmission
+2050037,10:50,S,S111,Kicked Out
+2050038,11:00,M,S111,Last Chance
+2050039,11:10,T,S111,Reduced load
+2050040,11:20,W,S111,Non-Readmission
+2050041,11:30,TH,S111,Kicked Out
+2050042,1:30,F,S111,Last Chance
+2050043,1:40,S,S111,Reduced load
+2050044,1:50,M,S111,Non-Readmission
+2050045,2:00,T,S111,Kicked Out
+2050046,2:10,W,S111,Last Chance
+2050047,2:20,TH,S111,Reduced load
+2050048,2:30,F,S111,Non-Readmission
+2050049,2:40,S,S111,Kicked Out
+2050050,2:50,M,S111,Last Chance
+2050051,3:00,T,S111,Reduced load
+2050052,3:10,W,S111,Non-Readmission
+2050053,3:20,TH,S111,Kicked Out
+2050054,3:30,F,S111,Last Chance
+2050055,3:40,S,S111,Reduced load
+2050056,3:50,M,S111,Non-Readmission
+2050057,4:00,T,S111,Kicked Out
+2060048,4:10,W,S111,Last Chance
+2060049,4:20,TH,S111,Reduced load
+2060050,4:30,F,S111,Non-Readmission
+2060051,4:40,S,S111,Kicked Out
+2060052,4:50,M,S111,Last Chance
+2060053,5:00,T,S111,Reduced load
+2060054,1:30,W,S111,Non-Readmission
+2060055,1:40,TH,S111,Kicked Out
+2060056,8:00,F,S111,Last Chance
+2060057,8:10,S,S111,Reduced load
+2060058,8:20,M,S111,Non-Readmission
+2060059,8:30,T,S111,Kicked Out
+2070010,8:40,W,S111,Last Chance
+2070011,8:50,TH,S111,Reduced load
+2070012,9:00,F,S111,Non-Readmission
+2070013,9:10,S,S111,Kicked Out
+2070014,9:20,M,S111,Last Chance
+2070015,9:30,T,S111,Reduced load
+2070016,9:40,W,S111,Non-Readmission
+2070017,9:50,TH,S111,Kicked Out
+2070018,9:00,F,S111,Last Chance
+2070019,9:10,S,S111,Reduced load
+2070020,9:20,M,S111,Non-Readmission
+2070021,9:30,T,S111,Kicked Out
+2070022,9:40,W,S111,Last Chance
+2070023,9:50,TH,S111,Reduced load
+2070024,10:00,F,S111,Non-Readmission
+2070025,10:10,S,S111,Kicked Out
+2070026,10:20,M,S111,Last Chance
+2070027,10:30,T,S111,Reduced load
+2070028,10:40,W,S111,Non-Readmission
+2070029,10:50,TH,S111,Kicked Out
+2070030,11:00,F,S111,Last Chance
+2070031,11:10,S,S111,Reduced load
+2070032,11:20,M,S111,Non-Readmission
+2070033,11:30,T,S111,Kicked Out
+2070034,1:30,W,S111,Last Chance
+2070035,1:40,TH,S111,Reduced load
+2070036,1:50,F,S111,Non-Readmission
+2070037,2:00,S,S111,Kicked Out
+2070038,2:10,M,S111,Last Chance
+2070039,2:20,T,S111,Reduced load
+2070040,2:30,W,S111,Non-Readmission
+2070041,2:40,TH,S111,Kicked Out
+2070042,2:50,F,S111,Last Chance
+2070043,3:00,S,S111,Reduced load
+2070044,3:10,M,S111,Non-Readmission
+2090015,3:20,T,S111,Kicked Out
+2090016,3:30,W,S111,Last Chance
+2090017,3:40,TH,S111,Reduced load
+2090018,3:50,F,S111,Non-Readmission
+2090019,4:00,S,S111,Kicked Out
+2090020,4:10,M,S111,Last Chance
+2090021,4:20,T,S111,Reduced load
+2090022,4:30,W,S111,Non-Readmission
+2090023,4:40,TH,S111,Kicked Out
+2090024,4:50,F,S111,Last Chance
+2090025,5:00,S,S111,Reduced load
+2090026,1:30,M,S111,Non-Readmission
+2090027,1:40,T,S111,Kicked Out
+2090028,8:00,W,S111,Last Chance
+2090029,8:10,TH,S111,Reduced load
+2090030,8:20,F,S111,Non-Readmission
+2090031,8:30,S,S111,Kicked Out
+2090032,8:40,M,S111,Last Chance
+2090033,8:50,T,S111,Reduced load
+2090034,9:00,W,S111,Non-Readmission
+2090035,9:10,TH,S111,Kicked Out
+2090036,9:20,F,S111,Last Chance
+2090037,9:30,S,S111,Reduced load
+2090038,9:40,M,S111,Non-Readmission
+2090039,9:50,T,S111,Kicked Out
+2090040,9:00,W,S111,Last Chance
+2090041,9:10,TH,S111,Reduced load
+2090042,9:20,F,S111,Non-Readmission
+2090043,9:30,S,S111,Kicked Out
+2090044,9:40,M,S111,Last Chance
+2090045,9:50,T,S111,Reduced load
+2090046,10:00,W,S111,Non-Readmission
+2090047,10:10,TH,S111,Kicked Out
+2090048,10:20,F,S111,Last Chance
+2090049,10:30,S,S111,Reduced load
+2090050,10:40,M,S111,Non-Readmission
+2090102,10:50,T,S111,Kicked Out
+2090103,11:00,W,S111,Last Chance
+2090104,11:10,TH,S111,Reduced load
+2090105,11:20,F,S111,Non-Readmission
+2090106,11:30,S,S111,Kicked Out
+2090107,1:30,M,S111,Last Chance
+2090108,1:40,T,S111,Reduced load
+2090109,1:50,W,S111,Non-Readmission
+2090110,2:00,TH,S111,Kicked Out
+2090111,2:10,F,S111,Last Chance
+2090112,2:20,S,S111,Reduced load
+2090113,2:30,M,S111,Non-Readmission
+2090114,2:40,T,S111,Kicked Out
+2090115,2:50,W,S111,Last Chance
+2090116,3:00,TH,S111,Reduced load
+2090117,3:10,F,S111,Non-Readmission
+2090118,3:20,S,S111,Kicked Out
+2090119,3:30,M,S111,Last Chance
+2090120,3:40,T,S111,Reduced load
+2090121,3:50,W,S111,Non-Readmission
+2090122,4:00,TH,S111,Kicked Out
+2090123,4:10,F,S111,Last Chance
+2090124,4:20,S,S111,Reduced load
+2090125,4:30,M,S111,Non-Readmission
+2090126,4:40,T,S111,Kicked Out
+2090127,4:50,W,S111,Last Chance
+2090128,5:00,TH,S111,Reduced load
+2090129,1:30,F,S111,Non-Readmission
+2090130,1:40,S,S111,Kicked Out
+2050058,8:00,M,S111,Last Chance
+2050059,8:10,T,S111,Reduced load
+2050060,8:20,W,S111,Non-Readmission
+2050061,8:30,TH,S111,Kicked Out
+2050062,8:40,F,S111,Last Chance
+2050063,8:50,S,S111,Reduced load
+2050123,9:00,M,S111,Non-Readmission
+2050124,9:10,T,S111,Kicked Out
+2050125,9:20,W,S111,Last Chance
+2050126,9:30,TH,S111,Reduced load
+2050127,9:40,F,S111,Non-Readmission
+2050128,9:50,S,S111,Kicked Out
+2050129,9:00,M,S111,Last Chance
+2066633,9:10,T,S111,Reduced load
+2066600,9:20,W,S111,Non-Readmission
+2050131,9:30,TH,S111,Kicked Out
+2050132,9:40,F,S111,Last Chance
+2050133,9:50,S,S111,Reduced load
+2050134,10:00,M,S111,Non-Readmission
+2050135,10:10,T,S111,Kicked Out
+2050136,10:20,W,S111,Last Chance
+2050137,10:30,TH,S111,Reduced load
+2050138,10:40,F,S111,Non-Readmission
+2050139,10:50,S,S111,Kicked Out
+2050140,11:00,M,S111,Last Chance
+2050141,11:10,T,S111,Reduced load
+2050145,11:20,W,S111,Non-Readmission
+2050146,11:30,TH,S111,Kicked Out
+2050147,1:30,F,S111,Last Chance
+2050148,1:40,S,S111,Reduced load
+2050150,1:50,M,S111,Non-Readmission
+2069999,2:00,T,S111,Kicked Out
+2050151,2:10,W,S111,Last Chance
+2050152,2:20,TH,S111,Reduced load
+2050155,2:30,F,S111,Non-Readmission
+2050156,2:40,S,S111,Kicked Out
+2050157,2:50,M,S111,Last Chance
+2050158,3:00,T,S111,Reduced load
+2050161,3:10,W,S111,Non-Readmission
+2050162,3:20,TH,S111,Kicked Out
+2050163,3:30,F,S111,Last Chance
+2050164,3:40,S,S111,Reduced load
+2050165,3:50,M,S111,Non-Readmission
+2050166,4:00,T,S111,Kicked Out
+,,,,

@@ -1,3 +1,4 @@
+<p class="sml">Try OASIS in <%= link_to "Filipino", set_lang_path(:lang_pref => 'tagalog')%>, <%= link_to "English", set_lang_path(:lang_pref => 'english')%></p>
 
 <% if !logged_in? %>
   <% form_tag session_path do -%>
@@ -8,7 +9,7 @@
     <%= password_field_tag 'password',"","maxlength" => "32","size" => "32" %>
 
     <br/>
-    <% if flash[:notice] %> <div class="sml" id="login_notif"><%=  flash[:notice] %></div>
+    <% if flash[:notice] %> <div class="" id="login_notif"><%=  flash[:notice] %></div>
       <% end %>
     <div style="margin-top:10px">
       <div class="remember"><span for="remember_me" >Remember me:</span>

@@ -9,3 +9,15 @@ tagalog:
   add_ward: Dagdagan ang Ward
   show_notification: Mga Notipikasyon
   ward_preferences: Kagustuhan tungkol sa Ward
+  captcha_error: Mali natype...kasalanan ng keyboard
+
+  invalid: Invalid
+  rawr: I'm Filipino
+
+  activerecord:
+     errors:
+      models:
+         user: 
+           attributes:
+          
+               invalid: Rawr

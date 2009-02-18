@@ -1,8 +1,11 @@
 class CourseOfferingsController < ApplicationController
 
   def index
-    if params[:idno]
-      @profiles = CourseOfferings.find_all_by_idNo params[:idno]
+    if params[:endSchYr]
+      @profiles = CourseOfferings.find_all_by_endSchYr params[:endSchYr]
+      @profiles.delete_if { |p|
+        p.semester.to_s!=params[:semester]
+      }
     else
       @profiles = CourseOfferings.find(:all)
     end
@@ -13,11 +16,11 @@ class CourseOfferingsController < ApplicationController
 
   # http://localhost:3000/courseofferings/2061009
   def show
-    @profile = CourseOfferings.find_by_idNo(params[:id])
+    @profile = CourseOfferings.find_by_endSchYr(params[:endSchYr])
     if @profile
       render :xml => @profile.to_xml
     else
-      render :xml => CourseOfferings.find(2)#pre configured to return a null object kung la sya mahanap...just create a null
+      render :xml => CourseOfferings.find(3)#pre configured to return a null object kung la sya mahanap...just create a null
                                        #object in the console...
     end
   end

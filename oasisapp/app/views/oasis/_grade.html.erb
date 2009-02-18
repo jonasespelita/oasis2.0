@@ -3,7 +3,7 @@
 
 <div style=" width:10000px; ">
 
-  <div id="<%= "m5#{profile.idNo}" %>" style="float:left; width:920px;display:block;">
+  <div id="<%= "m5#{profile.idNo}" %>" style="float:left; width:920px;display:block; height: 560px; overflow-y: auto">
 
     <div style=" width:800px;margin: 0px auto;">
       <h1><%= profile.fullname %>'s Student Profile</h1>
@@ -11,8 +11,9 @@
 
 
       <b>Most recent grades </b><span class="sml" style=" display:inline-block; margin-left:300px;"></span><br/>
-      
-      <span><%= @semester %> S.Y. 2007 - 2008 BSIT-1</span>
+        <% cur_sem = (@grades.first).semester %>
+           <% cur_yr = (@grades.first).endSchYr %>
+        <span><%= cur_sem %> S.Y. <%= "#{cur_yr-1} - #{cur_yr} " %> </span>
       <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
         <tr class="d">
           <td width="96" valign="top"><p>Course No.</p></td>
@@ -21,7 +22,25 @@
           <td width="103" valign="top" align="right">Remarks</td>
           <td width="103" valign="top" align="right">Units</td>
         </tr>
+        
         <% @grades.each do |grade| %>
+
+  <% if grade.endSchYr != cur_yr%>
+  <% cur_sem = grade.semester %>
+ <% cur_yr = grade.endSchYr %>
+        </table>
+   <span><%= cur_sem %> S.Y. <%= "#{cur_yr-1} - #{cur_yr}" %> </span>
+      <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
+        <tr class="d">
+          <td width="96" valign="top"><p>Course No.</p></td>
+          <td width="324" valign="top"><p>Course Description</p></td>
+          <td width="103" valign="top" align="right"><p>Grade</p></td>
+          <td width="103" valign="top" align="right">Remarks</td>
+          <td width="103" valign="top" align="right">Units</td>
+        </tr>
+  <% end %>
+
+
 
           <tr><td><%= grade.courseNo %></td>
             <td><%= grade.descriptiveTitle %></td>

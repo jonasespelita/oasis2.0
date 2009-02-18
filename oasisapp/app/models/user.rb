@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   attr_accessor :password
 
   validates_acceptance_of :terms_of_service
-  validates_presence_of     :login, :email, :first_name, :last_name, :nickname, :address
+  validates_presence_of     :login, :email, :first_name, :last_name, :nickname, :address, :cp_number
   validates_presence_of     :password,                   :if => :password_required?
   validates_presence_of     :password_confirmation,      :if => :password_required?
   validates_length_of       :password, :within => 6..32, :if => :password_required?

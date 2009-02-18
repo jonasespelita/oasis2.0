@@ -101,6 +101,7 @@ margin-bottom:10px;
 #error{
     font-weight:bold;
     color:#990033;
+    width:500px;
 }
 
 .dfieldWithErrors{

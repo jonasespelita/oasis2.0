@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  idNo: 
+  code: 
+  courseNo: 
+  absences: 
+  attendanceStatus: MyText
+  asOfDate: 2009-02-03
+
+two:
+  idNo: 
+  code: 
+  courseNo: 
+  absences: 
+  attendanceStatus: MyText
+  asOfDate: 2009-02-03

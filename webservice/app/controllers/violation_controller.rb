@@ -1,4 +1,3 @@
-
 class ViolationController < ApplicationController
   def index
     if params[:idno]
@@ -21,4 +20,3 @@ class ViolationController < ApplicationController
     end
   end
 end
-

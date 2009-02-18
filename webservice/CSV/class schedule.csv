@@ -1,0 +1,736 @@
+﻿2067514,9101,Relg 1,I Believe,3,07.30 – 08.30,"MWF",P100
+2067514,9102,Engl 1,Communication Arts 1,3,08.30 – 09.30,"MWF",P101
+2067514,9103,Fil 1,Sining ng Pakikipagtalastasan,3,09.30 – 10.30,"MWF",P102
+2067514,9104,Hist 1,Philippine History,3,10.30 – 11.30,"MWF",P103
+2067514,9105,Math 1A,College Algebra,3,11.30 – 12.30,"MWF",P104
+2067514,9106,Math 2A,Plane and Spherical Trigonometry,3,01.00 – 02.00,"MWF",P105
+2067514,9107,ICS 111,Introduction to Computer Science 1 Lecture,2,02.00 – 03.00,"MTh",P106
+2067514,9107,ICS 111,Introduction to Computer Science 1 Laboratory,1,02.30 – 04.00,"TF",P107
+2067514,9108,ICS 112,Computer Programming 1,2,03.00 – 04.00,"MTh",P108
+2067514,9108,ICS 112,Computer Programming 1,1,03.00 – 04.30,"TF",P109
+2067514,8020M,PE 1,Physical Fitness,2,07.30 -09.30,TH,PE100
+2051424,9109,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"MWF",P110
+2051424,9110,Engl 2,Communication Arts 2,3,08.30 – 09.30,"MWF",P111
+2051424,9111,Fil 2,Pagbasa at Pagsulat sa Iba’t Ibang Disiplina,3,09.30 – 10.30,"MWF",P112
+2051424,9112,Psycho 1,General Psychology with Drug Prevention,3,10.30 – 11.30,"MWF",P113
+2051424,9113,Math 3B,Analytic Geometry,4,11.30 – 12.30,"MWF",P114
+2051424,9114,Chem 1A,General and Inorganic Chemistry 1 (Lec),3,01.00 – 02.00,"MWF",P115
+2051424,9115,Chem 1AL,General and Inorganic Chemistry 1 (Lab),1,02.00 – 05.00,M,P116
+2051424,9116,ICS 121,Introduction to Computer Science 2,2,09.30 – 10.30,"TF",P117
+2051424,9116,ICS 121,Introduction to Computer Science 2 Laboratory,1,07.30 – 09.00,"TF",P118
+2051424,9117,ICS 122,Computer Programming 2,2,10.30 – 11.30,"TF",P119
+2051424,9117,ICS 122,Computer Programming 2 Laboratory,1,01.00 – 02.30,"TF",P120
+2051424,8020L,PE 2,Rhythmic Activities,2,03.00 – 05.00,T,PE101
+2041575,9201,Relg 3,Discipleship in Community,3,07.30 – 08.30,"MWF",P121
+2041575,9202,Phys 1A,College Physics 1,3,08.30 – 09.30,"MWF",P122
+2041575,9203,Phys 1AL,College Physics 1,1,01.00 – 04.00,S,P123
+2041575,9204,Philo 2,Ethics,3,09.30 – 10.30,"MWF",P124
+2041575,9205,Socio 1,Society and Culture with Family Planning,3,10.30 – 11.30,"MWF",P125
+2041575,9206,Hist 2,Life and Works of Rizal,3,11.30 – 12.30,"MWF",P126
+2041575,9207,Math 5A,Integral Calculus,4,04.00 – 05.00,"MTWTh",P127
+2041575,9208,ICS 221,File Organization,3,01.00 – 02.00,"MWF",P128
+2041575,9209,ICS 222,Computer Architecture,2,02.00 - 03.00,"MTh",P129
+2041575,9209,ICS 222,Computer Architecture,1,03.00 – 04.30,"MTh",P130
+2041575,8023L,PE 4,Team Sports and Games,2,10.30 – 12.30,S,PE103
+2034855,9301,Engl 7,Technical Writing,3,07.30 – 08.30,"TThS",P131
+2034855,9302,ICS 311,Operating Systems,2,08.30 – 09.30,"TF",P132
+2034855,9302,ICS 311,Operating Systems Laboratory,1,10.30 – 12.00,"TF",P133
+2034855,9303,ICS 312,Programming Applications,2,01.00 – 02.00,"TF",P134
+2034855,9303,ICS 312,Programming Applications,1,02.30 – 04.00,"TF",P135
+2034855,9304,ICS 313,Discrete Mathematics,3,04.00 – 05.00,"TThS",P136
+2034855,9305,IT 311,Systems Analysis and Design,3,05.00 – 06.00,"TThS",P137
+2034855,9306,IT 312,Computer-Based Information Systems,3,06.00 – 07.00,"TThS",P138
+2034855,9307,IT 321C,Current  Trends and Issues in IT,3,07.00 – 08.00,"TThS",P139
+2024514,9308,ICS 321,Database Management Systems,2,07.30 – 08.30,"MTh",P140
+2024514,9308,ICS 321,Database Management Systems,1,09.00 – 10.30,"MTh",P141
+2024514,9309,ICS 322,Data Communication and Computer Networks,2,10.30 – 11.30,"MTh",P142
+2024514,9309,ICS 322,Data Communication and Computer Networks,1,01.00 – 02.30,"MTh",P143
+2024514,9310,IT 321,Management Information System,3,03.00 – 04.00,"MWF",P144
+2024514,9311,IT 322,Financial Systems,3,04.00 – 05.00,"MWF",P145
+2024514,9312,IT 323,IT Project Planning and Management,3,05.00 – 06.00,"MWF",P146
+2024514,9313,ICS 321D,Structure of Programming Language,3,06.00 – 07.00,"MWF",P147
+2024514,9314,IT 321B,Data Warehousing,3,07.00 – 08.00,"MWF",P148
+2066744,9401,IT 421,Practicum,3,,,
+2066744,7000,NSTP - CWTS 1,Foundations of Service,3,,,
+2066744,7001,NSTP - CWTS 2,Social Awareness and Empowerment for Service,3,,,
+2066744,9402,Math 7A,Fundamentals of Probability and Statistics,3,07.30 – 08.30,"MWF",P149
+2066744,9403,ICS 411,"Quality Consciousness Habits and Processes",3,10.30 – 11.30,"TThS",P150
+2066744,9404,IT 411,IT Project 1,3,07.00 – 08.00,"MTWThFS",P151
+2066744,9405,IT 413,Software Engineering,3,11.30 – 12.30,"TThS",P152
+2066744,9406,IT 004,Knowledge Base and Expert Systems,3,01.00 – 02.00,"TThS",P153
+2055555,9407,IT 421,IT Project 2,3,07.00 – 08.00,"MTWThFS",P154
+2055555,9408,IT 422,System Resource Management/IRM,3,02.00 – 03.00,"TThS",P155
+2095454,2101,AR 111,Architectural Design 1,3,07.30 – 08.30,"TThS",O100
+2095454,2102,AR 111D,Architectural Design 1 Drafting,3,08.30 – 09.30,"TThS",O101
+2095454,2103,AR 112,Visual Techniques 1,3,09.30 – 10.30,"TThS",O102
+2095454,2104,AR 112D,Visual Techniques 1 Drafting,3,11.30 – 12.30,"TThS",O103
+2095454,2105,AR 113,Graphics 1,3,01.00 – 02.00,"TThS",O104
+2095454,2106,AR 113D,Graphics 1 Drafting,3,03.00 – 04.00,"TThS",O105
+2095454,2107,AR 114B,Theory of Archi 1,3,04.00 – 05.00,"TThS",O106
+2095454,2108,AR 115B,Desc. Geometry,3,05.00 – 06.00,"TThS",O107
+2095478,2201,AR 121,Architectural Design 2,3,07.30 – 08.30,"MWF",O108
+2095478,2202,AR 121D,Architectural Design 2 Drafting,3,08.30 – 09.30,"MWF",O109
+2095478,2203,AR 122,Visual Techniques 2,3,09.30 – 10.30,"MWF",O110
+2095478,2204,AR 122D,Visual Techniques 2 Drafting,3,10.30 – 11.30,"MWF",O111
+2095478,2205,AR 123,Graphics 2,3,01.00 – 02.00,"MWF",O112
+2095478,2206,AR 123D,Graphics 2 Drafting,3,02.00 – 03.00,"MWF",O113
+2095478,2207,AR 124B,Theory of Archi 2,3,03.00 – 04.00,"MWF",O114
+2095478,2208,AR 125B,Solid Geometry,3,04.00 – 05.00,"MWF",O115
+2066600,2209,MATH 4A,Differential Calculus,4,07.30 – 08.30,"MTWTh",O116
+2066600,2210,MATH 5A,Integral Calculus,4,08.30 – 09.30,"MTWTh",O117
+2061234,9409,Relg 4,Living Like Jesus,3,09.30 – 10.30,"MWF",P156
+2061234,9410,Engl 4,Public Speaking and Argumentation,3,10.30 – 11.30,"MWF",P157
+2061234,9411,Philo 1,Logic,3,11.30 – 12.30,"MWF",P158
+2061234,9411,Pol Sc 1,Politics and Governance with Philippine Constitution,3,02.00 – 03.00,"MWF",P159
+2061234,9412,Econ 1,Basic Economics with Taxation and Agrarian Reform,3,03.00 – 04.00,"MWF",P160
+2061234,9413,MATH 4A,Differential Calculus,4,01.00 – 02.00,"MTWTh",P161
+2061234,9414,ICS 211,Data Structures,2,05.00 - 06.00,"MTh",P162
+2061234,9414,ICS 211,Data Structures,1,05.30 – 07.00,"MTh",P163
+2061234,8074M,PE 3,Individual / Dual Sports and Games,2,02.00 – 04.00,TH,PE104
+2061234,9415,ICS 212,Logic Design and Digital Computer Circuits,2,07.30 – 08.30,"MTh",P164
+2061234,9415,ICS 212,Logic Design and Digital Computer Circuits,1,07.30 – 09.00,"MTh",P165
+2066635,9309,THEO 4,Living like Jesus,3,07.30 – 08.30,"MWF",P166
+2066635,9012,MATH 5A,Integral Calculus,4,08.30 – 09.30,"MTWTh",P167
+2066633,2601,ENGL 2,Communication Arts II,3,10.30 – 11.30,"MWF",O118
+2066633,2602,PHILO 2,Ethics,3,01.00 – 02.00,"MWF",O119
+2066633,2603,RELG 4,Living like Jesus,3,02.00 – 03.00,"MWF",O120
+20553160,1101,CHEM 1,Inorganic and Org. Chem.,3,07.30 – 08.30,"MWF",P300
+20553160,1102,IT 1,Introduction to Information Technology,3,08.30 – 09.30,"MWF",P301
+20553160,1103,ENGL 1,Communication Skills,3,09.30 – 10.30,"MWF",P302
+20553160,1104,FIL 1,Sining ng Pakikipagtalastasan,3,10.30 – 11.30,"MWF",P303
+20553160,1105,MATH 1A,College Algebra,3,11.30 – 12.30,"MWF",P304
+20553160,1106,PHILO 1,Logic,3,01.00 – 02.00,"MWF",P305
+20553160,1107,PSYCHO 1,General Psychology with Drug Education,3,02.00 – 03.00,"MWF",P306
+20553160,8096L,PE 1,Physical Fitness,2,03.00 – 04.00,"MWF",PE106
+2050094,1001,PSYCHO 211,Psychology Analysis,3,07.30 – 08.30,"TThS",P307
+2050094,1002,PSYCHO 212,Psychology Guidance,3,08.30 – 09.30,"TThS",P308
+2050094,1003,PSYCHO 213,Psychology Analysis 2,3,09.30 - 10.30,"TThS",P309
+2050094,1004,PE 4,Team Sports and Games,2,01.00 – 03.00,S,P310
+2053157,9901,ENGL 2,Communication Arts II,3,10.30 – 11.30,"MWF",P168
+2053157,9902,PHILO 2,Ethics,3,01.00 – 02.00,"MWF",P169
+2053157,9903,RELG 4,Living like Jesus,3,02.00 – 03.00,"MWF",P170
+2053157,9904,CHEM 1,Inorganic and Org. Chem.,3,07.30 – 08.30,"MWF",P171
+2053157,9905,IM 111,Introduction to Information Management,3,08.30 – 09.30,"MWF",P172
+2053157,9906,ENGL 1,Communication Skills,3,09.30 – 10.30,"MWF",P173
+2053157,9907,FIL 1,Sining ng Pakikipagtalastasan,3,10.30 – 11.30,"MWF",P174
+2053157,9908,MATH 1A,College Algebra,3,11.30 – 12.30,"MWF",P175
+2053157,9909,PHILO 1,Logic,3,01.00 – 02.00,"MWF",P176
+2053157,9910,PSYCHO 1,General Pyscho with Drug Education,3,02.00 – 03.00,"MWF",P177
+2053157,8074L,PE 1,Physical Fitness,2,03.00 – 05.00,F,PE105
+2069789,9801,IM 211,File Organization,3,07.30 – 08.30,"MWF",P178
+2069789,9802,IM 212,Computer Architecture,3,08.30 – 09.30,"MWF",P179
+2069789,9803,IM 213,Information Management with Financial Statements,3,09.30 – 10.30,"MWF",P180
+2069790,9804,IM 311,E-Commerce,3,07.30 – 08.30,"MWF",P181
+2069790,9805,IM 312,Programming Applications,3,08.30 – 09.30,"MWF",P182
+2069790,9806,IM 313,Management Information System,3,09.30 – 10.30,"MWF",P183
+2069791,9807,IM 411,IM Project 1,3,07.00 – 08.00,"MTWThFS",P184
+2069791,9808,IM 412,Practicum,3,,,P185
+2069791,9809,IM 413,Information Resource Management,3,10.30 – 11.30,"MWF",P186
+2069792,9999,MSIT 123,Multimedia Systems,3,01.00 – 02.00,S,P187
+2069793,9998,MSIT 108,Economics of Information Processing,3,06.00 – 07.00,S,P188
+2069794,9997,LIS 111,Library Information Science 1,3,07.30 – 08.30,"MWF",P189
+2069794,9996,LIS 121,Library Information Science 2,3,08.30 – 09.30,"MWF",P190
+2069794,9995,LIS 123,Library Information Science 3,3,09.30 – 10.30,"MWF",P191
+2069795,9994,LIS 211,Library Information 4,3,10.30 – 11.30,"MWF",P192
+2069795,9993,LIS 212,Library Information 5,3,11.30 – 12.30,"MWF",P193
+2069795,9992,LIS 213,Library Information 6,3,01.00 – 02.00,"MWF",P194
+2069796,9991,LIS 311,Library Information 7,3,07.30 – 08.30,"MWF",P195
+2069796,9990,LIS 312,Library Information 8,3,08.30 – 09.30,"MWF",P196
+2069796,9989,LIS 313,Library Information 9,3,09.30 – 10.30,"MWF",P197
+2069797,9988,LIS 411,Library Information 10,3,10.30 – 11.30,"MWF",P198
+2069797,9987,LIS 412,Library Information 11,3,11.30 – 12.30,"MWF",P199
+2069797,9986,LIS 413,Library Information 12,3,01.00 – 02.00,"MWF",P200
+2055315,9985,MATH 1A,College Algebra,3,07.30 – 08.30,"MWF",P189
+2055315,9984,MATH 2A,Algebraic Structures 1,3,08.30 – 09.30,"MWF",P190
+2055156,9983,MATH 3B,Algebraic Structures 2,3,09.30 – 10.30,"MWF",P191
+2055156,9982,MATH 3C,Solid Measurement,3,10.30 – 11.30,"MWF",P192
+2069798,9981,MATH 101,Elementary Statistics,3,11.30 – 12.30,"MWF",P193
+2069798,9980,MATH 140,Topological Structures,3,01.00 – 02.00,"MWF",P194
+2069799,9979,MATH 164,Math of Decision Making,3,02.00 – 05.00,"MWF",P195
+2069799,9978,MATH 173,Set Theory,3,09.30 – 10.30,"TThS",P196
+2055315,9997,STAT 111,Statistics 1,3,07.30 – 09.00,"TThS",P197
+2055315,9996,STAT 112,Statistics 2,3,10.30 – 11.30,"TThS",P198
+2099999,9995,STAT 211,Statistics 3,3,01.00 – 02.30,"TThS",P199
+2099999,9994,STAT 221,Statistics 4,3,03.00 – 05.00,"TTh",P200
+2099998,9993,STAT 312,Statistics 5,3,07.30 – 08.30,"MWF",P201
+2099998,9992,STAT 139,Finite Differences,3,08.30 – 09.30,"MWF",P202
+2050101,6101,Ana/Physio,Anatomy and Physiology,5,01.00 – 04.00,S,SC100
+2050101,6102,Soc Anthro,Sociology and Anthropology with Family Planning,3,09.30 – 10.30,"MWF",SC101
+2050102,6101,Health 1A,Health Ethics,3,10.30 – 11.30,"MWF",SC102
+2050102,6102,PHC 1,Primary Health Care 1,4,11.30 – 12.30,"MWF",SC103
+2050103,6103,ECON 1A,Health Economics with Taxation and Land Reform,3,04.00 – 05.00,"TThS",SC104
+2050103,6104,PHC 2,Primary Health Care 2,3,01.00 – 02.00,"MWF",SC105
+2050104,6105,STS,"Science Tech and Society",3,02.00 - 03.00,"MTh",SC106
+2050104,6106,Nat. Sci. 3,Microbiology and Parasitology,3,03.00 – 04.00,"MWF",SC107
+2050014,7101,Psycho 2,Psychology 2,3,07.30 – 08.30,"MWF",G100
+2050014,7102,Engl 2,Communication Arts 2,3,08.30 – 09.30,"MWF",G101
+2050015,7103,Theo 4,Living like Jesus,3,09.30 – 10.30,"MWF",G102
+2050015,7104,IT 2,Information Technology 2,3,10.30 – 11.30,"MWF",G103
+2050016,7105,Relg 1,I Believe,3,01.00 – 02.00,"MWF",G104
+2050016,7106,Engl 1,Communication Arts 1,3,02.00 – 03.00,"MWF",G105
+2050017,7107,Fil 1,Sining ng Pakikipagtalastasan,3,03.00 – 04.00,"MWF",G106
+2050018,7108,Relg 1,I Believe,3,10.30 – 11.30,"MWF",G107
+2050018,7109,Engl 1,Communication Arts 1,3,01.00 – 02.00,"MWF",G108
+2050019,7110,Relg 2,Believing into Discipleship,3,02.00 – 03.00,"MWF",G109
+2050019,7111,Engl 2,Communication Arts 2,3,07.30 – 08.30,"MWF",G110
+2050020,7112,Relg 3,Discipleship in Community,3,08.30 – 09.30,"MWF",G111
+2050020,7113,Fil 1,Sining ng Pakikipagtalastasan,3,09.30 – 10.30,"MWF",G112
+2050021,7114,Relg 4,Living like Jesus,3,10.30 – 11.30,"MWF",G113
+2050021,7115,Fil 2,Pagsulat at Pagbasa,3,11.30 – 12.30,"MWF",G114
+2050022,7116,Relg 1,I Believe,3,01.00 – 02.00,"MWF",G115
+2050022,7117,Engl 1,Communication Arts 1,3,02.00 – 03.00,"MWF",G116
+2050023,7118,Relg 2,Believing into Discipleship,3,03.00 – 04.00,"MWF",G117
+2050023,7119,Engl 2,Communication Arts 2,3,07.30 – 08.30,"TThS",G118
+2050024,7120,Relg 3,Discipleship in Community,3,08.30 – 09.30,"TThS",G119
+2050024,7121,Fil 1,Sining ng Pakikipagtalastasan,3,09.30 - 10.30,"TThS",G120
+2050025,7122,Relg 4,Living like Jesus,3,01.00 – 02.00,"TThS",G121
+2050025,7123,Fil 2,Pagsulat at Pagbasa,3,10.30 – 11.30,"MWF",G122
+2050026,7124,Fil 111,Filipino 1,3,01.00 – 02.00,"MWF",G123
+2050026,7125,Fil 112,Filipino 2,3,02.00 – 03.00,"MWF",G124
+2050027,7126,Fil 211,Learning the Filipino Culture 1,3,07.30 – 08.30,"MWF",G125
+2050027,7127,Fil 212,Learning the Filipino Culture 1,3,08.30 – 09.30,"MWF",G126
+2050028,7128,Fil 311,Filipino 3,3,09.30 – 10.30,"MWF",G127
+2050028,7129,Fil 312,Filipino 4,3,10.30 – 11.30,"MWF",G128
+2050029,7130,Fil 411,Filipino 5,3,11.30 – 12.30,"MWF",G129
+2050029,7131,Fil 412,Filipino 6,3,01.00 – 02.00,"MWF",G130
+2050030,7132,GenScie 111,Introduction to general Science,3,02.00 – 03.00,"MWF",G131
+2050030,7133,GenScie 112,General Science 2,3,03.00 – 05.00,F,G132
+2050031,7134,GenScie 211,General Science 3,3,07.30 – 08.30,"MWF",G133
+2050031,7135,GenScie 212,General Science 4,3,08.30 – 09.30,"MWF",G134
+2050032,7136,GenScie 311,General Science 5,3,09.30 – 10.30,"MWF",G135
+2050032,7137,GenScie 312,General Science 6,3,07.30 – 08.30,"MWF",G136
+2050033,7138,GenScie 411,General Science 7,3,08.30 – 09.30,"MWF",G137
+2050033,7139,GenScie 412,General Science 8,3,09.30 – 10.30,"MWF",G138
+2050034,7140,Relg 1,I Believe,3,07.00 – 08.00,"TThS",G139
+2050034,7141,Engl 1,Communication Arts 1,3,07.30 - 08.30,"TThS",G140
+2050035,7142,Relg 2,Believing into Discipleship,3,10.30 – 11.30,"MWF",G141
+2050035,7143,Engl 2,Communication Arts 2,3,10.30 – 11.30,"MWF",G142
+2050036,7144,HET 111,Home Economics and Technology,3,01.00 – 02.00,"MWF",G143
+2050036,7145,HET 112,Home Economics and Technology,3,02.00 – 03.00,"MWF",G144
+2050037,7146,HET 211,Home Economics and Technology,3,07.30 – 08.30,"MWF",G145
+2050037,7147,HET 212,Home Economics and Technology,3,08.30 – 09.30,"MWF",G146
+2050038,7148,Relg 1,I Believe,3,09.30 – 10.30,"MWF",G147
+2050038,7149,Engl 1,Communication Arts 1,3,10.30 – 11.30,"MWF",G148
+2050039,7150,Relg 2,Believing into Discipleship,3,11.30 – 12.30,"MWF",G149
+2050039,7151,Engl 2,Communication Arts 2,3,01.00 – 02.00,"MWF",G150
+2050040,7152,MATH 311,Mathematical Computing,3,02.00 – 03.00,"MWF",G151
+2050040,7153,MATH 312,Mathematical Reasoning,3,03.00 – 04.00,"MWF",G152
+2050041,7154,MATH 411,Functions of a Real Variable,3,07.30 – 08.30,"TThS",G153
+2050041,7155,MATH 412,Complex Variables and Applications,3,08.30 – 09.30,"TThS",G154
+2050042,7156,Relg 1,I Believe,3,09.30 - 10.30,"TThS",G155
+2050042,7157,Engl 1,Communication Arts 1,3,01.00 – 03.00,"TThS",G156
+2050043,7158,Relg 2,Believing into Discipleship,3,10.30 – 11.30,"MWF",G157
+2050043,7159,Engl 2,Communication Arts 2,3,01.00 – 02.00,"MWF",G158
+2050044,7160,MHP 311,Strategies on Health Education 1,3,02.00 – 03.00,"MWF",G159
+2050044,7161,MHP 312,Strategies on Health Education 2,3,07.30 – 08.30,"MWF",G160
+2050045,7162,MHP 411,"Music Health and Physical Education 1",3,08.30 – 09.30,"MWF",G161
+2050045,7163,MHP 312,"Music Health and Physical Education 2",3,09.30 – 10.30,"MWF",G162
+2050046,7164,Relg 1,I Believe,3,10.30 – 11.30,"MWF",G163
+2050046,7165,Engl 1,Communication Arts 1,3,11.30 – 12.30,"MWF",G164
+2050047,7166,Relg 2,Believing into Discipleship,3,01.00 – 02.00,"MWF",G165
+2050047,7167,Engl 2,Communication Arts 2,3,02.00 – 03.00,"MWF",G166
+2050048,7168,RELG 311,Antiquities and Archeology,3,03.00 – 05.00,"TThS",G167
+2050048,7169,RELG 312,Christian Life,3,07.30 – 08.30,"MWF",G167
+2050049,7170,RELG 411,Comparative Religion,3,08.30 – 09.30,"MWF",G168
+2050049,7171,RELG 412,Confucianism,3,09.30 – 10.30,"MWF",G169
+2050050,7172,Relg 1,I Believe,3,07.30 – 08.30,"MWF",G170
+2050050,7173,Engl 1,Communication Arts 1,3,08.30 – 09.30,"MWF",G171
+2050051,7174,Relg 2,Believing into Discipleship,3,09.30 – 10.30,"MWF",G172
+2050051,7175,Engl 2,Communication Arts 2,3,07.00 – 08.00,"TThS",G173
+2050052,7176,SS 311,Social Studies 1,3,,"TThS",G174
+2050052,7177,SS 312,Social Studies 2,3,10.30 – 11.30,"MWF",G175
+2050053,7178,SS 411,Social Studies 3,3,10.30 – 11.30,"MWF",G176
+2050053,7179,SS 412,Social Studies 4,3,01.00 – 02.00,"MWF",G177
+2050054,7180,Relg 1,I Believe,3,02.00 – 03.00,"MWF",G178
+2050054,7181,Engl 1,Communication Arts 1,3,07.30 – 08.30,"MWF",G179
+2050055,7182,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",G180
+2050055,7183,Engl 2,Communication Arts 2,3,09.30 – 10.30,"MWF",G181
+2050056,7184,LIB 311,Library 1,3,10.30 – 11.30,"MWF",G182
+2050056,7185,LIB 312,Library 2,3,11.30 – 12.30,"MWF",G183
+2050057,7186,LIB 411,Library 3,3,01.00 – 02.00,"MWF",G184
+2050057,7187,LIB 412,Library 4,3,02.00 – 03.00,"MWF",G185
+2050058,7188,Relg 1,I Believe,3,03.00 – 04.00,"MWF",G186
+2050058,7189,Engl 1,Communication Arts 1,3,07.30 – 08.30,"TThS",G187
+2050059,7190,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"TThS",G188
+2050059,7191,Engl 2,Communication Arts 2,3,09.30 - 10.30,"TThS",G189
+2060010,7192,BIO 311,Genetics,3,01.00 – 03.00,"TThS",G190
+2060010,7193,BIO 312,Cell Biology,3,10.30 – 11.30,"MWF",G191
+2060011,7194,BIO 411,Microbiology,3,01.00 – 02.00,"MWF",G192
+2060011,7195,BIO 412,Animal Behavior,3,02.00 – 03.00,"MWF",G193
+2060012,7196,Relg 1,I Believe,3,07.30 – 08.30,"MWF",G194
+2060012,7197,Engl 1,Communication Arts 1,3,08.30 – 09.30,"MWF",G195
+2060013,7198,Relg 2,Believing into Discipleship,3,09.30 – 10.30,"MWF",G196
+2060013,7199,Engl 2,Communication Arts 2,3,10.30 – 11.30,"MWF",G197
+2060014,7198,B-P 311,Neurobiology,3,11.30 – 12.30,"MWF",G198
+2060014,7199,B-P 312,Physiology,3,01.00 – 02.00,"MWF",G199
+2060015,7200,B-P 411,Ecology,3,02.00 – 03.00,"MWF",G200
+2060015,7201,B-P 412,Special Topics,3,03.00 – 05.00,"TThS",G201
+2060016,7202,Relg 1,I Believe,3,07.30 – 08.30,"MWF",G202
+2060016,7203,Engl 1,Communication Arts 1,3,08.30 – 09.30,"MWF",G203
+2060017,7204,Relg 2,Believing into Discipleship,3,09.30 – 10.30,"MWF",G204
+2060017,7205,Engl 2,Communication Arts 2,3,07.30 – 08.30,"MWF",G205
+2060018,7206,CHEM 311,Organic Chemistry III,3,08.30 – 09.30,"MWF",G206
+2060018,7207,CHEM 312,Biochemistry,3,09.30 – 10.30,"MWF",G207
+2060019,7208,CHEM 411,Chemistry 1,3,07.00 – 08.00,"TThS",G208
+2060019,7209,CHEM 412,Chemistry 2,3,10.30 – 11.30,"MWF",G209
+2060020,7210,Relg 1,I Believe,3,10.30 – 11.30,"MWF",G210
+2060020,7211,Engl 1,Communication Arts 1,3,11.30 – 12.30,"MWF",G211
+2060021,7212,Relg 2,Believing into Discipleship,3,01.00 – 02.00,"MWF",G212
+2060021,7213,Engl 2,Communication Arts 2,3,02.00 – 03.00,"MWF",G213
+2060022,7214,COMP ED 311,Data Structures,3,03.00 – 04.00,"MWF",G214
+2060022,7215,COMP ED 312,Systems Analysis and Design,3,07.30 – 08.30,"TThS",G215
+2060023,7216,COMP ED 411,Database Management,3,08.30 – 09.30,"TThS",G216
+2060023,7217,COMP ED 412,Computer Science 4,3,09.30 - 10.30,"TThS",G217
+2060024,7218,Relg 1,I Believe,3,01.00 – 03.00,"TThS",G218
+2060024,7219,Engl 1,Communication Arts 1,3,10.30 – 11.30,"MWF",G219
+2060025,7220,Relg 2,Believing into Discipleship,3,01.00 – 02.00,"MWF",G220
+2060025,7221,Engl 2,Communication Arts 2,3,02.00 – 03.00,"MWF",G221
+2060026,7222,HIST 311,Philippine History,3,07.30 – 08.30,"MWF",G222
+2060026,7223,HIST 312,Asian History,3,08.30 – 09.30,"MWF",G223
+2060027,7224,HIST 411,World History,3,09.30 – 10.30,"MWF",G224
+2060027,7225,HIST 412,Earth History,3,10.30 – 11.30,"MWF",G225
+2060028,7226,Relg 1,I Believe,3,11.30 – 12.30,"MWF",G226
+2060029,7227,Relg 2,Believing into Discipleship,3,01.00 – 02.00,"MWF",G227
+2060030,7228,MUSIC 311,Music 1,3,02.00 – 03.00,"MWF",G228
+2060031,7229,MUSIC 411,Music 2,3,03.00 – 05.00,"TThS",G229
+2060032,7230,Relg 1,I Believe,3,07.30 – 08.30,"MWF",G230
+2060033,7231,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",G231
+2060034,7232,MA 1,Arts History,3,09.30 – 10.30,"MWF",G232
+2060035,7233,MA 2,Visual Arts,3,07.30 – 08.30,"MWF",G233
+2060036,7234,Relg 1,I Believe,3,08.30 – 09.30,"MWF",G234
+2060037,7235,Relg 2,Believing into Discipleship,3,09.30 – 10.30,"MWF",G235
+2060038,7236,PE&H 311,Physical and Health 1,3,07.00 – 08.00,"TThS",G236
+2060039,7237,PE&H 411,Physical and Health 2,3,10.30 – 11.30,"MWF",G237
+2060040,7238,Relg 1,I Believe,3,10.30 – 11.30,"MWF",G238
+2060041,7239,Relg 2,Believing into Discipleship,3,11.30 – 12.30,"MWF",G239
+2060042,7240,PE 311,Physical Arts 1,3,01.00 – 02.00,"MWF",PE107
+2060043,7241,PE 411,Physical Arts 2,3,02.00 – 03.00,"MWF",PE108
+2060044,7242,Relg 1,I Believe,3,03.00 – 04.00,"MWF",G240
+2060045,7243,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"TThS",G241
+2060046,7244,PHYS 311,Mathematical Physics,3,08.30 – 09.30,"TThS",G242
+2060047,7245,PHYS 411,Experimental Physics,3,09.30 - 10.30,"TThS",G243
+2060048,7246,Relg 1,I Believe,3,01.00 – 03.00,"TThS",G244
+2060049,7247,Relg 2,Believing into Discipleship,3,10.30 – 11.30,"MWF",G245
+2060050,7248,RVE 311,Magesterium,3,01.00 – 02.00,"MWF",G246
+2060051,7249,RVE 411,Religion and Values,3,02.00 – 03.00,"MWF",G247
+2060052,7250,Relg 1,I Believe,3,07.30 – 08.30,"MWF",G248
+2060053,7251,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",G249
+2060054,7252,REL STD 311,Religious Studies 1,3,09.30 – 10.30,"MWF",G250
+2060055,7253,REL STD 411,Religious Studies 2,3,10.30 – 11.30,"MWF",G251
+2060056,7254,Relg 1,I Believe,3,11.30 – 12.30,"MWF",G252
+2060057,7255,Relg 2,Believing into Discipleship,3,01.00 – 02.00,"MWF",G253
+2060058,7256,SC TECH 311,Science and Technology 1,3,02.00 – 03.00,"MWF",G254
+2060059,7257,SC TECH 411,Science and Technology 2,3,03.00 – 05.00,"TThS",G255
+2070010,7258,Relg 1,I Believe,3,07.30 – 08.30,"MWF",G256
+2070011,7259,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",G257
+2070012,7260,THE 311,Technology and Home Economics 1,3,09.30 – 10.30,"MWF",G258
+2070013,7261,THE 411,Technology and Home Economics 2,3,07.30 – 08.30,"MWF",G259
+2070014,7262,Relg 1,I Believe,3,08.30 – 09.30,"MWF",G260
+2070015,7263,Relg 2,Believing into Discipleship,3,09.30 – 10.30,"MWF",G261
+2070016,7264,VAL 311,Values 1,3,07.00 – 08.00,"TThS",G262
+2070017,7265,VAL 411,Values 2,3,10.30 – 11.30,"MWF",G263
+2070018,5101,Relg 1,I Believe,3,10.30 – 11.30,"MWF",R100
+2070019,5102,Relg 2,Believing into Discipleship,3,11.30 – 12.30,"MWF",R101
+2070020,5103,MD 311,Doctrine 1,3,01.00 – 02.00,"MWF",R102
+2070021,5104,MD 411,Doctrine 2,3,02.00 – 03.00,"MWF",R103
+2070022,7266,Relg 1,I Believe,3,03.00 – 04.00,"MWF",G264
+2070023,7267,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"TThS",G265
+2070024,7268,SPELL 311,Spanish 1,3,08.30 – 09.30,"TThS",G266
+2070025,7269,SPELL 411,Literature 1,3,09.30 - 10.30,"TThS",G267
+2070026,7270,Relg 1,I Believe,3,01.00 – 03.00,"TThS",G268
+2070027,7271,Relg 2,Believing into Discipleship,3,10.30 – 11.30,"MWF",G269
+2070028,7272,ED 311,Management Information Source,3,01.00 – 02.00,"MWF",G270
+2070029,7273,ED 411,Financial Management,3,02.00 – 03.00,"MWF",G271
+2070030,7274,Relg 1,I Believe,3,07.30 – 08.30,"MWF",G272
+2070031,7275,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",G273
+2070032,7276,ED 311,Educational Perennialism,3,09.30 – 10.30,"MWF",G274
+2070033,7277,ED 411,International Education,3,10.30 – 11.30,"MWF",G275
+2070034,7278,Relg 1,I Believe,3,11.30 – 12.30,"MWF",G276
+2070035,7279,Relg 2,Believing into Discipleship,3,01.00 – 02.00,"MWF",G277
+2070036,7280,EM 311,Educational Management 1,3,02.00 – 03.00,"MWF",G278
+2070037,7281,EM 411,Educational Management 2,3,03.00 – 05.00,"TThS",G279
+2070038,7282,Relg 1,I Believe,3,07.30 – 08.30,"MWF",G280
+2070039,7283,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",G281
+2070040,7284,LANG ED 311,Language Education 1,3,09.30 – 10.30,"MWF",G282
+2070041,7285,LANG ED 411,Language Education 2,3,07.30 – 08.30,"MWF",G283
+2070042,7286,Relg 1,I Believe,3,08.30 – 09.30,"MWF",G284
+2070043,7287,Relg 2,Believing into Discipleship,3,09.30 – 10.30,"MWF",G285
+2070044,7288,PHD LING 311,Linguistics 1,3,07.00 – 08.00,"TThS",G286
+2070045,7289,PHD LING 411,Linguistics 2,3,10.30 – 11.30,"MWF",G287
+2070046,7290,Relg 1,I Believe,3,10.30 – 11.30,"MWF",G288
+2070047,7291,Relg 2,Believing into Discipleship,3,11.30 – 12.30,"MWF",G289
+2070048,7292,PHD LITT 311,Literature 1,3,01.00 – 02.00,"MWF",G290
+2070049,7293,PHD LITT 411,Literature 2,3,02.00 – 03.00,"MWF",G291
+2070050,3101,Relg 1,I Believe,3,03.00 – 04.00,"MWF",S100
+2070051,3102,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"TThS",S101
+2070052,3103,MGMT 311,Management 1,3,08.30 – 09.30,"TThS",S102
+2070053,3104,MGMT 411,Management 2,3,09.30 - 10.30,"TThS",S103
+2070054,4101,Relg 1,I Believe,3,01.00 – 03.00,"TThS",A100
+2070055,4102,Relg 2,Believing into Discipleship,3,10.30 – 11.30,"MWF",A101
+2070056,4103,BS 311,Biological Science 1,3,01.00 – 02.00,"MWF",A102
+2070057,4104,BS 411,Biological Science 2,3,02.00 – 03.00,"MWF",A103
+2070058,7295,Relg 1,I Believe,3,07.30 – 08.30,"MWF",G292
+2070059,7296,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",G293
+2070060,7297,LIT 311,Library Technology 1,,09.30 – 10.30,"MWF",G294
+2080035,7298,LIT 411,Library Technology 2,3,10.30 – 11.30,"MWF",G295
+2080036,7299,Relg 1,I Believe,3,11.30 – 12.30,"MWF",G296
+2080037,7300,Relg 2,Believing into Discipleship,3,01.00 – 02.00,"MWF",G297
+2080038,7301,CT 311,College in Teaching 1,3,02.00 – 03.00,"MWF",G298
+2080039,7302,CT 411,College in Teaching 2,3,03.00 – 05.00,"TThS",G299
+2080040,3105,Relg 1,I Believe,3,07.30 – 08.30,"MWF",S104
+2080041,3106,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",S105
+2080042,3107,ECON 311,Economics 1,3,09.30 – 10.30,"MWF",S106
+2080043,3108,ECON 411,Economics 2,3,07.30 – 08.30,"MWF",S107
+2080044,7303,Relg 1,I Believe,3,08.30 – 09.30,"MWF",G300
+2080045,7304,Relg 2,Believing into Discipleship,3,09.30 – 10.30,"MWF",G301
+2080046,7305,FIL ED 311,Filipino Education 1,3,07.00 – 08.00,"TThS",G302
+2080047,7306,FIL ED 411,Filipino Education 2,3,10.30 – 11.30,"MWF",G303
+2080048,7307,Relg 1,I Believe,3,10.30 – 11.30,"MWF",G304
+2080049,7308,Relg 2,Believing into Discipleship,3,11.30 – 12.30,"MWF",G305
+2080050,7309,AS 311,Administration And Supervision 1,3,01.00 – 02.00,"MWF",G306
+2080051,7310,AS 411,Administration And Supervision 2,3,02.00 – 03.00,"MWF",G307
+2080052,7311,Relg 1,I Believe,3,03.00 – 04.00,"MWF",G308
+2080053,7312,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"TThS",G309
+2080054,7313,B 311,Neurobiology,3,08.30 – 09.30,"TThS",G310
+2080055,7314,B 411,Edubiology,3,09.30 - 10.30,"TThS",G311
+2080056,7315,Relg 1,I Believe,3,01.00 – 03.00,"TThS",G312
+2080057,7316,Relg 2,Believing into Discipleship,3,10.30 – 11.30,"MWF",G313
+2080058,7317,ECED 311,Early Childhood Education 1,3,01.00 – 02.00,"MWF",G314
+2080059,7318,ECED 411,Early Childhood Education 2,3,02.00 – 03.00,"MWF",G315
+2090010,7319,Relg 1,I Believe,3,07.30 – 08.30,"MWF",G316
+2090011,7320,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",G317
+2090012,7321,ENG 311,English 1,3,09.30 – 10.30,"MWF",G318
+2090013,7322,ENG 411,English 2,3,10.30 – 11.30,"MWF",G319
+2090014,7323,Relg 1,I Believe,3,11.30 – 12.30,"MWF",G320
+2090015,7324,Relg 2,Believing into Discipleship,3,01.00 – 02.00,"MWF",G321
+2090016,7325,FIL 311,English 1,3,02.00 – 03.00,"MWF",G322
+2090017,7326,FIL 411,English 2,3,03.00 – 05.00,"TThS",G323
+2090018,7327,Relg 1,I Believe,3,07.30 – 08.30,"MWF",G324
+2090019,7328,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",G325
+2090020,7329,GC 311,Guidance and Counseling 1,3,09.30 – 10.30,"MWF",G326
+2090021,7330,GC 411,Guidance and Counseling 2,3,07.30 – 08.30,"MWF",G327
+2090022,7331,Relg 1,I Believe,3,08.30 – 09.30,"MWF",G328
+2090023,7332,Relg 2,Believing into Discipleship,3,09.30 – 10.30,"MWF",G329
+2090024,7333,LANG 311,Language with Education 1,3,07.00 – 08.00,"TThS",G330
+2090025,7334,LANG 411,Language with Education 2,3,10.30 – 11.30,"MWF",G331
+2090026,7335,Relg 1,I Believe,3,10.30 – 11.30,"MWF",G332
+2090027,7336,Relg 2,Believing into Discipleship,3,11.30 – 12.30,"MWF",G333
+2090028,7337,LRNG 311,Learning Disabilities 1,3,01.00 – 02.00,"MWF",G334
+2090029,7338,LRNG 411,Learning Disabilities 2,3,02.00 – 03.00,"MWF",G335
+2090030,7339,Relg 1,I Believe,3,03.00 – 04.00,"MWF",G336
+2090031,7340,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"TThS",G337
+2090032,7341,LS 311,Library Science 1,3,08.30 – 09.30,"TThS",G338
+2090033,7342,LS 411,Library Science 2,3,09.30 - 10.30,"TThS",G339
+2090034,7343,Relg 1,I Believe,3,01.00 – 03.00,"TThS",G340
+2090035,7344,Relg 2,Believing into Discipleship,3,10.30 – 11.30,"MWF",G341
+2090036,7345,NFE 311,Non Formal Education 1,3,01.00 – 02.00,"MWF",G342
+2090037,7346,NFE 411,Non Formal Education 2,3,02.00 – 03.00,"MWF",G343
+2090038,7347,Relg 1,I Believe,3,07.30 – 08.30,"MWF",G344
+2090039,7348,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",G345
+2090040,7349,N 311,Nursing 1,3,09.30 – 10.30,"MWF",G346
+2090041,7350,N 411,Nursing 2,3,10.30 – 11.30,"MWF",G347
+2090042,7351,Relg 1,I Believe,3,11.30 – 12.30,"MWF",G348
+2090043,7352,Relg 2,Believing into Discipleship,3,01.00 – 02.00,"MWF",G349
+2090044,7353,READ 311,Reading 1,3,02.00 – 03.00,"MWF",G350
+2090045,7354,READ 411,Reading 2,3,03.00 – 05.00,"TThS",G351
+2090046,7355,Relg 1,I Believe,3,07.30 – 08.30,"MWF",G352
+2090047,7356,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",G353
+2090048,7357,SCI 311,Science Education 1,3,09.30 – 10.30,"MWF",G354
+2090049,7358,SCI 411,Science Education 2,3,07.30 – 08.30,"MWF",G355
+2090050,7359,Relg 1,I Believe,3,08.30 – 09.30,"MWF",G356
+2090051,7360,Relg 2,Believing into Discipleship,3,09.30 – 10.30,"MWF",G357
+2090052,7361,EM 311,Educational Management 1,3,07.00 – 08.00,"TThS",G358
+2090053,7362,EM 411,Educational Management 2,3,10.30 – 11.30,"MWF",G359
+2090054,7363,Relg 1,I Believe,3,10.30 – 11.30,"MWF",G360
+2090055,7364,Relg 2,Believing into Discipleship,3,11.30 – 12.30,"MWF",G361
+2090056,7365,ENGL 311,Variable Topics,3,01.00 – 02.00,"MWF",G362
+2090057,7366,ENGL 411,Advance Studies in Genres,,02.00 – 03.00,"MWF",G363
+2090058,1149,Relg 1,I Believe,3,03.00 – 04.00,"MWF",P311
+2090059,1150,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"TThS",P312
+2090060,1151,ELING 311,Learning Foreign Language,3,08.30 – 09.30,"TThS",P313
+2090061,1152,ELING 411,Application of Foreign Language,3,09.30 - 10.30,"TThS",P314
+2090062,1153,Relg 1,I Believe,3,01.00 – 03.00,"TThS",P315
+2090063,1154,Relg 2,Believing into Discipleship,3,10.30 – 11.30,"MWF",P316
+2090064,1155,ELITT 311,Philippine Literature,3,01.00 – 02.00,"MWF",P317
+2090065,1156,ELITT 411,World Literature,3,02.00 – 03.00,"MWF",P318
+2090066,1157,Relg 1,I Believe,3,07.30 – 08.30,"MWF",P319
+2090067,1158,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",P320
+2090068,1159,EHP 311,Environmental and Habitat Planning 1,3,09.30 – 10.30,"MWF",P321
+2090069,1160,EHP 411,Environmental and Habitat Planning 2,3,10.30 – 11.30,"MWF",P322
+2090070,2198,Relg 1,I Believe,3,11.30 – 12.30,"MWF",O121
+2090071,2199,Relg 2,Believing into Discipleship,3,01.00 – 02.00,"MWF",O122
+2090072,2200,LS 311,Library Science 1,3,02.00 – 03.00,"MWF",O123
+2090073,2201,LS 411,Library Science 2,3,03.00 – 05.00,"TThS",O124
+2090074,1161,Relg 1,I Believe,3,07.30 – 08.30,"MWF",P323
+2090075,1162,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",P324
+2090076,1163,LING 311,Linguistic Science 1,3,09.30 – 10.30,"MWF",P325
+2090077,1164,LING 411,Linguistic Science 2,3,07.30 – 08.30,"MWF",P326
+2090078,1165,Relg 1,I Believe,3,08.30 – 09.30,"MWF",P327
+2090079,1166,Relg 2,Believing into Discipleship,3,09.30 – 10.30,"MWF",P328
+2090080,1167,LITT 311,Seminar in Philippine Literature,3,07.00 – 08.00,"TThS",P329
+2090081,1168,LITT 411,Seminar in World Literature,,10.30 – 11.30,"MWF",P330
+2090082,1169,Relg 1,I Believe,3,10.30 – 11.30,"MWF",P331
+2090083,1170,Relg 2,Believing into Discipleship,3,11.30 – 12.30,"MWF",P332
+2090084,1171,PHILOS 311,Ancient Philosophy,3,01.00 – 02.00,"MWF",P333
+2090085,1172,PHILOS 411,Medieval Philosophy,3,02.00 – 03.00,"MWF",P334
+2090086,1173,Relg 1,I Believe,3,03.00 – 04.00,"MWF",P335
+2090087,1174,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"TThS",P336
+2090088,1175,RELG STDS 311,Anthologies,3,08.30 – 09.30,"TThS",P337
+2090089,1176,RELG STDS 411,Pragmatism,3,09.30 - 10.30,"TThS",P338
+2090090,1177,Relg 1,I Believe,3,01.00 – 03.00,"TThS",P339
+2090091,1178,Relg 2,Believing into Discipleship,3,10.30 – 11.30,"MWF",P340
+2090092,1179,SPED 311,Special Education 1,3,01.00 – 02.00,"MWF",P341
+2090093,1180,SPED 411,Special Education 2,3,02.00 – 03.00,"MWF",P342
+2090094,7367,Relg 1,I Believe,3,07.30 – 08.30,"MWF",G364
+2090095,7368,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",G365
+2090096,7369,MAT 311,Writing for Teachers,3,09.30 – 10.30,"MWF",G366
+2090097,7370,MAT 411,Reading for Teachers,3,10.30 – 11.30,"MWF",G367
+2090098,7371,Relg 1,I Believe,3,11.30 – 12.30,"MWF",G368
+2090099,7372,Relg 2,Believing into Discipleship,3,01.00 – 02.00,"MWF",G369
+2090100,7373,MAT BIO 311,Biology 101,3,02.00 – 03.00,"MWF",G370
+2090101,7374,MAT BIO 411,Biology 102,3,03.00 – 05.00,"TThS",G371
+2090102,7375,Relg 1,I Believe,3,07.30 – 08.30,"MWF",G372
+2090103,7376,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",G373
+2090104,7377,MAT CHEM 311,Chemistry 101,3,09.30 – 10.30,"MWF",G374
+2090105,7378,MAT CHEM 411,Chemistry 102,3,07.30 – 08.30,"MWF",G375
+2090106,7379,Relg 1,I Believe,3,08.30 – 09.30,"MWF",G376
+2090107,7380,Relg 2,Believing into Discipleship,3,09.30 – 10.30,"MWF",G377
+2090108,7381,MAT PHYS 311,Physics101,3,07.00 – 08.00,"TThS",G378
+2090109,7382,MAT PHYS 411,Physics 102,3,10.30 – 11.30,"MWF",G379
+2090110,7383,Relg 1,I Believe,3,10.30 – 11.30,"MWF",G380
+2090111,7384,Relg 2,Believing into Discipleship,3,11.30 – 12.30,"MWF",G381
+2090112,7385,ENG’G 311,Engineering 101,3,01.00 – 02.00,"MWF",G382
+2090113,7386,ENG’G 411,Engineering 102,3,02.00 – 03.00,"MWF",G383
+2090114,2178,Relg 1,I Believe,3,03.00 – 04.00,"MWF",O125
+2090115,2179,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"TThS",O126
+2090116,2180,ENG’G ECE 311,Electronics and Circuits 101,3,08.30 – 09.30,"TThS",O127
+2090117,2181,ENG’G ECE 411,Electronics and Circuits 201,3,09.30 - 10.30,"TThS",O128
+2090118,2182,Relg 1,I Believe,3,01.00 – 03.00,"TThS",O129
+2090119,2183,Relg 2,Believing into Discipleship,3,10.30 – 11.30,"MWF",O130
+2090120,2184,ENG’G Che 311,Chemical 101,3,01.00 – 02.00,"MWF",O131
+2090121,2185,ENG’G Che 411,Chemical 201,3,02.00 – 03.00,"MWF",O132
+2090122,2186,Relg 1,I Believe,3,07.30 – 08.30,"MWF",O133
+2090123,2187,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",O134
+2090124,2188,ENG’G EE 311,Environmental Engineering 101,3,09.30 – 10.30,"MWF",O135
+2090125,2189,ENG’G EE 411,Environmental Engineering 201,3,10.30 – 11.30,"MWF",O136
+2090126,2190,Relg 1,I Believe,3,11.30 – 12.30,"MWF",O137
+2090127,2191,Relg 2,Believing into Discipleship,3,01.00 – 02.00,"MWF",O138
+2090128,2192,ENG’G IE 311,Industrial Engineering 101,3,02.00 – 03.00,"MWF",O139
+2090129,2193,ENG’G IE 411,Industrial Engineering 201,3,03.00 – 05.00,"TThS",O140
+2090130,2194,Relg 1,I Believe,3,07.30 – 08.30,"MWF",O141
+2050058,2195,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",O142
+2050059,2196,ENG’G ME 311,Mechanical Engineering 101,3,09.30 – 10.30,"MWF",O143
+2050060,2197,ENG’G ME 411,Mechanical Engineering 201,,07.30 – 08.30,"MWF",O144
+2050061,4113,Relg 1,I Believe,3,08.30 – 09.30,"MWF",A104
+2050062,4114,Relg 2,Believing into Discipleship,3,09.30 – 10.30,"MWF",A105
+2050063,4115,ES 311,Environmental Science 101,3,07.00 – 08.00,"TThS",A106
+2050064,4116,ES 411,Environmental Science 201,3,10.30 – 11.30,"MWF",A107
+2050065,3202,Relg 1,I Believe,3,10.30 – 11.30,"MWF",S108
+2050066,3203,Relg 2,Believing into Discipleship,3,11.30 – 12.30,"MWF",S109
+2050067,3204,Ac 311,Accounting 101,3,01.00 – 02.00,"MWF",S110
+2050068,3205,Ac 411,Accounting 102,3,02.00 – 03.00,"MWF",S112
+2050069,4117,Relg 1,I Believe,3,03.00 – 04.00,"MWF",A108
+2050070,4118,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"TThS",A109
+2050071,4119,BIOL 311,Biolology 101,3,08.30 – 09.30,"TThS",A110
+2050072,4120,BIOL 411,Biolology 201,3,09.30 - 10.30,"TThS",A111
+2050073,3198,Relg 1,I Believe,3,01.00 – 03.00,"TThS",S113
+50074,3199,Relg 2,Believing into Discipleship,3,10.30 – 11.30,"MWF",S114
+2050075,3200,BA 311,Business Administration 101,3,01.00 – 02.00,"MWF",S115
+2050076,3201,BA 411,Business Administration 201,3,02.00 – 03.00,"MWF",S116
+2050077,2170,Relg 1,I Believe,3,07.30 – 08.30,"MWF",O145
+2050078,2171,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",O146
+2050079,2172,CE 311,Geotechnical Engineering 101,3,09.30 – 10.30,"MWF",O147
+2050080,2173,CE 411,Geotechnical Engineering 201,3,10.30 – 11.30,"MWF",O148
+2050081,2174,Relg 1,I Believe,3,11.30 – 12.30,"MWF",O149
+2050082,2175,Relg 2,Believing into Discipleship,3,01.00 – 02.00,"MWF",O150
+2050083,2176,EN E 311,Environmental Engineering 101,3,02.00 – 03.00,"MWF",O151
+2050084,2177,EN E 411,Environmental Engineering 201,,03.00 – 05.00,"TThS",O152
+2050085,1181,Relg 1,I Believe,3,07.30 – 08.30,"MWF",P343
+2050086,1182,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",P344
+2050087,1183,S WK 311,Human Behaviour and Social Environment 1,3,09.30 – 10.30,"MWF",P345
+2050088,1184,S WK 411,Human Behaviour and Social Environment 2,3,07.30 – 08.30,"MWF",P346
+2050089,4121,Relg 1,I Believe,3,08.30 – 09.30,"MWF",A112
+2050090,4122,Relg 2,Believing into Discipleship,3,09.30 – 10.30,"MWF",A113
+2050091,4123,RT 311,Radiologic Technology 101,3,07.00 – 08.00,"TThS",A114
+2050092,4124,RT 411,Radiologic Technology 201,3,10.30 – 11.30,"MWF",A115
+2050094,1229,Relg 1,I Believe,3,10.30 – 11.30,"MWF",P347
+2050095,1185,Relg 2,Believing into Discipleship,3,11.30 – 12.30,"MWF",P348
+2050096,1186,PSYCH 311,Psychology 101,3,01.00 – 02.00,"MWF",P349
+2050097,4125,PHARM 411,Pharmacy 201,3,02.00 – 03.00,"MWF",A116
+2050098,4126,Relg 1,I Believe,3,03.00 – 04.00,"MWF",A117
+2050099,4127,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"TThS",A118
+2050100,4128,PHARM 311,Pharmacy 101,3,08.30 – 09.30,"TThS",A119
+2050105,2166,EM 411,Mining Engineering 201,3,09.30 - 10.30,"TThS",O153
+2050106,2167,Relg 1,I Believe,3,01.00 – 03.00,"TThS",O154
+2050107,2168,Relg 2,Believing into Discipleship,3,10.30 – 11.30,"MWF",O155
+2050108,2169,EM 511,Mining Engineering 202,3,01.00 – 02.00,"MWF",O156
+2050109,4109,MED T 411,Medical Technology 201,3,02.00 – 03.00,"MWF",A120
+2050110,4110,Relg 1,I Believe,3,07.30 – 08.30,"MWF",A121
+2050111,4111,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",A122
+2050112,4112,MED T 311,Medical Technology 101,3,09.30 – 10.30,"MWF",A123
+2050113,2142,ME 411,Fluid Power 101,3,10.30 – 11.30,"MWF",O157
+2050114,2143,Relg 1,I Believe,3,11.30 – 12.30,"MWF",O158
+2050115,2144,Relg 2,Believing into Discipleship,3,01.00 – 02.00,"MWF",O159
+2050116,2145,ME 511,Fluid Power 201,3,02.00 – 03.00,"MWF",O160
+2050117,2146,ME 512,Fluid Power with Energy Power,3,03.00 – 05.00,"TThS",O161
+2050118,2147,Relg 1,I Believe,3,07.30 – 08.30,"MWF",O162
+2050119,2148,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",O163
+2050120,2149,IE 311,Designing for Manufacturing,3,09.30 – 10.30,"MWF",O164
+2050121,2150,GE  311,Sustainable Energy in Buildings,3,07.30 – 08.30,"MWF",O165
+2050122,2151,Relg 1,I Believe,3,08.30 – 09.30,"MWF",O166
+2050123,2152,Relg 2,Believing into Discipleship,3,09.30 – 10.30,"MWF",O167
+2050124,2153,GE 411,Thermodynamics,3,07.00 – 08.00,"TThS",O168
+2050125,2154,EIE 311,Heat Transfer and Aerodynamics,3,10.30 – 11.30,"MWF",O169
+2050126,2155,Relg 1,I Believe,3,10.30 – 11.30,"MWF",O170
+2050127,2156,Relg 2,Believing into Discipleship,3,11.30 – 12.30,"MWF",O171
+2050128,2157,EIE 411,Solids Handling and Process Engineering,3,01.00 – 02.00,"MWF",O172
+2050129,2158,EIE 511,Control of Machines and Processes,3,02.00 – 03.00,"MWF",O173
+2050131,2159,Relg 1,I Believe,3,03.00 – 04.00,"MWF",O174
+2050132,2160,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"TThS",O175
+2050133,2161,ECE 511,Understanding Variation and Uncertainty,3,08.30 – 09.30,"TThS",O176
+2050134,2162,Relg 1,I Believe,3,09.30 - 10.30,"TThS",O177
+2050135,2163,Relg 2,Believing into Discipleship,3,01.00 – 03.00,"TThS",O178
+2050136,2164,EE 311,Engineering Fundamentals,3,10.30 – 11.30,"MWF",O179
+2050137,2165,EE 411,Engineering Analysis,3,01.00 – 02.00,"MWF",O180
+2050138,3125,Relg 1,I Believe,3,02.00 – 03.00,"MWF",S117
+2050139,3126,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"MWF",S118
+2050140,3127,MKTG 311,Marketing 101,3,08.30 – 09.30,"MWF",S119
+2050141,3128,MKTG 411,Marketing 201,3,09.30 – 10.30,"MWF",S120
+2050145,3129,Relg 1,I Believe,3,10.30 – 11.30,"MWF",S121
+2050146,3130,Relg 2,Believing into Discipleship,3,11.30 – 12.30,"MWF",S122
+2050147,3131,MGMT 311,Management 101,3,01.00 – 02.00,"MWF",S123
+2050148,3132,MGMT 411,Management 201,3,02.00 – 03.00,"MWF",S124
+2050150,3133,Relg 1,I Believe,3,03.00 – 05.00,"TThS",S125
+2066699,3134,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"MWF",S126
+2050151,3135,FNCL MGMT 311,Financial Management 101,3,08.30 – 09.30,"MWF",S127
+2050152,3136,FNCL MGMT 411,Financial Management 201,3,09.30 – 10.30,"MWF",S128
+2050155,3137,Relg 1,I Believe,3,07.30 – 08.30,"MWF",S129
+2050156,3138,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",S130
+2050157,3139,ENTREP 311,Entrepreneurial 101,3,09.30 – 10.30,"MWF",S131
+2050158,3140,ENTREP 411,Entrepreneurial 201,3,07.00 – 08.00,"TThS",S132
+2050161,3141,Relg 1,I Believe,3,10.30 – 11.30,"MWF",S133
+2050162,3142,Relg 2,Believing into Discipleship,3,10.30 – 11.30,"MWF",S134
+2050163,3143,ESBM 311,Entrepreneurial And Business Management 101,3,11.30 – 12.30,"MWF",S135
+2050164,3144,ESBM 411,Entrepreneurial And Business Management 201,3,01.00 – 02.00,"MWF",S136
+2050165,3145,Relg 1,I Believe,3,02.00 – 03.00,"MWF",S137
+2050166,3146,Relg 2,Believing into Discipleship,3,03.00 – 04.00,"MWF",S138
+2050167,3147,ECON 311,Economics 101,3,07.30 – 08.30,"TThS",S139
+2050168,3148,ECON 411,Economics 201,3,08.30 – 09.30,"TThS",S140
+2050169,3149,Relg 1,I Believe,3,09.30 - 10.30,"TThS",S141
+2050170,3150,Relg 2,Believing into Discipleship,3,01.00 – 03.00,"TThS",S142
+2050171,3151,BUS ECON 311,Business Economics 311,3,10.30 – 11.30,"MWF",S143
+2050172,3152,BUS ECON 411,Business Economics 411,3,01.00 – 02.00,"MWF",S144
+2050173,3153,Relg 1,I Believe,3,02.00 – 03.00,"MWF",S145
+2050174,3154,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"MWF",S146
+2050175,3155,BF 311,Banking and Finance 101,3,08.30 – 09.30,"MWF",S147
+2050176,3156,BF 411,Banking and Finance 201,3,09.30 – 10.30,"MWF",S148
+2050177,3157,Relg 1,I Believe,3,10.30 – 11.30,"MWF",S149
+2050178,3158,Relg 2,Believing into Discipleship,3,11.30 – 12.30,"MWF",S150
+2050179,3159,C 311,Commerce 101,3,01.00 – 02.00,"MWF",S151
+2050180,3160,C 411,Commerce 201,3,02.00 – 03.00,"MWF",S152
+2050181,3161,Relg 1,I Believe,3,03.00 – 05.00,"TThS",S153
+2050182,3162,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"MWF",S154
+2050183,3163,C 311,Commerce 301,3,08.30 – 09.30,"MWF",S155
+2050184,2128,CE 411,Special Topics in Civil Engineering,3,09.30 – 10.30,"MWF",O181
+2050185,2129,Relg 1,I Believe,3,07.30 – 08.30,"MWF",O182
+2050186,2130,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",O183
+2050187,2131,CE 311,Special Topics in Civil Engineering 2,3,09.30 – 10.30,"MWF",O184
+2050188,2132,CE 411,Systems Engineering Life Cycle,3,07.00 – 08.00,"TThS",O185
+2050189,2133,Relg 1,I Believe,3,10.30 – 11.30,"MWF",O186
+2050190,2134,Relg 2,Believing into Discipleship,3,10.30 – 11.30,"MWF",O187
+2050191,2135,CHE 311,Chemistry 901,3,11.30 – 12.30,"MWF",O188
+2050192,2136,CHE 411,Chemistry 902,3,01.00 – 02.00,"MWF",O189
+2050193,2137,Relg 1,I Believe,3,02.00 – 03.00,"MWF",O190
+2050194,4105,Relg 2,Believing into Discipleship,3,03.00 – 04.00,"MWF",A124
+2050195,4106,BIOL 311,Biology 901,3,07.30 – 08.30,"TThS",A125
+2050196,4107,BIOL 411,Biology 902,3,08.30 – 09.30,"TThS",A126
+2050197,4108,Relg 1,I Believe,3,09.30 - 10.30,"TThS",A127
+2050198,2128,Relg 2,Believing into Discipleship,3,01.00 – 03.00,"TThS",O191
+2050199,2127,Arch 311,Engineering Stress Analysis,3,10.30 – 11.30,"MWF",O192
+2050200,2126,Arch 411,Design for Manufacturing,3,01.00 – 02.00,"MWF",O193
+2050201,3118,Relg 1,I Believe,3,02.00 – 03.00,"MWF",S156
+2050202,3119,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"MWF",S157
+2050203,3120,Ac 311,Accounting Management 1,3,08.30 – 09.30,"MWF",S158
+2050204,3121,Ac 411,Accounting Management 2,3,09.30 – 10.30,"MWF",S159
+2050205,3122,Relg 1,I Believe,3,10.30 – 11.30,"MWF",S160
+2050206,1187,Relg 2,Believing into Discipleship,3,11.30 – 12.30,"MWF",P350
+2050207,1188,PH B 311,Philosophy 101,3,01.00 – 02.00,"MWF",P351
+2050208,1189,PH B 411,Philosophy 201,3,02.00 – 03.00,"MWF",P352
+2050209,1190,Relg 1,I Believe,3,03.00 – 05.00,"TThS",P353
+2050210,101,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"MWF",G436
+2050211,102,LL. B. 311,Law 101,3,08.30 – 09.30,"MWF",G437
+2050212,103,LL. B. 411,Law 102,3,09.30 – 10.30,"MWF",G438
+2050213,104,Relg 1,I Believe,3,07.30 – 08.30,"MWF",G439
+2050214,7437,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",G384
+2050215,7438,VAL FRM 311,Values Formation 1,3,09.30 – 10.30,"MWF",G385
+2050216,7439,VAL FRM 411,Values Formation 2,3,07.00 – 08.00,"TThS",G386
+2050217,7440,Relg 1,I Believe,3,10.30 – 11.30,"MWF",G387
+2050218,7441,Relg 2,Believing into Discipleship,3,10.30 – 11.30,"MWF",G388
+2050219,7442,VAL 311,Values Education 1,3,11.30 – 12.30,"MWF",G389
+2050220,7443,VAL 411,Values Education 2,3,01.00 – 02.00,"MWF",G390
+2050221,7444,Relg 1,I Believe,3,02.00 – 03.00,"MWF",G391
+2050222,7445,Relg 2,Believing into Discipleship,3,03.00 – 04.00,"MWF",G392
+2050223,7446,THE 311,Technology and Home Economics 901,3,07.30 – 08.30,"TThS",G393
+2050224,7447,THE 411,Technology and Home Economics 902,3,08.30 – 09.30,"TThS",G394
+2050225,7448,Relg 1,I Believe,3,09.30 - 10.30,"TThS",G395
+2050226,7449,Relg 2,Believing into Discipleship,3,01.00 – 03.00,"TThS",G396
+2050227,7450,SPED 311,Special Education 901,3,10.30 – 11.30,"MWF",G397
+2050228,7451,SPED 411,Special Education 902,3,01.00 – 02.00,"MWF",G398
+2050229,7452,Relg 1,I Believe,3,02.00 – 03.00,"MWF",G399
+2050230,7453,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"MWF",G400
+2050231,7454,SS 311,Social Studies 901,3,08.30 – 09.30,"MWF",G401
+2050232,7455,SS 411,Social Studies 902,3,09.30 – 10.30,"MWF",G402
+2050233,7456,Relg 1,I Believe,3,10.30 – 11.30,"MWF",G403
+2050234,7457,Relg 2,Believing into Discipleship,3,11.30 – 12.30,"MWF",G404
+2050235,7458,SC TECH 311,Science and Technology 901,3,01.00 – 02.00,"MWF",G405
+2050236,7459,SC TECH 411,Science and Technology 902,3,02.00 – 03.00,"MWF",G406
+2050237,7460,Relg 1,I Believe,3,03.00 – 05.00,"TThS",G407
+2050238,7461,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"MWF",G408
+2050239,7462,RVE 311,Religious And Values Education 901,3,08.30 – 09.30,"MWF",G409
+2050240,7463,RVE 411,Religious And Values Education 902,3,09.30 – 10.30,"MWF",G410
+2050241,7464,Relg 1,I Believe,3,07.30 – 08.30,"MWF",G411
+2050242,7465,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",G412
+2050243,7466,PRE ELM 311,Pre-Elementary Education 901,3,09.30 – 10.30,"MWF",G413
+2050244,7467,PRE ELM 411,Pre-Elementary Education 902,3,07.00 – 08.00,"TThS",G414
+2050245,7468,Relg 1,I Believe,3,10.30 – 11.30,"MWF",G415
+2050246,7469,Relg 2,Believing into Discipleship,3,10.30 – 11.30,"MWF",G416
+2050247,7470,AB SC T 311,Science and Technology 901,3,11.30 – 12.30,"MWF",G417
+2050248,7471,AB SC T 411,Science and Technology 902,3,01.00 – 02.00,"MWF",G418
+2050249,7472,Relg 1,I Believe,3,02.00 – 03.00,"MWF",G419
+2050250,7473,Relg 2,Believing into Discipleship,3,03.00 – 04.00,"MWF",G420
+2050251,7474,AB MAT 311,Mathematics 901,3,07.30 – 08.30,"TThS",G421
+2050252,7475,AB MAT 411,Mathematics 902,3,08.30 – 09.30,"TThS",G422
+2050253,7476,Relg 1,I Believe,3,09.30 - 10.30,"TThS",G423
+2050254,7477,Relg 2,Believing into Discipleship,3,01.00 – 03.00,"TThS",G424
+2050255,7478,AB ENGL 311,English 901,3,10.30 – 11.30,"MWF",G425
+2050256,7479,AB ENGL 411,English 902,3,01.00 – 02.00,"MWF",G426
+2050257,7480,Relg 1,I Believe,3,02.00 – 03.00,"MWF",G427
+2050258,1451,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"MWF",P354
+2050259,1317,POLIT SC 311,Political Science 901,3,08.30 – 09.30,"MWF",P355
+2050260,1318,POLIT SC 411,Political Science 902,3,09.30 – 10.30,"MWF",P356
+2050261,1319,Relg 1,I Believe,3,10.30 – 11.30,"MWF",P357
+2050262,1320,Relg 2,Believing into Discipleship,3,11.30 – 12.30,"MWF",P358
+2050263,1321,AB LITT 311,Literature 901,3,01.00 – 02.00,"MWF",P359
+2050264,1322,AB LITT 411,Literature 902,3,02.00 – 03.00,"MWF",P360
+2050265,1323,Relg 1,I Believe,3,03.00 – 05.00,"TThS",P361
+2050266,1324,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"MWF",P362
+2050267,1325,AB ENGL 311,English 903,3,08.30 – 09.30,"MWF",P363
+2050268,1326,AB ENGL 411,English 904,3,09.30 – 10.30,"MWF",P364
+2050269,1327,Relg 1,I Believe,3,07.30 – 08.30,"MWF",P365
+2050270,3109,Relg 2,Believing into Discipleship,3,08.30 – 09.30,"MWF",S161
+2050271,3110,AB ECON 311,Economics 903,3,09.30 – 10.30,"MWF",S162
+2050272,3111,AB ECON 411,Economics 904,3,07.00 – 08.00,"TThS",S163
+2050273,3112,Relg 1,I Believe,3,10.30 – 11.30,"MWF",S164
+2050274,1328,Relg 2,Believing into Discipleship,3,10.30 – 11.30,"MWF",P366
+2050275,1329,AB COM 311,Communication 901,3,11.30 – 12.30,"MWF",P367
+2050276,1330,AB COM 411,Communication 902,3,01.00 – 02.00,"MWF",P368
+2050277,1331,Relg 1,I Believe,3,02.00 – 03.00,"MWF",P369
+2050278,1332,Relg 2,Believing into Discipleship,3,03.00 – 04.00,"MWF",P370
+2050279,1333,ASS REL ED 311,Religious Education 901,3,07.30 – 08.30,"TThS",P371
+2050280,1334,ASS REL ED 411,Religious Education 902,3,08.30 – 09.30,"TThS",P372
+2050281,1335,Relg 1,I Believe,3,09.30 - 10.30,"TThS",P373
+2050282,1336,Relg 2,Believing into Discipleship,3,01.00 – 03.00,S,P374
+2050283,6123,AHSE 311,Health Science Education 901,3,10.30 – 11.30,"MWF",SC108
+2050284,6124,AHSE 411,Health Science Education 902,3,01.00 – 02.00,"MWF",SC109
+2050285,6125,Relg 1,I Believe,3,02.00 – 03.00,"MWF",SC110
+2050286,6126,Relg 2,Believing into Discipleship,3,07.30 – 08.30,"MWF",SC111

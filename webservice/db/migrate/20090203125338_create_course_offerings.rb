@@ -7,7 +7,7 @@ class CreateCourseOfferings < ActiveRecord::Migration
       t.integer :code
       t.string :courseNo
       t.string :descriptiveTitle
-      t.time :time
+      t.string :time
       t.string :day
       t.string :room
 

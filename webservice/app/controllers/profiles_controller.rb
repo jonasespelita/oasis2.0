@@ -11,8 +11,7 @@ class ProfilesController < ApplicationController
     if @profile
       render :xml => @profile
     else
-      a= Profile.new
-      render :xml => a
+      render :xml => Profile.find(3)
     end
   end
 end

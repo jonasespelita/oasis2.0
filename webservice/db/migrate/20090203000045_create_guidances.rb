@@ -3,7 +3,7 @@ class CreateGuidances < ActiveRecord::Migration
     create_table :guidances do |t|
       t.integer :idNo
       t.time :time
-      t.date :day
+      t.string :day
       t.string :room
       t.string :guidanceStatus
 

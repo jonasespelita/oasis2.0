@@ -70,7 +70,9 @@ class UsersController < ApplicationController
         current_user.password = params[:password]
 
         if current_user.save
+         
           flash[:alert] = "Password successfully changed"
+           flash[:status] = "success"
         else
           flash[:alert] = "Password not changed"
         end
@@ -81,7 +83,7 @@ class UsersController < ApplicationController
     else
       flash[:alert] = "Old password incorrect"
     end
-
+ flash[:status] = "error" if flash[:status].nil?
     respond_to do |format|
       format.html{render :action => 'change_password'}
       format.js
@@ -94,8 +96,10 @@ class UsersController < ApplicationController
     current_user.address = params[:address]
 
     if current_user.save
+      flash[:status] = "success"
       flash[:name_alert] = "Profile Updated!"
     else
+      flash[:status] = "error"
       flash[:name_alert] = "Invalid inputs."
     end
     respond_to do |format|
@@ -106,16 +110,21 @@ class UsersController < ApplicationController
   def change_email
     current_user.email = params[:email]
     current_user.cp_number = params[:cp]
-    current_user.lang_pref = 2
+ 
     current_user.mobile_pref = params[:val2]
     current_user.email_pref = params[:val1]
-    #      case params[:lang]
-    #    when "English"
-    #      1
-    #    when "Filipino"
-    #      2
-    #    end
-    
+    current_user.lang_pref = case params[:lang]
+    when "English"
+      1
+    when "Filipino"
+      2
+    end
+    session[:lang_pref] = case params[:lang]
+    when "English"
+      "english"
+    when "Filipino"
+      "tagalog"
+    end
     if current_user.save
       flash[:e_alert] = "Settings successfully updated"
     else
@@ -267,9 +276,22 @@ class UsersController < ApplicationController
   end
 
   def go_reset_password
-    redirect_to root_path
-    UserMailer.deliver_forgot_password_mail params[:email], ActiveSupport::SecureRandom.base64(6)
-    flash[:notice] ="Email has been sent!"
+    if !simple_captcha_valid?
+      flash[:error]="The characters you entered did not match the image. Please try again."
+      render :action => "reset_password"
+      return
+    end  
+      
+    if !params[:email]==""
+      redirect_to root_path
+      UserMailer.deliver_forgot_password_mail params[:email], ActiveSupport::SecureRandom.base64(6)
+      flash[:notice] ="Email has been sent!"
+    else
+      flash[:error]="Email is blank"
+      render :action => "reset_password"
+      return
+    end
+      
 
   end
 end

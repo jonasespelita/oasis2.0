@@ -49,7 +49,8 @@
         <div id ="f_topmenu"> <%= link_to t(:logout), logout_path %>| <%= link_to t(:settings) , change_password_path %> | <%= link_to t(:contact_us) , query_url%><hr/><span id="add"><%= link_to "[+]#{t(:add_ward)}", add_ward_path  %></span></div>
 
       </div>
-
+       rawr
+<%= flash[:notice] %>
       <div class = "grid_12 " id="a_content" >
         <span id="f_msg"><%= t :click_start %>   </span>
 <br/>
@@ -89,8 +90,9 @@
       <div id="bot_title"><span style="margin-right:190px">Notifications </span><%= link_to_function('x',
           "Element.hide('bot_notifs');
           ") %></div>
-
+   
       <ul>
+        
         <% @notifications.each do |notification| %>
           <li><%= (Profile.find(notification.idno)).fullname %>has <%= notification.details %></li>
         <% end %>
@@ -99,7 +101,7 @@
       <div id ="bot_linkie"><%= coolbox 300,150, "Help", pref_help_path, "See All" %></div>
     </div>
     <div id="bot_menu"><div id="bot_menu_thing">
-        <%=  link_to_function("#{t :show_notification}(10)",
+        <%=  link_to_function("#{t :show_notification}(#{@new_notifs.size})",
           "Element.show('bot_notifs');
           ")%>
 

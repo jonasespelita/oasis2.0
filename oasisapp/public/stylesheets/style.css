@@ -324,8 +324,10 @@ select{
 }
 
 #login_notif{
-
+   width:220px;
     color:maroon;
+    font-weight:bold;
+    font-size:12px;
 }
 
 dt{
@@ -388,4 +390,15 @@ tr.d:hover{
 small{
     font-weight:bold;
     
+}
+
+.success{
+    color:green;
+}
+
+.error{
+    background: url( /images/error.png) no-repeat;
+    padding-left:25px;
+    color: #990033;
+     font-weight:bold;
 }

@@ -11,5 +11,6 @@ Rails gem
 Ruby
 Postgres Gem
 Image Magick
-
+libmagick9-dev
+RMagick gem
 s

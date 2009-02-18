@@ -79,9 +79,16 @@ class SessionsController < ApplicationController
   def destroy
     self.current_user.forget_me if logged_in?
     cookies.delete :auth_token
+    lang=session[:lang_pref]
     reset_session
+    session[:lang_pref]=lang
     flash[:notice] = "You have logged out."
     #redirect_to new_session_path
     redirect_to root_path
+  end
+  
+  def set_language
+    session[:lang_pref] = params[:lang_pref]
+     redirect_to root_path
   end
 end
