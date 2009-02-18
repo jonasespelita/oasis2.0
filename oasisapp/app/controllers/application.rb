@@ -3,9 +3,15 @@
 
 class ApplicationController < ActionController::Base
   include AuthenticatedSystem
-  before_filter :no_cache, :set_site
+  before_filter :no_cache, :set_site,  :set_locale
   helper :all # include all helpers, all the time
-  
+
+
+  def set_locale
+  # if this is nil then I18n.default_locale will be used
+  I18n.locale = 'tagalog'
+end
+
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
   protect_from_forgery # :secret => '0f4c9180aa02a9e2e806a289f8376d03'
