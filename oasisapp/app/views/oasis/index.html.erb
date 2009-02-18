@@ -46,8 +46,7 @@
         <div id ="f_topmenu"> <%= link_to t(:logout), logout_path %>| <%= link_to t(:settings) , change_password_path %> | <%= link_to t(:contact_us) , query_url%><hr/><span id="add"><%= link_to "[+]#{t(:add_ward)}", add_ward_path  %></span></div>
 
       </div>
-       rawr
-<%= flash[:notice] %>
+
       <div class = "grid_12 " id="a_content" >
         <span id="f_msg"><%= t :click_start %>   </span>
 <br/>
@@ -98,7 +97,7 @@
       <div id ="bot_linkie"><%= coolbox 300,150, "Help", pref_help_path, "See All" %></div>
     </div>
     <div id="bot_menu"><div id="bot_menu_thing">
-        <%=  link_to_function("#{t :show_notification}(#{@new_notifs.size})",
+        <%=  link_to_function("#{t :show_notification}(#{@new_notifs.size} new)",
           "Element.show('bot_notifs');
           ")%>
 

@@ -3,8 +3,8 @@
   <div id="<%= "m5#{profile.idNo}" %>" style="float:left; width:920px;display:block;">
 
     <div style=" width:800px;margin: 0px auto;">
-      <h1>The Guidance Center</h1>
-					<span class="sml"><p>The Guidance Center is a sector of the
+      <h1>The Guidance Center  <span class="sml"><% tooltip :id => "attendance_tip" do %>
+  <%=" <p>The Guidance Center is a sector of the
 university that endeavors to help students and other members of the
 academic community in their decision making and coping. This is realized
 through its Counseling, Information, Placement and Testing services.
@@ -15,7 +15,10 @@ of private scholarships and financial assistance for deserving students.
 The Psychological Testing Unit handles the psychological assessment
 and evaluation of students to arrive at a better self-insight. The
 SLU-Guidance Extension Services assist a number of outlying high
-schools in their guidance needs.</p><br/><p><b> Listed below are the Guidance office sevices your ward has availed of.</b></span>
+schools in their guidance needs.</p><br/><p><b> Listed below are the Guidance office sevices your ward has availed of.</b>" %>
+<% end %></span>   </h1>
+     
+					
 
 <% if @guidances.size >0 %>
  <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">

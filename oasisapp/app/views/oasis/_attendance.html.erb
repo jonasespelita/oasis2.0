@@ -3,9 +3,8 @@
 
 							<div style="width:800px; margin:0px auto;">
 			<div  >
-              <h1><%= profile.fullname %>'s Attendance</h1>
-					<span class="sml">
-					<p>The standards of attendance should be maintained to
+                          <h1><%= profile.fullname %>'s Attendance<span class="sml"><% tooltip :id => "attendance_tip" do %>
+  <%="<p>The standards of attendance should be maintained to
 prevent the giving of school credits to students who do
 not meet the minimum attendance requirements. The
 checking of attendance is the responsibility of the faculty.
@@ -16,8 +15,11 @@ it before he goes back to his class.</p><br/><p>A student who has incurred
 absences of more than 20% of the required number of
 class and laboratory periods in a given subject should be
 given a DROPPED (D) mark.</p>
-<br/>
-</span>
+<br/>" %>
+<% end %>
+					
+					</span> </h1> 
+
 			</div>
 				<b>Attendance status: </b>	<span class="sml" style=" display:inline-block; "> </span>
 					<ul class="sml">
@@ -34,11 +36,7 @@ given a DROPPED (D) mark.</p>
 
 
 					</ul>
-					<br/>
-	
 					
-
-				<br/>
 
 
 

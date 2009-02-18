@@ -3,8 +3,12 @@
   <div id="<%= "m5#{profile.idNo}" %>" style="float:left; width:920px;display:block;">
 
     <div style=" width:800px;margin: 0px auto;">
-      <h1>Payment Schedule</h1>
-      <span class="sml"><p>The fees for the whole semester excluding those that are not presented in the original schedule of fees at the start of the semester such as, yearbook, graduation and breakage fees.</p></span>
+      <h1>Payment Schedule  <span class="sml"> <% tooltip :id => "attendance_tip" do %>
+  <%=" <p>The fees for the whole semester excluding those that are not presented in the original schedule of fees at the start of the semester such as, yearbook, graduation and breakage fees.</p>
+<br/>" %>
+<% end %></span></h1>
+        
+   
 
 
       <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">

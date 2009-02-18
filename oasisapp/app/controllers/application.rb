@@ -38,113 +38,109 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
   def generate_notifs follower, state
-
-      
-    @violations = Violation.find(:all, :from => "/violation/?idno=#{follower.idno}")
-    @guidance =  Guidance.find(:all, :from => "/guidance/?idno=#{follower.idno}")
-    @attendance=  Attendance.find(:all, :from => "/attendance/?idno=#{follower.idno}")
-    @grades = Grade.find(:all, :from => "/grade/?idno=#{follower.idno}")
-    @tf_assessment = Tfassessment.find(:all, :from => "/tfassessment/?idno=#{follower.idno}")
-    @tf_breakdown = Tfbreakdown.find(:all, :from => "/tfbreakdown/?idno=#{follower.idno}")
+ @violations = Violation.find(:all, :from => "/violation/?idno=#{follower.idno}")
+      @guidance =  Guidance.find(:all, :from => "/guidance/?idno=#{follower.idno}")
+      @attendance=  Attendance.find(:all, :from => "/attendance/?idno=#{follower.idno}")
+      @grades = Grade.find(:all, :from => "/grade/?idno=#{follower.idno}")
+      @tf_assessment = Tfassessment.find(:all, :from => "/tfassessment/?idno=#{follower.idno}")
+      @tf_breakdown = Tfbreakdown.find(:all, :from => "/tfbreakdown/?idno=#{follower.idno}")
                
-    if @violations.size>0
-      if state.violation_rows  < @violations.size
-        state.violation_rows =  @violations.size
-        state.save
-        notif =  Notification.new
-        notif.delivered_at = Time.now
-        notif.follower_id = follower.user_id
-        notif.idno = follower.idno
-        notif.details = "has a violation!"
-        notif.notification = "Violation notice!"
-        notif.new = true
-        notif.save
+      if @violations.size>0
+        if state.violation_rows  < @violations.size
+          state.violation_rows =  @violations.size
+          state.save
+          notif =  Notification.new
+          notif.delivered_at = Time.now
+          notif.follower_id = follower.user_id
+          notif.idno = follower.idno
+          notif.details = "commited a violation."
+          notif.notification = "Violation notice!"
+          notif.new = true
+          notif.save
+        end
       end
-    end
         
-    if @guidance.size>0
-      if state.guidance_rows  < @guidance.size
-        state.guidance_rows =  @guidance.size
-        state.save
-        notif =  Notification.new
-        notif.delivered_at = Time.now
-        notif.follower_id = follower.user_id
-        notif.idno = follower.idno
-        notif.details = " has a guidance!"
-        notif.notification = "guidace notice!"
-        notif.new = true
-        notif.save
+      if @guidance.size>0
+        if state.guidance_rows  < @guidance.size
+          state.guidance_rows =  @guidance.size
+          state.save
+          notif =  Notification.new
+          notif.delivered_at = Time.now
+          notif.follower_id = follower.user_id
+          notif.idno = follower.idno
+          notif.details = " has a been guidanced."
+          notif.notification = "guidace notice!"
+          notif.new = true
+          notif.save
+        end
       end
-    end
         
-    if @grades.size>0
-      if state.grade_rows  < @grades.size
-        state.grade_rows =  @grades.size
-        state.save
-        notif =  Notification.new
-        notif.delivered_at = Time.now
-        notif.follower_id = follower.user_id
-        notif.idno = follower.idno
-        notif.details = " has a grades!"
-        notif.notification = "grades notice!"
-        notif.new = true
-        notif.save
+      if @grades.size>0
+        if state.grade_rows  < @grades.size
+          state.grade_rows =  @grades.size
+          state.save
+          notif =  Notification.new
+          notif.delivered_at = Time.now
+          notif.follower_id = follower.user_id
+          notif.idno = follower.idno
+          notif.details = "'s grades are updated!"
+          notif.notification = "grades notice!"
+          notif.new = true
+          notif.save
+        end
       end
-    end
-      
-    if @tf_assessment.size >0
-      if state.tf_assessment_rows < @tf_assessment.size
-        state.tf_assessment_rows = @tf_assessment.size
-        state.save
-        notif = Notification.new
-        notif.delivered_at = Time.now
-        notif.idno = follower.idno
-        notif.details = " has a assessment!"
-        notif.notification = "assessment notice!"
-        notif.new = true
-        notif.save
-          
+
+      if @tf_assessment.size >0
+        if state.tf_assessment_rows < @tf_assessment.size
+          state.tf_assessment_rows = @tf_assessment.size
+          state.save
+          notif = Notification.new
+          notif.delivered_at = Time.now
+           notif.idno = follower.idno
+          notif.details = " has new assessment information"
+          notif.notification = "assessment notice!"
+          notif.new = true
+          notif.save
+
+        end
       end
-    end
-      
-    if  @tf_breakdown.size >0
-      if state.tf_assessment_rows <  @tf_breakdownt.size
-        state.tf_assessment_rows =  @tf_breakdown.size
-        state.save
-        notif = Notification.new
-        notif.delivered_at = Time.now
-        notif.idno = follower.idno
-        notif.details = " has a breakdown!"
-        notif.notification = "breakdown"
-        notif.new = true
-        notif.save
-          
+
+      if  @tf_breakdown.size >0
+        if state.tf_assessment_rows <  @tf_breakdownt.size
+          state.tf_assessment_rows =  @tf_breakdown.size
+          state.save
+          notif = Notification.new
+          notif.delivered_at = Time.now
+           notif.idno = follower.idno
+          notif.details = " has new breakdown information"
+          notif.notification = "breakdown"
+          notif.new = true
+          notif.save
+
+        end
       end
-    end
-      
-    if @attendance.size >0
-      last_index = @attendance.size-1
-      if state.attendance_as_of < Time.parse(@attendance[last_index].asOfDate)
-        state.attendance_as_of = Time.parse(@attendance[last_index].asOfDate)
-        state.save
-        notif = Notification.new
-        notif.delivered_at = Time.now
-        notif.idno = follower.idno
-        notif.details = " has a absence!"
-        notif.notification = "absence"
-        notif.new = true
-        notif.save
+
+      if @attendance.size >0
+        if state.attendance_as_of < @attendance.last.asOfDate
+          state.attendance_as_of = @attendance.last.asOfDate
+          state.save
+           notif = Notification.new
+          notif.delivered_at = Time.now
+           notif.idno = follower.idno
+          notif.details = " was recorded absent!"
+          notif.notification = "absence"
+          notif.save
+        end
       end
-    end
 
         
-    ##      update admin variable for next generation
-    #dont forget to generate the mails and send the cp messages
+      ##      update admin variable for next generation
+      #dont forget to generate the mails and send the cp messages
 
-  end
+    end
   protected
   def set_site
-    site="http://localhost:3000/"
+    site=( WebserviceAddress.find_by_name "rawr").address
     Violation.site = site
     Profile.site = site
     Grade.site = site

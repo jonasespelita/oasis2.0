@@ -227,3 +227,8 @@ font-weight:normal;
     cursor:move;
     color:#777;
 }
+
+#tooltip_content_attendance_tip{
+    
+    width:770px;
+}

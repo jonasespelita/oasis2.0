@@ -39,32 +39,17 @@ class FollowersController < ApplicationController
       return
     end
     #check if student exists
-    begin
-      student = Profile.find(idno)
-      if student.idNo.nil? #premade Profile for nonexistent students (check web service)
-        flash[:error]="The student cannot be found. Please check the ID number and try again."
-        return false
-      end
-
-      #need hash formula for vcode verification here!
-      if  vcode != hash(idno)[4..9]
-        flash[:error]="Invalid Verification Code #{hash(idno)[4..9]}"
-        return false
-      end
-    rescue
-      flash[:error]="The student cannot be found. Please check the ID number and try again."
-      return false
-
-    end
-
-#    idno = params[:idno]
-#    vcode = params[:vcode]
-#    mobilenum = params[:mobilenum]
-    if !verify?(params[:idno], params[:vcode])
+        if !verify?(params[:idno], params[:vcode])
 #      open("http://localhost:13004/cgi-bin/sendsms?username=admin&password=Linux&to=#{mobilenum}&text=#{hash(idno)[4..9]}") {|f|}
       redirect_back_or_default('/')
       return
     end
+    
+   
+#    idno = params[:idno]
+#    vcode = params[:vcode]
+#    mobilenum = params[:mobilenum]
+
     #init student for easy reference
     stud = Profile.find(params[:idno])
 

@@ -13,7 +13,14 @@
       <b>Most recent grades </b><span class="sml" style=" display:inline-block; margin-left:300px;"></span><br/>
         <% cur_sem = (@grades.first).semester %>
            <% cur_yr = (@grades.first).endSchYr %>
-        <span><%= cur_sem %> S.Y. <%= "#{cur_yr-1} - #{cur_yr} " %> </span>
+        <span><%= case cur_sem
+        when 1
+          "First Semester"
+        when 2
+          "Second Semester"
+        end
+
+      %> S.Y. <%= "#{cur_yr-1} - #{cur_yr} " %> </span>
       <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
         <tr class="d">
           <td width="96" valign="top"><p>Course No.</p></td>
@@ -29,7 +36,12 @@
   <% cur_sem = grade.semester %>
  <% cur_yr = grade.endSchYr %>
         </table>
-   <span><%= cur_sem %> S.Y. <%= "#{cur_yr-1} - #{cur_yr}" %> </span>
+   <span><%= case cur_sem
+        when 1
+          "First Semester"
+        when 2
+          "Second Semester"
+        end %> S.Y. <%= "#{cur_yr-1} - #{cur_yr}" %> </span>
       <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
         <tr class="d">
           <td width="96" valign="top"><p>Course No.</p></td>

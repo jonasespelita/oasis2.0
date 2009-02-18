@@ -9,10 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
 ActiveRecord::Schema.define(:version => 20090218081320) do
-
-
 
   create_table "admins", :force => true do |t|
     t.string   "username",        :limit => 40, :null => false
@@ -176,6 +173,12 @@ ActiveRecord::Schema.define(:version => 20090218081320) do
 
   create_table "temp_emails", :force => true do |t|
     t.text     "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_logins", :force => true do |t|
+    t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
