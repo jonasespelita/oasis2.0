@@ -118,6 +118,4 @@ class FollowersController < ApplicationController
     end
   end
 
- protected
-
 end
