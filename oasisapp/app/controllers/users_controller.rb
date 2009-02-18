@@ -23,16 +23,29 @@ class UsersController < ApplicationController
       f = Follower.new
       f.idno = session[:stud_idno]
       f.user_id = @user.id
-      f.save
+      f.position = 10
 
-      profile = Profile.find(session[:stud_idno])
-      flash[:notice] = "#{profile.fullname}"
-      render :action => "finish"
-    else
-      render :action => "new"
+      if f.save
+        #save state of follower for notification generation
+        state =  CurrentStateOfFollower.new
+        state.attendance_as_of = Time.now
+        state.follower_id = f.id
+        state.grade_rows=100
+        state.guidance_rows=0
+        state.violation_rows=0
+        state.save
+        generate_notifs f, state
+        profile = Profile.find(session[:stud_idno])
+        flash[:notice] = "#{profile.fullname}"
+
+        render :action => "finish"
+        return
+      else
+        render :action => "new"
+      end
     end
+    render :action => "new"
   end
-  
   def finish
     
   end
@@ -41,7 +54,7 @@ class UsersController < ApplicationController
     @old = params[:old_password]
     @lang = case current_user.lang_pref
     when 1
-     "<option selected='selected'>English</option> <option>Filipino</option>"
+      "<option selected='selected'>English</option> <option>Filipino</option>"
     when 2
       "<option>English</option> <option selected='selected'>Filipino</option>"
     end
@@ -96,12 +109,12 @@ class UsersController < ApplicationController
     current_user.lang_pref = 2
     current_user.mobile_pref = params[:val2]
     current_user.email_pref = params[:val1]
-#      case params[:lang]
-#    when "English"
-#      1
-#    when "Filipino"
-#      2
-#    end
+    #      case params[:lang]
+    #    when "English"
+    #      1
+    #    when "Filipino"
+    #      2
+    #    end
     
     if current_user.save
       flash[:e_alert] = "Settings successfully updated"
@@ -254,7 +267,7 @@ class UsersController < ApplicationController
   end
 
   def go_reset_password
-     redirect_to root_path
+    redirect_to root_path
     UserMailer.deliver_forgot_password_mail params[:email], ActiveSupport::SecureRandom.base64(6)
     flash[:notice] ="Email has been sent!"
 

@@ -1,3 +1,4 @@
+
 <div style=" width:10000px; ">
   
   <div id="<%= "m5#{profile.idNo}" %>" style="float:left; width:920px;display:block;">
@@ -11,6 +12,7 @@
         
         
         <div id="b_info" class="box">
+          
           <span class="sml headr"><b>Basic Information</b></span>
           <dt>Full Name:</dt><dd><%= profile.fullname %></dd>
           <dt> ID Number:</dt><dd><%= profile.idNo %></dd>
@@ -56,9 +58,10 @@
         </div>
         
       </div>
-      <span class="sml"><b>Class Schedule::</b></span>
+      <div class="grid_10">
+      <span class="sml"><b>Class Schedule:</b></span>
       
-      <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
+      <table border="1" cellspacing="0" cellpadding="0" width="780" class="c">
         <tr class="d">
           <td width="200" valign="top"><p>Code</p></td>
           <td width="200" valign="top"><p>Course No.</p></td>
@@ -68,13 +71,13 @@
           <td width="200" valign="top"><p>Units</p></td>
         </tr>
         <% schedules.each  do |schedule|%>
-          <tr><td><%= schedule.code%></td><td><%= schedule.courseNo%></td>
-          <td><%= schedule.room%></td><td><%= schedule.time%></td><td><%= schedule.units%></td></tr>
+          <tr><td align="center"><%= schedule.code%></td><td align="center"><%= schedule.courseNo%></td>
+          <td align="center"><%= schedule.room%></td><td align="center"><%= schedule.time%></td><td align="center"><%= schedule.units%></td></tr>
         <% end %>
         
       </table>
       
-      
+      </div>
       
       
     </div>

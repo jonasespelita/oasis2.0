@@ -6,6 +6,7 @@
 <title>OASIS Administrator</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <%= calendar_date_select_includes nil %>
+
 <!-- webfxlayout.js -->
 <script type="text/javascript">
 
@@ -89,7 +90,7 @@ function WebFXMenuButton() {}
 	<div class="topmenu" style="left:194px;">
 		<%= link_to 'Logout', :action => 'logout' %>
 		|
-		<%= link_to 'Change Password', :action => 'settings' %>
+		<%= link_to 'Change Settings', :action => 'settings' %>
 		<hr />		
 	</div>
 	
@@ -190,19 +191,10 @@ function WebFXMenuButton() {}
       				<br>
       				</br>
 					</span>						
-						<span style="position:relative; top:12px;">
-							<label for="Position">Position:
-							<span style="position:relative; left:15px;">
-      					<%= text_field_tag :edit_admin_position, params[:edit_admin_position], :size => 45, :maxlength => 25 %>
-      					</span>
-      					</label>
-      				<br>
-      				</br>
-					</span>
 					<span style="position:relative; top:18px;">
-						<label for="Username">Username:
-							<span style="position:relative;left:3px;">
-      					<%= text_field_tag :edit_admin_username, params[:edit_admin_username], :size => 45, :maxlength => 25 %>
+						<label for="Email">Email:
+							<span style="position:relative;left:28px">
+      					<%= text_field_tag :edit_admin_email, params[:edit_admin_email], :size => 45 %>
       					</span>
       				</label>
       				<br>
@@ -212,39 +204,42 @@ function WebFXMenuButton() {}
 				<div style="position:absolute; left:480px;">
 					
 					<span style="position:relative; top:0px;">
+						<label for="Username">Username:
+							<span style="position:relative;left:3px;">
+      					<%= text_field_tag :edit_admin_username, params[:edit_admin_username], :size => 45, :maxlength => 25 %>
+      					</span>
+      				</label>
+      				<br>
+      				</br>
+						
+					</span>
+					<span style="position:relative; top:6px;">
 						<% if flash[:notice] == "Edit admin passwords do not match" %>
 						<label for="Password" style="color:red">Password:
 						<% else %>
 						<label for="Password">Password:
 						<% end %>
-							<span style="position:relative; left:2px">
+							<span style="position:relative; left:5px">
       					<%= password_field_tag :edit_admin_password, params[:edit_admin_password], :size => 45, :maxlength => 25 %>
       					</span>
       				</label>
       				<br>
       				</br>
+						
 					</span>
-					<span style="position:relative; top:6px;">
+					<span style="position:relative; top:12px;">
 						<% if flash[:notice] == "Edit admin passwords do not match" %>
 						<label for="Confirm" style="color:red">Confirm:
 						<% else %>
-						<label for="Confirm">Confirm:
+						<label for="Confirm">Confirm Password:
 						<% end %>
-							<span style="position:relative; left:15px">
-      					<%= password_field_tag :edit_admin_confirm, params[:edit_admin_confirm], :size => 45, :maxlength => 25 %>
+							<span style="position:relative; left:2px">
+      					<%= password_field_tag :edit_admin_confirm, params[:edit_admin_confirm], :size => 39, :maxlength => 25 %>
       					</span>
       				</label>
       				<br>
       				</br>
-					</span>
-					<span style="position:relative; top:12px;">
-						<label for="Email">Email:
-							<span style="position:relative;left:26px">
-      					<%= text_field_tag :edit_admin_email, params[:edit_admin_email], :size => 45 %>
-      					</span>
-      				</label>
-      				<br>
-      				</br>
+						
 					</span>
 				</div>				 
 			<div style="position:relative; float:right; top:100px; left:-5px">
@@ -279,15 +274,20 @@ function WebFXMenuButton() {}
       				</br>
 					</span>						
 						<span style="position:relative; top:12px;">
-							<label for="Position">Position:
-							<span style="position:relative; left:15px;">
-      					<%= text_field_tag :add_admin_position, params[:add_admin_position], :size => 45, :maxlength => 25 %>
+							<label for="Email">Email:
+							<span style="position:relative;left:28px">
+      					<%= text_field_tag :add_admin_email, params[:add_admin_email], :size => 45 %>
       					</span>
-      					</label>
+      				</label>
       				<br>
       				</br>
 					</span>
-					<span style="position:relative; top:18px;">
+					
+				</div>
+			
+				<div style="position:absolute; left:480px;">
+					
+					<span style="position:relative; top:0px;">
 						<label for="Username">Username:
 							<span style="position:relative;left:3px">
       					<%= text_field_tag :add_admin_username, params[:add_admin_username], :size => 45, :maxlength => 25 %>
@@ -295,46 +295,36 @@ function WebFXMenuButton() {}
       				</label>
       				<br>
       				</br>
-					</span>
-				</div>
-			
-				<div style="position:absolute; left:480px;">
 					
-					<span style="position:relative; top:0px;">
-					<% if flash[:notice] == "Add admin passwords do not match" %>
+					</span>
+					<span style="position:relative; top:6px;">
+						<% if flash[:notice] == "Add admin passwords do not match" %>
 					<label for="Password" style="color:red">Password:
 					<% else %>
 					<label for="Password">Password:
 					<% end %>
-							<span style="position:relative; left:2px">
+							<span style="position:relative; left:4px">
       					<%= password_field_tag :add_admin_password, params[:add_admin_password], :size => 45, :maxlength => 25 %>
       					</span>
       				</label>
       				<br>
       				</br>
+						
 					</span>
-					<span style="position:relative; top:6px;">
+					<span style="position:relative; top:12px;">
 						<% if flash[:notice] == "Add admin passwords do not match" %>
 						<label for="Confirm" style="color:red">Confirm:
 						<% else %>
-						<label for="Confirm">Confirm:
+						<label for="Confirm">Confirm Password:
 						<% end %>
-							<span style="position:relative; left:15px;">
+							<span style="position:relative; left:2px;">
 						
-      					<%= password_field_tag :add_admin_confirm, params[:add_admin_confirm], :size => 45, :maxlength => 25 %>
+      					<%= password_field_tag :add_admin_confirm, params[:add_admin_confirm], :size => 39, :maxlength => 25 %>
       					</span>
       				</label>
       				<br>
       				</br>
-					</span>
-					<span style="position:relative; top:12px;">
-						<label for="Email">Email:
-							<span style="position:relative;left:26px">
-      					<%= text_field_tag :add_admin_email, params[:add_admin_email], :size => 45 %>
-      					</span>
-      				</label>
-      				<br>
-      				</br>
+						
 					</span>
 				</div>				 
 			<div style="position:relative; float:right; top:100px; left:-5px;">
@@ -355,11 +345,15 @@ function WebFXMenuButton() {}
 	  </div>
 	 
 	  <script language="text/javascript" type="text/javascript">
+	      function disableButtons() {
+	  			document.getElementById("button_admin_activate").disabled = true;
+	  			document.getElementById("button_admin_deactivate").disabled = true;
+	  		}
+	  		disableButtons();
 			function clickEditAdmin() {
 				var i = nlr1.selected;
 				document.getElementById("edit_admin_first_name").value = nlr1.elements[i][5];
 				document.getElementById("edit_admin_last_name").value = nlr1.elements[i][6];
-				document.getElementById("edit_admin_position").value = nlr1.elements[i][2];
 				document.getElementById("edit_admin_username").value = nlr1.elements[i][1];
 				document.getElementById("edit_admin_password").value = ""
 				document.getElementById("edit_admin_confirm").value = ""
@@ -378,8 +372,9 @@ function WebFXMenuButton() {}
 					
 				};
 				document.getElementById("button_admin_add").disabled = true
-				
+				if(getStyle(document.getElementById("addAdmin"), "display") != "block") {
 				Element.show('editAdmin');
+				};
 				
 			}
 			<% if flash[:notice] == "Edit admin passwords do not match" %>
@@ -388,7 +383,6 @@ function WebFXMenuButton() {}
 			function cancelAdminAdd() {
 				document.getElementById("add_admin_first_name").value = ""
 				document.getElementById("add_admin_last_name").value = ""
-				document.getElementById("add_admin_position").value = ""
 				document.getElementById("add_admin_username").value = ""		
 				document.getElementById("add_admin_password").value = ""
 				document.getElementById("add_admin_confirm").value = ""
@@ -398,7 +392,6 @@ function WebFXMenuButton() {}
 			function cancelAdminEdit() {
 				document.getElementById("edit_admin_first_name").value = ""
 				document.getElementById("edit_admin_last_name").value = ""
-				document.getElementById("edit_admin_position").value = ""
 				document.getElementById("edit_admin_username").value = ""		
 				document.getElementById("edit_admin_password").value = ""
 				document.getElementById("edit_admin_confirm").value = ""
@@ -425,7 +418,7 @@ function WebFXMenuButton() {}
 	    <script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script>
 	    
 		<div class="sys_groupbox1">
-			<fieldset class="fieldset" style="width:100px; height:590px;">
+			<fieldset class="fieldset" style="width:400px; height:590px;">
 				<legend class="groupbox">Visits Per Day</legend>
 					<% form_tag '/admin/filter_reports', :id => "filter_reports" do %>
 	    	<label for="From">From:
@@ -455,30 +448,18 @@ function WebFXMenuButton() {}
 
 						//  update the header and redraw
 						nlr2.updateHeader(ab);
-						<% ctr = 0 %>
+						
 						<% @reports.each{ |report| %>
-							<% if session[:report_from] && session[:report_to]
-									unless report.date < Date.parse(session[:report_from]) || report.date > Date.parse(session[:report_to])
-									ctr = ctr + 1  %>
-										ab[0]= <%= report.date.strftime("%B %d,%Y").to_json %>
-										ab[1]= <%= report.total.to_json %>
-										ab[2]= <%= report.unique.to_json %>
-
-										nlr2.silentAdd(ab)
-									<%end		
-								else%>
 								ab[0]= <%= report.date.strftime("%B %d,%Y").to_json %>
 										ab[1]= <%= report.total.to_json %>
 										ab[2]= <%= report.unique.to_json %>
 
 										nlr2.silentAdd(ab)
-								<% end %>
+						
 							
 						
 					<% } %>
-					<% if ctr == 0 && session[:report_from] && session[:report_to]%>
-					<%= flash[:notice] = "The dates you selected bear no reports" %>
-					<% end %>
+				
 						
 						nlr2.draw();
 						-->  
@@ -559,14 +540,21 @@ function WebFXMenuButton() {}
 	    <script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage3" ) );</script>
 	    
 		<% form_tag '/admin/filter_changes', :id => "filter_changes" do %>
-	    	<label for="From">From:
+	    	<label for="From">Date From:
 	    	<%= calendar_date_select_tag "changes_from_date", nil, :time => true %>
 	    	</label>
 	    	<label for="To">To:
 	    	<%= calendar_date_select_tag "changes_to_date", nil, :time => true %>
 	    	</label>
+	    	<label for="By Action">Action:
+	    	<%= select_tag "filter_changes_type", "<option>All</option><option>Added Announcement</option><option>Edited Announcement</option><option>Downloaded Actions Log</option><option>Downloaded System reports</option><option>Resolved Query</option><option>Deleted Query</option><option>Removed Student Being Followed</option><option>Put Website Offline</option><option>Put Website Online</option><option>Edited Email Contents</option><option>Blocked User</option><option>Unblocked User</option><option>Changed Messaging Settings</option>" %>
+	    	</label>
 	    	<%= submit_tag "Filter" %>
+	    	
 	    <% end %>
+	    
+	    
+
 		
 		<br />
 		
@@ -588,31 +576,17 @@ function WebFXMenuButton() {}
 
 					//  update the header and redraw
 					nlr4.updateHeader(ad);
-					<% ct = 0 %>
 					<% @changes.each{ |change| %>
-							<% if session[:change_from] && session[:change_to]
-									unless change.created_at < Time.parse(session[:change_from]) || change.created_at > Time.parse(session[:change_to])
-									ct = ct + 1 %>
-										ad[0]= <%= change.created_at.strftime("%m/%d/%Y %I:%M%p").to_json %>
-										ad[1]= <%= Admin.find(change.admin_id).get_name.to_json %>
-										ad[2]= <%= change.change_made.to_json %>
-										ad[3]= <%= change.ip_add.to_json %>
-										nlr4.silentAdd(ad)
-										
-									<%end		
-								else%>
 								ad[0]= <%= change.created_at.strftime("%m/%d/%Y %I:%M%p").to_json %>
 								ad[1]= <%= Admin.find(change.admin_id).get_name.to_json %>
 								ad[2]= <%= change.change_made.to_json %>
 								ad[3]= <%= change.ip_add.to_json %>
 								nlr4.silentAdd(ad)
-								<% end %>
+								
 							
 						
 					<% } %>
-					<% if ct == 0 && session[:change_from] && session[:change_to]%>
-					<%= flash[:notice] = "The dates you selected bear no actions" %>
-					<% end %>
+					
 					nlr4.draw();
 					-->  
 			  </script>
@@ -642,7 +616,7 @@ function WebFXMenuButton() {}
 					var aj=new Array(4);
 					//  fill the array with contents (now for the header)
 					aj[0]='Date/Time';
-					aj[1]='Activity';
+					aj[1]='Announcement';
 
 					//  update the header and redraw
 					nlr10.updateHeader(aj);
@@ -746,13 +720,15 @@ function WebFXMenuButton() {}
 	  </div>
 	  <script language="text/javascript" type="text/javascript">
 			function clickEditAnn() {
-				var j = nlr10.selected;
-				document.getElementById("edit_announcement_date").value = nlr10.elements[j][0];
-				document.getElementById("edit_announcement_name").value = nlr10.elements[j][1];
-				document.getElementById("edit_announcement_summary").value = nlr10.elements[j][2];
-				document.getElementById("edit_announcement_id").value = nlr10.elements[j][3];		
-				document.getElementById("button_add_ann").disabled = true
-				Element.show("editAnnouncement");
+				if(getStyle(document.getElementById("addAnnouncement"), "display") != "block") {
+					var j = nlr10.selected;
+					document.getElementById("edit_announcement_date").value = nlr10.elements[j][0];
+					document.getElementById("edit_announcement_name").value = nlr10.elements[j][1];
+					document.getElementById("edit_announcement_summary").value = nlr10.elements[j][2];
+					document.getElementById("edit_announcement_id").value = nlr10.elements[j][3];		
+					document.getElementById("button_add_ann").disabled = true
+					Element.show("editAnnouncement");
+				};
 			}
 			function cancelAnnAdd() {
 				Element.hide("addAnnouncement");
@@ -787,11 +763,17 @@ function WebFXMenuButton() {}
 	    
 	    <script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
 		
-		Search: <select><option>All</option><option>Blocked</option><option>Last Name</option></select> <input type="button" value="Search">
+		<% form_tag '/admin/filter_user', :id => "filter_changes" do %>
+	    	<%= select_tag "filter_users_type", "<option>All</option><option>Blocked</option><option>Student</option><option>Guardian</option><option>Last Name</option>", :id => 'select_user', :onchange => "showSearchField(this)" %>
+	    	<%= text_field_tag :search_user_name, nil, :id => "search_user_name",  :size => 30, :style => "display:none" %>
+	    	<%= submit_tag "Search" %>
+	    	
+	    	
+	    <% end %>
 		<div class="sys_groupbox1">
 			<fieldset class="fieldset" style="width: 400px; height:573px;">
 				<legend class="groupbox">Users</legend>
-				<div style="overflow:auto; height:573px;">
+				<div style="overflow:auto; height:520px;"onclick="clickUser()">
 				<script language="text/javascript" type="text/javascript">
 					<!--
 					//  let's create our list object
@@ -799,7 +781,7 @@ function WebFXMenuButton() {}
 					//  set it's width and height  
 					nlr5.setDims(300,100);
 					//  create array for item addition - you can use the same array for the header and items
-					var ae=new Array(4);
+					var ae=new Array(5);
 					//  fill the array with contents (now for the header)
 					ae[0]='Username';
 					ae[1]='Name';
@@ -811,65 +793,62 @@ function WebFXMenuButton() {}
 					<% @users.each{ |user| %>
 						ae[0]= <%= user.login.to_json %>
 						ae[1]= <%= user.get_fullname.to_json %>
-						ae[2]= 1
+						<% studs = Follower.find_all_by_user_id(user.id) %>
+						ae[2]= <%= studs.length.to_json %>
 						ae[3]= <%= user.status.to_json %>
+						ae[4]= <%= user.id.to_json %>
+						
 					nlr5.silentAdd(ae)
 					<% } %>
 					
 					nlr5.draw();
 					-->  
 				</script>
+					
 				</div>
-				<br />
-				<div style="position:relative; float:right; top:-3px;">
-					<input type="button" name="btn" value="Block">
-					<input type="button" name="btn" value="Unblock">
-				</div>
+				<br/>
+				<span style="float:right;">
+					<%= button_to_function "Block", "blockUser()", :id => "button_user_block" %>	 
+					<%= button_to_function "Unblock", "unblockUser()", :id => "button_user_unblock" %>
+				</span>
+				
 		    </fieldset>
 		</div>
+		<% form_tag '/admin/block_user', :id => "block_user" do %>
+		  <%= hidden_field_tag :block_user_id, nil %>
+		<% end %>
+		<% form_tag '/admin/unblock_user', :id => "unblock_user" do %>
+		  <%= hidden_field_tag :unblock_user_id, nil %>
+		<% end %>
+		<% form_tag '/admin/select_user', :id => "select_user_show" do %>
+		  <%= hidden_field_tag :select_user_id %>
+		<% end %>
 		<div class="sys_groupbox2">
-			<fieldset class="fieldset" style="width:430px; height:573px;">
-				<legend class="groupbox">Edit</legend>
-					<div style="float:left; left:10px; text-align:right; width:155px;">
-						<span style="position:relative; top:3px;">
-							Name: <br />
-						</span>
-						<span style="position:relative; top:17px;">
-							Address: <br />
-						</span>
-						<span style="position:relative; top:31px;">
-							E-mail: <br />
-						</span>
-						<span style="position:relative; top:48px;">
-							Last Date/Time Logged in: <br />
-						</span>
-						<span style="position:relative; top:69px;">
-							Student/s being followed:
-						</span>
+			<fieldset class="fieldset" style="width:430px; height:573px;" >
+				<legend class="groupbox">Edit Students Being Followed</legend>
+					<div id="show_users_check">
 					</div>
-					<div style="position:relative; float:left; width: 80px;">
-						<span style="position:relative; top:0px;">
-							<input type="text" size="40" /><br />
-						</span>
-						<span style="position:relative; top:8px;">
-							<input type="text" size="40" /><br />
-						</span>
-						<span style="position:relative; top:17px;">
-							<input type="text" size="40" />
-						</span>
-						<span style="position:relative; top:28px;">
-							<input type="text" size="40" />
-						</span>
-						<span style="position:relative; top:42px;">
-							<input type="text" size="40" style="height:380px;" />
-						</span>
-						<span style="position:relative; float:right; top:58px; left:185px;">
-							<input type="button" value="Save" />
-						</span>
-					</div>
+					
 		    </fieldset>		
 		</div>
+		<script language="text/javascript" type="text/javascript">
+			
+			function clickUser(){
+				var i = nlr5.selected;
+				document.getElementById("block_user_id").value = nlr5.elements[i][4];
+				document.getElementById("unblock_user_id").value = nlr5.elements[i][4];
+				document.getElementById("select_user_id").value = nlr5.elements[i][4];
+				$('select_user_show').request();
+				$('show_users_check').update('<%(Follower.find_all_by_user_id(session[:select_user_id])).each do |follower| %><%= check_box(follower.id,'checked') %>	<span><%=(Profile.find(follower.idno)).fullname%></span><% end %>');
+			}
+			function blockUser(){
+				document.getElementById("block_user").submit();
+			}
+			function unblockUser(){
+				document.getElementById("unblock_user").submit();	
+			}
 		
+		</script>
 	  </div>
 
 	  <div class="tab-page" id="tabPage2">
@@ -877,11 +856,14 @@ function WebFXMenuButton() {}
 	    
 	    <script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script>
 	    <% form_tag '/admin/filter_query', :id => "filter_query" do %>
-	    	<label for="From">From:
+	    	<label for="From">Date From:
 	    	<%= calendar_date_select_tag "query_from_date", nil, :time => true %>
 	    	</label>
 	    	<label for="To">To:
 	    	<%= calendar_date_select_tag "query_to_date", nil, :time => true %>
+	    	</label>
+	    	<label for="By Query">Query:
+	    	<%= select_tag "filter_query_type", "<option>All</option><option>Main Site Inquiry/Problems</option><option>Account Settings Inquiry</option><option>Ward Information Inquiry</option><option>Ward Addition Inquiry/Problems</option><option>Miscellaneous</option>" %>
 	    	</label>
 	    	<%= submit_tag "Filter" %>
 	    <% end %>
@@ -906,23 +888,9 @@ function WebFXMenuButton() {}
 
 				//  update the header and redraw
 				nlr6.updateHeader(af);
-				<% cts = 0 %>
 				<% @queries.each{ |query| %>
 				<% cur_user = User.find(query.user_id) %>
-				<% if session[:query_from] && session[:query_to]
-									unless query.created_at < Time.parse(session[:query_from]) || query.created_at > Time.parse(session[:query_to]) 
-									cts = cts + 1%>
-									af[0]= <%= cur_user.get_full_name.to_json %>
-									af[1]= <%= cur_user.email.to_json %>
-									af[2]= <%= query.subject.to_json %>
-									af[3]= <%= query.created_at.strftime("%m/%d/%Y %I:%M%p").to_json %>
-									af[4]= <%= if query.resolved then ('Yes').to_json else ('No').to_json end %>
-									af[5]= <%= query.message.to_json %>
-									af[6]= <%= query.id.to_json %>
-									nlr6.silentAdd(af)
-								<%end		
-						else%>
-						af[0]= <%= cur_user.get_full_name.to_json %>
+						af[0]= <%= cur_user.get_fullname.to_json %>
 						af[1]= <%= cur_user.email.to_json %>
 						af[2]= <%= query.subject.to_json %>
 						af[3]= <%= query.created_at.strftime("%m/%d/%Y %I:%M%p").to_json %>
@@ -930,11 +898,9 @@ function WebFXMenuButton() {}
 						af[5]= <%= query.message.to_json %>
 						af[6]= <%= query.id.to_json %>
 						nlr6.silentAdd(af)
-						<% end %>
-					<% } %>
-					<% if cts == 0 && session[:query_from] && session[:query_to]%>
-					<%= flash[:notice] = "The dates you selected bear no queries" %>
-					<% end %>
+					
+				<% } %>
+				
 				
 								
 			
@@ -955,16 +921,16 @@ function WebFXMenuButton() {}
 		<fieldset id= "Sender" class="fieldset" style="width: 920px; height: 80px;display:none;">
 		<legend class="groupbox">Sender</legend>
 		<label for="First_name">From:
-      					<%= text_field_tag :message_sender, nil, :size => 45 %>
+      					<%= text_field_tag :message_sender, nil, :size => 45, :disabled => true, :style => "background-color:transparent; color:black" %>
       				</label><br> <br>
 		<label for="First_name">Subject:
-      					<%= text_field_tag :message_subject, nil, :size => 45 %>
+      					<%= text_field_tag :message_subject, nil, :size => 45, :disabled => true, :style => "background-color:transparent; color:black" %>
       				</label>
 		</fieldset>
 		
 		<fieldset id= "MessageBox" class="fieldset" style="width: 920px; height: 208px;display:none;">
 		<legend class="groupbox">Message</legend>
-		<%= text_area_tag :message_area, nil, :size => "129x10" %>
+		<%= text_area_tag :message_area, nil, :size => "129x10", :disabled => true, :style => "background-color:transparent; color:black" %>
 		<span style="position:relative; float:right;">
 		<%= button_to_function 'Reply', "openEmail()" %> 
 		</span>
@@ -1008,7 +974,7 @@ function WebFXMenuButton() {}
 			}
 			function openEmail() {
 				var i = nlr6.selected;
-				window.location = "mailto:" + nlr6.elements[i][1];
+				window.location = "mailto:" + nlr6.elements[i][1] + "?subject=RE:" + nlr6.elements[i][2] + "&body=" + nlr6.elements[i][5];
 				Element.hide("Sender");
 				Element.hide("MessageBox");
 			}
@@ -1020,8 +986,105 @@ function WebFXMenuButton() {}
 		<div class="tab-page" id="tabPage11">
 			 <h2 class="tab">Site Settings</h2>
 			<div style="position:relative;">
-				Website Status: <select><option>Online</option><option>Offline</option></select> <input type="button" value="Change">
+				<% form_tag '/admin/change_site_status', :id => "show_site" do %>
+					<%= label_tag "Website status:(currently #{if @sitesetting.online then "Online" else "Offline" end})" %> 
+	    			<%= select_tag "site_status", "<option>Online</option><option>Offline</option>" %>
+					<%= submit_tag "Change" %>
+				<% end %>
 			</div>
+			<br>
+			<%= link_to_function "User sent messages frequency settings", "showFreq()" %>
+			<div id="message_freq" style="display:none">
+			<fieldset  class="fieldset" style="width: 920px; height: 80px;">
+				<legend class="groupbox">Notification Settings</legend>
+				<% form_tag '/admin/change_messages_settings', :id => "mesg_set" do %>
+					
+					<%= label_tag "Notification Time(currently at #{@sitesetting.notification_time.strftime("%I:%M%p")}):" %> 
+	    			 <%= time_select("post_notif", "sunrise") %>
+					
+					<br>
+					<%= label_tag "Frequency:" %>
+					<%= label_tag "Monday" %>
+					<%= check_box_tag 'notif_monday', 'yes', @sitesetting.notification_monday %>
+					<%= label_tag "Tuesday" %>
+					<%= check_box_tag 'notif_tuesday', 'yes', @sitesetting.notification_tuesday %>
+					<%= label_tag "Wednesday" %>
+					<%= check_box_tag 'notif_webnesday', 'yes', @sitesetting.notification_wednesday %>
+					<%= label_tag "Thursday" %>
+					<%= check_box_tag 'notif_thursday', 'yes', @sitesetting.notification_thursday %>
+					<%= label_tag "Friday" %>
+					<%= check_box_tag 'notif_friday', 'yes', @sitesetting.notification_friday %>
+					<%= label_tag "Saturday" %>
+					<%= check_box_tag 'notif_saturday', 'yes', @sitesetting.notification_saturday %>
+					<%= label_tag "Sunday" %>
+					<%= check_box_tag 'notif_sunday', 'yes', @sitesetting.notification_sunday %>
+					<br>
+					
+				
+			</fieldset>
+			<br>
+			<fieldset  class="fieldset" style="width: 920px; height: 80px;">
+				<legend class="groupbox">Email Settings</legend>
+				
+					
+					<%= label_tag "Email Time(currently at #{@sitesetting.email_tme.strftime("%I:%M%p")}):" %> 
+	    			 <%= time_select("post_email", "sunset") %>
+					
+					<br>
+					<%= label_tag "Frequency:" %>
+					<%= label_tag "Monday" %>
+					<%= check_box_tag 'email_monday', 'yes', @sitesetting.email_monday %>
+					<%= label_tag "Tuesday" %>
+					<%= check_box_tag 'email_tuesday', 'yes', @sitesetting.email_tuesday %>
+					<%= label_tag "Wednesday" %>
+					<%= check_box_tag 'email_webnesday', 'yes', @sitesetting.email_wednesday %>
+					<%= label_tag "Thursday" %>
+					<%= check_box_tag 'email_thursday', 'yes', @sitesetting.email_thursday %>
+					<%= label_tag "Friday" %>
+					<%= check_box_tag 'email_friday', 'yes', @sitesetting.email_friday %>
+					<%= label_tag "Saturday" %>
+					<%= check_box_tag 'email_saturday', 'yes', @sitesetting.email_saturday %>
+					<%= label_tag "Sunday" %>
+					<%= check_box_tag 'email_sunday', 'yes', @sitesetting.email_sunday %>
+					<br>
+					
+				
+			</fieldset>
+			<br>
+			<fieldset  class="fieldset" style="width: 920px; height: 80px;">
+				<legend class="groupbox">SMS Settings</legend>
+				
+					
+					<%= label_tag "SMS Time(currently at #{@sitesetting.sms_time.strftime("%I:%M%p")}):" %> 
+	    			 <%= time_select("post_sms", "midnight") %>
+					
+					<br>
+					<%= label_tag "Frequency:" %>
+					<%= label_tag "Monday" %>
+					<%= check_box_tag 'sms_monday', 'yes', @sitesetting.sms_monday %>
+					<%= label_tag "Tuesday" %>
+					<%= check_box_tag 'sms_tuesday', 'yes', @sitesetting.sms_tuesday %>
+					<%= label_tag "Wednesday" %>
+					<%= check_box_tag 'sms_webnesday', 'yes', @sitesetting.sms_wednesday %>
+					<%= label_tag "Thursday" %>
+					<%= check_box_tag 'sms_thursday', 'yes', @sitesetting.sms_thursday %>
+					<%= label_tag "Friday" %>
+					<%= check_box_tag 'sms_friday', 'yes', @sitesetting.sms_friday %>
+					<%= label_tag "Saturday" %>
+					<%= check_box_tag 'sms_saturday', 'yes', @sitesetting.sms_saturday %>
+					<%= label_tag "Sunday" %>
+					<%= check_box_tag 'sms_sunday', 'yes', @sitesetting.sms_sunday %>
+					<br>
+					
+				
+			</fieldset>
+			<span style="position:relative; float:right">
+			<%= submit_tag "Save" %>
+			<%= button_to_function "Cancel", "hideFreq()" %>
+			</span>
+			<% end %>
+			</div>
+			
 			<br>
 			<br>
 			<%= link_to_function "Email Content", "showEmail()" %>
@@ -1030,11 +1093,16 @@ function WebFXMenuButton() {}
 			<br>
 			<div id= "edit_email" style="position:relative;display:none;"> 
 			<%= label_tag "Edit Email Contents:" %>
-			
+			<% form_tag '/admin/select_email_edit', :id => "email_set" do %>
+			<%= select_tag "select_email_edit", "<option>Checklist</option><option>Dropped</option><option>Grades</option><option>Kicked Out</option><option>Last Chance</option><option>Non-readmittance</option><option>Reduced Load</option><option>Shift</option><option>Totally Dropped</option><option>Transfer</option><option>Tuition Fee Assessment</option><option>Tuition Fee Assessment Update</option><option>Tuition Fee Breakdowns</option><option>Update For Grades</option><option>Violations</option><option>Withdrawn</option>" %>
+	    	</label>
+	    	<%= submit_tag "Load" %>
+	    	<% end %>
 			<% form_tag '/admin/edit_email', :id => "edit_email" do %>
 			 <% use_tinymce -%>
-  			<%= text_area_tag 'edit_email_box', nil, :class => "mce-editor", :style => "width:100%;height:100%;" %>
   			
+  			<%= text_area_tag 'edit_email_box', @email_content , :class => "mce-editor", :style => "width:100%;height:100%;" %>
+  		
   			<span style="position:relative; float:right">
   			<%= submit_tag "Save" %>
   			<%= button_to_function "Cancel", "hideEmail()" %>
@@ -1043,10 +1111,20 @@ function WebFXMenuButton() {}
   			</div>
   			<script language="text/javascript" type="text/javascript">
   				function showEmail() {
-  					Element.show("edit_email");
+  					if(getStyle(document.getElementById("message_freq"), "display") != "block") {
+  						Element.show("edit_email");
+  					}
   				}
   				function hideEmail() {
   					Element.hide("edit_email");
+  				}
+  				function showFreq() {
+  					if(getStyle(document.getElementById("edit_email"), "display") != "block") {
+	  					Element.show("message_freq");
+	  				}
+  				}
+  				function hideFreq() {
+  					Element.hide("message_freq");
   				}
   			</script>
 		</div>
