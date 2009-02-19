@@ -4,7 +4,7 @@
 ENV["RAILS_ENV"] ||= "development"
 
 require File.dirname(__FILE__) + "/../../config/environment"
-  require 'open-uri'
+require 'open-uri'
 $running = true
 Signal.trap("TERM") do 
   $running = false
@@ -68,7 +68,7 @@ while($running) do
           notif.notification = "guidace notice!"
           notif.new = true
           notif.save
-           @notif<<notif
+          @notif<<notif
         end
       end
         
@@ -84,7 +84,7 @@ while($running) do
           notif.notification = "grades notice!"
           notif.new = true
           notif.save
-           @notif<<notif
+          @notif<<notif
         end
       end
 
@@ -94,12 +94,12 @@ while($running) do
           state.save
           notif = Notification.new
           notif.delivered_at = Time.now
-           notif.idno = follower.idno
+          notif.idno = follower.idno
           notif.details = " has new assessment information"
           notif.notification = "assessment notice!"
           notif.new = true
           notif.save
- @notif<<notif
+          @notif<<notif
         end
       end
 
@@ -109,12 +109,12 @@ while($running) do
           state.save
           notif = Notification.new
           notif.delivered_at = Time.now
-           notif.idno = follower.idno
+          notif.idno = follower.idno
           notif.details = " has new breakdown information."
           notif.notification = "breakdown"
           notif.new = true
           notif.save
- @notif<<notif
+          @notif<<notif
         end
       end
 
@@ -122,14 +122,14 @@ while($running) do
         if state.attendance_as_of < Time.parse(@attendance.last.asOfDate)
           state.attendance_as_of = Time.parse(@attendance.last.asOfDate)
           state.save
-           notif = Notification.new
+          notif = Notification.new
           notif.delivered_at = Time.now
-           notif.idno = follower.idno
+          notif.idno = follower.idno
           notif.details = " was recorded absent!"
           notif.notification = "absence"
           notif.new = true
           notif.save
-           @notif<<notif
+          @notif<<notif
         end
       end
 
@@ -138,36 +138,14 @@ while($running) do
       #dont forget to generate the mails and send the cp messages
 
     end
-     mobilenum = "09175071504"
-
-    cp_set_time =  Time.local(2009, "feb", 13, 22, 29)
-      
-    if cp_set_time <= Time.now
-      
-      
-      foo = Follower.find(:all)
-         open("http://localhost:13004/cgi-bin/sendsms?username=admin&password=Linux&to=#{mobilenum}&text=after+follower#{foo.size}") {|f|}
-         
-      
-      foo.each do |fo| 
-        
-        @notif = Notification.find_all_by_follower_id fo
-        user = User.find fo.id
-        @notif.each do |no|
-          open("http://localhost:13004/cgi-bin/sendsms?username=admin&password=Linux&to=#{user.cp_number}&text=#{fo.idno}+#{Notification.smsify(no.details)}") {|f|}
-        end
-        
-      end
-      
-      
-    end
+ 
     
    
    
     
   end
   #check every 60 secs if sked update
-  sleep 5
+  sleep 60
 end
 
 

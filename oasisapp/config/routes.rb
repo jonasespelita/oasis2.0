@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :mobile_numbers
+
   map.resources :grades
   map.resources :queries
   map.resources :users
@@ -20,7 +22,7 @@ ActionController::Routing::Routes.draw do |map|
   map.add_ward  'follow', :controller => "followers", :action =>"new"
   map.wards 'wards', :controller => "oasis", :action => "index"
   map.tos '/tos', :controller =>"help", :action => 'tos'
-  
+  map.offline 'offline',  :controller =>'static', :action => 'offline'
   map.set_lang 'set_language', :controller => 'sessions', :action => 'set_language'
   map.createquery 'create_query', :controller=>"help", :action =>"create_query"
   map.query 'contact', :controller=>'help', :action => 'show_query'

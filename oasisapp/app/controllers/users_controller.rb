@@ -30,9 +30,12 @@ class UsersController < ApplicationController
         state =  CurrentStateOfFollower.new
         state.attendance_as_of = Time.now
         state.follower_id = f.id
-        state.grade_rows=100
+        state.grade_rows=0
         state.guidance_rows=0
         state.violation_rows=0
+        state.tf_assessment_rows=0
+        state.tf_breakdown_rows=0
+        state.attendance_rows = 0
         state.save
         generate_notifs f, state
         profile = Profile.find(session[:stud_idno])

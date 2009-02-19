@@ -1,5 +1,5 @@
 <div style="width:10000px; ">
-  <div id="master" style="float:left; width:920px; margin: 0px auto;">
+  <div id="master" style="float:left; width:920px; margin: 0px auto ; height: 560px; overflow-y: auto"">
     
     <div style="width:800px; margin:0px auto;">
       <div  >
@@ -33,7 +33,7 @@
           
         </tr>
         <% @absences.each do |absence| %>
-          <tr align="center"><td><%= absence.courseNo%></td><td align="right"><%= absence.absences%></td><td align="center"><%=absence.get_status%></td><td><%= (Time.parse(absence.asOfDate)).strftime("%B %d, %Y") %></td></tr>
+          <tr align="center"><td><%= absence.courseNo%></td><td align="right"><%= absence.absences%></td><td align="center"><%=absence.get_status%></td><td><%= absence.asOfDate.strftime("%B %d, %Y")%></td></tr>
         <% end %>
         
       </table>

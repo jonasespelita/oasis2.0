@@ -2,7 +2,7 @@
 <div class="grid_12">
   <% form_tag 'create_query' do%>
 
-    <%=label_tag( :subject, "Subject:") %><%=select_tag "Subject", "<option selected='selected'>rawr</option> <option>rawr</option>"  %><br/>
+    <%=label_tag( :subject, "Subject:") %><%=select_tag :subject, "<option selected='selected'>Interface Complaint</option> <option>rawr</option>"  %><br/>
     <%=label_tag( :subject, "Message:") %><br/>
     
       <% if params[:user_id].nil? %>

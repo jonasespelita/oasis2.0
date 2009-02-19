@@ -1,6 +1,6 @@
 <div style=" width:10000px; ">
 
-  <div id="<%= "m5#{profile.idNo}" %>" style="float:left; width:920px;display:block;">
+  <div id="<%= "m5#{profile.idNo}" %>" style="float:left; width:920px;display:block; height: 560px; overflow-y: auto">
 
     <div style=" width:800px;margin: 0px auto;">
       <h1>Payment Schedule  <span class="sml"> <% tooltip :id => "attendance_tip" do %>
@@ -9,11 +9,11 @@
 <% end %></span></h1>
         
    
-
-
-      <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
+<table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
 
       </table>
+<% if@tf_breakdown.size>0 %>
+
       <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
         <tr class="d">
           <td width="200" valign="top"><p>Item</p></td>
@@ -24,23 +24,13 @@
         <% end %>
 
       </table>
-   <br/>
+  <% else %>
+ 
+  <% end %>
 
-      <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
-        <tr class="d">
-          <td width="100" valign="top"><p>Date of payment</p></td>
-           <td width="300" valign="top"><p>Details</p></td>
-          <td width="200" valign="top"><p>Amount Paid</p></td>
-         
-        </tr>
-        <% @payments.each do |payment| %>
-          <tr><td><%= payment.dateOFPayment %></td><td><%= payment.textDetail%></td><td><%= "PHP #{payment.amt}"%></td></tr>
-        <% end %>
-
-      </table>
-
-<br/>
-      <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
+      <br/>
+<% if @tf_assessment.size >0%>
+ <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
         <tr class="d">
           <td width="100" valign="top"><p>Grading Term</p></td>
            <td width="300" valign="top"><p>Balance As Of</p></td>
@@ -60,6 +50,37 @@
         <% end %>
 
       </table>
+  <% else %>
+<table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
+            <tr class="d">No assessment information available.</tr></table>
+  <% end %>
+   <br/>
+   <% if @payments.size > 0 %>
+<table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
+        <tr class="d">
+          <td width="100" valign="top"><p>Date of payment</p></td>
+           <td width="300" valign="top"><p>Details</p></td>
+          <td width="200" valign="top"><p>Amount Paid</p></td>
+         
+        </tr>
+        <% @payments.each do |payment| %>
+          <tr><td><%= payment.dateOfPayment %></td><td><%= payment.textDetail%></td><td><%= "PHP #{payment.amt}"%></td></tr>
+        <% end %>
+
+      </table>
+  <% else %>
+<table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
+            <tr class="d">No payments information available.</tr></table>
+  <% end %>
+      
+
+<br/>
+
+
+
+
+
+     
 
     </div>
 

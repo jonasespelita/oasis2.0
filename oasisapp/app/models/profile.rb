@@ -7,7 +7,7 @@ class Profile < ActiveResource::Base
   end
 
   def fullname
-    "#{givenName} #{middlename} #{familyName}"
+    "#{givenName} #{middleName} #{familyName}"
   end
 
   def yrcourse

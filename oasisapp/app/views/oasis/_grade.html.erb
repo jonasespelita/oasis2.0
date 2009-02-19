@@ -32,10 +32,12 @@
         
         <% @grades.each do |grade| %>
 
-  <% if grade.endSchYr != cur_yr%>
+  <% if grade.semester != cur_sem%>
   <% cur_sem = grade.semester %>
  <% cur_yr = grade.endSchYr %>
+
         </table>
+        <br/>
    <span><%= case cur_sem
         when 1
           "First Semester"
@@ -64,7 +66,7 @@
 
 
       </table>
-      <p class="grades"><em><%= @p_units %> / <%= @t_units %> Units,  <%= @p_passed  %> % Passed</em></p>
+      <p class="grades"><em>Total Units:<%= @p_units %>units passed</em></p>
 
     </div>
 

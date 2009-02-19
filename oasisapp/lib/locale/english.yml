@@ -70,7 +70,7 @@ english:
   faq_q16: Q16.  Is OASIS for free?
   faq_a16: A16.  Yes! Every feature and functionality that you currently see on OASIS is completely free.
   faq_q17: Q17.  How do I know who is following my ward?
-  faq_a17: A17.
+
   faq_q18: Q18.  Is there a limit to the number of wards I can add?
   faq_a18: A18.  There is no limit to the number of wards each user can add.  As long as you have the certain ward's verification code, you may add him/her.
   faq_q19: Q19.  How do I sign in to OASIS?
@@ -80,7 +80,7 @@ english:
   faq_footer3: and we'll contact you shortly.
 
 
- captcha_error: Captcha error
+  captcha_error: Captcha error
   
   rawr: I'm English
 
@@ -103,6 +103,7 @@ english:
                     password:
                         invalid: Invalid
                         too_short: Password too short. Use 6 to 32 characters
+                        confirmation: Passwords don't match. Try again.
                     email:
                         invalid: Invalid
                         taken: Email already taken.

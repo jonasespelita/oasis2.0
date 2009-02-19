@@ -1,7 +1,7 @@
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
 
-=begin
+
 puts "start announcements"
 ann_date = '%d.%m.%Y'
 File.open(Rails.root+"/CSV/announcement.csv").each {|line|
@@ -76,7 +76,7 @@ File.open(Rails.root+"/CSV/grade.csv").each {|line|
   g.save
 }
 puts "end grades"
-=end
+
 puts "start guidance"
 File.open(Rails.root+"/CSV/guidance.csv").each {|line|
   temp = line.split(',')
@@ -89,7 +89,7 @@ File.open(Rails.root+"/CSV/guidance.csv").each {|line|
   g.save
 }
 puts "end guidance"
-=begin
+
 puts "start payment schedule"
 File.open(Rails.root+"/CSV/payment schedule.csv").each {|line|
   temp = line.split(',')
@@ -172,4 +172,3 @@ File.open(Rails.root+"/CSV/mobile number.csv").each {|line|
   mobile.save
 }
 puts "end mobile number"
-=end

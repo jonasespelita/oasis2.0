@@ -3,10 +3,21 @@ class ClassScheduleController < ApplicationController
   def index
     if params[:idno]
       @profiles = ClassSchedule.find_all_by_idNo params[:idno]
+       @grades = Grade.find_all_by_idNo params[:idno]
+   
+      @profiles.delete_if do|sked|
+        delete = false
+        @grades.each do |grade|
+            if sked.courseNo==grade.courseNo
+              delete = true
+            end
+        end
+         delete
+      end
     else
       @profiles = ClassSchedule.find(:all)
     end
-
+ 
     render :xml => @profiles.to_xml # use rail's automatic xml parser to convert object to xml =P
   end
 

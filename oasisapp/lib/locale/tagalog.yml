@@ -106,6 +106,7 @@ tagalog:
                     password:
                         invalid: Invalid
                         too_short: Password too short. Use 6 to 32 characters
+                        confirmation: Passwords don't match. Try again.
                     email:
                         invalid: Invalid
                         taken: Email already taken.
