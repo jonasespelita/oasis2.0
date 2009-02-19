@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+<title>Change Password</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link href="css/dirlister.css" type="text/css" rel="stylesheet">
+<link href="css/dirlister_style.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" media="all" href="myStyles.css">
+
+</head>
+<body>
+
+<div class="container">
+	
+	<div class="admin_title"><b>Diagnostic Tests</b></div>
+		
+	<div class="logo">
+		<div class="invis">
+			<h1>OASIS</h1><br/><h2>Online Access Student Information System</h2>
+		</div>
+	</div>
+	
+	<div class="slu">
+		<div class="invis">
+			<h2>Saint Louis University</h2>
+		</div>
+	</div>	
+
+	<div style="position:relative; top:100px;">
+		<fieldset class="fieldset" style="width:300px; height:300px;">
+                  <% form_for "send_gen" , "/admin/demo_sendsms_notification" do%>
+    <%= submit_tag" Force Send Generated Notification" %>
+  <% end %>
+
+<% form_for "send_gen" , "/admin/demo_sendsms_enrollment" do%>
+    <%= submit_tag" Force Send Invitation Notification" %>
+  <% end %>
+<%= flash[:message] %>
+		</fieldset>	
+	</div>
+</div> <!--end of container-->
+
+</body>
+</html>
+

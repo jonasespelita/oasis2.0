@@ -836,7 +836,7 @@ function WebFXMenuButton() {}
 					
 				};
 				$('select_user_show').request();
-				$('show_users_check').update('<% form_tag '/admin/remove_student', :id => "remove_student" do %> <%(Follower.find_all_by_user_id(session[:select_user_id])).each do |follower| %><%= check_box_tag(follower.id,'checked') %>	<span><%=(Profile.find(follower.idno)).fullname%></span><br><% end %><br><%= submit_tag "Save" %> <% end %>');
+				$('show_users_check').update('<% form_tag '/admin/remove_student', :id => "remove_student" do %> <%(Follower.find_all_by_user_id(session[:select_user_id])).each do |follower| %><%= check_box_tag(follower.id.to_s,nil) %>	<span><%=(Profile.find(follower.idno)).fullname%></span><br><% end %><br><%= submit_tag "Save" %> <% end %>');
 			}
 			function blockUser(){
 				document.getElementById("block_user").submit();
