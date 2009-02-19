@@ -41,7 +41,7 @@
           <li id="aboutteam"><%= link_to "<span class='invis'>FAQ's</span>", faq_path %></li>
         </ul>
 
-        <span id="date"><%= (Time.now).strftime("%B %d, %Y") %><br/> 1st Semester <br/>S.Y. 08 - 09</span><span id = "username"> <%= t :welcome %> <%= current_user.nickname %>!</span>
+<span id="date"><%= (Time.now).strftime("%B %d, %Y") %><br/><%= Sitesettings.find(:first).semester %> <br/></span><span id = "username"> <%= t :welcome %> <%= current_user.nickname %>!</span>
 
         <div id ="f_topmenu"> <%= link_to t(:logout), logout_path %>| <%= link_to t(:settings) , change_password_path %> | <%= link_to t(:contact_us) , query_url%><hr/><span id="add"><%= link_to "[+]#{t(:add_ward)}", add_ward_path  %></span></div>
 
