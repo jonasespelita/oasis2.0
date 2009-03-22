@@ -66,6 +66,7 @@ class SessionsController < ApplicationController
       current_user.cur_login = Time.now
       
       current_user.save
+      session[:cur_login] = current_user.cur_login
       redirect_to wards_path
       flash[:notice] = "Logged in as #{current_user.login}"
     else
@@ -78,11 +79,16 @@ class SessionsController < ApplicationController
 
   def destroy
     self.current_user.forget_me if logged_in?
+    
     cookies.delete :auth_token
     lang=session[:lang_pref]
+    x="You have logged out."
+    x =  "You have been logged out because you have signed in from another location.." if session[:another_login] 
     reset_session
     session[:lang_pref]=lang
-    flash[:notice] = "You have logged out."
+ flash[:notice] = x
+
+    
     #redirect_to new_session_path
     redirect_to root_path
   end

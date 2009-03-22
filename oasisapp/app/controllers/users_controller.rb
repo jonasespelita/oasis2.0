@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   # Be sure to include AuthenticationSystem in Application Controller instead
+  before_filter :login_required, :only => [:change_password,
+:change_password_update,
+:change_profile_update,
+:change_email,
+:reset_password]
 
   layout 'reg'
 
