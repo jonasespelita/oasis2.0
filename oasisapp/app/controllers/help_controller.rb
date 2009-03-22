@@ -24,6 +24,7 @@ A student who has incurred absences of more than 20% of the required number of c
    
   end
   def create_query
+    begin
      query = Query.new
      query.message = params[:message]
      query.resolved = false
@@ -36,7 +37,10 @@ A student who has incurred absences of more than 20% of the required number of c
        flash[:notice] = "Problems encounteredYour query has not been sent."  
        render :action => "show_query"
      end
-     
+    rescue
+      flash[:notice] = "Problems encounteredYour query has not been sent."  
+       render :action => "show_query"
+    end
      
   end
   def tos

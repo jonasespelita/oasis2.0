@@ -59,9 +59,11 @@
 
 
             <ul style="list-style: square inside; width:280px" class="sml">
-              <li>Students grades will be available on September 20, 2008 </li>
-              <li>There would be a system maintenance on September 22, 2008</li>
-              <li>There would be a system maintenance on September 22, 2008</li>
+              <% for announcement in @announcements %>
+                <li><b><%= announcement.announcement %></b> - <%= announcement.date_time.strftime("%B %d, %Y") %><br/>
+         <%= announcement.summary %>
+  <% end %>
+             
             </ul>
 
 

@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   
   def check_online
     setting = (Sitesettings.first).online
-    
+        @announcements = Announcements.find(:all)
    
     if !setting
       redirect_to offline_path
@@ -155,16 +155,39 @@ end
 protected
 def set_site
   site=( WebserviceAddress.first).address
+ user = "slu"
+password = "slu"
+
   Violation.site = site
+  Violation.user=user
+  Violation.password=password
   Profile.site = site
+  Profile.user = user
+  Profile.password = password
   Grade.site = site
+  Grade.user = user
+  Grade.password = password
   Attendance.site = site
+    Attendance.user = user
+  Attendance.password = password
   Guidance.site = site
+    Guidance.user = user
+  Guidance.password = password
   PaymentSchedule.site = site
+PaymentSchedule.user = user
+  PaymentSchedule.password = password
   Tfbreakdown.site = site
+  Tfbreakdown.user = user
+  Tfbreakdown.password = password
   Tfassessment.site = site
+  Tfassessment.user = user
+  Tfassessment.password = password
   ClassSchedule.site = site
+  ClassSchedule.user = user
+  ClassSchedule.password = password
   MobileNumber.site = site
+  MobileNumber.user = user
+  MobileNumber.password = password
 end
   
 def no_cache

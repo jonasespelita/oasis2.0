@@ -150,7 +150,10 @@ class OasisController < ApplicationController
   def pref_help
     
   end
-
+def save_pref
+  flash[:notice] = "Preferences Saved"
+  redirect_to wards_path
+end
   protected
   def verified_followed?
     followers = Follower.find_all_by_user_id(current_user.id)

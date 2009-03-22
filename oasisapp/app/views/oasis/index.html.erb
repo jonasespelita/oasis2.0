@@ -48,8 +48,8 @@
       </div>
 
       <div class = "grid_12 " id="a_content" >
-        <span id="f_msg"><%= t :click_start %>   </span>
-<br/>
+        <span id="f_msg"><%= t :click_start %>   </span><br/><div style="color:green;"><%= flash[:notice] %></div>
+<br/> 
         <span class ="sml" id="sort_option"><%= link_to "#{t :ward_preferences}", :action => 'open_sorter' %>
            <% tooltip do %>
   <%= t :sorter_message %> <%= link_to "#{t :sorter_link}", :action => 'open_sorter' %>.

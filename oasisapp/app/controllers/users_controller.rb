@@ -86,11 +86,16 @@ class UsersController < ApplicationController
     else
       flash[:alert] = "Old password incorrect"
     end
+    
+
  flash[:status] = "error" if flash[:status].nil?
     respond_to do |format|
-      format.html{render :action => 'change_password'}
+      format.html{
+        #render :action => 'change_password'
+        redirect_to logout_path        
+        }
       format.js
-      
+     
     end
   end
 

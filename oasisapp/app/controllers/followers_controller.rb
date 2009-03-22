@@ -21,6 +21,7 @@ class FollowersController < ApplicationController
         flash[:notice]= "#{t(:rawr)}"
         f .photo = params[:photo]
         if f.save
+          flash[:notice] = "Photo Uploaded"
           redirect_to "/oasis/open_sorter"
         else
           flash[:error] = "Invalid File Type"

@@ -8,19 +8,19 @@
 <br/>" %>
 <% end %></span></h1>
         
-   
+     <b>Tuition Fee Breakdown</b>
 <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
 
       </table>
 <% if@tf_breakdown.size>0 %>
 
-      <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
+      <table border="1" cellspacing="0" cellpadding="0" width="541" class="c">
         <tr class="d">
-          <td width="200" valign="top"><p>Item</p></td>
+          <td width="100" valign="top"><p>Item</p></td>
           <td width="200" valign="top"><p>Fee Amount</p></td>
         </tr>
         <% @tf_breakdown.each do |item| %>
-          <tr><td><%= item.item %></td><td><%= item.feeAmt %></td></tr>
+          <tr><td ><%="  "+item.item %></td><td  align="right"><%= " Php #{number_with_precision(item.feeAmt ,2, :separator =>".")}"%></td></tr>
         <% end %>
 
       </table>
@@ -29,6 +29,7 @@
   <% end %>
 
       <br/>
+       <b>Assessment</b>
 <% if @tf_assessment.size >0%>
  <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
         <tr class="d">
@@ -38,7 +39,7 @@
 
         </tr>
         <% @tf_assessment.each do |item| %>
-          <tr><td><%= case item.gradingTerm
+          <tr><td ><%= case item.gradingTerm
           when "P"
             "Prelims"
           when "M"
@@ -46,7 +47,7 @@
           when "F"
             "Finals"
           end
-          %></td><td><%= item.balanceAsOf%></td><td><%= "PHP #{item.payAmt}"%></td></tr>
+          %></td><td align="right"><%= " Php #{number_with_precision(item.balanceAsOf ,2, :separator =>".")}"%></td><td align="right"><%=  " Php #{number_with_precision(item.payAmt ,2, :separator =>".")}"%></td></tr>
         <% end %>
 
       </table>
@@ -55,16 +56,17 @@
             <tr class="d">No assessment information available.</tr></table>
   <% end %>
    <br/>
+   <b>Payments</b>
    <% if @payments.size > 0 %>
 <table border="1" cellspacing="0" cellpadding="0" width="741" class="c">
         <tr class="d">
-          <td width="100" valign="top"><p>Date of payment</p></td>
+          <td width="150" valign="top"><p>Date of payment</p></td>
            <td width="300" valign="top"><p>Details</p></td>
           <td width="200" valign="top"><p>Amount Paid</p></td>
          
         </tr>
         <% @payments.each do |payment| %>
-          <tr><td><%= payment.dateOfPayment %></td><td><%= payment.textDetail%></td><td><%= "PHP #{payment.amt}"%></td></tr>
+          <tr><td ><%= payment.dateOfPayment.strftime("%B %d, %Y") %></td><td  ><%= payment.textDetail%></td><td align="right"><%=  " Php #{number_with_precision(payment.amt,2, :separator =>".")}"%></td></tr>
         <% end %>
 
       </table>

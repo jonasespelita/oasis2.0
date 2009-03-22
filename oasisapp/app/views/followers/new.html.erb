@@ -15,8 +15,8 @@
     <% form_tag :controller => 'followers',:action => 'create' do %>
     
 
-      <label class="fstr"><%= t :reg1_id %>:</label> <%=  text_field_tag :idno, nil,:size => 30%><br/>
-      <label class="fstr"><%= t :reg1_code %>:</label> <%= text_field_tag :vcode, nil,:size => 30 %>
+      <label class="fstr"><%= t :reg1_id %>:</label> <%=  text_field_tag :idno, nil,:size => 30 , :autocomplete=>"off"%><br/>
+      <label class="fstr"><%= t :reg1_code %>:</label> <%= text_field_tag :vcode, nil,:size => 30,  :autocomplete=>"off" %>
 
   <%= show_simple_captcha :distortion => 'medium' %>
       <br/>

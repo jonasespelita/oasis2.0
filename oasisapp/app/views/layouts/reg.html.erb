@@ -32,6 +32,7 @@
           <li id="aboutteam"><%= link_to "<span class='invis'>FAQ's</span>", faq_path %></li>
         </ul>
       </div>
+      <%= flash[:notice] %>
       <%= yield -%>
 
       <div class = "grid_12" id = "footer">
