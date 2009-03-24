@@ -23,7 +23,9 @@
       </div>
       <b>Attendance status: </b>	<span class="sml" style=" display:inline-block; "> </span>
       
-      
+              <% if @absences.size ==0 %>
+        <tr><b>No absences recorded!</b></tr>
+  <% end %>
       <table border="1" cellspacing="0" cellpadding="0" width="801" class="c">
         <tr class="d">
           <td width="100" valign="top"><p>Course No</p></td>
@@ -32,6 +34,7 @@
           <td width="200" valign="top"><p>Date Recorded</p></td>
           
         </tr>
+
         <% @absences.each do |absence| %>
           <tr align="center"><td><%= absence.courseNo%></td><td align="right"><%= absence.absences%></td><td align="center"><%=absence.get_status%></td><td><%= absence.asOfDate.strftime("%B %d, %Y")%></td></tr>
         <% end %>

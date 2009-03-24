@@ -8,7 +8,7 @@ class Attendance <  ActiveResource::Base
   def get_status
     #attendanceStatus
     case attendanceStatus
-    when "D "
+    when "D"
       "Dropped"
     when "WP"
       "Withdrawal with Permission"

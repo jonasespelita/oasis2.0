@@ -17,11 +17,11 @@
   
   <a class="t_tab" href="#q">
     
-    <span class="f_name"><%= profile.fullname %> - <%  if get_sched_empty?(profile.idNo)
-        "Not Enrolled" 
-      else 
-        "Enrolled" 
-      %></span><br/>
+    <span class="f_name"><%= profile.fullname %> - <%  if get_sched_empty?(profile.idNo)%>
+      <%=  "Not Enrolled" %>
+     <% else %>
+      <%=  "Enrolled"  %>
+   <% end  %></span><br/>
       <span class="f_idno"><%= profile.idNo %></span><br/>
       <span class="f_course"><%= profile.yrcourse %></span>
     </a>

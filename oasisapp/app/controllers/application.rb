@@ -51,6 +51,7 @@ protect_from_forgery # :secret => '0f4c9180aa02a9e2e806a289f8376d03'
 # filter_parameter_logging :password
 
 def generate_notifs follower, state
+  begin
   @violations = Violation.find(:all, :from => "/violation/?idno=#{follower.idno}")
   @guidance =  Guidance.find(:all, :from => "/guidance/?idno=#{follower.idno}")
   @attendance=  Attendance.find(:all, :from => "/attendance/?idno=#{follower.idno}")
@@ -146,7 +147,8 @@ def generate_notifs follower, state
       notif.save
     end
   end
-
+  rescue
+  end
         
   ##      update admin variable for next generation
   #dont forget to generate the mails and send the cp messages
