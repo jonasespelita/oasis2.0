@@ -11,13 +11,12 @@ class SessionsController < ApplicationController
     
     @IE = case (request.env['HTTP_USER_AGENT']).index('.NET')
     when nil then
-      
       false
     else
       access_denied
       true
     end
-    
+
     if logged_in?
       redirect_to wards_path
     end

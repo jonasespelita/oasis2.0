@@ -13,7 +13,11 @@ a{
 a:hover{ 
     text-decoration:underline;
 }
-
+#browser_pics{
+    background: transparent url(../images/browsers.png) no-repeat;
+    width: 619px;
+    height:162px;
+}
 .container_12{
     background: transparent url(../images/bg.jpg) no-repeat;
     width: 977px;
@@ -38,7 +42,7 @@ a:hover{
     width:440px;
 }
 #slu{
-
+    
     background-image: url(../images/slu.png);
     height:117px;
     left:-60px;
@@ -59,7 +63,7 @@ a:hover{
 }
 
 #topmenu ul li a {
-
+    
     float:left;
     width:140px;
     height:70px;
@@ -83,9 +87,9 @@ li#aboutteam a:hover {
 #front{
     background: transparent url(../images/front.png) no-repeat;
     height:273px;
-
-
-
+    
+    
+    
 }
 
 
@@ -99,8 +103,8 @@ li#aboutteam a:hover {
     margin-top:5px;
     display:inline-block;
     width:98px;
-
-
+    
+    
 }
 #rawr{
     display:inline-block;
@@ -139,7 +143,7 @@ li#aboutteam a:hover {
 }
 #reg_sos{
     background: transparent url(../images/reg_sos.png) no-repeat;
-
+    
     height:106px;
 }
 
@@ -210,7 +214,7 @@ li#aboutteam a:hover {
     height:73px;
     margin-left:80px;
     margin-bottom:25px;
-
+    
 }
 
 #date{
@@ -232,14 +236,14 @@ div.loading {
     margin-top:260px;
     margin-left: auto ;
     margin-right: auto ;
-
+    
 }
 
 #lc{
-
+    
     /* position:absolute;*/
-
-
+    
+    
 }
 
 #bot_menu{
@@ -259,12 +263,12 @@ div.loading {
     height:26px;
     border: solid 1px #cbd1d3;
     text-align: center;
-
+    
 }
 
 #bot_menu_thing:hover{
     background-color:#f1fafa;
-
+    
 }
 
 #bot_menu_thing a{
@@ -288,18 +292,18 @@ div.loading {
 #bot_title{
     font-weight:bold;
     background-color:#deeef6;
-
-
+    
+    
 }
 #bot_title a{
-
+    
     color:#bbbbbb;
-
+    
 }
 #bot_title a:hover{
     text-decoration:none;
     color:black;
-
+    
 }
 
 #bot_linkie {
@@ -309,23 +313,23 @@ div.loading {
 #bot_linkie a{
     font-size:8pt;
     font-weight:normal;
-
+    
 }
 
 select{
     width:150px;
-
+    
 }
 
 .remember {
-
+    
     width:260px;
     font-size:8pt;
     float:left;
 }
 
 #login_notif{
-   width:220px;
+    width:220px;
     color:maroon;
     font-weight:bold;
     font-size:12px;
@@ -335,13 +339,13 @@ dt{
     float:left;
     width:119px;
     color:#808080;
-
+    
 }
 dd,dt{
     font-size:12px;
 }
 dd{
-
+    
 }
 
 .headr{
@@ -366,20 +370,20 @@ dd{
 
 
 .f_info{
-width:100%;
-   float:none;
+    width:100%;
+    float:none;
 }
 tr:hover{
-   background-color:#FFFFCC;
+    background-color:#FFFFCC;
 }
 
 tr.d:hover{
-     background-color:#CAE8EA;
+    background-color:#CAE8EA;
 }
 
 .tooltip_content{
     z-index:4;
-
+    
     width:300px;
     
 }
@@ -401,5 +405,5 @@ small{
     background: url( /images/error.png) no-repeat;
     padding-left:25px;
     color: #990033;
-     font-weight:bold;
+    font-weight:bold;
 }

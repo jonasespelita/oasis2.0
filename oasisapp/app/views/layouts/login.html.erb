@@ -32,6 +32,23 @@
         </ul>
 
       </div>
+      <div class="grid_12">
+      <% if @IE %>
+        <span><b>The following are the site requirements:</b></span>
+        <ul>
+          <li>
+            Enabled Javascript
+          </li>
+                <li>
+            Enabled Cookies.
+          </li>
+                <li>
+                  <b>Supported Browsers: </b>Mozilla Firefox, Chrome, Safari, Opera 
+          </li>
+          
+        </ul>
+      </div><div id="browser_pics" class="grid_6"></div>
+  <% else%>
 
       <div id="reg_sos" class="grid_6"></div>
 
@@ -83,6 +100,8 @@
         </div>
 
       </div>
+        <% end %>
     </div><!--end of container-->
+    
   </body>
 </html>
