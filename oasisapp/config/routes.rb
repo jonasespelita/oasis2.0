@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   #ROUTES_PROTOCOL = (ENV["RAILS_ENV"] =~ /development/ ? "http" : "https")
   #map.resources :requirements => {:protocol =>"http"}
-
+map.reqs '/minreqs', :controller =>'static', :action => 'reqs'
   map.resources :mobile_numbers
   map.resources :grades
   map.resources :queries

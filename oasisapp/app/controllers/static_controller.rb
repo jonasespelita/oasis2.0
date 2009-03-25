@@ -17,5 +17,9 @@ class StaticController < ApplicationController
 
   def sitemap
   end
+  
+  def reqs
+    
+  end
 
 end

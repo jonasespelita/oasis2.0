@@ -121,7 +121,7 @@ class FollowersController < ApplicationController
     #check if student exists
     begin
       student = Profile.find(idno)
-      if student.idNo.nil? #premade Profile for nonexistent students (check web service)
+      if student.idNo==2041575 #premade Profile for nonexistent students (check web service)
         flash[:error]="The student cannot be found. Please check the ID number and try again."
         return false
       end

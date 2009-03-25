@@ -94,7 +94,7 @@
         <div id="f_links">
           <%=  link_to "Home", root_path %> : <%= link_to "Terms & Conditions", toc_path%> :   <%= link_to "Privacy Policy ", pri_path %>  <br/> <%= link_to "Contact Us", contact_path %> :  <%= link_to "About Us", about_path %> : <%= link_to "Site Map", sitemap_path %><br/>
           <!--	<span>&copy; Saint Louis University, 2008. All rights reserved.</span><br/>-->
-          <span><a href = "http://validator.w3.org/check?uri=referer">XHTML 1.0 valid</a> :
+          <span><%= link_to "Minimum Site Requirements", reqs_path%> :<a href = "http://validator.w3.org/check?uri=referer">XHTML 1.0 valid</a> :
           <a href ="http://jigsaw.w3.org/css-validator/"> Valid CSS 2.1!</a></span>
 
         </div>
