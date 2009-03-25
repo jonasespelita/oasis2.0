@@ -1,5 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   # The priority is based upon order of creation: first created -> highest priority.
+ROUTES_PROTOCOL = (ENV["RAILS_ENV"] =~ /development/ ? "http" : "https")
+map.resources :requirements => {:protocol => ROUTES_PROTOCOL}
+
 map.resources :students
 map.resources :profiles
 map.resources :violation

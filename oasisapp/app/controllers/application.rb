@@ -2,7 +2,9 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  include SslRequirement
   include AuthenticatedSystem
+
   before_filter :no_cache, :set_site,  :set_locale, :check_online , :except => [ :offline, "AdminController"]
   helper :all # include all helpers, all the time
   

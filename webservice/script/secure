@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+require File.dirname(__FILE__) + '/../config/boot'
+
+require 'webrick'
+require 'webrick/https'
+
+OPTIONS = {
+  :port        => 3000,
+  :ip        => "127.0.0.1",
+  :environment    => (ENV['RAILS_ENV'] || "development").dup,
+  :server_root    => File.expand_path(RAILS_ROOT + "/public/"),
+}
+
+ENV["RAILS_ENV"] = OPTIONS[:environment]
+RAILS_ENV.replace(OPTIONS[:environment]) if defined?(RAILS_ENV)
+
+require RAILS_ROOT + "/config/environment"
+require 'webrick_server'
+OPTIONS['working_directory'] = File.expand_path(RAILS_ROOT)
+
+ class SSLDispatchServlet < DispatchServlet
+    def self.dispatch(options)
+    Socket.do_not_reverse_lookup = true # patch for OS X
+    server = WEBrick::HTTPServer.new(
+      :Port            => options[:port].to_i,
+      :ServerType      => options[:server_type],
+      :BindAddress     => options[:ip],
+      :SSLEnable       => true,
+      :SSLVerifyClient => ::OpenSSL::SSL::VERIFY_NONE,
+      :SSLPrivateKey   => ::OpenSSL::PKey::RSA.new(File.read(File.dirname(__FILE__) + '/../../ssl/keys/privkey.pem')),
+      :SSLCertificate  => ::OpenSSL::X509::Certificate.new(File.read(File.dirname(__FILE__) + '/../../ssl/certificates/cert.pem')),
+      :SSLCertName => [ [ "CN",WEBrick::Utils::getservername ] ])
+    server.mount('/', DispatchServlet, options)
+    trap("INT") { server.shutdown }
+    server.start
+  end
+end
+
+puts "=> Rails application started on https://#{OPTIONS[:ip]}:#{OPTIONS[:port]}"
+SSLDispatchServlet.dispatch(OPTIONS)

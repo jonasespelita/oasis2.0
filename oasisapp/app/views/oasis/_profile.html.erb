@@ -74,7 +74,7 @@
         
 <% schedules.each  do |schedule|%>
           <tr><td align="center"><%= schedule.code%></td><td align="center"><%= schedule.courseNo%></td>
-          <td align="center"><%= schedule.room%></td><td align="center"><%= schedule.time%></td><td align="center"><%= schedule.units%></td></tr>
+          <td align="center"><%= schedule.room%></td><td align="center"><%= "#{schedule.time} #{schedule.day}"%></td><td align="center"><%= schedule.units%></td></tr>
         <% end %>
         
       </table>

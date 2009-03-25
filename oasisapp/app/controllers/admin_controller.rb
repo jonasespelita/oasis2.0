@@ -856,10 +856,14 @@ class AdminController < ApplicationController
         end
         
         def remove_student
-          
+          flash[:notice] = ""
           follows = Follower.find_all_by_user_id(session[:select_user_id])
-          follows.each{ |follow| if params[follow.id.to_s] == "yes" then follow.destroy else end }
-          redirect_to(:action => "index")
+          follows.each{ |follow|   
+            if params[follow.id.to_s] == "on" then follow.destroy 
+   
+            else 
+            end }
+                 redirect_to(:action => "index")
         end
 	
         def demo_sendsms_notification    
